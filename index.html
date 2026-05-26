@@ -1,86 +1,462 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>ADRAH Assistance</title>
-<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
 <style>
-body {
-    background:#000;
-    color:white;
-    font-family:Arial,sans-serif;
-    margin:0;
-    padding:20px;
+
+:root{
+
+--bg:#0b1220;
+--panel:#121b2d;
+--panel2:#1a2740;
+--blue:#1f8fff;
+--blue2:#4bb3ff;
+--text:#ffffff;
+--muted:#9ba7bd;
+
 }
-.logo {
-    width:220px;
-    display:block;
-    margin:10px auto;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
 }
-input {
-    width:100%;
-    padding:16px;
-    border-radius:12px;
-    border:none;
-    font-size:18px;
-    margin:20px 0;
+
+body{
+
+background:
+linear-gradient(rgba(5,10,20,.92),rgba(5,10,20,.95)),
+url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-attachment:fixed;
+
+color:var(--text);
+
+padding:20px;
+
 }
-.card {
-    background:#111;
-    border:1px solid #1e90ff;
-    border-radius:14px;
-    padding:15px;
-    margin-bottom:12px;
+
+.header{
+
+margin-bottom:20px;
+
 }
-.btn {
-    display:inline-block;
-    background:#1e90ff;
-    color:white;
-    padding:12px 18px;
-    border-radius:10px;
-    text-decoration:none;
-    margin-top:10px;
-    font-weight:bold;
+
+.logo{
+
+font-size:42px;
+font-weight:700;
+
 }
-.small {
-    color:#aaa;
+
+.logo span{
+
+color:var(--blue);
+
 }
+
+.sub{
+
+margin-top:5px;
+
+color:var(--muted);
+
+}
+
+.search{
+
+margin-top:20px;
+
+position:relative;
+
+}
+
+.search input{
+
+width:100%;
+
+height:56px;
+
+border:none;
+
+outline:none;
+
+border-radius:18px;
+
+padding:0 20px 0 55px;
+
+background:var(--panel);
+
+color:white;
+
+font-size:17px;
+
+border:1px solid #223352;
+
+}
+
+.search i{
+
+position:absolute;
+
+left:18px;
+top:18px;
+
+font-size:20px;
+
+color:var(--muted);
+
+}
+
+.tabs{
+
+display:flex;
+
+gap:10px;
+
+overflow:auto;
+
+margin-top:20px;
+margin-bottom:20px;
+
+}
+
+.tab{
+
+background:var(--panel);
+
+border:1px solid #284066;
+
+padding:14px 18px;
+
+border-radius:16px;
+
+cursor:pointer;
+
+white-space:nowrap;
+
+font-weight:600;
+
+transition:.2s;
+
+}
+
+.tab:hover{
+
+background:var(--blue);
+
+}
+
+.results{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.card{
+
+background:rgba(16,24,40,.95);
+
+border:1px solid #253654;
+
+border-radius:24px;
+
+padding:18px;
+
+}
+
+.name{
+
+font-size:22px;
+
+font-weight:700;
+
+}
+
+.meta{
+
+margin-top:6px;
+
+color:var(--muted);
+
+font-size:14px;
+
+}
+
+.phone{
+
+margin-top:14px;
+
+font-size:28px;
+
+font-weight:700;
+
+}
+
+.call{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:16px;
+
+height:52px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:700;
+
+font-size:18px;
+
+background:linear-gradient(90deg,var(--blue),var(--blue2));
+
+}
+
+.empty{
+
+text-align:center;
+
+padding:40px;
+
+color:var(--muted);
+
+}
+
 </style>
 </head>
+
 <body>
-<img src="logo.png" class="logo">
-<h2>ADRAH Dépannage - Recherche Assistance</h2>
-<input type="text" id="search" placeholder="Tape AXA, BMW, IVECO...">
-<div id="results"></div>
+
+<div class="header">
+
+<div class="logo">
+<span>A</span>DRAH
+</div>
+
+<div class="sub">
+Assistance • Dépannage • Remorquage
+</div>
+
+</div>
+
+<div class="search">
+
+<i class="ph ph-magnifying-glass"></i>
+
+<input
+id="search"
+type="text"
+placeholder="Recherche : BMW, AXA, IVECO..."
+>
+
+</div>
+
+<div class="tabs">
+
+<div class="tab" onclick="filterCat('ALL')">
+🌍 TOUT
+</div>
+
+<div class="tab" onclick="filterCat('VL')">
+🚗 VL
+</div>
+
+<div class="tab" onclick="filterCat('PL')">
+🚛 PL
+</div>
+
+<div class="tab" onclick="filterCat('MOTO')">
+🏍️ MOTO
+</div>
+
+<div class="tab" onclick="filterCat('ASSURANCE')">
+🛡️ ASSURANCE
+</div>
+
+</div>
+
+<div
+class="results"
+id="results"
+>
+
+<div class="empty">
+Chargement...
+</div>
+
+</div>
 
 <script>
-const data = [{"type": "Assurance", "nom": "AXA", "assisteur": "AXA", "telephone": "01 55 92 26 92"}, {"type": "Assurance", "nom": "MAAF", "assisteur": "FIDELIA", "telephone": "0 800 16 17 18"}, {"type": "Assurance", "nom": "MACIF", "assisteur": "IMA", "telephone": "0 800 774 774"}, {"type": "AUTO", "nom": "BMW", "assisteur": "MONDIAL ASSISTANCE", "telephone": "0800 00 16 24"}, {"type": "AUTO", "nom": "IVECO", "assisteur": "SAVE ASSISTANCE", "telephone": "00 800 48 32 60 00"}, {"type": "AUTO", "nom": "RENAULT", "assisteur": "IMA", "telephone": "0800 05 15 15"}, {"type": "AUTO", "nom": "PEUGEOT", "assisteur": "IMA", "telephone": "0 800 44 24 24"}, {"type": "PL", "nom": "VOLVO Action Service", "assisteur": "EBTS", "telephone": "0800 90 75 18"}, {"type": "MOTO", "nom": "YAMAHA", "assisteur": "EUROP ASSISTANCE", "telephone": "01 34 30 31 00"}];
 
-function render(list) {
-    const results = document.getElementById('results');
-    results.innerHTML = '';
-    list.forEach(item => {
-        results.innerHTML += `
-        <div class="card">
-            <h3>${item.nom}</h3>
-            <div class="small">${item.type} • ${item.assisteur}</div>
-            <p>${item.telephone}</p>
-            <a class="btn" href="tel:${item.telephone.replace(/ /g,'')}">📞 Appeler</a>
-        </div>`;
-    });
+let DATA = [];
+
+let CURRENT = 'ALL';
+
+fetch('data.json')
+
+.then(response => response.json())
+
+.then(json => {
+
+DATA = json.map(x => ({
+
+nom: x.nom || '',
+
+categorie: x.categorie || '',
+
+assisteur: x.assisteur || '',
+
+telephone: x.telephone || ''
+
+}));
+
+render();
+
+})
+
+.catch(error => {
+
+document.getElementById('results').innerHTML = `
+
+<div class="empty">
+
+Erreur chargement data.json
+
+</div>
+
+`;
+
+console.error(error);
+
+});
+
+function filterCat(cat){
+
+CURRENT = cat;
+
+render();
+
 }
 
-render(data);
+function render(){
 
-document.getElementById('search').addEventListener('input', e => {
-    const q = e.target.value.toLowerCase();
-    const filtered = data.filter(x =>
-        x.nom.toLowerCase().includes(q) ||
-        x.assisteur.toLowerCase().includes(q)
-    );
-    render(filtered);
+const q = document
+.getElementById('search')
+.value
+.toLowerCase();
+
+let filtered = DATA.filter(item => {
+
+const text = `
+
+${item.nom}
+${item.categorie}
+${item.assisteur}
+${item.telephone}
+
+`.toLowerCase();
+
+return text.includes(q);
+
 });
+
+if(CURRENT !== 'ALL'){
+
+filtered = filtered.filter(item =>
+item.categorie === CURRENT
+);
+
+}
+
+const results =
+document.getElementById('results');
+
+if(filtered.length === 0){
+
+results.innerHTML = `
+
+<div class="empty">
+
+Aucun résultat
+
+</div>
+
+`;
+
+return;
+
+}
+
+results.innerHTML = filtered.map(item => `
+
+<div class="card">
+
+<div class="name">
+
+${item.nom}
+
+</div>
+
+<div class="meta">
+
+${item.assisteur}
+•
+${item.categorie}
+
+</div>
+
+<div class="phone">
+
+${item.telephone}
+
+</div>
+
+<a
+class="call"
+href="tel:${item.telephone.replace(/\s/g,'')}">
+
+<i class="ph ph-phone"></i>
+
+APPELER
+
+</a>
+
+</div>
+
+`).join('');
+
+}
+
+document
+.getElementById('search')
+.addEventListener('input', render);
+
 </script>
+
 </body>
 </html>
