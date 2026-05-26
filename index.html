@@ -226,181 +226,493 @@
   <script>
     // 1) Définition des catégories visibles
     const CATEGORIES = [
-      { key:'VL', label:'VL', sub:'Véhicule léger', icon:'ph-car' },
-      { key:'PL', label:'PL', sub:'Poids lourd', icon:'ph-truck' },
-      { key:'MOTO', label:'MOTO', sub:'Deux-roues', icon:'ph-motorcycle' },
-      { key:'LOCATION', label:'LOCATION', sub:'Location', icon:'ph-key' },
-      { key:'ASSURANCE', label:'ASSURANCE', sub:'Assurance', icon:'ph-shield' }
-    ];
 
-    // 2) Données: commence avec quelques entrées; tu chargeras tout le PDF en data.json
-    const DATA = [
-      { type:'ASSISTANCE', name:'AXA Assistance', category:'ASSURANCE', assistant:'AXA', phone:'01 55 92 27 72', extra:'France et International', logo:'[logo.clearbit.com](https://logo.clearbit.com/axa.fr)' },
-      { type:'ASSISTANCE', name:'IMA', category:'ASSURANCE', assistant:'IMA', phone:'0 800 774 774', extra:'Plateforme IMA', logo:'' },
-      { type:'VL', name:'BMW', category:'VL', assistant:'Mondial Assistance', phone:'0800 00 16 24', extra:'BMW Assistance', logo:'[logo.clearbit.com](https://logo.clearbit.com/bmw.com)' },
-      { type:'PL', name:'IVECO Assistance Non-Stop', category:'PL', assistant:'SAVE Assistance', phone:'00 800 48 32 60 00', extra:'PL 24/7', logo:'[logo.clearbit.com](https://logo.clearbit.com/iveco.com)' },
-      { type:'LOCATION', name:'Europcar', category:'LOCATION', assistant:'IMA', phone:'0 800 354 000', extra:'Voir conditions contrat', logo:'[logo.clearbit.com](https://logo.clearbit.com/europcar.com)' },
-      { type:'ASSURANCE', name:'GAN', category:'ASSURANCE', assistant:'MUTUAIDE', phone:'01 55 98 71 56', extra:'Numéro direct', logo:'[logo.clearbit.com](https://logo.clearbit.com/gan.fr)' }
-    ];
-    // Astuce: mets toutes les lignes du PDF dans un fichier data.json avec ces clés.
-    // Exemple: [{ "type":"ASSURANCE","name":"Abeille assurance","assistant":"OPTEVEN","phone":"01 41 32 21 56","category":"ASSURANCE","extra":"" }, ...]
+  { key:'VL', label:'VL', sub:'Véhicule léger', icon:'ph-car' },
 
-    // 3) Rendu catégories
-    const cats = document.getElementById('cats');
-    cats.innerHTML = CATEGORIES.map(c => `
-      <button class="card" data-cat="${c.key}">
-        <i class="ph ${c.icon}"></i>
-        <div><h3>${c.label}</h3><span>${c.sub}</span></div>
-        <span class="badge">24/7</span>
-      </button>
-    `).join('');
+  { key:'PL', label:'PL', sub:'Poids lourd', icon:'ph-truck' },
 
-    // 4) Recherche + filtrage
-    const listEl = document.getElementById('list');
-    const resultsEl = document.getElementById('results');
-    const q = document.getElementById('q');
-    const count = document.getElementById('count');
-    const hint = document.getElementById('hint');
+  { key:'MOTO', label:'MOTO', sub:'Deux-roues', icon:'ph-motorcycle' },
 
-    let current = []; // résultats courants
+  { key:'LOCATION', label:'LOCATION', sub:'Location', icon:'ph-key' },
 
-    function render(rows){
-      current = rows;
-      if(rows.length===0){ resultsEl.classList.add('hidden'); return; }
-      resultsEl.classList.remove('hidden');
-      count.textContent = rows.length + (rows.length>1?' résultats':' résultat');
-      listEl.innerHTML = rows.map((r,i)=>`
-        <div class="row" data-i="${i}">
-          <div class="meta">
-            <div class="title">${r.name}</div>
-            <div class="sub">${r.category || r.type} · ${r.assistant || ''}</div>
-          </div>
-          <div class="actions">
-            <a class="btn btn-call" href="tel:${(r.phone||'').replace(/\s+/g,'')}"><i class="ph ph-phone"></i>${r.phone||'—'}</a>
-            <button class="btn btn-ghost fav ${isFav(r)?'on':''}" data-fav="${i}" title="Favori"><i class="ph ph-star"></i></button>
-            <button class="btn btn-ghost" data-detail="${i}" title="Détails"><i class="ph ph-info"></i></button>
-          </div>
+  { key:'ASSURANCE', label:'ASSURANCE', sub:'Assurance', icon:'ph-shield' }
+
+];
+
+let DATA = [];
+
+// Chargement automatique du JSON
+
+fetch('data.json')
+
+.then(r => r.json())
+
+.then(json => {
+
+  DATA = json.map(x => ({
+
+    type: x.type || x.categorie || '',
+
+    name: x.nom || x.name || '',
+
+    assistant: x.assisteur || x.assistant || '',
+
+    phone: x.telephone || x.phone || '',
+
+    category: x.categorie || x.category || '',
+
+    extra: x.extra || '',
+
+    logo: x.logo || ''
+
+  }));
+
+});
+
+// 3) Rendu catégories
+
+const cats = document.getElementById('cats');
+
+cats.innerHTML = CATEGORIES.map(c => `
+
+  <button class="card" data-cat="${c.key}">
+
+    <i class="ph ${c.icon}"></i>
+
+    <div>
+
+      <h3>${c.label}</h3>
+
+      <span>${c.sub}</span>
+
+    </div>
+
+    <span class="badge">24/7</span>
+
+  </button>
+
+`).join('');
+
+// 4) Recherche + filtrage
+
+const listEl = document.getElementById('list');
+
+const resultsEl = document.getElementById('results');
+
+const q = document.getElementById('q');
+
+const count = document.getElementById('count');
+
+const hint = document.getElementById('hint');
+
+let current = [];
+
+function render(rows){
+
+  current = rows;
+
+  if(rows.length===0){
+
+    resultsEl.classList.add('hidden');
+
+    return;
+
+  }
+
+  resultsEl.classList.remove('hidden');
+
+  count.textContent =
+
+    rows.length +
+
+    (rows.length>1 ? ' résultats' : ' résultat');
+
+  listEl.innerHTML = rows.map((r,i)=>`
+
+    <div class="row" data-i="${i}">
+
+      <div class="meta">
+
+        <div class="title">
+
+          ${r.name}
+
         </div>
-      `).join('');
-    }
 
-    function matches(item, needle){
-      const hay = [item.name, item.type, item.category, item.assistant, item.phone, item.extra].join(' ').toLowerCase();
-      return hay.includes(needle.toLowerCase());
-    }
+        <div class="sub">
 
-    function search(text){
-      const n = text.trim();
-      if(!n){ resultsEl.classList.add('hidden'); return; }
-      const rows = DATA.filter(d=>matches(d,n)).slice(0,200);
-      hint.textContent = 'Filtré par « '+n+' »';
-      render(rows);
-    }
+          ${r.category || r.type}
 
-    q.addEventListener('input', e=> search(e.target.value));
+          ·
 
-    // Quick tags
-    document.getElementById('quickTags').addEventListener('click', e=>{
-      const tag = e.target?.dataset?.tag;
-      if(!tag) return;
-      q.value = tag;
-      search(tag);
-    });
+          ${r.assistant || ''}
 
-    // Catégories -> liste courte
-    cats.addEventListener('click', e=>{
-      const btn = e.target.closest('[data-cat]');
-      if(!btn) return;
-      const key = btn.dataset.cat;
-      const rows = DATA.filter(d => (d.category||d.type) && (d.category===key || d.type===key)).slice(0,200);
-      hint.textContent = key;
-      render(rows);
-      window.scrollTo({ top: resultsEl.offsetTop - 10, behavior:'smooth' });
-    });
+        </div>
 
-    // Drawer détail
-    const drawer = document.getElementById('drawer');
-    const dName = document.getElementById('d-name');
-    const dCat = document.getElementById('d-cat');
-    const dTel = document.getElementById('d-tel');
-    const dCall = document.getElementById('d-call');
-    const dAssist = document.getElementById('d-assist');
-    const dType = document.getElementById('d-type');
-    const dExtra = document.getElementById('d-extra');
-    const dExtraWrap = document.getElementById('d-extra-wrap');
-    const dLogo = document.getElementById('d-logo');
-    const dFav = document.getElementById('d-fav');
+      </div>
 
-    function openDetail(item){
-      dName.textContent = item.name;
-      dCat.textContent = item.category || item.type || 'Contact';
-      dTel.textContent = item.phone || '—';
-      dCall.href = item.phone ? 'tel:'+item.phone.replace(/\s+/g,'') : '#';
-      dAssist.textContent = item.assistant || '—';
-      dType.textContent = item.type || '—';
-      if(item.extra){ dExtra.textContent = item.extra; dExtraWrap.style.display='block'; }
-      else { dExtraWrap.style.display='none'; }
-      dLogo.src = item.logo || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
-      dFav.classList.toggle('on', isFav(item));
-      drawer.classList.add('show');
-      drawer.setAttribute('aria-hidden','false');
-    }
+      <div class="actions">
 
-    document.getElementById('d-close').addEventListener('click', ()=>{
-      drawer.classList.remove('show');
-      drawer.setAttribute('aria-hidden','true');
-    });
+        <a class="btn btn-call"
 
-    // Délégation événements ligne
-    listEl.addEventListener('click', e=>{
-      const i = e.target.closest('[data-detail]')?.dataset?.detail;
-      if(i!=null){ openDetail(current[i]); return; }
-      const f = e.target.closest('[data-fav]')?.dataset?.fav;
-      if(f!=null){ toggleFav(current[f]); e.target.closest('button').classList.toggle('on'); return; }
-    });
+        href="tel:${(r.phone||'').replace(/\s+/g,'')}">
 
-    // Favoris (localStorage)
-    const KEY='adrah:favs';
-    const getFavs=()=>JSON.parse(localStorage.getItem(KEY)||'[]');
-    const saveFavs=(arr)=>localStorage.setItem(KEY,JSON.stringify(arr));
-    const isFav=(item)=>getFavs().some(x=>x.name===item.name && (x.phone||'')===(item.phone||''));
-    const toggleFav=(item)=>{
-      const favs=getFavs();
-      const idx=favs.findIndex(x=>x.name===item.name && (x.phone||'')===(item.phone||''));
-      if(idx>-1) favs.splice(idx,1); else favs.push(item);
-      saveFavs(favs);
-      if(dName.textContent===item.name) dFav.classList.toggle('on', isFav(item));
-    };
-    dFav.addEventListener('click', ()=> toggleFav({name:dName.textContent, phone:dTel.textContent, category:dCat.textContent, assistant:dAssist.textContent, type:dType.textContent, extra:dExtra.textContent}));
+          <i class="ph ph-phone"></i>
 
-    // Clique “Détails” depuis drawer favoris (pas de liste dédiée ici — simple et rapide)
+          ${r.phone||'—'}
 
-    // 5) Chargement optionnel d’un gros jeu de données
-    // Place un fichier data.json à la racine avec toutes les lignes du PDF.
-    // Si présent, on remplace DATA.
-    fetch('data.json')
-      .then(r=> r.ok ? r.json() : Promise.reject())
-      .then(json=>{
-        // normaliser champs
-        const norm = (v)=> (v??'').toString().trim();
-        const mapped = json.map(x=>({
-          type:norm(x.type||x.Type),
-          name:norm(x.name||x.Nom),
-          assistant:norm(x.assistant||x.Assisteur),
-          phone:norm(x.phone||x.Téléphone||x.Tel),
-          category:norm(x.category||(x.Type && x.Type.toUpperCase().includes('ASSURANCE') ? 'ASSURANCE' :
-                                    x.Type && x.Type.toUpperCase().includes('MOTO') ? 'MOTO' :
-                                    x.Type && x.Type.toUpperCase().includes('LOCATION') ? 'LOCATION' :
-                                    x.Type && (x.Type==='VL'||x.Type==='AUTO') ? 'VL' :
-                                    x.Type && (x.Type.includes('PL')||x.Type.includes('BUS')) ? 'PL' : '')),
-          extra:norm(x['autres informations']||x.infos||''),
-          logo:norm(x.logo||'')
-        }));
-        if(mapped.length) {
-          DATA.splice(0, DATA.length, ...mapped);
-        }
-      })
-      .catch(()=>{/* data.json optionnel */});
-  </script>
+        </a>
+
+        <button
+
+        class="btn btn-ghost fav ${isFav(r)?'on':''}"
+
+        data-fav="${i}">
+
+          <i class="ph ph-star"></i>
+
+        </button>
+
+        <button
+
+        class="btn btn-ghost"
+
+        data-detail="${i}">
+
+          <i class="ph ph-info"></i>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  `).join('');
+
+}
+
+function matches(item, needle){
+
+  const hay = [
+
+    item.name,
+
+    item.type,
+
+    item.category,
+
+    item.assistant,
+
+    item.phone,
+
+    item.extra
+
+  ].join(' ').toLowerCase();
+
+  return hay.includes(
+
+    needle.toLowerCase()
+
+  );
+
+}
+
+function search(text){
+
+  const n = text.trim();
+
+  if(!n){
+
+    resultsEl.classList.add('hidden');
+
+    return;
+
+  }
+
+  const rows = DATA
+
+  .filter(d=>matches(d,n))
+
+  .slice(0,300);
+
+  hint.textContent =
+
+    'Filtré par « '+n+' »';
+
+  render(rows);
+
+}
+
+q.addEventListener('input',
+
+e=> search(e.target.value)
+
+);
+
+// Quick tags
+
+document
+
+.getElementById('quickTags')
+
+.addEventListener('click', e=>{
+
+  const tag =
+
+  e.target?.dataset?.tag;
+
+  if(!tag) return;
+
+  q.value = tag;
+
+  search(tag);
+
+});
+
+// Catégories
+
+cats.addEventListener('click', e=>{
+
+  const btn =
+
+  e.target.closest('[data-cat]');
+
+  if(!btn) return;
+
+  const key = btn.dataset.cat;
+
+  const rows = DATA.filter(d =>
+
+    (d.category===key || d.type===key)
+
+  ).slice(0,300);
+
+  hint.textContent = key;
+
+  render(rows);
+
+  window.scrollTo({
+
+    top: resultsEl.offsetTop - 10,
+
+    behavior:'smooth'
+
+  });
+
+});
+
+// Drawer détail
+
+const drawer = document.getElementById('drawer');
+
+const dName = document.getElementById('d-name');
+
+const dCat = document.getElementById('d-cat');
+
+const dTel = document.getElementById('d-tel');
+
+const dCall = document.getElementById('d-call');
+
+const dAssist = document.getElementById('d-assist');
+
+const dType = document.getElementById('d-type');
+
+const dExtra = document.getElementById('d-extra');
+
+const dExtraWrap = document.getElementById('d-extra-wrap');
+
+const dLogo = document.getElementById('d-logo');
+
+const dFav = document.getElementById('d-fav');
+
+function openDetail(item){
+
+  dName.textContent = item.name;
+
+  dCat.textContent =
+
+    item.category ||
+
+    item.type ||
+
+    'Contact';
+
+  dTel.textContent =
+
+    item.phone || '—';
+
+  dCall.href =
+
+    item.phone
+
+    ? 'tel:'+item.phone.replace(/\s+/g,'')
+
+    : '#';
+
+  dAssist.textContent =
+
+    item.assistant || '—';
+
+  dType.textContent =
+
+    item.type || '—';
+
+  if(item.extra){
+
+    dExtra.textContent =
+
+      item.extra;
+
+    dExtraWrap.style.display='block';
+
+  } else {
+
+    dExtraWrap.style.display='none';
+
+  }
+
+  dLogo.src =
+
+    item.logo ||
+
+    'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
+  dFav.classList.toggle(
+
+    'on',
+
+    isFav(item)
+
+  );
+
+  drawer.classList.add('show');
+
+}
+
+document
+
+.getElementById('d-close')
+
+.addEventListener('click', ()=>{
+
+  drawer.classList.remove('show');
+
+});
+
+// Délégation
+
+listEl.addEventListener('click', e=>{
+
+  const i =
+
+  e.target.closest('[data-detail]')
+
+  ?.dataset?.detail;
+
+  if(i!=null){
+
+    openDetail(current[i]);
+
+    return;
+
+  }
+
+  const f =
+
+  e.target.closest('[data-fav]')
+
+  ?.dataset?.fav;
+
+  if(f!=null){
+
+    toggleFav(current[f]);
+
+    e.target.closest('button')
+
+    .classList.toggle('on');
+
+  }
+
+});
+
+// Favoris
+
+const KEY='adrah:favs';
+
+const getFavs=()=>
+
+JSON.parse(
+
+localStorage.getItem(KEY)||'[]'
+
+);
+
+const saveFavs=(arr)=>
+
+localStorage.setItem(
+
+KEY,
+
+JSON.stringify(arr)
+
+);
+
+const isFav=(item)=>
+
+getFavs().some(x=>
+
+x.name===item.name &&
+
+(x.phone||'')===(item.phone||'')
+
+);
+
+const toggleFav=(item)=>{
+
+  const favs=getFavs();
+
+  const idx=favs.findIndex(x=>
+
+    x.name===item.name &&
+
+    (x.phone||'')===(item.phone||'')
+
+  );
+
+  if(idx>-1){
+
+    favs.splice(idx,1);
+
+  } else {
+
+    favs.push(item);
+
+  }
+
+  saveFavs(favs);
+
+};
+
+dFav.addEventListener('click', ()=>{
+
+  toggleFav({
+
+    name:dName.textContent,
+
+    phone:dTel.textContent,
+
+    category:dCat.textContent,
+
+    assistant:dAssist.textContent,
+
+    type:dType.textContent,
+
+    extra:dExtra.textContent
+
+  });
+
+});
+
+</script>
 </body>
 </html>
