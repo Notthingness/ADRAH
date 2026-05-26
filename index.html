@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADRAH Assistance</title>
+<link rel="manifest" href="manifest.json">
+<style>
+body {
+    background:#000;
+    color:white;
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:20px;
+}
+.logo {
+    width:220px;
+    display:block;
+    margin:10px auto;
+}
+input {
+    width:100%;
+    padding:16px;
+    border-radius:12px;
+    border:none;
+    font-size:18px;
+    margin:20px 0;
+}
+.card {
+    background:#111;
+    border:1px solid #1e90ff;
+    border-radius:14px;
+    padding:15px;
+    margin-bottom:12px;
+}
+.btn {
+    display:inline-block;
+    background:#1e90ff;
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    margin-top:10px;
+    font-weight:bold;
+}
+.small {
+    color:#aaa;
+}
+</style>
+</head>
+<body>
+<img src="logo.png" class="logo">
+<h2>ADRAH Dépannage - Recherche Assistance</h2>
+<input type="text" id="search" placeholder="Tape AXA, BMW, IVECO...">
+<div id="results"></div>
+
+<script>
+const data = [{"type": "Assurance", "nom": "AXA", "assisteur": "AXA", "telephone": "01 55 92 26 92"}, {"type": "Assurance", "nom": "MAAF", "assisteur": "FIDELIA", "telephone": "0 800 16 17 18"}, {"type": "Assurance", "nom": "MACIF", "assisteur": "IMA", "telephone": "0 800 774 774"}, {"type": "AUTO", "nom": "BMW", "assisteur": "MONDIAL ASSISTANCE", "telephone": "0800 00 16 24"}, {"type": "AUTO", "nom": "IVECO", "assisteur": "SAVE ASSISTANCE", "telephone": "00 800 48 32 60 00"}, {"type": "AUTO", "nom": "RENAULT", "assisteur": "IMA", "telephone": "0800 05 15 15"}, {"type": "AUTO", "nom": "PEUGEOT", "assisteur": "IMA", "telephone": "0 800 44 24 24"}, {"type": "PL", "nom": "VOLVO Action Service", "assisteur": "EBTS", "telephone": "0800 90 75 18"}, {"type": "MOTO", "nom": "YAMAHA", "assisteur": "EUROP ASSISTANCE", "telephone": "01 34 30 31 00"}];
+
+function render(list) {
+    const results = document.getElementById('results');
+    results.innerHTML = '';
+    list.forEach(item => {
+        results.innerHTML += `
+        <div class="card">
+            <h3>${item.nom}</h3>
+            <div class="small">${item.type} • ${item.assisteur}</div>
+            <p>${item.telephone}</p>
+            <a class="btn" href="tel:${item.telephone.replace(/ /g,'')}">📞 Appeler</a>
+        </div>`;
+    });
+}
+
+render(data);
+
+document.getElementById('search').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    const filtered = data.filter(x =>
+        x.nom.toLowerCase().includes(q) ||
+        x.assisteur.toLowerCase().includes(q)
+    );
+    render(filtered);
+});
+</script>
+</body>
+</html>
