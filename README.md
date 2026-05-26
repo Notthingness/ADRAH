@@ -1,2 +1,0 @@
-# ADRAH
-Adrah Assistance 
