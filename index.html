@@ -6,444 +6,157 @@
   <title>ADRAH — Assistance • Dépannage • Remorquage</title>
 
   <!-- Police et icônes -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap)" rel="stylesheet">
+  <link rel="stylesheet" href="[unpkg.com](https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css)">
 
   <style>
     :root{
-  --bg:#05070b;
-  --panel:rgba(18,20,28,.88);
-  --panel-2:rgba(28,32,42,.92);
-  --muted:#9ca3b5;
-  --text:#ffffff;
-  --accent:#e01919;
-  --accent-2:#ff3434;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html,body{
-  height:100%;
-}
-
-body{
-  margin:0;
-  color:var(--text);
-  font-family:Inter,system-ui,sans-serif;
-
-  background:
-  linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.88)),
-  url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1600&auto=format&fit=crop');
-
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-
-  -webkit-font-smoothing:antialiased;
-}
-
-.app{
-  max-width:560px;
-  margin:auto;
-  padding:22px;
-}
-
-header{
-  margin-bottom:20px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-.brand-logo{
-  width:95px;
-  height:95px;
-  border-radius:26px;
-
-  background:
-  linear-gradient(145deg,#181d29,#090c13);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-  0 12px 35px rgba(0,0,0,.45);
-
-  position:relative;
-  overflow:hidden;
-}
-
-.brand-logo::after{
-  content:"";
-  position:absolute;
-  inset:-20% -50% auto;
-
-  height:160%;
-
-  background:
-  conic-gradient(
-    from 200deg at 50% 50%,
-    transparent 0 20%,
-    rgba(255,255,255,.08) 20% 40%,
-    transparent 40% 100%
-  );
-
-  transform:rotate(-10deg);
-}
-
-.brand-title{
-  line-height:1;
-}
-
-.brand-title h1{
-  margin:0;
-  font-size:48px;
-  font-weight:800;
-  color:#1e5eff;
-}
-
-.brand-title small{
-  display:block;
-  margin-top:6px;
-  color:#d7dbe5;
-  font-size:16px;
-}
-
-.search{
-  display:flex;
-  gap:10px;
-  margin:24px 0;
-  position:relative;
-}
-
-.search input{
-  width:100%;
-  height:64px;
-
-  background:rgba(18,20,28,.92);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:20px;
-
-  color:white;
-
-  padding:0 18px 0 56px;
-  
-  font-size:18px;
-
-  outline:none;
-
-  backdrop-filter:blur(
-}  
-
-.search input:focus{
-  border-color:#ff2d2d;
-
-  box-shadow:
-  0 0 0 4px rgba(255,0,0,.12);
-}
-
-.search .ico{
-  position:absolute;
-  left:18px;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-.search .ico i{
-  font-size:22px;
-  color:#1e5eff;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:16px;
-}
-
-.card{
-  display:flex;
-  align-items:center;
-  gap:18px;
-
-  min-height:110px;
-
-  padding:20px;
-
-  border-radius:24px;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  overflow:hidden;
-
-  position:relative;
-
-  background:
-  linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.78)),
-  url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop');
-
-  background-size:cover;
-  background-position:center;
-
-  backdrop-filter:blur(8px);
-
-  transition:.2s;
-}
-
-.card:hover{
-  transform:translateY(-3px);
-
-  border-color:#ff2d2d;
-
-  box-shadow:
-  0 12px 30px rgba(0,0,0,.45);
-}
-
-.card i{
-  font-size:40px;
-  color:#ff2d2d;
-}
-
-.card h3{
-  margin:0;
-  font-size:34px;
-  font-weight:800;
-  color:white;
-}
-
-.card span{
-  color:#e0e3ea;
-  font-size:16px;
-}
-
-.badge{
-  position:absolute;
-
-  top:18px;
-  right:18px;
-
-  background:rgba(255,255,255,.08);
-
-  border:1px solid rgba(255,255,255,.1);
-
-  color:white;
-
-  border-radius:999px;
-
-  padding:6px 14px;
-
-  font-size:14px;
-}
-
-.results{
-  margin-top:24px;
-
-  background:rgba(14,16,22,.9);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  border-radius:24px;
-
-  overflow:hidden;
-
-  backdrop-filter:blur(12px);
-}
-
-.results-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:16px;
-
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.results-head strong{
-  font-size:15px;
-}
-
-.list{
-  display:flex;
-  flex-direction:column;
-}
-
-.row{
-  display:grid;
-  grid-template-columns:1fr auto;
-
-  gap:10px;
-
-  align-items:center;
-
-  padding:18px;
-
-  border-bottom:1px solid rgba(255,255,255,.04);
-}
-
-.row:last-child{
-  border-bottom:none;
-}
-
-.row .title{
-  font-size:20px;
-  font-weight:700;
-}
-
-.row .sub{
-  font-size:14px;
-  color:#b7bcc8;
-}
-
-.actions{
-  display:flex;
-  gap:10px;
-}
-
-.btn{
-  border:none;
-  cursor:pointer;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:18px;
-
-  font-weight:700;
-}
-
-.btn-call{
-  background:
-  linear-gradient(180deg,#ff3434,#d70000);
-
-  color:white;
-
-  height:52px;
-
-  padding:0 18px;
-
-  box-shadow:
-  0 10px 20px rgba(255,0,0,.25);
-}
-
-.btn-ghost{
-  width:50px;
-  height:50px;
-
-  background:rgba(255,255,255,.06);
-
-  color:white;
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.drawer{
-  position:fixed;
-
-  top:0;
-  right:0;
-
-  width:min(420px,92vw);
-  height:100%;
-
-  background:
-  linear-gradient(rgba(10,10,10,.94),rgba(10,10,10,.96)),
-  url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop');
-
-  background-size:cover;
-
-  border-left:1px solid rgba(255,255,255,.08);
-
-  transform:translateX(100%);
-
-  transition:.25s;
-
-  z-index:999;
-
-  display:flex;
-  flex-direction:column;
-}
-
-.drawer.show{
-  transform:translateX(0);
-}
-
-.drawer header{
-  padding:20px;
-
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.drawer .title{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.drawer .title img{
-  width:52px;
-  height:52px;
-
-  border-radius:14px;
-
-  background:#1a1c22;
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.drawer .body{
-  padding:20px;
-
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-.kv{
-  background:rgba(255,255,255,.04);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  border-radius:18px;
-
-  padding:14px;
-}
-
-.kv b{
-  display:block;
-
-  margin-bottom:6px;
-
-  color:#b8becc;
-
-  font-size:12px;
-}
-
-.kv span{
-  font-size:15px;
-}
-
-.hidden{
-  display:none;
-}
-
-.muted{
-  color:var(--muted);
-}
-
-</style>
+      --bg:#0e0f12;
+      --panel:#1a1c21;
+      --panel-2:#23262c;
+      --muted:#8c93a3;
+      --text:#f4f6fa;
+      --accent:#e63a3a;
+      --accent-2:#ff5a3c;
+      --ok:#19c37d;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;background:linear-gradient(180deg,#0b0c10 0%,#121418 60%,#0b0c10 100%);
+      color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .app{max-width:1160px;margin:auto;padding:20px 16px 28px}
+    header{
+      display:flex;align-items:center;gap:16px;margin-bottom:16px
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px
+    }
+    .brand-logo{
+      width:54px;height:54px;border-radius:12px;display:grid;place-items:center;
+      background:radial-gradient(120% 120% at 20% 10%, #2a2f37 0%, #1b1f26 45%, #101317 100%);
+      position:relative;overflow:hidden;border:1px solid #2a2f37;
+    }
+    .brand-logo::after{
+      content:"";position:absolute;inset:-20% -50% auto;height:160%;
+      background:conic-gradient(from 200deg at 50% 50%, transparent 0 20%, rgba(255,255,255,.06) 20% 40%, transparent 40% 100%);
+      transform:rotate(-10deg)
+    }
+    .brand-title{line-height:1}
+    .brand-title h1{margin:0;font-size:26px;letter-spacing:.6px}
+    .brand-title small{display:block;color:var(--muted);margin-top:2px}
+
+    /* Barre recherche */
+    .search{
+      display:flex;gap:10px;margin:14px 0 24px
+    }
+    .search input{
+      flex:1;background:var(--panel);border:1px solid #2a2f37;color:var(--text);
+      height:48px;border-radius:12px;padding:0 14px 0 44px;font-size:15px;
+      outline:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)
+    }
+    .search .ico{
+      position:relative
+    }
+    .search .ico i{
+      position:absolute;left:14px;top:50%;translate:0 -50%;color:var(--muted)
+    }
+    .quick-tags{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:-6px;margin-bottom:16px
+    }
+    .chip{
+      padding:6px 10px;border-radius:20px;background:#20242b;color:#c6cad4;
+      border:1px solid #2a2f37;font-size:12px;cursor:pointer;user-select:none
+    }
+    .chip:hover{border-color:#3a3f48}
+
+    /* Grille catégories */
+    .grid{
+      display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px
+    }
+    @media (max-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+    .card{
+      background:linear-gradient(180deg,#1d2026,#17191e);
+      border:1px solid #2a2f37;border-radius:var(--radius);padding:14px 12px;
+      position:relative;overflow:hidden;min-height:86px;display:flex;gap:12px;align-items:center;
+      transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+    }
+    .card:hover{transform:translateY(-2px);border-color:#3a3f48;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+    .card i{font-size:24px;color:#d7dbe6}
+    .card h3{margin:0 0 4px;font-size:15px}
+    .card span{font-size:12px;color:var(--muted)}
+    .badge{
+      position:absolute;right:10px;top:10px;background:#1f232a;border:1px solid #2e3340;
+      color:#cfd5e2;font-size:11px;padding:3px 8px;border-radius:999px
+    }
+
+    /* Résultats */
+    .results{
+      margin-top:18px;background:var(--panel);border:1px solid #2a2f37;border-radius:16px;overflow:hidden
+    }
+    .results-head{
+      display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#191c22;border-bottom:1px solid #2a2f37
+    }
+    .results-head strong{font-size:13px;color:#cfd5e2}
+    .list{display:flex;flex-direction:column}
+    .row{
+      display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;
+      padding:12px 14px;border-bottom:1px solid #262a33
+    }
+    .row:last-child{border-bottom:none}
+    .row .meta{display:flex;flex-direction:column;gap:2px}
+    .row .title{font-weight:600}
+    .row .sub{color:var(--muted);font-size:12px}
+    .actions{display:flex;gap:8px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;border-radius:999px;border:1px solid transparent;
+      height:38px;padding:0 14px;font-weight:600;cursor:pointer;
+    }
+    .btn-call{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;box-shadow:0 6px 18px rgba(230,58,58,.35)}
+    .btn-ghost{background:#21252c;color:#e2e5ec;border-color:#343a46}
+    .btn i{font-size:18px}
+    .fav.on i{color:#ffd166}
+
+    /* Drawer détail */
+    .drawer{
+      position:fixed;right:0;top:0;height:100%;width:min(420px,92vw);
+      background:linear-gradient(180deg,#15181d,#111317);border-left:1px solid #2b2f39;
+      translate:100% 0;transition:translate .2s ease;z-index:40;display:flex;flex-direction:column
+    }
+    .drawer.show{translate:0 0}
+    .drawer header{padding:14px 14px;border-bottom:1px solid #2b2f39}
+    .drawer .title{display:flex;align-items:center;gap:10px}
+    .drawer .title img{width:36px;height:36px;border-radius:8px;border:1px solid #2a2f37;background:#222}
+    .drawer .body{padding:14px;display:flex;flex-direction:column;gap:12px;overflow:auto}
+    .kv{background:#1b1f26;border:1px solid #2a2f37;border-radius:12px;padding:10px}
+    .kv b{display:block;font-size:11px;color:#a8b0c0;margin-bottom:4px}
+    .kv span{font-size:14px}
+
+    /* Footer features */
+    .features{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0
+    }
+    @media (max-width:900px){.features{grid-template-columns:repeat(2,1fr)}}
+    .feature{
+      background:linear-gradient(180deg,#171a1f,#14171b);
+      border:1px solid #2a2f37;border-radius:14px;padding:12px;display:flex;gap:10px;align-items:center
+    }
+    .feature i{font-size:22px;color:#ff6f61}
+    .muted{color:var(--muted)}
+    .hidden{display:none}
+  </style>
 </head>
 <body>
   <div class="app">
     <header>
       <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
         <div class="brand-title">
           <h1>ADRAH</h1>
           <small>Assistance • Dépannage • Remorquage — 24h/24 · 7j/7</small>
@@ -455,6 +168,13 @@ header{
       <div class="ico"><i class="ph ph-magnifying-glass"></i></div>
       <input id="q" type="search" placeholder="Rechercher une assistance, assurance, marque…" autocomplete="off" />
     </div>
+    <div class="quick-tags" id="quickTags">
+      <span class="chip" data-tag="AXA">AXA</span>
+      <span class="chip" data-tag="IMA">IMA</span>
+      <span class="chip" data-tag="BMW">BMW</span>
+      <span class="chip" data-tag="IVECO">IVECO</span>
+      <span class="chip" data-tag="Europcar">Europcar</span>
+    </div>
 
     <section>
       <h2 style="margin:0 0 10px 2px;font-size:14px;color:#bfc6d4;letter-spacing:.3px">CATÉGORIES</h2>
@@ -462,6 +182,13 @@ header{
         <!-- Catégories générées en JS -->
       </div>
     </section>
+
+    <div class="features">
+      <div class="feature"><i class="ph ph-phone-call"></i><div><b>Appel en 1 clic</b><div class="muted">Bouton d’appel optimisé</div></div></div>
+      <div class="feature"><i class="ph ph-timer"></i><div><b>Recherche intelligente</b><div class="muted">Rapide et précise</div></div></div>
+      <div class="feature"><i class="ph ph-star"></i><div><b>Favoris</b><div class="muted">Accès direct</div></div></div>
+      <div class="feature"><i class="ph ph-map-trifold"></i><div><b>Interface terrain</b><div class="muted">Simple, lisible et efficace</div></div></div>
+    </div>
 
     <section class="results hidden" id="results">
       <div class="results-head">
@@ -513,11 +240,60 @@ header{
 ];
 
 let DATA = [];
-let current = [];
 
-// ELEMENTS
+// Chargement automatique du JSON
+
+fetch('data.json')
+
+.then(r => r.json())
+
+.then(json => {
+
+  DATA = json.map(x => ({
+
+    type: x.type || x.categorie || '',
+
+    name: x.nom || x.name || '',
+
+    assistant: x.assisteur || x.assistant || '',
+
+    phone: x.telephone || x.phone || '',
+
+    category: x.categorie || x.category || '',
+
+    extra: x.extra || '',
+
+    logo: x.logo || ''
+
+  }));
+
+});
+
+// 3) Rendu catégories
 
 const cats = document.getElementById('cats');
+
+cats.innerHTML = CATEGORIES.map(c => `
+
+  <button class="card" data-cat="${c.key}">
+
+    <i class="ph ${c.icon}"></i>
+
+    <div>
+
+      <h3>${c.label}</h3>
+
+      <span>${c.sub}</span>
+
+    </div>
+
+    <span class="badge">24/7</span>
+
+  </button>
+
+`).join('');
+
+// 4) Recherche + filtrage
 
 const listEl = document.getElementById('list');
 
@@ -528,6 +304,204 @@ const q = document.getElementById('q');
 const count = document.getElementById('count');
 
 const hint = document.getElementById('hint');
+
+let current = [];
+
+function render(rows){
+
+  current = rows;
+
+  if(rows.length===0){
+
+    resultsEl.classList.add('hidden');
+
+    return;
+
+  }
+
+  resultsEl.classList.remove('hidden');
+
+  count.textContent =
+
+    rows.length +
+
+    (rows.length>1 ? ' résultats' : ' résultat');
+
+  listEl.innerHTML = rows.map((r,i)=>`
+
+    <div class="row" data-i="${i}">
+
+      <div class="meta">
+
+        <div class="title">
+
+          ${r.name}
+
+        </div>
+
+        <div class="sub">
+
+          ${r.category || r.type}
+
+          ·
+
+          ${r.assistant || ''}
+
+        </div>
+
+      </div>
+
+      <div class="actions">
+
+        <a class="btn btn-call"
+
+        href="tel:${(r.phone||'').replace(/\s+/g,'')}">
+
+          <i class="ph ph-phone"></i>
+
+          ${r.phone||'—'}
+
+        </a>
+
+        <button
+
+        class="btn btn-ghost fav ${isFav(r)?'on':''}"
+
+        data-fav="${i}">
+
+          <i class="ph ph-star"></i>
+
+        </button>
+
+        <button
+
+        class="btn btn-ghost"
+
+        data-detail="${i}">
+
+          <i class="ph ph-info"></i>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  `).join('');
+
+}
+
+function matches(item, needle){
+
+  const hay = [
+
+    item.name,
+
+    item.type,
+
+    item.category,
+
+    item.assistant,
+
+    item.phone,
+
+    item.extra
+
+  ].join(' ').toLowerCase();
+
+  return hay.includes(
+
+    needle.toLowerCase()
+
+  );
+
+}
+
+function search(text){
+
+  const n = text.trim();
+
+  if(!n){
+
+    resultsEl.classList.add('hidden');
+
+    return;
+
+  }
+
+  const rows = DATA
+
+  .filter(d=>matches(d,n))
+
+  .slice(0,300);
+
+  hint.textContent =
+
+    'Filtré par « '+n+' »';
+
+  render(rows);
+
+}
+
+q.addEventListener('input',
+
+e=> search(e.target.value)
+
+);
+
+// Quick tags
+
+document
+
+.getElementById('quickTags')
+
+.addEventListener('click', e=>{
+
+  const tag =
+
+  e.target?.dataset?.tag;
+
+  if(!tag) return;
+
+  q.value = tag;
+
+  search(tag);
+
+});
+
+// Catégories
+
+cats.addEventListener('click', e=>{
+
+  const btn =
+
+  e.target.closest('[data-cat]');
+
+  if(!btn) return;
+
+  const key = btn.dataset.cat;
+
+  const rows = DATA.filter(d =>
+
+    (d.category===key || d.type===key)
+
+  ).slice(0,300);
+
+  hint.textContent = key;
+
+  render(rows);
+
+  window.scrollTo({
+
+    top: resultsEl.offsetTop - 10,
+
+    behavior:'smooth'
+
+  });
+
+});
+
+// Drawer détail
 
 const drawer = document.getElementById('drawer');
 
@@ -551,32 +525,161 @@ const dLogo = document.getElementById('d-logo');
 
 const dFav = document.getElementById('d-fav');
 
-// FAVORIS
+function openDetail(item){
 
-const KEY = 'adrah:favs';
+  dName.textContent = item.name;
 
-const getFavs = () =>
-JSON.parse(localStorage.getItem(KEY) || '[]');
+  dCat.textContent =
 
-const saveFavs = arr =>
-localStorage.setItem(KEY, JSON.stringify(arr));
+    item.category ||
 
-const isFav = item =>
-getFavs().some(x =>
-x.name === item.name &&
-(x.phone || '') === (item.phone || '')
-);
+    item.type ||
 
-const toggleFav = item => {
+    'Contact';
 
-  const favs = getFavs();
+  dTel.textContent =
 
-  const idx = favs.findIndex(x =>
-    x.name === item.name &&
-    (x.phone || '') === (item.phone || '')
+    item.phone || '—';
+
+  dCall.href =
+
+    item.phone
+
+    ? 'tel:'+item.phone.replace(/\s+/g,'')
+
+    : '#';
+
+  dAssist.textContent =
+
+    item.assistant || '—';
+
+  dType.textContent =
+
+    item.type || '—';
+
+  if(item.extra){
+
+    dExtra.textContent =
+
+      item.extra;
+
+    dExtraWrap.style.display='block';
+
+  } else {
+
+    dExtraWrap.style.display='none';
+
+  }
+
+  dLogo.src =
+
+    item.logo ||
+
+    'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
+  dFav.classList.toggle(
+
+    'on',
+
+    isFav(item)
+
   );
 
-  if(idx > -1){
+  drawer.classList.add('show');
+
+}
+
+document
+
+.getElementById('d-close')
+
+.addEventListener('click', ()=>{
+
+  drawer.classList.remove('show');
+
+});
+
+// Délégation
+
+listEl.addEventListener('click', e=>{
+
+  const i =
+
+  e.target.closest('[data-detail]')
+
+  ?.dataset?.detail;
+
+  if(i!=null){
+
+    openDetail(current[i]);
+
+    return;
+
+  }
+
+  const f =
+
+  e.target.closest('[data-fav]')
+
+  ?.dataset?.fav;
+
+  if(f!=null){
+
+    toggleFav(current[f]);
+
+    e.target.closest('button')
+
+    .classList.toggle('on');
+
+  }
+
+});
+
+// Favoris
+
+const KEY='adrah:favs';
+
+const getFavs=()=>
+
+JSON.parse(
+
+localStorage.getItem(KEY)||'[]'
+
+);
+
+const saveFavs=(arr)=>
+
+localStorage.setItem(
+
+KEY,
+
+JSON.stringify(arr)
+
+);
+
+const isFav=(item)=>
+
+getFavs().some(x=>
+
+x.name===item.name &&
+
+(x.phone||'')===(item.phone||'')
+
+);
+
+const toggleFav=(item)=>{
+
+  const favs=getFavs();
+
+  const idx=favs.findIndex(x=>
+
+    x.name===item.name &&
+
+    (x.phone||'')===(item.phone||'')
+
+  );
+
+  if(idx>-1){
 
     favs.splice(idx,1);
 
@@ -590,311 +693,23 @@ const toggleFav = item => {
 
 };
 
-// CATEGORIES
-
-cats.innerHTML = CATEGORIES.map(c => `
-
-<button class="card" data-cat="${c.key}">
-
-  <i class="ph ${c.icon}"></i>
-
-  <div>
-
-    <h3>${c.label}</h3>
-
-    <span>${c.sub}</span>
-
-  </div>
-
-  <span class="badge">24/7</span>
-
-</button>
-
-`).join('');
-
-// CHARGEMENT JSON
-
-fetch('data.json')
-
-.then(r => r.json())
-
-.then(json => {
-
-  DATA = json.map(x => ({
-
-    type: x.type || '',
-
-    name: x.nom || x.name || '',
-
-    assistant: x.assisteur || x.assistant || '',
-
-    phone: x.telephone || x.phone || '',
-
-    category: x.categorie || x.category || '',
-
-    extra: x.extra || '',
-
-    logo: x.logo || ''
-
-  }));
-
-})
-
-.catch(err => {
-
-  console.log('Erreur JSON', err);
-
-});
-
-// RECHERCHE
-
-function matches(item, needle){
-
-  const hay = [
-
-    item.name,
-
-    item.type,
-
-    item.category,
-
-    item.assistant,
-
-    item.phone,
-
-    item.extra
-
-  ].join(' ').toLowerCase();
-
-  return hay.includes(needle.toLowerCase());
-
-}
-
-function render(rows){
-
-  current = rows;
-
-  if(rows.length === 0){
-
-    resultsEl.classList.add('hidden');
-
-    return;
-
-  }
-
-  resultsEl.classList.remove('hidden');
-
-  count.textContent =
-
-    rows.length +
-
-    (rows.length > 1 ? ' résultats' : ' résultat');
-
-  listEl.innerHTML = rows.map((r,i)=>`
-
-<div class="row" data-i="${i}">
-
-  <div class="meta">
-
-    <div class="title">${r.name}</div>
-
-    <div class="sub">
-
-      ${r.category || r.type}
-
-      ·
-
-      ${r.assistant || ''}
-
-    </div>
-
-  </div>
-
-  <div class="actions">
-
-    <a class="btn btn-call"
-
-    href="tel:${(r.phone || '').replace(/\s+/g,'')}">
-
-      <i class="ph ph-phone"></i>
-
-      ${r.phone || '—'}
-
-    </a>
-
-    <button
-
-    class="btn btn-ghost fav ${isFav(r)?'on':''}"
-
-    data-fav="${i}">
-
-      <i class="ph ph-star"></i>
-
-    </button>
-
-  </div>
-
-</div>
-
-`).join('');
-
-}
-
-function search(text){
-
-  const n = text.trim();
-
-  if(!n){
-
-    resultsEl.classList.add('hidden');
-
-    return;
-
-  }
-
-  const rows = DATA
-  .filter(d => matches(d,n))
-  .slice(0,300);
-
-  hint.textContent = 'Filtré par « ' + n + ' »';
-
-  render(rows);
-
-}
-
-q.addEventListener('input', e => {
-
-  search(e.target.value);
-
-});
-
-// CLICK CATEGORIES
-
-cats.addEventListener('click', e => {
-
-  const btn = e.target.closest('[data-cat]');
-
-  if(!btn) return;
-
-  const key = btn.dataset.cat;
-
-  const rows = DATA.filter(d =>
-
-    d.category === key ||
-
-    d.type === key
-
-  ).slice(0,300);
-
-  hint.textContent = key;
-
-  render(rows);
-
-  window.scrollTo({
-
-    top: resultsEl.offsetTop - 10,
-
-    behavior:'smooth'
-
-  });
-
-});
-
-// DRAWER
-
-function openDetail(item){
-
-  dName.textContent = item.name;
-
-  dCat.textContent =
-
-    item.category ||
-
-    item.type ||
-
-    'Contact';
-
-  dTel.textContent = item.phone || '—';
-
-  dCall.href = item.phone
-
-  ? 'tel:' + item.phone.replace(/\s+/g,'')
-
-  : '#';
-
-  dAssist.textContent = item.assistant || '—';
-
-  dType.textContent = item.type || '—';
-
-  if(item.extra){
-
-    dExtra.textContent = item.extra;
-
-    dExtraWrap.style.display = 'block';
-
-  } else {
-
-    dExtraWrap.style.display = 'none';
-
-  }
-
-  dLogo.src = item.logo ||
-
-  'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
-
-  dFav.classList.toggle('on', isFav(item));
-
-  drawer.classList.add('show');
-
-}
-
-// FERMER DRAWER
-
-document
-.getElementById('d-close')
-.addEventListener('click', ()=>{
-
-  drawer.classList.remove('show');
-
-});
-
-// CLICK RESULTATS
-
-listEl.addEventListener('click', e => {
-
-  const row = e.target.closest('.row');
-
-  if(!row) return;
-
-  const index = row.dataset.i;
-
-  openDetail(current[index]);
-
-});
-
-// FAVORIS
-
 dFav.addEventListener('click', ()=>{
 
   toggleFav({
 
     name:dName.textContent,
 
-    phone:dTel.textContent
+    phone:dTel.textContent,
+
+    category:dCat.textContent,
+
+    assistant:dAssist.textContent,
+
+    type:dType.textContent,
+
+    extra:dExtra.textContent
 
   });
-
-});
-
-// FERMER SI CLICK EXTERIEUR
-
-window.addEventListener('click', e => {
-
-  if(e.target === drawer){
-
-    drawer.classList.remove('show');
-
-  }
 
 });
 
