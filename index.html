@@ -442,18 +442,29 @@ html,body{
   font-size:22px;
   flex-shrink:0;
 }
-
+    
+#d-call{
+  min-width:0;
+}
+    
 #d-call .call-label{
   font-size:14px;
 }
 
 #d-tel{
   display:block;
+
+  width:100%;
+  min-width:0;
+  max-width:100%;
+
   font-size:16px;
   line-height:1.4;
+
   white-space:normal;
-  word-break:break-word;
+
   overflow-wrap:anywhere;
+  word-break:break-word;
 }
          
 .call-text{
@@ -527,7 +538,11 @@ html,body{
   align-items:center;
   gap:14px;
 }
-
+    
+.drawer .body *{
+  min-width:0;
+}
+    
 .drawer .title img{
   width:52px;
   height:52px;
