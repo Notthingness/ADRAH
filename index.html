@@ -881,34 +881,32 @@ function render(rows){
     <div class="title">${r.name}</div>
 
     <div class="sub">
-
       ${r.category || r.type}
-
       ·
-
       ${r.assistant || ''}
-
     </div>
 
   </div>
 
   <div class="actions">
 
-  <a
-  class="btn btn-call"
-  href="tel:${(r.phone || '').replace(/\s+/g,'')}">
+    <a
+      class="btn btn-call"
+      href="tel:${(r.phone || '').replace(/\s+/g,'')}">
 
-    <i class="ph ph-phone"></i>
+      <i class="ph ph-phone"></i>
 
-  </a>
+    </a>
 
-  <button
-  class="btn btn-ghost ${isFav(r) ? 'on' : ''}"
-  data-fav="${i}">
+    <button
+      class="btn btn-ghost ${isFav(r) ? 'on' : ''}"
+      data-fav="${i}">
 
-    <i class="ph ph-star"></i>
+      <i class="ph ph-star"></i>
 
-  </button>
+    </button>
+
+  </div>
 
 </div>
 
