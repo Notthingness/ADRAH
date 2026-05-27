@@ -605,10 +605,26 @@ html,body{
   color:var(--muted);
 }
     
-.logo-img{
-  height:180px;
-  width:auto;
+.top-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  width:100%;
+
+  margin-bottom:24px;
+}
+
+.main-logo{
+
+  width:90%;
+
+  max-width:420px;
+
+  height:auto;
+
   object-fit:contain;
+
   display:block;
 }
     
@@ -617,9 +633,15 @@ html,body{
 <body>
   <div class="app">
     <header>
-      <div class="brand">
-        <div class="brand-title">
-          <img src="logo.PNG" alt="ADRAH" class="logo-img">
+        <header class="top-logo">
+
+  <img
+    src="TON_LOGO.png"
+    alt="ADRAH Logo"
+    class="main-logo"
+  >
+
+</header>
           <small>Assistance • Dépannage • Remorquage</small>
         </div>
       </div>
