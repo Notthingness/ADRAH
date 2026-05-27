@@ -928,11 +928,11 @@ cats.addEventListener('click', e => {
 
   render(rows);
 
-  window.scrollTo({
+  resultsEl.scrollIntoView({
 
-    top: resultsEl.offsetTop - 10,
+    behavior: 'smooth',
 
-    behavior:'smooth'
+    block: 'start'
 
   });
 
