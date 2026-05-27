@@ -514,60 +514,11 @@ header{
 ];
 
 let DATA = [];
+let current = [];
 
-// Chargement automatique du JSON
-
-fetch('data.json')
-
-.then(r => r.json())
-
-.then(json => {
-
-  DATA = json.map(x => ({
-
-    type: x.type || x.categorie || '',
-
-    name: x.nom || x.name || '',
-
-    assistant: x.assisteur || x.assistant || '',
-
-    phone: x.telephone || x.phone || '',
-
-    category: x.categorie || x.category || '',
-
-    extra: x.extra || '',
-
-    logo: x.logo || ''
-
-  }));
-
-});
-
-// 3) Rendu catégories
+// ELEMENTS
 
 const cats = document.getElementById('cats');
-
-cats.innerHTML = CATEGORIES.map(c => `
-
-  <button class="card" data-cat="${c.key}">
-
-    <i class="ph ${c.icon}"></i>
-
-    <div>
-
-      <h3>${c.label}</h3>
-
-      <span>${c.sub}</span>
-
-    </div>
-
-    <span class="badge">24/7</span>
-
-  </button>
-
-`).join('');
-
-// 4) Recherche + filtrage
 
 const listEl = document.getElementById('list');
 
@@ -578,204 +529,6 @@ const q = document.getElementById('q');
 const count = document.getElementById('count');
 
 const hint = document.getElementById('hint');
-
-let current = [];
-
-function render(rows){
-
-  current = rows;
-
-  if(rows.length===0){
-
-    resultsEl.classList.add('hidden');
-
-    return;
-
-  }
-
-  resultsEl.classList.remove('hidden');
-
-  count.textContent =
-
-    rows.length +
-
-    (rows.length>1 ? ' résultats' : ' résultat');
-
-  listEl.innerHTML = rows.map((r,i)=>`
-
-    <div class="row" data-i="${i}">
-
-      <div class="meta">
-
-        <div class="title">
-
-          ${r.name}
-
-        </div>
-
-        <div class="sub">
-
-          ${r.category || r.type}
-
-          ·
-
-          ${r.assistant || ''}
-
-        </div>
-
-      </div>
-
-      <div class="actions">
-
-        <a class="btn btn-call"
-
-        href="tel:${(r.phone||'').replace(/\s+/g,'')}">
-
-          <i class="ph ph-phone"></i>
-
-          ${r.phone||'—'}
-
-        </a>
-
-        <button
-
-        class="btn btn-ghost fav ${isFav(r)?'on':''}"
-
-        data-fav="${i}">
-
-          <i class="ph ph-star"></i>
-
-        </button>
-
-        <button
-
-        class="btn btn-ghost"
-
-        data-detail="${i}">
-
-          <i class="ph ph-info"></i>
-
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join('');
-
-}
-
-function matches(item, needle){
-
-  const hay = [
-
-    item.name,
-
-    item.type,
-
-    item.category,
-
-    item.assistant,
-
-    item.phone,
-
-    item.extra
-
-  ].join(' ').toLowerCase();
-
-  return hay.includes(
-
-    needle.toLowerCase()
-
-  );
-
-}
-
-function search(text){
-
-  const n = text.trim();
-
-  if(!n){
-
-    resultsEl.classList.add('hidden');
-
-    return;
-
-  }
-
-  const rows = DATA
-
-  .filter(d=>matches(d,n))
-
-  .slice(0,300);
-
-  hint.textContent =
-
-    'Filtré par « '+n+' »';
-
-  render(rows);
-
-}
-
-q.addEventListener('input',
-
-e=> search(e.target.value)
-
-);
-
-// Quick tags
-
-document
-
-.getElementById('quickTags')
-
-.addEventListener('click', e=>{
-
-  const tag =
-
-  e.target?.dataset?.tag;
-
-  if(!tag) return;
-
-  q.value = tag;
-
-  search(tag);
-
-});
-
-// Catégories
-
-cats.addEventListener('click', e=>{
-
-  const btn =
-
-  e.target.closest('[data-cat]');
-
-  if(!btn) return;
-
-  const key = btn.dataset.cat;
-
-  const rows = DATA.filter(d =>
-
-    (d.category===key || d.type===key)
-
-  ).slice(0,300);
-
-  hint.textContent = key;
-
-  render(rows);
-
-  window.scrollTo({
-
-    top: resultsEl.offsetTop - 10,
-
-    behavior:'smooth'
-
-  });
-
-});
-
-// Drawer détail
 
 const drawer = document.getElementById('drawer');
 
@@ -799,161 +552,32 @@ const dLogo = document.getElementById('d-logo');
 
 const dFav = document.getElementById('d-fav');
 
-function openDetail(item){
+// FAVORIS
 
-  dName.textContent = item.name;
+const KEY = 'adrah:favs';
 
-  dCat.textContent =
+const getFavs = () =>
+JSON.parse(localStorage.getItem(KEY) || '[]');
 
-    item.category ||
+const saveFavs = arr =>
+localStorage.setItem(KEY, JSON.stringify(arr));
 
-    item.type ||
+const isFav = item =>
+getFavs().some(x =>
+x.name === item.name &&
+(x.phone || '') === (item.phone || '')
+);
 
-    'Contact';
+const toggleFav = item => {
 
-  dTel.textContent =
+  const favs = getFavs();
 
-    item.phone || '—';
-
-  dCall.href =
-
-    item.phone
-
-    ? 'tel:'+item.phone.replace(/\s+/g,'')
-
-    : '#';
-
-  dAssist.textContent =
-
-    item.assistant || '—';
-
-  dType.textContent =
-
-    item.type || '—';
-
-  if(item.extra){
-
-    dExtra.textContent =
-
-      item.extra;
-
-    dExtraWrap.style.display='block';
-
-  } else {
-
-    dExtraWrap.style.display='none';
-
-  }
-
-  dLogo.src =
-
-    item.logo ||
-
-    'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
-
-  dFav.classList.toggle(
-
-    'on',
-
-    isFav(item)
-
+  const idx = favs.findIndex(x =>
+    x.name === item.name &&
+    (x.phone || '') === (item.phone || '')
   );
 
-  drawer.classList.add('show');
-
-}
-
-document
-
-.getElementById('d-close')
-
-.addEventListener('click', ()=>{
-
-  drawer.classList.remove('show');
-
-});
-
-// Délégation
-
-listEl.addEventListener('click', e=>{
-
-  const i =
-
-  e.target.closest('[data-detail]')
-
-  ?.dataset?.detail;
-
-  if(i!=null){
-
-    openDetail(current[i]);
-
-    return;
-
-  }
-
-  const f =
-
-  e.target.closest('[data-fav]')
-
-  ?.dataset?.fav;
-
-  if(f!=null){
-
-    toggleFav(current[f]);
-
-    e.target.closest('button')
-
-    .classList.toggle('on');
-
-  }
-
-});
-
-// Favoris
-
-const KEY='adrah:favs';
-
-const getFavs=()=>
-
-JSON.parse(
-
-localStorage.getItem(KEY)||'[]'
-
-);
-
-const saveFavs=(arr)=>
-
-localStorage.setItem(
-
-KEY,
-
-JSON.stringify(arr)
-
-);
-
-const isFav=(item)=>
-
-getFavs().some(x=>
-
-x.name===item.name &&
-
-(x.phone||'')===(item.phone||'')
-
-);
-
-const toggleFav=(item)=>{
-
-  const favs=getFavs();
-
-  const idx=favs.findIndex(x=>
-
-    x.name===item.name &&
-
-    (x.phone||'')===(item.phone||'')
-
-  );
-
-  if(idx>-1){
+  if(idx > -1){
 
     favs.splice(idx,1);
 
@@ -967,23 +591,311 @@ const toggleFav=(item)=>{
 
 };
 
+// CATEGORIES
+
+cats.innerHTML = CATEGORIES.map(c => `
+
+<button class="card" data-cat="${c.key}">
+
+  <i class="ph ${c.icon}"></i>
+
+  <div>
+
+    <h3>${c.label}</h3>
+
+    <span>${c.sub}</span>
+
+  </div>
+
+  <span class="badge">24/7</span>
+
+</button>
+
+`).join('');
+
+// CHARGEMENT JSON
+
+fetch('data.json')
+
+.then(r => r.json())
+
+.then(json => {
+
+  DATA = json.map(x => ({
+
+    type: x.type || '',
+
+    name: x.nom || x.name || '',
+
+    assistant: x.assisteur || x.assistant || '',
+
+    phone: x.telephone || x.phone || '',
+
+    category: x.categorie || x.category || '',
+
+    extra: x.extra || '',
+
+    logo: x.logo || ''
+
+  }));
+
+})
+
+.catch(err => {
+
+  console.log('Erreur JSON', err);
+
+});
+
+// RECHERCHE
+
+function matches(item, needle){
+
+  const hay = [
+
+    item.name,
+
+    item.type,
+
+    item.category,
+
+    item.assistant,
+
+    item.phone,
+
+    item.extra
+
+  ].join(' ').toLowerCase();
+
+  return hay.includes(needle.toLowerCase());
+
+}
+
+function render(rows){
+
+  current = rows;
+
+  if(rows.length === 0){
+
+    resultsEl.classList.add('hidden');
+
+    return;
+
+  }
+
+  resultsEl.classList.remove('hidden');
+
+  count.textContent =
+
+    rows.length +
+
+    (rows.length > 1 ? ' résultats' : ' résultat');
+
+  listEl.innerHTML = rows.map((r,i)=>`
+
+<div class="row" data-i="${i}">
+
+  <div class="meta">
+
+    <div class="title">${r.name}</div>
+
+    <div class="sub">
+
+      ${r.category || r.type}
+
+      ·
+
+      ${r.assistant || ''}
+
+    </div>
+
+  </div>
+
+  <div class="actions">
+
+    <a class="btn btn-call"
+
+    href="tel:${(r.phone || '').replace(/\s+/g,'')}">
+
+      <i class="ph ph-phone"></i>
+
+      ${r.phone || '—'}
+
+    </a>
+
+    <button
+
+    class="btn btn-ghost fav ${isFav(r)?'on':''}"
+
+    data-fav="${i}">
+
+      <i class="ph ph-star"></i>
+
+    </button>
+
+  </div>
+
+</div>
+
+`).join('');
+
+}
+
+function search(text){
+
+  const n = text.trim();
+
+  if(!n){
+
+    resultsEl.classList.add('hidden');
+
+    return;
+
+  }
+
+  const rows = DATA
+  .filter(d => matches(d,n))
+  .slice(0,300);
+
+  hint.textContent = 'Filtré par « ' + n + ' »';
+
+  render(rows);
+
+}
+
+q.addEventListener('input', e => {
+
+  search(e.target.value);
+
+});
+
+// CLICK CATEGORIES
+
+cats.addEventListener('click', e => {
+
+  const btn = e.target.closest('[data-cat]');
+
+  if(!btn) return;
+
+  const key = btn.dataset.cat;
+
+  const rows = DATA.filter(d =>
+
+    d.category === key ||
+
+    d.type === key
+
+  ).slice(0,300);
+
+  hint.textContent = key;
+
+  render(rows);
+
+  window.scrollTo({
+
+    top: resultsEl.offsetTop - 10,
+
+    behavior:'smooth'
+
+  });
+
+});
+
+// DRAWER
+
+function openDetail(item){
+
+  dName.textContent = item.name;
+
+  dCat.textContent =
+
+    item.category ||
+
+    item.type ||
+
+    'Contact';
+
+  dTel.textContent = item.phone || '—';
+
+  dCall.href = item.phone
+
+  ? 'tel:' + item.phone.replace(/\s+/g,'')
+
+  : '#';
+
+  dAssist.textContent = item.assistant || '—';
+
+  dType.textContent = item.type || '—';
+
+  if(item.extra){
+
+    dExtra.textContent = item.extra;
+
+    dExtraWrap.style.display = 'block';
+
+  } else {
+
+    dExtraWrap.style.display = 'none';
+
+  }
+
+  dLogo.src = item.logo ||
+
+  'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
+
+  dFav.classList.toggle('on', isFav(item));
+
+  drawer.classList.add('show');
+
+}
+
+// FERMER DRAWER
+
+document
+.getElementById('d-close')
+.addEventListener('click', ()=>{
+
+  drawer.classList.remove('show');
+
+});
+
+// CLICK RESULTATS
+
+listEl.addEventListener('click', e => {
+
+  const row = e.target.closest('.row');
+
+  if(!row) return;
+
+  const index = row.dataset.i;
+
+  openDetail(current[index]);
+
+});
+
+// FAVORIS
+
 dFav.addEventListener('click', ()=>{
 
   toggleFav({
 
     name:dName.textContent,
 
-    phone:dTel.textContent,
-
-    category:dCat.textContent,
-
-    assistant:dAssist.textContent,
-
-    type:dType.textContent,
-
-    extra:dExtra.textContent
+    phone:dTel.textContent
 
   });
+
+});
+
+// FERMER SI CLICK EXTERIEUR
+
+window.addEventListener('click', e => {
+
+  if(e.target === drawer){
+
+    drawer.classList.remove('show');
+
+  }
 
 });
 
