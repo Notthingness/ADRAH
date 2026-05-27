@@ -252,10 +252,10 @@ header{
  }
     
 .meta{
-  flex:1;
-  min-width:0;
 
-  overflow:hidden;
+  flex:1;
+
+  min-width:0;
 }    
     
  .card div{
@@ -326,27 +326,22 @@ header{
 }
 
 .row{
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   gap:12px;
 
   padding:18px;
 
-  overflow:hidden;
-
-  transition:.18s;
-
   border-bottom:1px solid rgba(255,255,255,.04);
 
-  flex-wrap:nowrap;
+  overflow:hidden;
 }
-
- .row > *{
-  min-width:0;
-}
-    
+  
 .row:hover{
 
   background:rgba(255,255,255,.04);
@@ -378,14 +373,16 @@ header{
 }
 
 .actions{
+
   display:flex;
+
   align-items:center;
+
   gap:10px;
 
   flex-shrink:0;
-  min-width:max-content;
 }
-
+    
 .btn{
   border:none;
   cursor:pointer;
