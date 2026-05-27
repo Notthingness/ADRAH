@@ -301,22 +301,31 @@ header{
 }
 
 .row{
-  cursor:pointer;
-  transition:.18s;
-  display:grid;
-  grid-template-columns:1fr auto;
-
-  gap:10px;
-
+  display:flex;
   align-items:center;
+  justify-content:space-between;
+
+  gap:14px;
 
   padding:18px;
 
-  border-bottom:1px solid rgba(255,255,255,.04);
-  
-}
-.row:hover{
+  margin:12px;
 
+  border-radius:22px;
+
+  background:
+  linear-gradient(
+    rgba(18,20,28,.92),
+    rgba(10,12,18,.92)
+  );
+
+  border:1px solid rgba(255,255,255,.05);
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.35);
+}
+    
+.row:hover{
   background:rgba(255,255,255,.04);
 
 }
@@ -354,17 +363,28 @@ header{
 }
 
 .btn-call{
+  width:68px;
+  height:68px;
+
+  border-radius:50%;
+
   background:
-  linear-gradient(180deg,#ff3434,#d70000);
+  linear-gradient(
+    180deg,
+    #ff3d3d,
+    #c70000
+  );
 
   color:white;
 
-  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  padding:0 18px;
+  font-size:28px;
 
   box-shadow:
-  0 10px 20px rgba(255,0,0,.25);
+  0 10px 25px rgba(255,0,0,.35);
 }
 
  .btn-call:hover{
@@ -738,43 +758,27 @@ function render(rows){
 
   <div class="meta">
 
-    <div class="title">${r.name}</div>
+    <div class="title">
+      ${r.name}
+    </div>
 
     <div class="sub">
-
       ${r.category || r.type}
+    </div>
 
-      ·
-
-      ${r.assistant || ''}
-
+    <div class="sub">
+      ${r.phone || ''}
     </div>
 
   </div>
 
-  <div class="actions">
+  <a
+  class="btn btn-call"
+  href="tel:${(r.phone || '').replace(/\s+/g,'')}">
 
-    <a class="btn btn-call"
+    <i class="ph ph-phone"></i>
 
-    href="tel:${(r.phone || '').replace(/\s+/g,'')}">
-
-      <i class="ph ph-phone"></i>
-
-      ${r.phone || '—'}
-
-    </a>
-
-    <button
-
-    class="btn btn-ghost fav ${isFav(r)?'on':''}"
-
-    data-fav="${i}">
-
-      <i class="ph ph-star"></i>
-
-    </button>
-
-  </div>
+  </a>
 
 </div>
 
