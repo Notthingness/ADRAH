@@ -353,49 +353,35 @@ header{
   font-weight:700;
 }
 
-.btn-call{
-
-  width:62px;
-  height:62px;
-
-  border-radius:50%;
-
-  background:
-  linear-gradient(
-    180deg,
-    #ff3b3b,
-    #c40000
-  );
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:#111;
-
-  padding:0;
-
-  box-shadow:
-  0 10px 24px rgba(255,0,0,.35);
-
-  transition:.18s;
-
+a{
+  text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
 }
 
- .btn-call:hover{
- transform:scale(1.03);   
- } 
+.btn-call{
+  outline:none;
+}
 
-.btn-call i{
+.btn-call:focus,
+.btn-call:active,
+.btn-call:hover{
+  text-decoration:none;
+  outline:none;
+  box-shadow:none;
+}
+    
+.btn-ghost{
 
-  font-size:28px;
+  width:50px;
+  height:50px;
 
-  color:black;
+  background:rgba(255,255,255,.06);
 
-  margin:0;
+  color:white;
 
-}   
-.btn-ghost{   
+  border:1px solid rgba(255,255,255,.08);
+}
+
 .btn-ghost.on{
 
   background:#1e5eff;
@@ -403,7 +389,6 @@ header{
   color:white;
 
   border-color:#1e5eff;
-
 }
 
 .drawer{
@@ -774,26 +759,21 @@ function render(rows){
 
   <div class="actions">
 
-    <a class="btn btn-call"
+  <a
+  class="btn btn-call"
+  href="tel:${(r.phone || '').replace(/\s+/g,'')}">
 
-    href="tel:${(r.phone || '').replace(/\s+/g,'')}">
+    <i class="ph ph-phone"></i>
 
-      <i class="ph ph-phone"></i>
+  </a>
 
+  <button
+  class="btn btn-ghost ${isFav(r) ? 'on' : ''}"
+  data-fav="${i}">
 
-    </a>
+    <i class="ph ph-star"></i>
 
-    <button
-
-    class="btn btn-ghost fav ${isFav(r)?'on':''}"
-
-    data-fav="${i}">
-
-      <i class="ph ph-star"></i>
-
-    </button>
-
-  </div>
+  </button>
 
 </div>
 
@@ -923,23 +903,19 @@ document
 
 listEl.addEventListener('click', e => {
 
-  const favBtn = e.target.closest('[data-fav]');
+  const fav = e.target.closest('[data-fav]');
 
-  if(favBtn){
+  if(fav){
+
+    e.preventDefault();
 
     e.stopPropagation();
 
-    const index = favBtn.dataset.fav;
+    const i = fav.dataset.fav;
 
-    toggleFav(current[index]);
+    toggleFav(current[i]);
 
-    favBtn.classList.toggle(
-
-      'on',
-
-      isFav(current[index])
-
-    );
+    fav.classList.toggle('on');
 
     return;
 
