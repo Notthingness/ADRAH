@@ -252,7 +252,10 @@ header{
  }
     
 .meta{
+  flex:1;
   min-width:0;
+
+  overflow:hidden;
 }    
     
  .card div{
@@ -323,19 +326,19 @@ header{
 }
 
 .row{
-  min-width:0;
-  overflow:hidden;
-  transition:.18s;
-  display:grid;
-  grid-template-columns:1fr auto;
-
-  gap:10px;
-
+  display:flex;
   align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
 
   padding:18px;
 
-  border-bottom:1px solid rgba(255,255,255,.04); 
+  overflow:hidden;
+
+  transition:.18s;
+
+  border-bottom:1px solid rgba(255,255,255,.04);
 }
 
  .row > *{
