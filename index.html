@@ -163,11 +163,52 @@
       display:inline-flex;align-items:center;gap:8px;border-radius:999px;border:1px solid transparent;
       height:38px;padding:0 14px;font-weight:600;cursor:pointer;
     }
-    .btn-call{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;box-shadow:0 6px 18px rgba(230,58,58,.35)}
-    .btn-ghost{background:#21252c;color:#e2e5ec;border-color:#343a46}
-    .btn i{font-size:18px}
-    .fav.on i{color:#ffd166}
+    .btn-call{
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:white;
+  border-radius:18px;
 
+  height:48px;
+
+  font-size:16px;
+
+  box-shadow:
+  0 10px 20px rgba(255,0,0,.28);
+    }
+
+.app{
+  backdrop-filter:blur(6px);
+    }
+
+.results{
+  background:rgba(16,18,26,.88);
+  border-radius:22px;
+  overflow:hidden;
+}
+
+.row{
+  background:rgba(255,255,255,.02);
+}
+
+.results-head{
+  background:rgba(255,255,255,.03);
+}
+
+.search input{
+  background:rgba(20,22,30,.92);
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:18px;
+
+  height:58px;
+
+  font-size:17px;
+    }
+
+.search input:focus{
+  border-color:#ff2d2d;
+  box-shadow:0 0 0 4px rgba(255,0,0,.12);
+    }
     /* Drawer détail */
     .drawer{
       position:fixed;right:0;top:0;height:100%;width:min(420px,92vw);
