@@ -403,31 +403,48 @@ html,body{
 } 
     
 .drawer .btn-call{
-
   width:100%;
-  min-height:56px;
+  min-height:64px;
 
   border-radius:18px;
 
   color:white;
 
-  gap:10px;
-
   display:flex;
-
   align-items:center;
+  gap:12px;
 
-  justify-content:center;
+  padding:14px 16px;
 
-  padding:12px 16px;
+  text-align:left;
 
   overflow:hidden;
+}
 
-  text-align:center;
+.drawer .btn-call i{
+  font-size:22px;
+  flex-shrink:0;
+}
 
-  flex-wrap:wrap;
+#d-call .call-text{
+  display:flex;
+  flex-direction:column;
 
-  word-break:break-word;
+  min-width:0;
+
+  overflow:hidden;
+}
+
+#d-call .call-label{
+  font-size:14px;
+}
+
+#d-tel{
+  font-size:16px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
     
 .btn-call i{
@@ -619,7 +636,14 @@ html,body{
       </div>
     </header>
     <div class="body">
-      <a id="d-call" class="btn btn-call"><i class="ph ph-phone"></i><div> <div>Appeler</div> <span id="d-tel"></span></div></a>
+      <a id="d-call" class="btn btn-call">
+  <i class="ph ph-phone"></i>
+
+  <div class="call-text">
+    <span class="call-label">Appeler</span>
+    <span id="d-tel"></span>
+  </div>
+</a>
       <div class="kv"><b>Type</b><span id="d-type"></span></div>
       <div class="kv"><b>Assisteur</b><span id="d-assist"></span></div>
       <div class="kv" id="d-extra-wrap"><b>Informations</b><span id="d-extra"></span></div>
