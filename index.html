@@ -251,6 +251,10 @@ header{
   pointer-events:none;  
  }
     
+.meta{
+  min-width:0;
+}    
+    
  .card div{
   min-width:0;
 }
@@ -258,8 +262,9 @@ header{
 .card h3,
 .card span{
   overflow:hidden;
-  text-overflow:ellipsis; 
-} 
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
     
 .card span{
   display:block;
