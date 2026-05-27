@@ -359,15 +359,30 @@ a{
 }
 
 .btn-call{
-  outline:none;
+
+  width:52px;
+  height:52px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(180deg,#ff3434,#d70000);
+
+  color:black;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+  0 10px 20px rgba(255,0,0,.25);
+
 }
 
-.btn-call:focus,
-.btn-call:active,
-.btn-call:hover{
-  text-decoration:none;
-  outline:none;
-  box-shadow:none;
+.btn-call i{
+
+  font-size:22px;
+
 }
     
 .btn-ghost{
@@ -935,13 +950,23 @@ listEl.addEventListener('click', e => {
 
 dFav.addEventListener('click', ()=>{
 
-  toggleFav({
+  const item = {
 
     name:dName.textContent,
 
     phone:dTel.textContent
 
-  });
+  };
+
+  toggleFav(item);
+
+  dFav.classList.toggle(
+
+    'on',
+
+    isFav(item)
+
+  );
 
 });
 
