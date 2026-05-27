@@ -363,37 +363,33 @@ header{
 }
 
 .btn-call{
-  width:68px;
-  height:68px;
-
-  border-radius:50%;
-
   background:
-  linear-gradient(
-    180deg,
-    #ff3d3d,
-    #c70000
-  );
+  linear-gradient(180deg,#ff3434,#d70000);
 
   color:white;
+
+  width:58px;
+  height:58px;
+
+  border-radius:50%;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  font-size:28px;
+  padding:0;
 
   box-shadow:
-  0 10px 25px rgba(255,0,0,.35);
+  0 8px 20px rgba(255,0,0,.30);
 }
 
  .btn-call:hover{
  transform:scale(1.03);   
  } 
 
- .btn-call i{
- margin-right:8px;  
- }   
+.btn-call i{
+  font-size:24px;
+}   
     
 .btn-ghost{
   width:50px;
@@ -658,7 +654,7 @@ cats.innerHTML = CATEGORIES.map(c => `
 
 <button class="card" data-cat="${c.key}">
 
-  <i class="ph ${c.icon}"></i>
+  <i class="ph ph-phone"></i>
 
   <div>
 
