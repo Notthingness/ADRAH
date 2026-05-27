@@ -354,36 +354,56 @@ header{
 }
 
 .btn-call{
+
+  width:62px;
+  height:62px;
+
+  border-radius:50%;
+
   background:
-  linear-gradient(180deg,#ff3434,#d70000);
+  linear-gradient(
+    180deg,
+    #ff3b3b,
+    #c40000
+  );
 
-  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  height:52px;
+  color:#111;
 
-  padding:0 18px;
+  padding:0;
 
   box-shadow:
-  0 10px 20px rgba(255,0,0,.25);
+  0 10px 24px rgba(255,0,0,.35);
+
+  transition:.18s;
+
 }
 
  .btn-call:hover{
  transform:scale(1.03);   
  } 
 
- .btn-call i{
- margin-right:8px;  
- }   
-    
-.btn-ghost{
-  width:50px;
-  height:50px;
+.btn-call i{
 
-  background:rgba(255,255,255,.06);
+  font-size:28px;
+
+  color:black;
+
+  margin:0;
+
+}   
+.btn-ghost{   
+.btn-ghost.on{
+
+  background:#1e5eff;
 
   color:white;
 
-  border:1px solid rgba(255,255,255,.08);
+  border-color:#1e5eff;
+
 }
 
 .drawer{
@@ -760,7 +780,6 @@ function render(rows){
 
       <i class="ph ph-phone"></i>
 
-      ${r.phone || '—'}
 
     </a>
 
@@ -903,6 +922,28 @@ document
 // CLICK RESULTATS
 
 listEl.addEventListener('click', e => {
+
+  const favBtn = e.target.closest('[data-fav]');
+
+  if(favBtn){
+
+    e.stopPropagation();
+
+    const index = favBtn.dataset.fav;
+
+    toggleFav(current[index]);
+
+    favBtn.classList.toggle(
+
+      'on',
+
+      isFav(current[index])
+
+    );
+
+    return;
+
+  }
 
   const row = e.target.closest('.row');
 
