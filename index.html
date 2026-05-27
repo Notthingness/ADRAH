@@ -440,15 +440,29 @@ html,body{
 }
 
 #d-tel{
+  display:block;
+
   font-size:16px;
 
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  line-height:1.4;
+
+  white-space:normal;
+
+  overflow-wrap:break-word;
+
+  word-break:break-word;
 }
     
+#d-call div{
+  min-width:0; 
+}  
+    
+ .call-text{
+  flex:1;
+  min-width:0;
+}  
+    
 .btn-call i{
-
   font-size:22px;
 }
     
@@ -533,26 +547,6 @@ html,body{
   display:flex;
   flex-direction:column;
   gap:14px;
-}
-
-#d-tel{
-  display:block;
-
-  width:100%;
-
-  margin-top:4px;
-
-  font-size:15px;
-
-  white-space:normal;
-
-  word-break:break-word;
-
-  overflow-wrap:anywhere;
-}
-    
-#d-call div{
-  min-width:0; 
 } 
     
 .kv{
