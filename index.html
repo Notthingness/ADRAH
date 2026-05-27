@@ -323,6 +323,7 @@ header{
 }
 
 .row{
+  min-width:0;
   overflow:hidden;
   transition:.18s;
   display:grid;
@@ -334,9 +335,13 @@ header{
 
   padding:18px;
 
-  border-bottom:1px solid rgba(255,255,255,.04);
-  
+  border-bottom:1px solid rgba(255,255,255,.04); 
 }
+
+ .row > *{
+  min-width:0;
+}
+    
 .row:hover{
 
   background:rgba(255,255,255,.04);
