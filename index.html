@@ -808,7 +808,9 @@ fetch('data.json')
 
     assistant: x.assisteur || x.assistant || '',
 
-    phone: x.telephone || x.phone || '',
+    phone: String(x.telephone || x.phone || '')
+      .replace(/\s+/g,' ')
+      .trim(),
 
     category: x.categorie || x.category || '',
 
@@ -988,7 +990,7 @@ function openDetail(item){
 
     'Contact';
 
-  dTel.textContent = item.phone || '—';
+  dTel.textContent = (item.phone || '—').trim();
 
   dCall.href = item.phone
 
