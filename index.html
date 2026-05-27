@@ -426,7 +426,10 @@ html,body{
     
 .drawer .btn-call{
   width:100%;
-  min-height:64px;
+
+  min-width:0;
+
+  max-width:100%;
 
   border-radius:18px;
 
@@ -475,7 +478,7 @@ html,body{
 .call-text{
   flex:1;
   min-width:0;
-
+  overflow:hidden;
   display:flex;
   flex-direction:column;
 }
