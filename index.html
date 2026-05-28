@@ -796,8 +796,6 @@ const dExtra = document.getElementById('d-extra');
 const dExtraWrap = document.getElementById('d-extra-wrap');
 
 const dLogo = document.getElementById('d-logo');
-
-const dFav = document.getElementById('d-fav');
     
 const backTop = document.getElementById('backTop');
 // FAVORIS
@@ -1158,30 +1156,6 @@ listEl.addEventListener('click', e => {
   const index = row.dataset.i;
 
   openDetail(current[index]);
-
-});
-
-// FAVORIS
-
-dFav.addEventListener('click', ()=>{
-
-  const item = {
-
-    name:dName.textContent,
-
-    phone:dTel.textContent
-
-  };
-
-  toggleFav(item);
-
-  dFav.classList.toggle(
-
-    'on',
-
-    isFav(item)
-
-  );
 
 });
 
