@@ -101,12 +101,7 @@ const cats = document.getElementById("cats");
 const list = document.getElementById("list");
 const results = document.getElementById("results");
 const q = document.getElementById("q");
-
 const drawer = document.getElementById("drawer");
-const dName = document.getElementById("d-name");
-const dCat = document.getElementById("d-cat");
-const dTel = document.getElementById("d-tel");
-const dCall = document.getElementById("d-call");
 
 /* CATEGORIES */
 const CATEGORIES = [
@@ -124,16 +119,19 @@ cats.innerHTML = CATEGORIES.map(c => `
   </div>
 `).join("");
 
-/* LOAD DATA (IMPORTANT SAFE) */
+/* SAFE LOAD DATA */
 fetch("data.json")
   .then(r => r.json())
   .then(j => {
-    DATA = j || [];
+    DATA = Array.isArray(j) ? j : [];
+  })
+  .catch(() => {
+    DATA = [];
   });
 
 /* SEARCH */
 q.addEventListener("input", e => {
-  const v = e.target.value.trim().toLowerCase();
+  const v = (e.target.value || "").toLowerCase().trim();
 
   if(!v){
     results.classList.add("hidden");
@@ -153,17 +151,19 @@ q.addEventListener("input", e => {
 
 /* RENDER */
 function render(){
+  if(!list || !results) return;
+
   results.classList.remove("hidden");
 
   list.innerHTML = current.map((x,i)=>`
     <div class="row" data-i="${i}">
       <div>
         <div class="title">${x.name || ""}</div>
-        <div class="sub">${x.category || x.type || ""}</div>
+        <div class="sub">${x.category || ""}</div>
       </div>
 
       <a class="btn"
-        href="tel:${(x.phone||"").replace(/\s+/g,"")}">
+        href="tel:${(x.phone || "").replace(/\s+/g,"")}">
         Appel
       </a>
     </div>
@@ -173,11 +173,11 @@ function render(){
 /* CLICK CATEGORY */
 cats.addEventListener("click", e => {
   const el = e.target.closest(".card");
-  if(!el || !DATA.length) return;
+  if(!el) return;
 
   const key = el.dataset.cat;
 
-  current = DATA.filter(x =>
+  current = (DATA || []).filter(x =>
     x.category === key || x.type === key
   );
 
@@ -192,18 +192,23 @@ list.addEventListener("click", e => {
   const item = current[row.dataset.i];
   if(!item) return;
 
-  dName.textContent = item.name || "";
-  dCat.textContent = item.category || item.type || "";
-  dTel.textContent = item.phone || "—";
+  const dName = document.getElementById("d-name");
+  const dCat = document.getElementById("d-cat");
+  const dTel = document.getElementById("d-tel");
+  const dCall = document.getElementById("d-call");
 
-  dCall.href = item.phone
-    ? "tel:" + item.phone.replace(/\s+/g,"")
-    : "#";
+  if(dName) dName.textContent = item.name || "";
+  if(dCat) dCat.textContent = item.category || item.type || "";
+  if(dTel) dTel.textContent = item.phone || "—";
+
+  if(dCall){
+    dCall.href = "tel:" + (item.phone || "").replace(/\s+/g,"");
+  }
 
   drawer.classList.add("show");
 });
 
-/* CLOSE DRAWER (click outside only) */
+/* CLOSE DRAWER */
 drawer.addEventListener("click", e => {
   if(e.target === drawer){
     drawer.classList.remove("show");
