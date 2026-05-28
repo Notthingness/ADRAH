@@ -760,7 +760,37 @@ CATÉGORIES
     </div>
   </aside>
 
-  <script>
+ </body>
+<!-- MENU SECRET -->
+
+ <aside class="drawer" id="secretDrawer">
+
+  <header class="drawer-header">
+
+    <div class="title">
+      <div>
+        <div style="font-weight:700">
+          MENU SECRET 🔒
+        </div>
+
+        <div class="muted" style="font-size:12px">
+          Numéros privés
+        </div>
+      </div>
+    </div>
+
+    <button id="secretClose" class="drawer-back">
+      <i class="ph ph-arrow-right"></i>
+    </button>
+
+  </header>
+
+  <div class="body" id="secretBody">
+  </div>
+
+</aside> 
+            
+  <script>   
     // 1) Définition des catégories visibles
     const CATEGORIES = [
 
@@ -1211,7 +1241,56 @@ secretTrigger.addEventListener('click', () => {
 
     secretCount = 0;
 
-    alert('MENU SECRET 🔒');
+    const secretDrawer =
+document.getElementById('secretDrawer');
+
+    const secretBody =
+document.getElementById('secretBody');
+    
+    const SECRET_NUMBERS = [
+
+  {
+    nom:"Patron Dépannage",
+    telephone:"06 00 00 00 00"
+  },
+
+  {
+    nom:"Garage urgence",
+    telephone:"07 11 22 33 44"
+  },
+
+  {
+    nom:"Fourrière privée",
+    telephone:"01 22 33 44 55"
+  }
+
+];
+secretBody.innerHTML =
+SECRET_NUMBERS.map(n => `
+
+<a
+  class="btn btn-call"
+  href="tel:${n.telephone.replace(/\s+/g,'')}">
+
+  <i class="ph ph-phone"></i>
+
+  <div class="call-text">
+
+    <span class="call-label">
+      ${n.nom}
+    </span>
+
+    <span>
+      ${n.telephone}
+    </span>
+
+  </div>
+
+</a>
+
+`).join('');
+
+secretDrawer.classList.add('show');
 
   }
 
