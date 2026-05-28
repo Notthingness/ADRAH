@@ -927,11 +927,21 @@ function search(text){
 
   if(!n){
 
-    backTop.addEventListener('click', ()=>{
+    resultsEl.classList.add('hidden');
+
+    backTop.classList.add('hidden');
+
+    return;
+
+  }
+
+  backTop.addEventListener('click', ()=>{
 
   resultsEl.classList.add('hidden');
 
   backTop.classList.add('hidden');
+
+  q.value = '';
 
   window.scrollTo({
 
@@ -943,6 +953,18 @@ function search(text){
 
 });
 
+  const rows = DATA
+    .filter(d => matches(d,n))
+    .slice(0,300);
+
+  hint.textContent = 'Filtré par « ' + n + ' »';
+
+  render(rows);
+
+  backTop.classList.remove('hidden');
+
+}
+    
   const rows = DATA
   .filter(d => matches(d,n))
   .slice(0,300);
@@ -981,16 +1003,13 @@ cats.addEventListener('click', e => {
 
   render(rows);
 
-  resultsEl.scrollIntoView({
+backTop.classList.remove('hidden');
 
-    behavior: 'smooth',
-
-    block: 'start'
-
-  });
-
+resultsEl.scrollIntoView({
+  behavior:'smooth',
+  block:'start'
 });
-
+  
 // DRAWER
 
 function openDetail(item){
