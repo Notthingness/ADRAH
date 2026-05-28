@@ -1,213 +1,211 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>ADRAH — Assistance • Dépannage • Remorquage</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>ADRAH — Dépannage</title>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
-  <style>
-    :root{
-      --bg:#05070b;
-      --muted:#9ca3b5;
-      --text:#fff;
-    }
+<style>
+body{margin:0;font-family:Inter;background:#000;color:#fff}
+.app{max-width:560px;margin:auto;padding:20px}
 
-    *{box-sizing:border-box;}
+/* LOGO */
+.top-logo{text-align:center}
+.main-logo{width:85%;max-width:420px}
 
-    body{
-      margin:0;
-      font-family:Inter,sans-serif;
-      background:#000;
-      color:var(--text);
-    }
+/* SEARCH */
+.search{position:relative;margin:20px 0}
+.search input{
+width:100%;height:60px;border-radius:18px;
+border:1px solid rgba(255,255,255,.1);
+background:#111;color:#fff;
+text-align:center;font-size:16px
+}
 
-    .app{
-      max-width:560px;
-      margin:auto;
-      padding:22px;
-    }
+/* CATEGORIES */
+.grid{display:grid;gap:12px}
+.card{
+display:flex;align-items:center;gap:14px;
+padding:18px;border-radius:18px;
+background:#111;border:1px solid rgba(255,255,255,.08);
+cursor:pointer
+}
+.card h3{margin:0;color:#1e5eff}
+.card span{font-size:13px;color:#aaa}
 
-    .top-logo{
-      display:flex;
-      justify-content:center;
-      margin-bottom:20px;
-    }
+/* RESULTS */
+.results{margin-top:20px}
+.row{
+display:flex;justify-content:space-between;
+padding:14px;border-bottom:1px solid #222
+}
+.title{font-weight:700}
+.sub{font-size:12px;color:#aaa}
 
-    .main-logo{
-      width:90%;
-      max-width:420px;
-    }
+/* BTN */
+.btn-call{
+background:#ff2d2d;color:#000;
+border:none;padding:10px 12px;
+border-radius:12px
+}
 
-    .search{
-      display:flex;
-      position:relative;
-      margin:24px 0;
-    }
+/* BACK */
+.back-top{
+width:100%;margin-top:15px;
+padding:12px;border-radius:12px;
+border:1px solid #222;background:#111;color:#fff
+}
+.hidden{display:none}
 
-    .search input{
-      width:100%;
-      height:64px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(18,20,28,.92);
-      color:#fff;
-      text-align:center;
-      font-size:18px;
-      outline:none;
-    }
+/* DRAWER */
+.drawer{
+position:fixed;top:0;right:0;
+width:90%;max-width:420px;height:100%;
+background:#0b0b0b;
+transform:translateX(100%);
+transition:.25s;z-index:999;
+padding:20px
+}
+.drawer.show{transform:translateX(0)}
 
-    .grid{display:grid;gap:16px;}
-
-    .card{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:20px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(20,20,30,.6);
-      cursor:pointer;
-    }
-
-    .results.hidden{display:none;}
-
-    .drawer{
-      position:fixed;
-      top:0;right:0;
-      width:min(420px,92vw);
-      height:100%;
-      background:#111;
-      transform:translateX(100%);
-      transition:.25s;
-      z-index:999;
-    }
-
-    .drawer.show{transform:translateX(0);}
-  </style>
+.kv{margin-top:10px;background:#111;padding:10px;border-radius:12px}
+</style>
 </head>
 
 <body>
 
 <div class="app">
 
-  <!-- LOGO -->
-  <header class="top-logo">
-    <img src="logo.jpg" class="main-logo" alt="ADRAH">
-  </header>
+<!-- LOGO -->
+<div class="top-logo">
+<img src="logo.jpg" class="main-logo">
+</div>
 
-  <div style="text-align:center;margin-bottom:10px;">
-    Assistance • Dépannage • Remorquage
-  </div>
+<div style="text-align:center;margin-bottom:10px">
+Assistance • Dépannage • Remorquage
+</div>
 
-  <!-- SEARCH -->
-  <div class="search">
-    <input id="q" type="search" placeholder="Rechercher...">
-  </div>
+<!-- SEARCH -->
+<div class="search">
+<input id="q" placeholder="Rechercher...">
+</div>
 
-  <!-- CATÉGORIES -->
-  <section>
-    <h2 id="secretTrigger" style="font-size:14px;color:#bfc6d4;">
-      CATÉGORIES
-    </h2>
+<!-- CATEGORIES -->
+<h3 id="secretTrigger">CATÉGORIES</h3>
+<div class="grid" id="cats"></div>
 
-    <div class="grid" id="cats"></div>
-  </section>
+<button id="backTop" class="back-top hidden">Retour</button>
 
-  <!-- RESULTS -->
-  <section id="results" class="results hidden">
-    <div id="list"></div>
-  </section>
-
-  <!-- RETOUR -->
-  <button id="backTop" class="hidden">Retour</button>
+<!-- RESULTS -->
+<div class="results hidden" id="results">
+<div id="list"></div>
+</div>
 
 </div>
 
-<!-- DRAWER DETAIL -->
-<aside class="drawer" id="drawer">
-  <div style="padding:20px">
-    <div id="d-name"></div>
-    <div id="d-tel"></div>
-  </div>
-</aside>
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+<h3 id="d-name"></h3>
+<div id="d-cat"></div>
+<div class="kv" id="d-tel"></div>
+<a id="d-call" class="btn-call">Appeler</a>
+</div>
 
-<!-- MENU SECRET -->
-<aside class="drawer" id="secretDrawer">
-  <div style="padding:20px">
-    <h3>MENU SECRET</h3>
-    <div id="secretBody"></div>
-  </div>
-</aside>
+<!-- SECRET -->
+<div class="drawer" id="secretDrawer">
+<h3>MENU SECRET 🔒</h3>
+<div id="secretBody"></div>
+</div>
 
 <script>
-const CATEGORIES = [
-  { key:'VL', label:'VL', sub:'VL' },
-  { key:'PL', label:'PL', sub:'PL' }
+
+const CATEGORIES=[
+{key:"VL",label:"VL",sub:"Léger"},
+{key:"PL",label:"PL",sub:"Poids lourd"},
+{key:"MOTO",label:"Moto",sub:"2 roues"}
 ];
 
-let DATA = [];
-let current = [];
+let DATA=[];
+let current=[];
 
-/* CATEGORIES */
-const cats = document.getElementById('cats');
+/* INIT CATS */
+cats.innerHTML=CATEGORIES.map(c=>`
+<div class="card" data-cat="${c.key}">
+<div>
+<h3>${c.label}</h3>
+<span>${c.sub}</span>
+</div>
+</div>`).join('');
 
-cats.innerHTML = CATEGORIES.map(c => `
-  <div class="card" data-cat="${c.key}">
-    <div>
-      <b>${c.label}</b><br>
-      <small>${c.sub}</small>
-    </div>
-  </div>
-`).join('');
-
-/* JSON */
-fetch('data.json')
-.then(r => r.json())
-.then(json => DATA = json);
+/* LOAD DATA */
+fetch("data.json")
+.then(r=>r.json())
+.then(j=>DATA=j);
 
 /* SEARCH */
-function search(v){
-  const res = DATA.filter(x =>
-    JSON.stringify(x).toLowerCase().includes(v.toLowerCase())
-  );
-  current = res;
-  document.getElementById('results').classList.remove('hidden');
-  document.getElementById('list').innerHTML =
-    res.map(r => `<div class="card">${r.nom}</div>`).join('');
+q.oninput=e=>{
+const v=e.target.value.toLowerCase();
+if(!v){results.classList.add("hidden");return;}
+
+current=DATA.filter(x=>
+(x.name||"").toLowerCase().includes(v)||
+(x.category||"").toLowerCase().includes(v)
+);
+
+render();
+};
+
+function render(){
+results.classList.remove("hidden");
+
+list.innerHTML=current.map((x,i)=>`
+<div class="row" data-i="${i}">
+<div>
+<div class="title">${x.name}</div>
+<div class="sub">${x.category||""}</div>
+</div>
+<a class="btn-call" href="tel:${x.phone||""}">Appel</a>
+</div>
+`).join('');
 }
 
-document.getElementById('q').addEventListener('input', e=>{
-  search(e.target.value);
-});
+/* CLICK CAT */
+cats.onclick=e=>{
+const c=e.target.closest(".card");
+if(!c)return;
 
-/* CLIC CAT */
-cats.addEventListener('click', e=>{
-  const cat = e.target.closest('[data-cat]');
-  if(!cat) return;
-
-  const key = cat.dataset.cat;
-  const res = DATA.filter(x => x.categorie === key);
-
-  current = res;
-  document.getElementById('results').classList.remove('hidden');
-  document.getElementById('list').innerHTML =
-    res.map(r => `<div class="card">${r.nom}</div>`).join('');
-});
-
-/* MENU SECRET */
-let count = 0;
-document.getElementById('secretTrigger').onclick = ()=>{
-  count++;
-  if(count >= 3){
-    count = 0;
-    document.getElementById('secretDrawer').classList.add('show');
-  }
+const k=c.dataset.cat;
+current=DATA.filter(x=>x.category===k||x.type===k);
+render();
+backTop.classList.remove("hidden");
 };
-</script>
 
+/* BACK */
+backTop.onclick=()=>{
+results.classList.add("hidden");
+backTop.classList.add("hidden");
+q.value="";
+};
+
+/* SECRET */
+let count=0;
+secretTrigger.onclick=()=>{
+count++;
+if(count>=3){
+count=0;
+secretDrawer.classList.add("show");
+
+secretBody.innerHTML=`
+<a href="tel:0600000000">Patron</a><br>
+<a href="tel:0711223344">Garage</a>
+`;
+}
+setTimeout(()=>count=0,1000);
+};
+
+</script>
 </body>
 </html>
