@@ -687,9 +687,7 @@ html,body{
 
 <div style="text-align:center">
   Assistance • Dépannage • Remorquage
-</div> 
-</div
-</header>
+</div>
 
     <div class="search">
       <div class="ico"><i class="ph ph-magnifying-glass"></i></div>
@@ -1162,7 +1160,8 @@ function openDetail(item){
 // FERMER DRAWER
     
 const secretClose = document.getElementById('secretClose');
-if(secretClose){
+
+if (secretClose) {
   secretClose.addEventListener('click', () => {
     document.getElementById('secretDrawer').classList.remove('show');
   });
