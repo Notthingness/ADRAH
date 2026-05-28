@@ -700,6 +700,7 @@ html,body{
 
 let DATA = [];
 let current = [];
+let categoryOpened = false;
 
 // ELEMENTS
 
@@ -925,19 +926,18 @@ function search(text){
 
   const n = text.trim();
 
+  // Si la recherche est vide
   if(!n){
 
     resultsEl.classList.add('hidden');
 
-    // Cache le bouton si aucune catégorie ouverte
-    if(!categoryOpened){
-      backTop.classList.add('hidden');
-    }
+    // cacher le bouton retour
+    backTop.classList.add('hidden');
 
     return;
-
   }
 
+  // Recherche texte
   const rows = DATA
     .filter(d => matches(d,n))
     .slice(0,300);
@@ -947,19 +947,16 @@ function search(text){
   render(rows);
 
   // IMPORTANT :
-  // Ne pas afficher le bouton pendant une simple recherche
-  if(!categoryOpened){
-    backTop.classList.add('hidden');
-  }
+  // ne jamais afficher le bouton retour pendant une recherche
+  backTop.classList.add('hidden');
 
 }
 
   backTop.addEventListener('click', ()=>{
 
-  categoryOpened = false;
 
   resultsEl.classList.add('hidden');
-
+  categoryOpened = false;
   backTop.classList.add('hidden');
 
   q.value = '';
@@ -1000,7 +997,8 @@ cats.addEventListener('click', e => {
   hint.textContent = key;
 
   render(rows);
-
+  
+  categoryOpened = true;
   backTop.classList.remove('hidden');
 
   resultsEl.scrollIntoView({
