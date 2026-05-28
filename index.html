@@ -569,42 +569,12 @@ html,body{
   display:block;
 }
     
-.back-top{
-
-  width:100%;
-
-  height:54px;
-
-  border:none;
-
-  border-radius:18px;
-
-  margin-top:20px;
-
-  background:#111;
-
-  color:white;
-
-  font-size:16px;
-
-  font-weight:700;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:10px;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  cursor:pointer;
+.back-top.hidden{
+  display:none !important;
 }
-
 .back-top i{
   font-size:20px;
-}   
+}  
     
 </style>
 </head>
@@ -951,22 +921,6 @@ function search(text){
   backTop.classList.add('hidden');
 
 }
-
-  backTop.addEventListener('click', ()=>{
-
-
-  resultsEl.classList.add('hidden');
-  categoryOpened = false;
-  backTop.classList.add('hidden');
-
-  q.value = '';
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
-
-});
     
 q.addEventListener('input', e => {
 
