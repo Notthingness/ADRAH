@@ -1005,10 +1005,16 @@ function search(text){
 
   render(rows);
 
-  // IMPORTANT :
-  // ne jamais afficher le bouton retour pendant une recherche
-  backTop.classList.add('hidden');
+// Descendre automatiquement vers les résultats
+resultsEl.scrollIntoView({
+  behavior:'smooth',
+  block:'start'
+  
+});
 
+// IMPORTANT :
+// ne jamais afficher le bouton retour pendant une recherche
+backTop.classList.add('hidden');  
 }
     
 q.addEventListener('input', e => {
