@@ -85,12 +85,26 @@ header{
 }
     
 .search input:focus{
-  border-color:#ff2d2d;
 
-  box-shadow:
-  0 0 0 4px rgba(255,0,0,.12);
+  border-color:rgba(255,255,255,.08);
+
+  box-shadow:none;  
+}
+    
+button,
+input,
+a{
+  outline:none;
+  -webkit-tap-highlight-color:transparent;
 }
 
+button:focus,
+input:focus,
+a:focus{
+  outline:none;
+  box-shadow:none;
+}
+    
 .search .ico{
   position:absolute;
   left:18px;
@@ -142,9 +156,10 @@ header{
 }
 
 .card:hover{
+
   transform:translateY(-3px);
 
-  border-color:#ff2d2d;
+  border-color:rgba(255,255,255,.08);
 
   box-shadow:
   0 12px 30px rgba(0,0,0,.45);
