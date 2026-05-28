@@ -856,7 +856,7 @@ const toggleFav = item => {
 
 cats.innerHTML = CATEGORIES.map(c => `
 
-<button class="card" data-cat="${c.key}">
+<div class="card" data-cat="${c.key}">
 
   <i class="ph ${c.icon}"></i>
 
@@ -870,7 +870,7 @@ cats.innerHTML = CATEGORIES.map(c => `
 
   <span class="badge">24/7</span>
 
-</button>
+</div>
 
 `).join('');
 
