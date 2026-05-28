@@ -759,24 +759,16 @@ CATÉGORIES
       </div>
     </div>
   </aside>
-
- 
+            
 <!-- MENU SECRET -->
-<body>
-  
- <aside class="drawer" id="secretDrawer">
+<aside class="drawer" id="secretDrawer">
 
   <header class="drawer-header">
 
     <div class="title">
       <div>
-        <div style="font-weight:700">
-          MENU SECRET 🔒
-        </div>
-
-        <div class="muted" style="font-size:12px">
-          Numéros privés
-        </div>
+        <div style="font-weight:700">MENU SECRET 🔒</div>
+        <div class="muted" style="font-size:12px">Numéros privés</div>
       </div>
     </div>
 
@@ -786,10 +778,9 @@ CATÉGORIES
 
   </header>
 
-  <div class="body" id="secretBody">
-  </div>
+  <div class="body" id="secretBody"></div>
 
-</aside> 
+</aside>
             
   <script>   
     // 1) Définition des catégories visibles
@@ -1174,7 +1165,11 @@ function openDetail(item){
 }
 
 // FERMER DRAWER
-
+    
+ document.getElementById('secretClose').addEventListener('click', () => {
+document.getElementById('secretDrawer').classList.remove('show');
+});
+    
 document
 .getElementById('d-close-top')
 .addEventListener('click', ()=>{
