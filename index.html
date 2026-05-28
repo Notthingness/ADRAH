@@ -1008,13 +1008,18 @@ function search(text){
 // Descendre automatiquement vers les résultats
 setTimeout(() => {
 
-  resultsEl.scrollIntoView({
-    behavior:'smooth',
-    block:'start'
+  const y =
+    resultsEl.getBoundingClientRect().top +
+    window.pageYOffset -
+    120;
+
+  window.scrollTo({
+    top:y,
+    behavior:'smooth'
   });
 
-}, 80);
-
+}, 50);
+  
 // IMPORTANT :
 // ne jamais afficher le bouton retour pendant une recherche
 backTop.classList.add('hidden');  
