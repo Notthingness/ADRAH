@@ -1006,11 +1006,19 @@ function search(text){
   render(rows);
 
 // Descendre automatiquement vers les résultats
-resultsEl.scrollIntoView({
-  behavior:'smooth',
-  block:'start'
-  
-});
+setTimeout(() => {
+
+  const y =
+    resultsEl.getBoundingClientRect().top +
+    window.pageYOffset -
+    120;
+
+  window.scrollTo({
+    top:y,
+    behavior:'smooth'
+  });
+
+}, 50);
 
 // IMPORTANT :
 // ne jamais afficher le bouton retour pendant une recherche
