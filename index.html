@@ -1008,14 +1008,9 @@ function search(text){
 // Descendre automatiquement vers les résultats
 setTimeout(() => {
 
-  const y =
-    resultsEl.getBoundingClientRect().top +
-    window.pageYOffset -
-    20;
-
-  window.scrollTo({
-    top:y,
-    behavior:'smooth'
+  resultsEl.scrollIntoView({
+    behavior:'smooth',
+    block:'start'
   });
 
 }, 80);
