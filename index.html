@@ -569,6 +569,43 @@ html,body{
   display:block;
 }
     
+.back-top{
+
+  width:100%;
+
+  height:54px;
+
+  border:none;
+
+  border-radius:18px;
+
+  margin-top:20px;
+
+  background:#111;
+
+  color:white;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:10px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  cursor:pointer;
+}
+
+.back-top i{
+  font-size:20px;
+}   
+    
 </style>
 </head>
 <body>
@@ -600,7 +637,12 @@ html,body{
       </div>
     </section>
 
-    <section class="results hidden" id="results">
+    <button id="backTop" class="back-top hidden">
+  <i class="ph ph-arrow-up"></i>
+  Retour
+</button>
+
+<section class="results hidden" id="results">
       <div class="results-head">
         <strong id="count">0 résultat</strong>
         <span class="muted" id="hint">Tape pour filtrer…</span>
@@ -694,7 +736,8 @@ const dExtraWrap = document.getElementById('d-extra-wrap');
 const dLogo = document.getElementById('d-logo');
 
 const dFav = document.getElementById('d-fav');
-
+    
+const backTop = document.getElementById('backTop');
 // FAVORIS
 
 const KEY = 'adrah:favs';
@@ -884,11 +927,21 @@ function search(text){
 
   if(!n){
 
-    resultsEl.classList.add('hidden');
+    backTop.addEventListener('click', ()=>{
 
-    return;
+  resultsEl.classList.add('hidden');
 
-  }
+  backTop.classList.add('hidden');
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:'smooth'
+
+  });
+
+});
 
   const rows = DATA
   .filter(d => matches(d,n))
