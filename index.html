@@ -100,92 +100,116 @@ let current = [];
 const cats = document.getElementById("cats");
 const list = document.getElementById("list");
 const results = document.getElementById("results");
+const q = document.getElementById("q");
 
 const drawer = document.getElementById("drawer");
 const dName = document.getElementById("d-name");
 const dCat = document.getElementById("d-cat");
-const dPhone = document.getElementById("d-phone");
+const dTel = document.getElementById("d-tel");
 const dCall = document.getElementById("d-call");
 
 /* CATEGORIES */
 const CATEGORIES = [
-{key:"VL",label:"VL",sub:"Léger"},
-{key:"PL",label:"PL",sub:"Poids lourd"},
-{key:"MOTO",label:"MOTO",sub:"2 roues"}
+  { key:"VL", label:"VL", sub:"Léger" },
+  { key:"PL", label:"PL", sub:"Poids lourd" },
+  { key:"MOTO", label:"MOTO", sub:"2 roues" }
 ];
 
-cats.innerHTML = CATEGORIES.map(c=>`
-<div class="card" data-cat="${c.key}">
-<div>
-<h3>${c.label}</h3>
-<span>${c.sub}</span>
-</div>
-</div>
+cats.innerHTML = CATEGORIES.map(c => `
+  <div class="card" data-cat="${c.key}">
+    <div>
+      <h3>${c.label}</h3>
+      <span>${c.sub}</span>
+    </div>
+  </div>
 `).join("");
 
-/* LOAD */
+/* LOAD DATA (IMPORTANT SAFE) */
 fetch("data.json")
-.then(r=>r.json())
-.then(j=>DATA=j);
+  .then(r => r.json())
+  .then(j => {
+    DATA = j || [];
+  });
 
 /* SEARCH */
-q.oninput = e => {
-const v = e.target.value.toLowerCase().trim();
-if(!v){results.classList.add("hidden");return;}
+q.addEventListener("input", e => {
+  const v = e.target.value.trim().toLowerCase();
 
-current = DATA.filter(x =>
-(x.name||"").toLowerCase().includes(v) ||
-(x.category||"").toLowerCase().includes(v)
-);
+  if(!v){
+    results.classList.add("hidden");
+    return;
+  }
 
-render();
-};
+  if(!DATA.length) return;
 
+  current = DATA.filter(x =>
+    (x.name||"").toLowerCase().includes(v) ||
+    (x.category||"").toLowerCase().includes(v) ||
+    (x.type||"").toLowerCase().includes(v)
+  );
+
+  render();
+});
+
+/* RENDER */
 function render(){
-results.classList.remove("hidden");
+  results.classList.remove("hidden");
 
-list.innerHTML = current.map((x,i)=>`
-<div class="row" data-i="${i}">
-<div>
-<div class="title">${x.name||""}</div>
-<div class="sub">${x.category||""}</div>
-</div>
-<a class="btn" href="tel:${(x.phone||"").replace(/\s+/g,"")}">Appel</a>
-</div>
-`).join("");
+  list.innerHTML = current.map((x,i)=>`
+    <div class="row" data-i="${i}">
+      <div>
+        <div class="title">${x.name || ""}</div>
+        <div class="sub">${x.category || x.type || ""}</div>
+      </div>
+
+      <a class="btn"
+        href="tel:${(x.phone||"").replace(/\s+/g,"")}">
+        Appel
+      </a>
+    </div>
+  `).join("");
 }
 
-/* CLICK CAT */
-cats.onclick = e=>{
-const c = e.target.closest(".card");
-if(!c)return;
+/* CLICK CATEGORY */
+cats.addEventListener("click", e => {
+  const el = e.target.closest(".card");
+  if(!el || !DATA.length) return;
 
-const k = c.dataset.cat;
-current = DATA.filter(x=>x.category===k||x.type===k);
-render();
-};
+  const key = el.dataset.cat;
 
-/* OPEN DETAIL */
-list.onclick = e=>{
-const row = e.target.closest(".row");
-if(!row)return;
+  current = DATA.filter(x =>
+    x.category === key || x.type === key
+  );
 
-const item = current[row.dataset.i];
+  render();
+});
 
-dName.textContent = item.name;
-dCat.textContent = item.category || item.type;
-dPhone.textContent = item.phone || "—";
+/* CLICK RESULT */
+list.addEventListener("click", e => {
+  const row = e.target.closest(".row");
+  if(!row) return;
 
-dCall.href = "tel:"+(item.phone||"").replace(/\s+/g,"");
+  const item = current[row.dataset.i];
+  if(!item) return;
 
-drawer.classList.add("show");
-};
+  dName.textContent = item.name || "";
+  dCat.textContent = item.category || item.type || "";
+  dTel.textContent = item.phone || "—";
 
-/* CLOSE DRAWER */
-drawer.onclick = e=>{
-if(e.target===drawer) drawer.classList.remove("show");
-};
+  dCall.href = item.phone
+    ? "tel:" + item.phone.replace(/\s+/g,"")
+    : "#";
 
+  drawer.classList.add("show");
+});
+
+/* CLOSE DRAWER (click outside only) */
+drawer.addEventListener("click", e => {
+  if(e.target === drawer){
+    drawer.classList.remove("show");
+  }
+});
+  
 </script>
 </body>
 </html>
