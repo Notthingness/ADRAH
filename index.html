@@ -681,20 +681,15 @@ html,body{
 </head>
 <body>
   <div class="app">
-    <header>
         <header class="top-logo">
-
-  <img
-    src="logo.jpg"
-    alt="ADRAH Logo"
-    class="main-logo"
-  >
-
+  <img src="logo.jpg" alt="ADRAH Logo" class="main-logo">
 </header>
-          <medium>Assistance • Dépannage • Remorquage<medium>
-        </div>
-      </div>
-    </header>
+
+<div style="text-align:center">
+  Assistance • Dépannage • Remorquage
+</div> 
+</div
+</header>
 
     <div class="search">
       <div class="ico"><i class="ph ph-magnifying-glass"></i></div>
@@ -1166,9 +1161,12 @@ function openDetail(item){
 
 // FERMER DRAWER
     
- document.getElementById('secretClose').addEventListener('click', () => {
-document.getElementById('secretDrawer').classList.remove('show');
-});
+const secretClose = document.getElementById('secretClose');
+if(secretClose){
+  secretClose.addEventListener('click', () => {
+    document.getElementById('secretDrawer').classList.remove('show');
+  });
+}
     
 document
 .getElementById('d-close-top')
