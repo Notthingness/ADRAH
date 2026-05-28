@@ -935,6 +935,18 @@ function search(text){
 
   }
 
+  const rows = DATA
+    .filter(d => matches(d,n))
+    .slice(0,300);
+
+  hint.textContent = 'Filtré par « ' + n + ' »';
+
+  render(rows);
+
+  backTop.classList.remove('hidden');
+
+}
+
   backTop.addEventListener('click', ()=>{
 
   resultsEl.classList.add('hidden');
