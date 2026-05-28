@@ -517,6 +517,55 @@ html,body{
   border:1px solid rgba(255,255,255,.08);
 }
     
+.drawer-header{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:12px;
+}
+
+.drawer-back{
+
+  width:42px;
+
+  height:42px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,.08);
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  transition:.2s;
+}
+
+.drawer-back:hover{
+
+  background:#1e5eff;
+}
+
+.drawer-back i{
+  font-size:22px;
+} 
+    
 .kv{
   background:rgba(255,255,255,.04);
 
@@ -660,15 +709,22 @@ html,body{
 
   <!-- Drawer détail -->
   <aside class="drawer" id="drawer" aria-hidden="true">
-    <header>
-      <div class="title">
-        <img id="d-logo" alt="">
-        <div>
-          <div id="d-name" style="font-weight:700"></div>
-          <div id="d-cat" class="muted" style="font-size:12px"></div>
-        </div>
-      </div>
-    </header>
+<header class="drawer-header">
+
+  <div class="title">
+    <img id="d-logo" alt="">
+
+    <div>
+      <div id="d-name" style="font-weight:700"></div>
+      <div id="d-cat" class="muted" style="font-size:12px"></div>
+    </div>
+  </div>
+
+  <button id="d-close-top" class="drawer-back">
+    <i class="ph ph-arrow-right"></i>
+  </button>
+
+</header>
     <div class="body">
       <a id="d-call" class="btn btn-call">
   <i class="ph ph-phone"></i>
@@ -684,7 +740,6 @@ html,body{
       <div class="kv"><b>Disponibilité</b><span>24h/24 · 7j/7</span></div>
       <div>
         <button id="d-fav" class="btn btn-ghost"><i class="ph ph-star"></i> Ajouter aux favoris</button>
-        <button id="d-close" class="btn btn-ghost"><i class="ph ph-x"></i> Fermer</button>
       </div>
     </div>
   </aside>
@@ -1068,7 +1123,7 @@ function openDetail(item){
 // FERMER DRAWER
 
 document
-.getElementById('d-close')
+.getElementById('d-close-top')
 .addEventListener('click', ()=>{
 
   drawer.classList.remove('show');
