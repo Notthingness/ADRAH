@@ -929,7 +929,10 @@ function search(text){
 
     resultsEl.classList.add('hidden');
 
-    backTop.classList.add('hidden');
+    // Cache le bouton si aucune catégorie ouverte
+    if(!categoryOpened){
+      backTop.classList.add('hidden');
+    }
 
     return;
 
@@ -943,9 +946,17 @@ function search(text){
 
   render(rows);
 
+  // IMPORTANT :
+  // Ne pas afficher le bouton pendant une simple recherche
+  if(!categoryOpened){
+    backTop.classList.add('hidden');
+  }
+
 }
 
   backTop.addEventListener('click', ()=>{
+
+  categoryOpened = false;
 
   resultsEl.classList.add('hidden');
 
@@ -954,11 +965,8 @@ function search(text){
   q.value = '';
 
   window.scrollTo({
-
     top:0,
-
     behavior:'smooth'
-
   });
 
 });
@@ -976,6 +984,8 @@ cats.addEventListener('click', e => {
   const btn = e.target.closest('[data-cat]');
 
   if(!btn) return;
+
+  categoryOpened = true;
 
   const key = btn.dataset.cat;
 
