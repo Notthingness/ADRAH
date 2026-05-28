@@ -952,29 +952,7 @@ function search(text){
   });
 
 });
-
-  const rows = DATA
-    .filter(d => matches(d,n))
-    .slice(0,300);
-
-  hint.textContent = 'Filtré par « ' + n + ' »';
-
-  render(rows);
-
-  backTop.classList.remove('hidden');
-
-}
     
-  const rows = DATA
-  .filter(d => matches(d,n))
-  .slice(0,300);
-
-  hint.textContent = 'Filtré par « ' + n + ' »';
-
-  render(rows);
-
-}
-
 q.addEventListener('input', e => {
 
   search(e.target.value);
@@ -1003,11 +981,31 @@ cats.addEventListener('click', e => {
 
   render(rows);
 
-backTop.classList.remove('hidden');
+  backTop.classList.remove('hidden');
 
-resultsEl.scrollIntoView({
-  behavior:'smooth',
-  block:'start'
+  resultsEl.scrollIntoView({
+    behavior:'smooth',
+    block:'start'
+  });
+
+});
+
+
+// BOUTON RETOUR
+
+backTop.addEventListener('click', ()=>{
+
+  resultsEl.classList.add('hidden');
+
+  backTop.classList.add('hidden');
+
+  q.value = '';
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
+
 });
   
 // DRAWER
