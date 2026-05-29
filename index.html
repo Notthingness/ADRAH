@@ -1035,8 +1035,15 @@ function search(text){
 
   // Recherche texte
   const rows = DATA
-    .filter(d => matches(d,n))
-    .slice(0,300);
+  .filter(d => matches(d,n))
+
+  .sort((a, b) =>
+    a.name.localeCompare(b.name, 'fr', {
+      sensitivity:'base'
+    })
+  )
+
+  .slice(0,300);
 
   hint.textContent = 'Filtré par « ' + n + ' »';
 
@@ -1075,13 +1082,22 @@ cats.addEventListener('click', e => {
 
   const key = btn.dataset.cat;
 
-  const rows = DATA.filter(d =>
+  const rows = DATA
+  .filter(d =>
 
     d.category === key ||
 
     d.type === key
 
-  ).slice(0,300);
+  )
+
+  .sort((a, b) =>
+    a.name.localeCompare(b.name, 'fr', {
+      sensitivity:'base'
+    })
+  )
+
+  .slice(0,300);
 
   hint.textContent = key;
 
