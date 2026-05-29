@@ -922,6 +922,8 @@ fetch('data.json')
 
     logo: x.logo || ''
 
+    country: x.country || 'FR'
+
   }));
 
 })
@@ -1017,47 +1019,95 @@ function render(rows){
 `).join('');
 
 }
-
+    
+function isUrgent(text){
+  const t = text.toLowerCase();
+  return (
+    t.includes('urgence') ||
+    t.includes('accident') ||
+    t.includes('panne') ||
+    t.includes('remorquage') ||
+    t.includes('dépannage')
+  );
+}
+    
 function search(text){
 
-  const n = text.trim();
+  if(!DATA || DATA.length === 0) return;
 
-  // Si la recherche est vide
+  const n = text.trim().toLowerCase();
+
   if(!n){
-
     resultsEl.classList.add('hidden');
-
-    // cacher le bouton retour
     backTop.classList.add('hidden');
-
     return;
   }
 
-  // Recherche texte
+  const countryMap = {
+    belgique: 'BE',
+    belgium: 'BE',
+    france: 'FR',
+    espagne: 'ES',
+    spain: 'ES',
+    italie: 'IT',
+    italy: 'IT',
+    suisse: 'CH',
+    switzerland: 'CH',
+    uk: 'UK',
+    angleterre: 'UK',
+    england: 'UK',
+    portugal: 'PT',
+    paysbas: 'NL',
+    netherlands: 'NL'
+  };
+
+  // détecte si l'utilisateur parle d'un pays
+  let detectedCountry = null;
+
+  for(const key in countryMap){
+    if(n.includes(key)){
+      detectedCountry = countryMap[key];
+      break;
+    }
+  }
+
   const rows = DATA
-  .filter(d => matches(d,n))
+    .filter(d => {
 
-  .sort((a, b) =>
-    a.name.localeCompare(b.name, 'fr', {
-      sensitivity:'base'
+      const hay = [
+        d.name,
+        d.type,
+        d.category,
+        d.assistant,
+        d.phone,
+        d.extra
+      ].join(' ').toLowerCase();
+
+      const matchText = hay.includes(n);
+
+      const matchCountry =
+        !detectedCountry || d.country === detectedCountry;
+
+      return matchText && matchCountry;
     })
-  )
+    .sort((a,b)=> a.name.localeCompare(b.name,'fr',{sensitivity:'base'}))
+    .slice(0,300);
 
-  .slice(0,300);
-
-  hint.textContent = 'Filtré par « ' + n + ' »';
+  hint.textContent = detectedCountry
+    ? `Résultats filtrés par pays détecté`
+    : `Recherche globale`;
 
   render(rows);
 
-// Descendre automatiquement vers les résultats
-setTimeout(() => {
+  setTimeout(() => {
+    resultsEl.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
+  }, 80);
 
-  resultsEl.scrollIntoView({
-    behavior:'smooth',
-    block:'start'
-  });
-
-}, 80);
+  backTop.classList.add('hidden');
+}
   
 // IMPORTANT :
 // ne jamais afficher le bouton retour pendant une recherche
@@ -1066,8 +1116,16 @@ backTop.classList.add('hidden');
     
 q.addEventListener('input', e => {
 
-  search(e.target.value);
+  const val = e.target.value;
 
+  // 🔥 URGENCE VISUEL
+  if(isUrgent(val)){
+    q.style.border = "2px solid red";
+  } else {
+    q.style.border = "";
+  }
+
+  search(val);
 });
 
 // CLICK CATEGORIES
