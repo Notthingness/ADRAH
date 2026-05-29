@@ -715,60 +715,9 @@ CATÉGORIES
 
 <section class="results hidden" id="results">
       <div class="results-head">
-
-  <!-- GAUCHE -->
-  <div>
-    <strong id="count">0 résultat</strong><br>
-    <span class="muted" id="hint">Tape pour filtrer…</span>
-  </div>
-
-  <!-- CENTRE PAYS -->
-  <div style="position:relative;">
-    
-    <button id="countryBtn" style="
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
-      color:white;
-      padding:8px 12px;
-      border-radius:12px;
-      cursor:pointer;
-      font-size:13px;
-    ">
-      FR ▼
-    </button>
-
-    <!-- MENU PAYS -->
-    <div id="countryMenu" style="
-      display:none;
-      position:absolute;
-      top:42px;
-      left:0;
-      background:rgba(15,15,15,.95);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      overflow:hidden;
-      z-index:999;
-      min-width:140px;
-    ">
-      <div class="country" data-country="ALL">🌍 Tous</div>
-      <div class="country" data-country="FR">🇫🇷 France</div>
-      <div class="country" data-country="BE">🇧🇪 Belgique</div>
-      <div class="country" data-country="UK">🇬🇧 UK</div>
-      <div class="country" data-country="ES">🇪🇸 Espagne</div>
-      <div class="country" data-country="IT">🇮🇹 Italie</div>
-      <div class="country" data-country="CH">🇨🇭 Suisse</div>
-      <div class="country" data-country="PT">🇵🇹 Portugal</div>
-      <div class="country" data-country="NL">🇳🇱 Pays-Bas</div>
-    </div>
-
-  </div>
-
-  <!-- DROITE -->
-  <div>
-    <strong id="catTitle">—</strong>
-  </div>
-
-</div>
+        <strong id="count">0 résultat</strong>
+        <span class="muted" id="hint">Tape pour filtrer…</span>
+      </div>
       <div class="list" id="list"></div>
     </section>
   </div>
@@ -850,8 +799,6 @@ CATÉGORIES
 let DATA = [];
 let current = [];
 let categoryOpened = false;
-let selectedCountry = 'FR'; 
-let currentCategory = null;    
 
 // ELEMENTS
 
@@ -888,13 +835,6 @@ const dExtraWrap = document.getElementById('d-extra-wrap');
 const dLogo = document.getElementById('d-logo');
     
 const backTop = document.getElementById('backTop');
-
-const countryBtn = document.getElementById('countryBtn');
-
-const countryMenu = document.getElementById('countryMenu');
-
-const catTitle = document.getElementById('catTitle');
-    
 // FAVORIS
 
 const KEY = 'adrah:favs';
@@ -934,58 +874,6 @@ const toggleFav = item => {
 
 };
 
-// OUVRIR FERMER MENU PAYS 
-    
-countryBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  countryMenu.style.display =
-    countryMenu.style.display === 'block' ? 'none' : 'block';
-});
-    
-// SELECTION PAYS   
-
-countryMenu.addEventListener('click', (e) => {
-
-  const el = e.target.closest('.country');
-  if(!el) return;
-  
-  if(!DATA || DATA.length === 0) return;
-  
-  selectedCountry = el.dataset.country;
-
-  const labels = {
-    FR:'🇫🇷 FR',
-    BE:'🇧🇪 BE',
-    UK:'🇬🇧 UK',
-    ES:'🇪🇸 ES',
-    IT:'🇮🇹 IT',
-    CH:'🇨🇭 CH',
-    PT:'🇵🇹 PT',
-    NL:'🇳🇱 NL',
-    ALL:'🌍 ALL'
-  };
-
-  countryBtn.textContent = labels[selectedCountry];
-  countryMenu.style.display = 'none';
-
-  // 🔥 CAS 1 : recherche active
-  if(q.value.trim() !== ''){
-    search(q.value);
-    return;
-  }
-
-  // 🔥 CAS 2 : catégorie active
-  if(categoryOpened && currentCategory){
-
-    const rows = DATA.filter(d =>
-      (d.category === currentCategory || d.type === currentCategory) &&
-      (selectedCountry === 'ALL' || d.country === selectedCountry)
-    );
-
-    render(rows);
-  }
-});  
-    
 // CATEGORIES
 
 cats.innerHTML = CATEGORIES.map(c => `
@@ -1017,17 +905,24 @@ fetch('data.json')
 .then(json => {
 
   DATA = json.map(x => ({
-  type: x.type || '',
-  name: x.nom || x.name || '',
-  assistant: x.assisteur || x.assistant || '',
-  phone: String(x.telephone || x.phone || '')
-    .replace(/\s+/g,' ')
-    .trim(),
-  category: x.categorie || x.category || '',
-  extra: x.extra || '',
-  logo: x.logo || '',
-  country: x.country || 'FR'   // 👈 AJOUT OBLIGATOIRE
-}));
+
+    type: x.type || '',
+
+    name: x.nom || x.name || '',
+
+    assistant: x.assisteur || x.assistant || '',
+
+    phone: String(x.telephone || x.phone || '')
+      .replace(/\s+/g,' ')
+      .trim(),
+
+    category: x.categorie || x.category || '',
+
+    extra: x.extra || '',
+
+    logo: x.logo || ''
+
+  }));
 
 })
 
@@ -1066,10 +961,12 @@ function render(rows){
   current = rows;
 
   if(rows.length === 0){
-  resultsEl.classList.add('hidden');
-  current = [];
-  return;
-}
+
+    resultsEl.classList.add('hidden');
+
+    return;
+
+  }
 
   resultsEl.classList.remove('hidden');
 
@@ -1091,7 +988,6 @@ function render(rows){
       ${r.category || r.type}
       ·
       ${r.assistant || ''}
-      ·${r.country || ''}
     </div>
 
   </div>
@@ -1120,12 +1016,10 @@ function render(rows){
 
 `).join('');
 
-}    
-    
+}
+
 function search(text){
-  
-  if(!DATA || DATA.length === 0) return;
-  
+
   const n = text.trim();
 
   // Si la recherche est vide
@@ -1180,20 +1074,20 @@ q.addEventListener('input', e => {
 
 cats.addEventListener('click', e => {
 
-  if(!DATA || DATA.length === 0) return;
-
   const btn = e.target.closest('[data-cat]');
 
-  if(!btn) return
+  if(!btn) return;
 
   categoryOpened = true;
 
   const key = btn.dataset.cat;
 
-  const rows = DATA.filter(d =>
-  (d.category === key || d.type === key) &&
-  (selectedCountry === 'ALL' || d.country === selectedCountry)
+  const rows = DATA
+  .filter(d =>
 
+    d.category === key ||
+
+    d.type === key
 
   )
 
@@ -1205,13 +1099,10 @@ cats.addEventListener('click', e => {
 
   .slice(0,300);
 
-  const countryLabel = countryBtn.textContent.replace(' ▼','');
-catTitle.textContent = `${key} • ${countryLabel}`;
   hint.textContent = key;
 
   render(rows);
   
-  currentCategory = key;
   categoryOpened = true;
   backTop.classList.remove('hidden');
 
@@ -1337,12 +1228,12 @@ listEl.addEventListener('click', e => {
 
 // FERMER SI CLICK EXTERIEUR
 
-window.addEventListener('click', (e) => {
+window.addEventListener('click', e => {
 
-  countryMenu.style.display = 'none';
+  if(e.target === drawer){
 
-  if (e.target === drawer) {
     drawer.classList.remove('show');
+
   }
 
 });
