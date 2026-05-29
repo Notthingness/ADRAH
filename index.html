@@ -850,7 +850,8 @@ CATÉGORIES
 let DATA = [];
 let current = [];
 let categoryOpened = false;
-let selectedCountry = 'FR';    
+let selectedCountry = 'FR'; 
+let currentCategory = null;    
 
 // ELEMENTS
 
@@ -947,10 +948,11 @@ countryMenu.addEventListener('click', (e) => {
 
   const el = e.target.closest('.country');
   if(!el) return;
-
+  
+  if(!DATA || DATA.length === 0) return;
+  
   selectedCountry = el.dataset.country;
 
-  // affichage bouton
   const labels = {
     FR:'🇫🇷 FR',
     BE:'🇧🇪 BE',
@@ -964,24 +966,25 @@ countryMenu.addEventListener('click', (e) => {
   };
 
   countryBtn.textContent = labels[selectedCountry];
-
   countryMenu.style.display = 'none';
 
-  // relancer recherche / catégorie
+  // 🔥 CAS 1 : recherche active
   if(q.value.trim() !== ''){
     search(q.value);
-  } else if(categoryOpened){
-    const key = catTitle.textContent;
+    return;
+  }
+
+  // 🔥 CAS 2 : catégorie active
+  if(categoryOpened && currentCategory){
 
     const rows = DATA.filter(d =>
-      (d.category === key || d.type === key) &&
+      (d.category === currentCategory || d.type === currentCategory) &&
       (selectedCountry === 'ALL' || d.country === selectedCountry)
     );
 
     render(rows);
   }
-
-});    
+});  
     
 // CATEGORIES
 
@@ -1063,12 +1066,10 @@ function render(rows){
   current = rows;
 
   if(rows.length === 0){
-
-    resultsEl.classList.add('hidden');
-
-    return;
-
-  }
+  resultsEl.classList.add('hidden');
+  current = [];
+  return;
+}
 
   resultsEl.classList.remove('hidden');
 
@@ -1119,10 +1120,12 @@ function render(rows){
 
 `).join('');
 
-}
-
+}    
+    
 function search(text){
-
+  
+  if(!DATA || DATA.length === 0) return;
+  
   const n = text.trim();
 
   // Si la recherche est vide
@@ -1177,9 +1180,11 @@ q.addEventListener('input', e => {
 
 cats.addEventListener('click', e => {
 
+  if(!DATA || DATA.length === 0) return;
+
   const btn = e.target.closest('[data-cat]');
 
-  if(!btn) return;
+  if(!btn) return
 
   categoryOpened = true;
 
@@ -1206,6 +1211,7 @@ catTitle.textContent = `${key} • ${countryLabel}`;
 
   render(rows);
   
+  currentCategory = key;
   categoryOpened = true;
   backTop.classList.remove('hidden');
 
