@@ -800,6 +800,25 @@ let DATA = [];
 let current = [];
 let categoryOpened = false;
 
+// 🌍 PAYS MAP
+const countryMap = {
+  belgique: 'BE',
+  belgium: 'BE',
+  france: 'FR',
+  espagne: 'ES',
+  spain: 'ES',
+  italie: 'IT',
+  italy: 'IT',
+  suisse: 'CH',
+  switzerland: 'CH',
+  uk: 'UK',
+  angleterre: 'UK',
+  england: 'UK',
+  portugal: 'PT',
+  paysbas: 'NL',
+  netherlands: 'NL'
+};
+
 // ELEMENTS
 
 const cats = document.getElementById('cats');
@@ -1020,44 +1039,62 @@ function render(rows){
 
 function search(text){
 
-  const n = text.trim();
+  const n = text.trim().toLowerCase();
 
-  // Si la recherche est vide
   if(!n){
-
     resultsEl.classList.add('hidden');
-
-    // cacher le bouton retour
     backTop.classList.add('hidden');
-
     return;
   }
 
-  // Recherche texte
-  const rows = DATA
-  .filter(d => matches(d,n))
+  // 🔥 détecte pays
+  let detectedCountry = null;
 
-  .sort((a, b) =>
-    a.name.localeCompare(b.name, 'fr', {
-      sensitivity:'base'
-    })
-  )
+  for(const key in countryMap){
+    if(n.includes(key)){
+      detectedCountry = countryMap[key];
+      break;
+    }
+  }
 
-  .slice(0,300);
+  // 🔥 mot métier (optionnel)
+  const keywords = n
+    .replace(Object.keys(countryMap).join('|'), '')
+    .trim();
 
-  hint.textContent = 'Filtré par « ' + n + ' »';
+  const rows = DATA.filter(d => {
+
+    const hay = [
+      d.name,
+      d.type,
+      d.category,
+      d.assistant,
+      d.phone,
+      d.extra
+    ].join(' ').toLowerCase();
+
+    const matchText = keywords ? hay.includes(keywords) : true;
+
+    const matchCountry = !detectedCountry || d.country === detectedCountry;
+
+    return matchText && matchCountry;
+  });
+
+  hint.textContent = detectedCountry
+    ? `Filtré : ${detectedCountry}`
+    : `Recherche globale`;
 
   render(rows);
 
-// Descendre automatiquement vers les résultats
-setTimeout(() => {
+  setTimeout(() => {
+    resultsEl.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
+  }, 80);
 
-  resultsEl.scrollIntoView({
-    behavior:'smooth',
-    block:'start'
-  });
-
-}, 80);
+  backTop.classList.add('hidden');
+}
   
 // IMPORTANT :
 // ne jamais afficher le bouton retour pendant une recherche
