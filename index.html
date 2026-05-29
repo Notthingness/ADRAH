@@ -1149,11 +1149,20 @@ cats.addEventListener('click', e => {
 
   )
 
-  .sort((a, b) =>
-    a.name.localeCompare(b.name, 'fr', {
-      sensitivity:'base'
-    })
-  )
+  .sort((a, b) => {
+
+  // 🇫🇷 France en priorité
+  if (a.country === 'FR' && b.country !== 'FR') return -1;
+  if (a.country !== 'FR' && b.country === 'FR') return 1;
+
+  // ordre alphabétique
+  return a.name.localeCompare(
+    b.name,
+    'fr',
+    { sensitivity:'base' }
+  );
+
+})
 
   .slice(0,300);
 
