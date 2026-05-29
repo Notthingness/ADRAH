@@ -899,36 +899,25 @@ cats.innerHTML = CATEGORIES.map(c => `
 // CHARGEMENT JSON
 
 fetch('data.json')
-
 .then(r => r.json())
-
 .then(json => {
 
   DATA = json.map(x => ({
-
     type: x.type || '',
-
     name: x.nom || x.name || '',
-
     assistant: x.assisteur || x.assistant || '',
-
     phone: String(x.telephone || x.phone || '')
       .replace(/\s+/g,' ')
       .trim(),
-
     category: x.categorie || x.category || '',
-
     extra: x.extra || '',
-
-    logo: x.logo || ''
-
+    logo: x.logo || '',
     country: x.country || 'FR'
-
   }));
 
+  console.log("DATA chargé :", DATA.length);
 })
-
-.catch(err => {
+.catch(err => console.log('Erreur JSON', err));
 
   console.log('Erreur JSON', err);
 
@@ -1034,14 +1023,13 @@ function isUrgent(text){
 function search(text){
 
   if(!DATA || DATA.length === 0) return;
-
+  
   const n = text.trim().toLowerCase();
 
   if(!n){
     resultsEl.classList.add('hidden');
     backTop.classList.add('hidden');
     return;
-  }
 
   const countryMap = {
     belgique: 'BE',
@@ -1131,7 +1119,9 @@ q.addEventListener('input', e => {
 // CLICK CATEGORIES
 
 cats.addEventListener('click', e => {
-
+  
+  if(!DATA || DATA.length === 0) return;
+  
   const btn = e.target.closest('[data-cat]');
 
   if(!btn) return;
