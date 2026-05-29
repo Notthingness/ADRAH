@@ -932,7 +932,7 @@ cats.innerHTML = CATEGORIES.map(c => `
 
 `).join('');
 
-// CHARGEMENT JSON
+// CHARGEMENT JSON / FETCH
 
 fetch('data.json')
   .then(r => r.json())
@@ -1151,11 +1151,14 @@ cats.addEventListener('click', e => {
 
   .sort((a, b) => {
 
-  // 🇫🇷 France en priorité
-  if (a.country === 'FR' && b.country !== 'FR') return -1;
-  if (a.country !== 'FR' && b.country === 'FR') return 1;
+  const countryA = (a.country || 'FR').toUpperCase();
+  const countryB = (b.country || 'FR').toUpperCase();
 
-  // ordre alphabétique
+  // 🇫🇷 France prioritaire
+  if (countryA === 'FR' && countryB !== 'FR') return -1;
+  if (countryA !== 'FR' && countryB === 'FR') return 1;
+
+  // Alphabetique
   return a.name.localeCompare(
     b.name,
     'fr',
@@ -1163,7 +1166,6 @@ cats.addEventListener('click', e => {
   );
 
 })
-
   .slice(0,300);
 
   hint.textContent = key;
