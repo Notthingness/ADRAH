@@ -802,22 +802,15 @@ let current = [];
 let categoryOpened = false;
 
 // 🌍 PAYS MAP
-const countryMap = {
-  belgique: 'BE',
-  belgium: 'BE',
-  france: 'FR',
-  espagne: 'ES',
-  spain: 'ES',
-  italie: 'IT',
-  italy: 'IT',
-  suisse: 'CH',
-  switzerland: 'CH',
-  uk: 'UK',
-  angleterre: 'UK',
-  england: 'UK',
-  portugal: 'PT',
-  paysbas: 'NL',
-  netherlands: 'NL'
+const countryNames = {
+  BE: 'Belgique',
+  FR: 'France',
+  ES: 'Espagne',
+  IT: 'Italie',
+  CH: 'Suisse',
+  UK: 'Royaume-Uni',
+  PT: 'Portugal',
+  NL: 'Pays-Bas'
 };
 
 // ELEMENTS
@@ -937,7 +930,7 @@ fetch('data.json')
   category: x.categorie || x.category || '',
   extra: x.extra || '',
   logo: x.logo || '',
-  country: x.country || 'FR'
+  country: (x.pays || x.country || '').toUpperCase() || 'FR'
 }));
 })
 
@@ -1000,10 +993,10 @@ function render(rows){
     <div class="title">${r.name}</div>
 
     <div class="sub">
-      ${r.category || r.type}
-      ·
-      ${r.assistant || ''}
-    </div>
+  ${r.category || r.type}
+  ${r.assistant ? `· ${r.assistant}` : ''}
+  ${r.country ? `· ${countryNames[r.country] || r.country}` : ''}
+</div>
 
   </div>
 
@@ -1046,18 +1039,18 @@ function search(text){
   // 🔥 détection pays
   let detectedCountry = null;
 
-  for(const key in countryMap){
-    if(n.includes(key)){
-      detectedCountry = countryMap[key];
-      break;
-    }
+for (const key in countryMap) {
+  if (n.includes(key)) {
+    detectedCountry = countryMap[key];
+    break;
   }
+}
 
   // 🔥 nettoyage du texte (sans pays)
 let cleanedText = n;
 
 for (const key in countryMap) {
-  cleanedText = cleanedText.replace(new RegExp(`\\b(${Object.keys(countryMap).join('|')})\\b`, 'g'), '');
+  cleanedText = cleanedText.replace(new RegExp(`\\b${key}\\b`, 'g'), '');
 }
 
 cleanedText = cleanedText.trim();
@@ -1074,7 +1067,9 @@ cleanedText = cleanedText.trim();
     ].join(' ').toLowerCase();
 
     const matchText = cleanedText ? hay.includes(cleanedText) : true;
-    const matchCountry = detectedCountry ? d.country === detectedCountry : true;
+    const matchCountry = detectedCountry
+  ? d.country.toUpperCase() === detectedCountry
+  : true;
 
     return matchText && matchCountry;
   });
@@ -1187,7 +1182,7 @@ function openDetail(item){
   dType.textContent = item.type || '—';
 
   // 🔥 NOUVEAU
-  dCountry.textContent = item.country || '—';
+  dCountry.textContent = countryNames[item.country] || item.country || '—';
 
   if(item.extra){
     dExtra.textContent = item.extra;
