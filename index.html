@@ -935,30 +935,28 @@ cats.innerHTML = CATEGORIES.map(c => `
 // CHARGEMENT JSON
 
 fetch('data.json')
+  .then(r => r.json())
+  .then(json => {
 
-.then(r => r.json())
+    DATA = json.map(x => ({
+      type: x.type || '',
+      name: x.nom || x.name || '',
+      assistant: x.assisteur || x.assistant || '',
+      phone: String(x.telephone || x.phone || '')
+        .replace(/\s+/g,' ')
+        .trim(),
+      category: x.categorie || x.category || '',
+      extra: x.extra || '',
+      logo: x.logo || '',
+      country: (x.pays || x.country || 'FR').toUpperCase()
+    }));
 
-.then(json => {
+  })
+  .catch(err => {
 
-  DATA = json.map(x => ({
-  type: x.type || '',
-  name: x.nom || x.name || '',
-  assistant: x.assisteur || x.assistant || '',
-  phone: String(x.telephone || x.phone || '')
-    .replace(/\s+/g,' ')
-    .trim(),
-  category: x.categorie || x.category || '',
-  extra: x.extra || '',
-  logo: x.logo || '',
-  country: (x.pays || x.country || '').toUpperCase() || 'FR'
-}));
-})
+    console.log('Erreur JSON', err);
 
-.catch(err => {
-
-  console.log('Erreur JSON', err);
-
-});
+  });
 
 // RECHERCHE
 
@@ -1078,13 +1076,14 @@ cleanedText = cleanedText.trim();
   const rows = DATA.filter(d => {
 
     const hay = [
-      d.name,
-      d.type,
-      d.category,
-      d.assistant,
-      d.phone,
-      d.extra
-    ].join(' ').toLowerCase();
+  d.name,
+  d.type,
+  d.category,
+  d.assistant,
+  d.phone,
+  d.extra,
+  d.country
+]
 
     const matchText = cleanedText ? hay.includes(cleanedText) : true;
     const matchCountry = detectedCountry
