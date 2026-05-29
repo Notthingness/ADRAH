@@ -752,6 +752,7 @@ CATÉGORIES
       <div class="kv"><b>Type</b><span id="d-type"></span></div>
       <div class="kv"><b>Assisteur</b><span id="d-assist"></span></div>
       <div class="kv" id="d-extra-wrap"><b>Informations</b><span id="d-extra"></span></div>
+      <div class="kv"><b>Pays</b><span id="d-country"></span></div>
       <div class="kv"><b>Disponibilité</b><span>24h/24 · 7j/7</span></div>
       <div>
       </div>
@@ -854,6 +855,9 @@ const dExtraWrap = document.getElementById('d-extra-wrap');
 const dLogo = document.getElementById('d-logo');
     
 const backTop = document.getElementById('backTop');
+    
+const dCountry = document.getElementById('d-country');  
+    
 // FAVORIS
 
 const KEY = 'adrah:favs';
@@ -940,6 +944,8 @@ fetch('data.json')
     extra: x.extra || '',
 
     logo: x.logo || ''
+
+    country: x.country || 'FR'
 
   }));
 
@@ -1174,43 +1180,33 @@ function openDetail(item){
   dName.textContent = item.name;
 
   dCat.textContent =
-
     item.category ||
-
     item.type ||
-
     'Contact';
 
   dTel.textContent = (item.phone || '—').trim();
 
   dCall.href = item.phone
-
-  ? 'tel:' + item.phone.replace(/\s+/g,'')
-
-  : '#';
+    ? 'tel:' + item.phone.replace(/\s+/g,'')
+    : '#';
 
   dAssist.textContent = item.assistant || '—';
-
   dType.textContent = item.type || '—';
 
+  // 🔥 NOUVEAU
+  dCountry.textContent = item.country || '—';
+
   if(item.extra){
-
     dExtra.textContent = item.extra;
-
     dExtraWrap.style.display = 'block';
-
   } else {
-
     dExtraWrap.style.display = 'none';
-
   }
 
   dLogo.src = item.logo ||
-
-  'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
+    'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
 
   drawer.classList.add('show');
-
 }
 
 // FERMER DRAWER
