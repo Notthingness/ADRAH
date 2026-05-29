@@ -1,18 +1,146 @@
 [
   {
-    "nom": "MASTER Groupe",
-    "telephone": "02 54 73 86 23",
+    "nom": "ALLIANZ",
+    "telephone": "01 40 25 59 18",
     "categorie": "ASSURANCE",
-    "assisteur": "",
-    "type": "AUTO ECOLE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "VL",
     "logo": ""
   },
   {
-    "nom": "Mutuelle Nationale Sapeurs",
-    "telephone": "09 77 40 84 16",
+    "nom": "Allianz Assistance",
+    "telephone": "01 40 25 52 95",
     "categorie": "ASSURANCE",
-    "assisteur": "",
-    "type": "MUTUELLE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "APRIL Assistance",
+    "telephone": "02 47 51 07 07",
+    "categorie": "ASSURANCE",
+    "assisteur": "APRIL",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "AXA Assistance",
+    "telephone": "01 55 92 27 72",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Direct Assurance",
+    "telephone": "01 55 92 27 20",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Europ Assistance",
+    "telephone": "01 41 85 85 85",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Fidelia Assistance",
+    "telephone": "01 47 11 73 77",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "GAN Assurance",
+    "telephone": "01 55 98 71 56",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "GMF Assistance",
+    "telephone": "0800 00 12 13",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Groupama Assistance",
+    "telephone": "01 45 16 66 66",
+    "categorie": "ASSURANCE",
+    "assisteur": "GROUPAMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "IMA Assistance",
+    "telephone": "05 49 34 81 19",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "MAAF Assistance",
+    "telephone": "0800 16 17 18",
+    "categorie": "ASSURANCE",
+    "assisteur": "MAAF",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "MACIF Assistance",
+    "telephone": "0800 774 774",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Matmut Assistance",
+    "telephone": "0800 30 20 30",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Mondial Assistance",
+    "telephone": "01 40 25 58 86",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Mutuaide Assistance",
+    "telephone": "01 45 16 66 66",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Opteven Assistance",
+    "telephone": "04 26 73 78 20",
+    "categorie": "ASSURANCE",
+    "assisteur": "OPTEVEN",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Pacifica Assistance",
+    "telephone": "0800 810 812",
+    "categorie": "ASSURANCE",
+    "assisteur": "PACIFICA",
+    "type": "VL",
     "logo": ""
   },
   {
@@ -21,6 +149,49 @@
     "categorie": "ASSURANCE",
     "assisteur": "",
     "type": "ASSURANCE",
+    "logo": ""
+  },
+  {
+    "nom": "MASTER Groupe",
+    "telephone": "02 54 73 86 23",
+    "categorie": "ASSURANCE",
+    "assisteur": "",
+    "type": "AUTO ECOLE",
+    "logo": ""
+  },
+  {
+    "nom": "ASSU 2000",
+    "telephone": "01 55 92 21 55",
+    "categorie": "COURTIER",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "VL",
+    "extra": "groupe VILAVI",
+    "logo": ""
+  },
+  {
+    "nom": "AYENS",
+    "telephone": "0 825 85 85 85",
+    "categorie": "COURTIER",
+    "assisteur": "OPTEVEN",
+    "type": "VL",
+    "extra": "ALD Automotive et LeasePlan",
+    "logo": ""
+  },
+  {
+    "nom": "CAMBIER & EVRARD",
+    "telephone": "01 55 92 26 92",
+    "categorie": "COURTIER",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "CARMINE",
+    "telephone": "01 41 85 90 08",
+    "categorie": "COURTIER",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "extra": "Groupe +Simple",
     "logo": ""
   },
   {
@@ -72,139 +243,128 @@
     "logo": ""
   },
   {
-    "nom": "AXA Assistance",
-    "telephone": "01 55 92 27 72",
-    "categorie": "ASSURANCE",
-    "assisteur": "AXA",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "IMA Assistance",
-    "telephone": "05 49 34 81 19",
-    "categorie": "ASSURANCE",
-    "assisteur": "IMA",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Mondial Assistance",
-    "telephone": "01 40 25 58 86",
-    "categorie": "ASSURANCE",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Europ Assistance",
-    "telephone": "01 41 85 85 85",
-    "categorie": "ASSURANCE",
-    "assisteur": "EUROP ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Mutuaide Assistance",
-    "telephone": "01 45 16 66 66",
-    "categorie": "ASSURANCE",
-    "assisteur": "MUTUAIDE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Fidelia Assistance",
-    "telephone": "01 47 11 73 77",
-    "categorie": "ASSURANCE",
-    "assisteur": "FIDELIA",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Opteven Assistance",
-    "telephone": "04 26 73 78 20",
-    "categorie": "ASSURANCE",
+    "nom": "ECA Assurances",
+    "telephone": "09 88 29 20 00",
+    "categorie": "COURTIER",
     "assisteur": "OPTEVEN",
     "type": "VL",
     "logo": ""
   },
   {
-    "nom": "MAAF Assistance",
-    "telephone": "0800 16 17 18",
-    "categorie": "ASSURANCE",
-    "assisteur": "MAAF",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "MACIF Assistance",
-    "telephone": "0800 774 774",
-    "categorie": "ASSURANCE",
+    "nom": "EURALPHA",
+    "telephone": "05 49 34 81 19",
+    "categorie": "COURTIER",
     "assisteur": "IMA",
     "type": "VL",
     "logo": ""
   },
   {
-    "nom": "Groupama Assistance",
-    "telephone": "01 45 16 66 66",
-    "categorie": "ASSURANCE",
-    "assisteur": "GROUPAMA",
+    "nom": "LEOCARE",
+    "telephone": "01 41 85 97 39",
+    "categorie": "COURTIER",
+    "assisteur": "EUROP ASSISTANCE",
     "type": "VL",
     "logo": ""
   },
   {
-    "nom": "Allianz Assistance",
-    "telephone": "01 40 25 52 95",
-    "categorie": "ASSURANCE",
+    "nom": "LOVYS",
+    "telephone": "01 41 85 91 40",
+    "categorie": "COURTIER",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "MAXANCE",
+    "telephone": "02 43 80 21 38",
+    "categorie": "COURTIER",
     "assisteur": "MONDIAL ASSISTANCE",
     "type": "VL",
     "logo": ""
   },
   {
-    "nom": "Direct Assurance",
-    "telephone": "01 55 92 27 20",
-    "categorie": "ASSURANCE",
-    "assisteur": "AXA",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Matmut Assistance",
-    "telephone": "0800 30 20 30",
-    "categorie": "ASSURANCE",
+    "nom": "NOVELIA",
+    "telephone": "01 41 85 94 05",
+    "categorie": "COURTIER",
     "assisteur": "IMA",
     "type": "VL",
     "logo": ""
   },
   {
-    "nom": "April Assistance",
-    "telephone": "02 47 51 07 07",
-    "categorie": "ASSURANCE",
-    "assisteur": "APRIL",
+    "nom": "ORNIKAR",
+    "telephone": "01 40 25 15 99",
+    "categorie": "COURTIER",
+    "assisteur": "MONDIAL ASSISTANCE",
     "type": "VL",
     "logo": ""
   },
   {
-  "nom": "GAN Assurance",
-  "telephone": "01 55 98 71 56",
-  "categorie": "ASSURANCE",
-  "assisteur": "MUTUAIDE",
-  "type": "VL",
-  "logo": ""
-},
-  {
-    "nom": "GMF Assistance",
-    "telephone": "0800 00 12 13",
-    "categorie": "ASSURANCE",
-    "assisteur": "FIDELIA",
+    "nom": "RETRO+ et QUATTRO",
+    "telephone": "01 40 25 57 58",
+    "categorie": "COURTIER",
+    "assisteur": "MONDIAL ASSISTANCE",
     "type": "VL",
+    "extra": "cabinet THEROND",
     "logo": ""
   },
   {
-    "nom": "Pacifica Assistance",
-    "telephone": "0800 810 812",
-    "categorie": "ASSURANCE",
-    "assisteur": "PACIFICA",
+    "nom": "SOLLY AZAR",
+    "telephone": "01 48 97 74 08",
+    "categorie": "COURTIER",
+    "assisteur": "EUROP ASSISTANCE",
     "type": "VL",
+    "extra": "Groupe Verspieren",
+    "logo": ""
+  },
+  {
+    "nom": "SPRING",
+    "telephone": "04 26 73 78 20",
+    "categorie": "COURTIER",
+    "assisteur": "OPTEVEN",
+    "type": "VL",
+    "extra": "groupe LEADER Insurance",
+    "logo": ""
+  },
+  {
+    "nom": "VERSPIEREN",
+    "telephone": "application",
+    "categorie": "COURTIER",
+    "assisteur": "OPTEVEN",
+    "type": "VL",
+    "extra": "Groupe Verspieren",
+    "logo": ""
+  },
+  {
+    "nom": "WAZARI Assurances",
+    "telephone": "01 55 92 26 27",
+    "categorie": "COURTIER",
+    "assisteur": "MUTUAIDE",
+    "type": "VL",
+    "extra": "groupe meilleurtaux",
+    "logo": ""
+  },
+  {
+    "nom": "ROOLE",
+    "telephone": "01 46 90 37 00",
+    "categorie": "CLUB",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "CLUB",
+    "logo": ""
+  },
+  {
+    "nom": "AMERICAN EXPRESS",
+    "telephone": "01 47 77 74 64",
+    "categorie": "CARTE",
+    "assisteur": "AXA",
+    "type": "CARTE",
+    "logo": ""
+  },
+  {
+    "nom": "MASTERCARD",
+    "telephone": "0 800 90 13 87",
+    "categorie": "CARTE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "CARTE",
     "logo": ""
   },
   {
@@ -292,30 +452,6 @@
     "telephone": "01 76 21 40 50",
     "categorie": "VL",
     "assisteur": "IMA",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "BMW Assistance",
-    "telephone": "0800 00 16 24",
-    "categorie": "VL",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Mini Assistance",
-    "telephone": "0800 00 16 18",
-    "categorie": "VL",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "Tesla Assistance",
-    "telephone": "09 70 73 08 50",
-    "categorie": "VL",
-    "assisteur": "MONDIAL ASSISTANCE",
     "type": "VL",
     "logo": ""
   },
@@ -456,62 +592,6 @@
     "logo": ""
   },
   {
-    "nom": "ADA",
-    "telephone": "0 805 16 00 66",
-    "categorie": "LOCATION",
-    "assisteur": "ACTA",
-    "type": "LOCATION",
-    "logo": ""
-  },
-  {
-    "nom": "EUROPCAR",
-    "telephone": "0 800 354 000",
-    "categorie": "LOCATION",
-    "assisteur": "IMA",
-    "type": "LOCATION",
-    "logo": ""
-  },
-  {
-    "nom": "HERTZ",
-    "telephone": "01 30 44 04 41",
-    "categorie": "LOCATION",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "LOCATION",
-    "logo": ""
-  },
-  {
-    "nom": "SIXT",
-    "telephone": "voir contrat",
-    "categorie": "LOCATION",
-    "assisteur": "ACTA",
-    "type": "LOCATION",
-    "logo": ""
-  },
-  {
-    "nom": "ROOLE",
-    "telephone": "01 46 90 37 00",
-    "categorie": "CLUB",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "CLUB",
-    "logo": ""
-  },
-  {
-    "nom": "AMERICAN EXPRESS",
-    "telephone": "01 47 77 74 64",
-    "categorie": "CARTE",
-    "assisteur": "AXA",
-    "type": "CARTE",
-    "logo": ""
-  },
-  {
-    "nom": "MASTERCARD",
-    "telephone": "0 800 90 13 87",
-    "categorie": "CARTE",
-    "assisteur": "EUROP ASSISTANCE",
-    "type": "CARTE",
-    "logo": ""
-  },
-  {
     "nom": "IVECO",
     "telephone": "00 800 48 32 60 00",
     "categorie": "PL",
@@ -597,6 +677,39 @@
     "categorie": "FROID",
     "assisteur": "EBTS",
     "type": "PL",
+    "logo": ""
+  },
+
+  {
+    "nom": "ADA",
+    "telephone": "0 805 16 00 66",
+    "categorie": "LOCATION",
+    "assisteur": "ACTA",
+    "type": "LOCATION",
+    "logo": ""
+  },
+  {
+    "nom": "EUROPCAR",
+    "telephone": "0 800 354 000",
+    "categorie": "LOCATION",
+    "assisteur": "IMA",
+    "type": "LOCATION",
+    "logo": ""
+  },
+  {
+    "nom": "HERTZ",
+    "telephone": "01 30 44 04 41",
+    "categorie": "LOCATION",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "LOCATION",
+    "logo": ""
+  },
+  {
+    "nom": "SIXT",
+    "telephone": "voir contrat",
+    "categorie": "LOCATION",
+    "assisteur": "ACTA",
+    "type": "LOCATION",
     "logo": ""
   }
 ]
