@@ -1054,41 +1054,49 @@ function search(text){
     return;
   }
 
-  // 🔥 détection pays
+  // Détection pays
   let detectedCountry = null;
 
-for (const key in countryMap) {
-  if (n.includes(key)) {
-    detectedCountry = countryMap[key];
-    break;
+  for (const key in countryMap) {
+    if (n.includes(key)) {
+      detectedCountry = countryMap[key];
+      break;
+    }
   }
-}
 
-  // 🔥 nettoyage du texte (sans pays)
-let cleanedText = n;
+  // Nettoyage texte
+  let cleanedText = n;
 
-for (const key in countryMap) {
-  cleanedText = cleanedText.replace(new RegExp(`\\b${key}\\b`, 'g'), '');
-}
+  for (const key in countryMap) {
+    cleanedText = cleanedText.replace(
+      new RegExp(`\\b${key}\\b`, 'g'),
+      ''
+    );
+  }
 
-cleanedText = cleanedText.trim();
+  cleanedText = cleanedText.trim();
 
   const rows = DATA.filter(d => {
 
     const hay = [
-  d.name,
-  d.type,
-  d.category,
-  d.assistant,
-  d.phone,
-  d.extra,
-  d.country
-]
+      d.name,
+      d.type,
+      d.category,
+      d.assistant,
+      d.phone,
+      d.extra,
+      d.country
+    ]
+    .join(' ')
+    .toLowerCase();
 
-    const matchText = cleanedText ? hay.includes(cleanedText) : true;
+    const matchText = cleanedText
+      ? hay.includes(cleanedText)
+      : true;
+
     const matchCountry = detectedCountry
-  ? d.country.toUpperCase() === detectedCountry
-  : true;
+      ? d.country.toUpperCase() === detectedCountry
+      : true;
 
     return matchText && matchCountry;
   });
