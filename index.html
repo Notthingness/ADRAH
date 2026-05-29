@@ -943,10 +943,9 @@ fetch('data.json')
 
     extra: x.extra || '',
 
-    logo: x.logo || ''
+    logo: x.logo || '',
 
     country: x.country || 'FR'
-
   }));
 
 })
@@ -1053,7 +1052,7 @@ function search(text){
     return;
   }
 
-  // 🔥 détecte pays
+  // 🔥 détection pays
   let detectedCountry = null;
 
   for(const key in countryMap){
@@ -1063,10 +1062,14 @@ function search(text){
     }
   }
 
-  // 🔥 mot métier (optionnel)
-  const keywords = n
-    .replace(Object.keys(countryMap).join('|'), '')
-    .trim();
+  // 🔥 nettoyage du texte (sans pays)
+  let cleanedText = n;
+
+  for(const key in countryMap){
+    cleanedText = cleanedText.replace(key, '');
+  }
+
+  cleanedText = cleanedText.trim();
 
   const rows = DATA.filter(d => {
 
@@ -1079,15 +1082,14 @@ function search(text){
       d.extra
     ].join(' ').toLowerCase();
 
-    const matchText = keywords ? hay.includes(keywords) : true;
-
-    const matchCountry = !detectedCountry || d.country === detectedCountry;
+    const matchText = cleanedText ? hay.includes(cleanedText) : true;
+    const matchCountry = detectedCountry ? d.country === detectedCountry : true;
 
     return matchText && matchCountry;
   });
 
   hint.textContent = detectedCountry
-    ? `Filtré : ${detectedCountry}`
+    ? `Pays : ${detectedCountry}`
     : `Recherche globale`;
 
   render(rows);
