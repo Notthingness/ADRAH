@@ -928,26 +928,17 @@ fetch('data.json')
 .then(json => {
 
   DATA = json.map(x => ({
-
-    type: x.type || '',
-
-    name: x.nom || x.name || '',
-
-    assistant: x.assisteur || x.assistant || '',
-
-    phone: String(x.telephone || x.phone || '')
-      .replace(/\s+/g,' ')
-      .trim(),
-
-    category: x.categorie || x.category || '',
-
-    extra: x.extra || '',
-
-    logo: x.logo || '',
-
-    country: x.country || 'FR'
-  }));
-
+  type: x.type || '',
+  name: x.nom || x.name || '',
+  assistant: x.assisteur || x.assistant || '',
+  phone: String(x.telephone || x.phone || '')
+    .replace(/\s+/g,' ')
+    .trim(),
+  category: x.categorie || x.category || '',
+  extra: x.extra || '',
+  logo: x.logo || '',
+  country: x.country || 'FR'
+}));
 })
 
 .catch(err => {
@@ -1063,13 +1054,13 @@ function search(text){
   }
 
   // 🔥 nettoyage du texte (sans pays)
-  let cleanedText = n;
+let cleanedText = n;
 
-  for(const key in countryMap){
-    cleanedText = cleanedText.replace(key, '');
-  }
+for (const key in countryMap) {
+  cleanedText = cleanedText.replace(new RegExp(`\\b(${Object.keys(countryMap).join('|')})\\b`, 'g'), '');
+}
 
-  cleanedText = cleanedText.trim();
+cleanedText = cleanedText.trim();
 
   const rows = DATA.filter(d => {
 
@@ -1107,7 +1098,7 @@ function search(text){
 // IMPORTANT :
 // ne jamais afficher le bouton retour pendant une recherche
 backTop.classList.add('hidden');  
-}
+
     
 q.addEventListener('input', e => {
 
