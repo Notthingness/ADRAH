@@ -1,6 +1,7 @@
 [
   {
     "nom": "ALLIANZ",
+    "pays": "FR",
     "telephone": "01 40 25 59 18",
     "categorie": "ASSURANCE",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -9,6 +10,7 @@
   },
   {
     "nom": "Allianz Assistance",
+    "pays": "FR",
     "telephone": "01 40 25 52 95",
     "categorie": "ASSURANCE",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -17,6 +19,7 @@
   },
   {
     "nom": "APRIL Assistance",
+    "pays": "FR",
     "telephone": "02 47 51 07 07",
     "categorie": "ASSURANCE",
     "assisteur": "APRIL",
@@ -25,6 +28,7 @@
   },
   {
     "nom": "AXA Assistance",
+    "pays": "FR",
     "telephone": "01 55 92 27 72",
     "categorie": "ASSURANCE",
     "assisteur": "AXA",
@@ -33,6 +37,7 @@
   },
   {
     "nom": "Direct Assurance",
+    "pays": "FR",
     "telephone": "01 55 92 27 20",
     "categorie": "ASSURANCE",
     "assisteur": "AXA",
@@ -41,6 +46,7 @@
   },
   {
     "nom": "Europ Assistance",
+    "pays": "FR",
     "telephone": "01 41 85 85 85",
     "categorie": "ASSURANCE",
     "assisteur": "EUROP ASSISTANCE",
@@ -49,6 +55,7 @@
   },
   {
     "nom": "Fidelia Assistance",
+    "pays": "FR",
     "telephone": "01 47 11 73 77",
     "categorie": "ASSURANCE",
     "assisteur": "FIDELIA",
@@ -57,6 +64,7 @@
   },
   {
     "nom": "GAN Assurance",
+    "pays": "FR",
     "telephone": "01 55 98 71 56",
     "categorie": "ASSURANCE",
     "assisteur": "MUTUAIDE",
@@ -65,6 +73,7 @@
   },
   {
     "nom": "GMF Assistance",
+    "pays": "FR",
     "telephone": "0800 00 12 13",
     "categorie": "ASSURANCE",
     "assisteur": "FIDELIA",
@@ -73,6 +82,7 @@
   },
   {
     "nom": "Groupama Assistance",
+    "pays": "FR",
     "telephone": "01 45 16 66 66",
     "categorie": "ASSURANCE",
     "assisteur": "GROUPAMA",
@@ -81,6 +91,7 @@
   },
   {
     "nom": "IMA Assistance",
+    "pays": "FR",
     "telephone": "05 49 34 81 19",
     "categorie": "ASSURANCE",
     "assisteur": "IMA",
@@ -89,6 +100,7 @@
   },
   {
     "nom": "MAAF Assistance",
+    "pays": "FR",
     "telephone": "0800 16 17 18",
     "categorie": "ASSURANCE",
     "assisteur": "MAAF",
@@ -97,6 +109,7 @@
   },
   {
     "nom": "MACIF Assistance",
+    "pays": "FR",
     "telephone": "0800 774 774",
     "categorie": "ASSURANCE",
     "assisteur": "IMA",
@@ -105,6 +118,7 @@
   },
   {
     "nom": "Matmut Assistance",
+    "pays": "FR",
     "telephone": "0800 30 20 30",
     "categorie": "ASSURANCE",
     "assisteur": "IMA",
@@ -113,6 +127,7 @@
   },
   {
     "nom": "Mondial Assistance",
+    "pays": "FR",
     "telephone": "01 40 25 58 86",
     "categorie": "ASSURANCE",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -121,6 +136,7 @@
   },
   {
     "nom": "Mutuaide Assistance",
+    "pays": "FR",
     "telephone": "01 45 16 66 66",
     "categorie": "ASSURANCE",
     "assisteur": "MUTUAIDE",
@@ -129,6 +145,7 @@
   },
   {
     "nom": "Opteven Assistance",
+    "pays": "FR",
     "telephone": "04 26 73 78 20",
     "categorie": "ASSURANCE",
     "assisteur": "OPTEVEN",
@@ -137,6 +154,7 @@
   },
   {
     "nom": "Pacifica Assistance",
+    "pays": "FR",
     "telephone": "0800 810 812",
     "categorie": "ASSURANCE",
     "assisteur": "PACIFICA",
@@ -145,6 +163,7 @@
   },
   {
     "nom": "WAKAM",
+    "pays": "FR",
     "telephone": "01 45 16 43 96",
     "categorie": "ASSURANCE",
     "assisteur": "",
@@ -153,6 +172,7 @@
   },
   {
     "nom": "MASTER Groupe",
+    "pays": "FR",
     "telephone": "02 54 73 86 23",
     "categorie": "ASSURANCE",
     "assisteur": "",
@@ -161,6 +181,7 @@
   },
   {
     "nom": "ASSU 2000",
+    "pays": "FR",
     "telephone": "01 55 92 21 55",
     "categorie": "COURTIER",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -170,6 +191,7 @@
   },
   {
     "nom": "AYENS",
+    "pays": "FR",
     "telephone": "0 825 85 85 85",
     "categorie": "COURTIER",
     "assisteur": "OPTEVEN",
@@ -179,6 +201,7 @@
   },
   {
     "nom": "CAMBIER & EVRARD",
+    "pays": "FR",
     "telephone": "01 55 92 26 92",
     "categorie": "COURTIER",
     "assisteur": "AXA",
@@ -187,6 +210,7 @@
   },
   {
     "nom": "CARMINE",
+    "pays": "FR",
     "telephone": "01 41 85 90 08",
     "categorie": "COURTIER",
     "assisteur": "EUROP ASSISTANCE",
@@ -196,6 +220,7 @@
   },
   {
     "nom": "Courtier CIRANO",
+    "pays": "FR",
     "telephone": "01 41 10 19 02",
     "categorie": "COURTIER",
     "assisteur": "",
@@ -204,6 +229,7 @@
   },
   {
     "nom": "Courtier DIOT",
+    "pays": "FR",
     "telephone": "01 41 85 97 17",
     "categorie": "COURTIER",
     "assisteur": "",
@@ -212,6 +238,7 @@
   },
   {
     "nom": "Courtier RETRO+",
+    "pays": "FR",
     "telephone": "01 40 25 57 58",
     "categorie": "COURTIER",
     "assisteur": "",
@@ -220,6 +247,7 @@
   },
   {
     "nom": "Courtier SOS MALUS",
+    "pays": "FR",
     "telephone": "01 42 99 82 08",
     "categorie": "COURTIER",
     "assisteur": "",
@@ -228,6 +256,7 @@
   },
   {
     "nom": "Courtier VERDINE",
+    "pays": "FR",
     "telephone": "01 55 98 71 46",
     "categorie": "COURTIER",
     "assisteur": "",
@@ -236,6 +265,7 @@
   },
   {
     "nom": "Courtier VIAXEL SOFINCO",
+    "pays": "FR",
     "telephone": "02 35 61 90 19",
     "categorie": "COURTIER",
     "assisteur": "",
@@ -243,108 +273,8 @@
     "logo": ""
   },
   {
-    "nom": "ECA Assurances",
-    "telephone": "09 88 29 20 00",
-    "categorie": "COURTIER",
-    "assisteur": "OPTEVEN",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "EURALPHA",
-    "telephone": "05 49 34 81 19",
-    "categorie": "COURTIER",
-    "assisteur": "IMA",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "LEOCARE",
-    "telephone": "01 41 85 97 39",
-    "categorie": "COURTIER",
-    "assisteur": "EUROP ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "LOVYS",
-    "telephone": "01 41 85 91 40",
-    "categorie": "COURTIER",
-    "assisteur": "EUROP ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "MAXANCE",
-    "telephone": "02 43 80 21 38",
-    "categorie": "COURTIER",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "NOVELIA",
-    "telephone": "01 41 85 94 05",
-    "categorie": "COURTIER",
-    "assisteur": "IMA",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "ORNIKAR",
-    "telephone": "01 40 25 15 99",
-    "categorie": "COURTIER",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "VL",
-    "logo": ""
-  },
-  {
-    "nom": "RETRO+ et QUATTRO",
-    "telephone": "01 40 25 57 58",
-    "categorie": "COURTIER",
-    "assisteur": "MONDIAL ASSISTANCE",
-    "type": "VL",
-    "extra": "cabinet THEROND",
-    "logo": ""
-  },
-  {
-    "nom": "SOLLY AZAR",
-    "telephone": "01 48 97 74 08",
-    "categorie": "COURTIER",
-    "assisteur": "EUROP ASSISTANCE",
-    "type": "VL",
-    "extra": "Groupe Verspieren",
-    "logo": ""
-  },
-  {
-    "nom": "SPRING",
-    "telephone": "04 26 73 78 20",
-    "categorie": "COURTIER",
-    "assisteur": "OPTEVEN",
-    "type": "VL",
-    "extra": "groupe LEADER Insurance",
-    "logo": ""
-  },
-  {
-    "nom": "VERSPIEREN",
-    "telephone": "application",
-    "categorie": "COURTIER",
-    "assisteur": "OPTEVEN",
-    "type": "VL",
-    "extra": "Groupe Verspieren",
-    "logo": ""
-  },
-  {
-    "nom": "WAZARI Assurances",
-    "telephone": "01 55 92 26 27",
-    "categorie": "COURTIER",
-    "assisteur": "MUTUAIDE",
-    "type": "VL",
-    "extra": "groupe meilleurtaux",
-    "logo": ""
-  },
-  {
     "nom": "ROOLE",
+    "pays": "FR",
     "telephone": "01 46 90 37 00",
     "categorie": "CLUB",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -353,6 +283,7 @@
   },
   {
     "nom": "AMERICAN EXPRESS",
+    "pays": "FR",
     "telephone": "01 47 77 74 64",
     "categorie": "CARTE",
     "assisteur": "AXA",
@@ -361,6 +292,7 @@
   },
   {
     "nom": "MASTERCARD",
+    "pays": "FR",
     "telephone": "0 800 90 13 87",
     "categorie": "CARTE",
     "assisteur": "EUROP ASSISTANCE",
@@ -369,6 +301,7 @@
   },
   {
     "nom": "AUTO AUDI",
+    "pays": "FR",
     "telephone": "0 800 28 34 00",
     "categorie": "VL",
     "assisteur": "HLPY",
@@ -377,6 +310,7 @@
   },
   {
     "nom": "AUTO CUPRA",
+    "pays": "FR",
     "telephone": "0 800 921 900",
     "categorie": "VL",
     "assisteur": "HLPY",
@@ -385,6 +319,7 @@
   },
   {
     "nom": "AUTO DACIA",
+    "pays": "FR",
     "telephone": "0 800 740 832",
     "categorie": "VL",
     "assisteur": "IMA",
@@ -393,6 +328,7 @@
   },
   {
     "nom": "AUTO DS AUTOMOBILES",
+    "pays": "FR",
     "telephone": "00 800 24 24 07 07",
     "categorie": "VL",
     "assisteur": "IMA",
@@ -401,6 +337,7 @@
   },
   {
     "nom": "AUTO NISSAN",
+    "pays": "FR",
     "telephone": "0805 11 22 23",
     "categorie": "VL",
     "assisteur": "IMA",
@@ -409,6 +346,7 @@
   },
   {
     "nom": "AUTO RENAULT",
+    "pays": "FR",
     "telephone": "0800 05 15 15",
     "categorie": "VL",
     "assisteur": "IMA",
@@ -417,6 +355,7 @@
   },
   {
     "nom": "AUTO SEAT",
+    "pays": "FR",
     "telephone": "0 800 00 72 07",
     "categorie": "VL",
     "assisteur": "HLPY",
@@ -425,6 +364,7 @@
   },
   {
     "nom": "AUTO SKODA",
+    "pays": "FR",
     "telephone": "0 800 22 8000",
     "categorie": "VL",
     "assisteur": "HLPY",
@@ -433,6 +373,7 @@
   },
   {
     "nom": "AUTO VOLKSWAGEN",
+    "pays": "FR",
     "telephone": "0 800 22 4000",
     "categorie": "VL",
     "assisteur": "HLPY",
@@ -441,6 +382,7 @@
   },
   {
     "nom": "AUTO VOLVO",
+    "pays": "FR",
     "telephone": "04 72 17 12 92",
     "categorie": "VL",
     "assisteur": "ACTA",
@@ -449,6 +391,7 @@
   },
   {
     "nom": "AUTO VINFAST",
+    "pays": "FR",
     "telephone": "01 76 21 40 50",
     "categorie": "VL",
     "assisteur": "IMA",
@@ -457,6 +400,7 @@
   },
   {
     "nom": "AIXAM",
+    "pays": "FR",
     "telephone": "04 87 25 71 29",
     "categorie": "SANS PERMIS",
     "assisteur": "OPTEVEN",
@@ -465,6 +409,7 @@
   },
   {
     "nom": "BELLIER",
+    "pays": "FR",
     "telephone": "01 45 16 63 00",
     "categorie": "SANS PERMIS",
     "assisteur": "MUTUAIDE",
@@ -473,6 +418,7 @@
   },
   {
     "nom": "CHATENET",
+    "pays": "FR",
     "telephone": "01 41 85 82 06",
     "categorie": "SANS PERMIS",
     "assisteur": "EUROP ASSISTANCE",
@@ -481,6 +427,7 @@
   },
   {
     "nom": "GOUPIL",
+    "pays": "FR",
     "telephone": "05 53 84 13 64",
     "categorie": "SANS PERMIS",
     "assisteur": "OPTEVEN",
@@ -489,6 +436,7 @@
   },
   {
     "nom": "JMEV",
+    "pays": "FR",
     "telephone": "0 800 05 15 15",
     "categorie": "SANS PERMIS",
     "assisteur": "IMA",
@@ -497,6 +445,7 @@
   },
   {
     "nom": "LIGIER",
+    "pays": "FR",
     "telephone": "04 26 73 72 32",
     "categorie": "SANS PERMIS",
     "assisteur": "OPTEVEN",
@@ -505,6 +454,7 @@
   },
   {
     "nom": "MICROCAR",
+    "pays": "FR",
     "telephone": "04 26 73 72 32",
     "categorie": "SANS PERMIS",
     "assisteur": "OPTEVEN",
@@ -513,6 +463,7 @@
   },
   {
     "nom": "MOBILIZE",
+    "pays": "FR",
     "telephone": "0 800 05 15 15",
     "categorie": "SANS PERMIS",
     "assisteur": "IMA",
@@ -521,6 +472,7 @@
   },
   {
     "nom": "APRILIA",
+    "pays": "FR",
     "telephone": "0 805 54 06 54",
     "categorie": "MOTO",
     "assisteur": "EUROP ASSISTANCE",
@@ -529,6 +481,7 @@
   },
   {
     "nom": "DUCATI",
+    "pays": "FR",
     "telephone": "0 800 23 65 10",
     "categorie": "MOTO",
     "assisteur": "ACTA",
@@ -537,6 +490,7 @@
   },
   {
     "nom": "HARLEY DAVIDSON",
+    "pays": "FR",
     "telephone": "01 49 93 80 24",
     "categorie": "MOTO",
     "assisteur": "OPTEVEN",
@@ -545,6 +499,7 @@
   },
   {
     "nom": "HONDA",
+    "pays": "FR",
     "telephone": "01 49 93 73 90",
     "categorie": "MOTO",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -553,6 +508,7 @@
   },
   {
     "nom": "KAWASAKI",
+    "pays": "FR",
     "telephone": "01 49 93 80 80",
     "categorie": "MOTO",
     "assisteur": "OPTEVEN",
@@ -561,6 +517,7 @@
   },
   {
     "nom": "KTM",
+    "pays": "FR",
     "telephone": "04 37 25 14 60",
     "categorie": "MOTO",
     "assisteur": "ACTA",
@@ -569,6 +526,7 @@
   },
   {
     "nom": "SUZUKI",
+    "pays": "FR",
     "telephone": "04 72 43 69 39",
     "categorie": "MOTO",
     "assisteur": "OPTEVEN",
@@ -577,6 +535,7 @@
   },
   {
     "nom": "TRIUMPH",
+    "pays": "FR",
     "telephone": "01 48 97 74 43",
     "categorie": "MOTO",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -585,6 +544,7 @@
   },
   {
     "nom": "YAMAHA",
+    "pays": "FR",
     "telephone": "01 34 30 31 00",
     "categorie": "MOTO",
     "assisteur": "EUROP ASSISTANCE",
@@ -593,6 +553,7 @@
   },
   {
     "nom": "IVECO",
+    "pays": "FR",
     "telephone": "00 800 48 32 60 00",
     "categorie": "PL",
     "assisteur": "SAVE ASSISTANCE",
@@ -601,6 +562,7 @@
   },
   {
     "nom": "RENAULT TRUCKS",
+    "pays": "FR",
     "telephone": "0 800 24 24 10",
     "categorie": "PL",
     "assisteur": "EBTS",
@@ -609,6 +571,7 @@
   },
   {
     "nom": "SCANIA",
+    "pays": "FR",
     "telephone": "02 41 41 32 32",
     "categorie": "PL",
     "assisteur": "EBTS",
@@ -617,6 +580,7 @@
   },
   {
     "nom": "VOLVO Action Service",
+    "pays": "FR",
     "telephone": "0800 90 75 18",
     "categorie": "PL",
     "assisteur": "EBTS",
@@ -625,6 +589,7 @@
   },
   {
     "nom": "MAN Mobile24",
+    "pays": "FR",
     "telephone": "0080066245324",
     "categorie": "PL",
     "assisteur": "EBTS",
@@ -633,6 +598,7 @@
   },
   {
     "nom": "MERCEDES-BENZ Service24h",
+    "pays": "FR",
     "telephone": "01 70 480 152",
     "categorie": "PL",
     "assisteur": "SAVE ASSISTANCE",
@@ -641,6 +607,7 @@
   },
   {
     "nom": "DAF",
+    "pays": "FR",
     "telephone": "+31 40 214 30 00",
     "categorie": "PL",
     "assisteur": "DAF ITS",
@@ -649,6 +616,7 @@
   },
   {
     "nom": "FORD Trucks",
+    "pays": "FR",
     "telephone": "00 800 600 500 60",
     "categorie": "PL",
     "assisteur": "ASSISTANCE 24SEVEN",
@@ -657,6 +625,7 @@
   },
   {
     "nom": "FUSO",
+    "pays": "FR",
     "telephone": "00800 1 777 7777",
     "categorie": "PL",
     "assisteur": "SAVE ASSISTANCE",
@@ -665,6 +634,7 @@
   },
   {
     "nom": "THERMOKING",
+    "pays": "FR",
     "telephone": "00800 80 85 85 85",
     "categorie": "FROID",
     "assisteur": "EBTS",
@@ -673,15 +643,16 @@
   },
   {
     "nom": "CARRIER Froid",
+    "pays": "FR",
     "telephone": "0800 91 31 48",
     "categorie": "FROID",
     "assisteur": "EBTS",
     "type": "PL",
     "logo": ""
   },
-
   {
     "nom": "ADA",
+    "pays": "FR",
     "telephone": "0 805 16 00 66",
     "categorie": "LOCATION",
     "assisteur": "ACTA",
@@ -690,6 +661,7 @@
   },
   {
     "nom": "EUROPCAR",
+    "pays": "FR",
     "telephone": "0 800 354 000",
     "categorie": "LOCATION",
     "assisteur": "IMA",
@@ -698,6 +670,7 @@
   },
   {
     "nom": "HERTZ",
+    "pays": "FR",
     "telephone": "01 30 44 04 41",
     "categorie": "LOCATION",
     "assisteur": "MONDIAL ASSISTANCE",
@@ -706,10 +679,407 @@
   },
   {
     "nom": "SIXT",
+    "pays": "FR",
     "telephone": "voir contrat",
     "categorie": "LOCATION",
     "assisteur": "ACTA",
     "type": "LOCATION",
+    "logo": ""
+  },
+  {
+    "nom": "AEDES Assurances",
+    "pays": "BE",
+    "telephone": "+32 4 340 56 23",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "AG",
+    "pays": "BE",
+    "telephone": "078 055 505",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ALKORA",
+    "pays": "ES",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ALPHABET (VAB)",
+    "pays": "BE",
+    "telephone": "+32 78 15 05 35",
+    "categorie": "ASSURANCE",
+    "assisteur": "ACTA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ARAG",
+    "pays": "ES",
+    "telephone": "+34 93 300 10 50",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "BALOISE",
+    "pays": "CH",
+    "telephone": "+41 58 285 28 28",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "BELFIUS DIRECT",
+    "pays": "BE",
+    "telephone": "+32 2 244 23 23",
+    "categorie": "ASSURANCE",
+    "assisteur": "CHARLIE 24",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "CARAVELA (ex MACIF Portugal)",
+    "pays": "PT",
+    "telephone": "+351 211 571 982",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "CEC finance et assurances",
+    "pays": "BE",
+    "telephone": "01 41 85 85 85",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ELVIA (ex HELVETIA)",
+    "pays": "CH",
+    "telephone": "01 53 05 86 00",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ETHIAS",
+    "pays": "BE",
+    "telephone": "+32 4 220 30 40",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "FIDELIDADE",
+    "pays": "PT",
+    "telephone": "+34 91 391 78 51",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "GARANZIA MEC",
+    "pays": "IT",
+    "telephone": "+39 0833 693281",
+    "categorie": "ASSURANCE",
+    "assisteur": "OPTEVEN",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Groupe P&V",
+    "pays": "BE",
+    "telephone": "+32 2 229 00 10",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "HU OPENAIR",
+    "pays": "IT",
+    "telephone": "+39 2 5824 0386",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ING",
+    "pays": "BE",
+    "telephone": "+32 2 464 60 02",
+    "categorie": "ASSURANCE",
+    "assisteur": "ACTA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "LAGUN ARO",
+    "pays": "ES",
+    "telephone": "+34 944 051 412",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "LIBERTY SEGUROS",
+    "pays": "ES",
+    "telephone": "+34 93 495 51 25",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "MDN Group",
+    "pays": "BE",
+    "telephone": "078 055 505",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "NCI Assurances",
+    "pays": "UK",
+    "telephone": "+44 1423 535 795",
+    "categorie": "ASSURANCE",
+    "assisteur": "OPTEVEN",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "PELAYO",
+    "pays": "ES",
+    "telephone": "+34 91 520 05 00",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "PLUS ULTRA",
+    "pays": "ES",
+    "telephone": "+34 91 393 90 30",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "REALE MUTUA",
+    "pays": "IT/ES",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "CHARLIE 24",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "TOTALMOBIL (TCS)",
+    "pays": "CH",
+    "telephone": "+41 848 24 365",
+    "categorie": "ASSURANCE",
+    "assisteur": "ACTA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "TVM",
+    "pays": "NL",
+    "telephone": "+31 528 29 29 11",
+    "categorie": "ASSURANCE",
+    "assisteur": "24SEVEN ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "WAFA Assurance",
+    "pays": "MA",
+    "telephone": "+212 522 58 95 35",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "XL Group (AXA)",
+    "pays": "US/IE",
+    "telephone": "01 55 92 40 00",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ZURICH",
+    "pays": "CH",
+    "telephone": "+41 44 628 98 98",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "BLUE Assistance",
+    "pays": "IT",
+    "telephone": "+39 011 741 75 11",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "CARHELP Assistance",
+    "pays": "CH",
+    "telephone": "+41 52 218 98 75",
+    "categorie": "ASSISTANCE",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Centraal Beheer",
+    "pays": "NL",
+    "telephone": "+31 55 579 7955",
+    "categorie": "ASSISTANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "Charles Taylor Assistance",
+    "pays": "UK",
+    "telephone": "+44 1243 219 600",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "EUROCROSS",
+    "pays": "NL",
+    "telephone": "+31 71 36 46200",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "First Assistance",
+    "pays": "NZ",
+    "telephone": "+64 9 356 1656",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "GESTRANS",
+    "pays": "ES",
+    "telephone": "+34 902 242 124",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "GREEN FLAG",
+    "pays": "UK",
+    "telephone": "+44 141 349 0516",
+    "categorie": "ASSISTANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "INTER PARTNER ASSISTANCE",
+    "pays": "BE",
+    "telephone": "01 70 77 04 16",
+    "categorie": "ASSISTANCE",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "LINEA DIRECTA",
+    "pays": "ES",
+    "telephone": "+34 91 807 42 57",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "MOBI24",
+    "pays": "CH",
+    "telephone": "00800 16 16 16 16",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "REAL GARANT",
+    "pays": "CH",
+    "telephone": "+41 848 272 272",
+    "categorie": "ASSISTANCE",
+    "assisteur": "IMA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "ROLAND ASSISTANCE",
+    "pays": "DE",
+    "telephone": "0221 8277 8277",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "SOLVAS Assistance",
+    "pays": "BE",
+    "telephone": "+32 2 287 09 00",
+    "categorie": "ASSISTANCE",
+    "assisteur": "AXA",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "SOS INTERNATIONAL",
+    "pays": "DK/SE/NO",
+    "telephone": "+45 70 10 50 50",
+    "categorie": "ASSISTANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "VL",
+    "logo": ""
+  },
+  {
+    "nom": "VAB",
+    "pays": "BE",
+    "telephone": "+32 3 253 65 65",
+    "categorie": "ASSISTANCE",
+    "assisteur": "ACTA",
+    "type": "VL",
     "logo": ""
   }
 ]
