@@ -8,181 +8,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
-<style>
-body{
-  margin:0;
-  font-family:Inter;
-  background:#000;
-  color:#fff;
-}
-
-.app{max-width:560px;margin:auto;padding:20px}
-
-.search input{
-  width:100%;
-  height:60px;
-  border-radius:16px;
-  border:1px solid #222;
-  background:#111;
-  color:#fff;
-  text-align:center;
-  font-size:16px;
-}
-
-.card{
-  padding:18px;
-  margin-top:10px;
-  background:#111;
-  border-radius:16px;
-  border:1px solid #222;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.row{
-  padding:14px;
-  border-bottom:1px solid #222;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.hidden{display:none}
-
-.btn{
-  background:red;
-  border:none;
-  color:#fff;
-  padding:10px;
-  border-radius:10px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 <div class="app">
 
-<h2>ADRAH</h2>
+<header class="top-logo">
+  <img src="logo.jpg" class="main-logo">
+</header>
 
 <div class="search">
-<input id="q" placeholder="Rechercher..." />
+  <input id="q" type="search" placeholder="Rechercher..." />
 </div>
 
-<div id="cats"></div>
+<section>
+  <h2 id="secretTrigger">CATÉGORIES</h2>
+  <div class="grid" id="cats"></div>
+</section>
 
-<div id="results" class="hidden">
-  <div id="list"></div>
+<button id="backTop" class="back-top hidden">Retour</button>
+
+<section class="results hidden" id="results">
+  <div class="results-head">
+    <strong id="count"></strong>
+    <span id="hint"></span>
+  </div>
+  <div class="list" id="list"></div>
+</section>
+
 </div>
 
-</div>
-
-<script>
-let DATA = [];
-let current = [];
-
-const q = document.getElementById('q');
-const list = document.getElementById('list');
-const results = document.getElementById('results');
-const cats = document.getElementById('cats');
-
-/* ---------------- CATEGORIES ---------------- */
-const CATEGORIES = [
-{key:"VL",label:"VL"},
-{key:"PL",label:"PL"},
-{key:"MOTO",label:"MOTO"},
-{key:"LOCATION",label:"LOCATION"},
-{key:"ASSURANCE",label:"ASSURANCE"}
-];
-
-cats.innerHTML = CATEGORIES.map(c=>`
-<div class="card" data-cat="${c.key}">
-<b>${c.label}</b>
-</div>
-`).join('');
-
-/* ---------------- LOAD JSON ---------------- */
-fetch('data.json')
-.then(r=>{
-  if(!r.ok) throw new Error("JSON introuvable");
-  return r.json();
-})
-.then(json=>{
-  DATA = json.map(x=>({
-    name:x.nom||"",
-    phone:x.telephone||"",
-    category:x.categorie||"",
-    type:x.type||"",
-    assistant:x.assisteur||""
-  }));
-  console.log("DATA OK :",DATA.length);
-})
-.catch(err=>{
-  console.error("Erreur JSON :",err);
-});
-
-/* ---------------- SEARCH ---------------- */
-function search(val){
-
-  const n = val.trim().toLowerCase();
-
-  if(!n){
-    results.classList.add('hidden');
-    return;
-  }
-
-  if(!DATA.length) return;
-
-  const rows = DATA.filter(d=>{
-    const hay = (d.name+" "+d.phone+" "+d.category+" "+d.type+" "+d.assistant).toLowerCase();
-    return hay.includes(n);
-  });
-
-  render(rows);
-}
-
-/* ---------------- RENDER ---------------- */
-function render(rows){
-
-  current = rows;
-
-  if(!rows.length){
-    results.classList.add('hidden');
-    return;
-  }
-
-  results.classList.remove('hidden');
-
-  list.innerHTML = rows.map(r=>`
-    <div class="row">
+<!-- DRAWER -->
+<aside class="drawer" id="drawer">
+  <header class="drawer-header">
+    <div class="title">
+      <img id="d-logo">
       <div>
-        <b>${r.name}</b><br>
-        <small>${r.category}</small>
+        <div id="d-name"></div>
+        <div id="d-cat"></div>
       </div>
-
-      <a class="btn" href="tel:${(r.phone||"").replace(/\s/g,'')}">
-        Appeler
-      </a>
     </div>
-  `).join('');
-}
+    <button id="d-close-top">✕</button>
+  </header>
 
-/* ---------------- EVENTS ---------------- */
-q.addEventListener('input',e=>{
-  search(e.target.value);
-});
+  <div class="body">
+    <a id="d-call" class="btn-call">
+      <i class="ph ph-phone"></i>
+      <div>
+        <div>Appeler</div>
+        <div id="d-tel"></div>
+      </div>
+    </a>
 
-cats.addEventListener('click',e=>{
-  const c = e.target.closest('[data-cat]');
-  if(!c || !DATA.length) return;
+    <div id="d-type"></div>
+    <div id="d-assist"></div>
+    <div id="d-extra"></div>
+  </div>
+</aside>
 
-  const key = c.dataset.cat;
+<!-- SECRET -->
+<aside class="drawer" id="secretDrawer">
+  <div class="body" id="secretBody"></div>
+</aside>
 
-  const rows = DATA.filter(d=>d.category===key || d.type===key);
-
-  render(rows);
-});
-</script>
-
+<script src="app.js"></script>
 </body>
 </html>
