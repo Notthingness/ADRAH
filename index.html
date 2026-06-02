@@ -936,12 +936,16 @@ cats.innerHTML = CATEGORIES.map(c => `
 
 Promise.allSettled([
   fetch('data.json').then(r => r.json()),
-  fetch('data2.json').then(r => r.json())
+  fetch('data2.json').then(r => r.json()),
   fetch('data3.json').then(r => r.json())
 ])
-.then(([json1, json2]) => {
+.then(([json1, json2, json3]) => {
 
-  DATA = [...json1, ...json2].map(x => ({
+  const arr1 = json1.status === "fulfilled" ? json1.value : [];
+  const arr2 = json2.status === "fulfilled" ? json2.value : [];
+  const arr3 = json3.status === "fulfilled" ? json3.value : [];
+
+  DATA = [...arr1, ...arr2, ...arr3].map(x => ({
     type: x.type || '',
     name: x.nom || x.name || '',
     assistant: x.assisteur || x.assistant || '',
@@ -953,6 +957,8 @@ Promise.allSettled([
     logo: x.logo || '',
     country: (x.pays || x.country || 'FR').toUpperCase()
   }));
+
+});
 
   // Suppression doublons
   DATA = [...new Map(
