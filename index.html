@@ -934,9 +934,10 @@ cats.innerHTML = CATEGORIES.map(c => `
 
 // CHARGEMENT JSON / FETCH
 
-Promise.all([
+Promise.allSettled([
   fetch('data.json').then(r => r.json()),
   fetch('data2.json').then(r => r.json())
+  fetch('data3.json').then(r => r.json())
 ])
 .then(([json1, json2]) => {
 
@@ -955,11 +956,16 @@ Promise.all([
 
   // Suppression doublons
   DATA = [...new Map(
-    DATA.map(item => [
-      `${item.name}|${item.phone}`,
-      item
-    ])
-  ).values()];
+  DATA.map(item => [
+
+    `${item.name.toLowerCase().trim()}|${
+      item.phone.replace(/\D/g,'')
+    }`,
+
+    item
+
+  ])
+).values()];
 
 })
 .catch(err => {
