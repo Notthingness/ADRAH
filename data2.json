@@ -1,1 +1,459 @@
-
+{
+"nom":"Abeille assurance",
+"telephone":"01 41 32 21 56",
+"categorie":"ASSURANCE",
+"assisteur":"OPTEVEN",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"Acheel",
+"telephone":"application",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"ACMF",
+"telephone":"01 47 04 09 01",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"AESIO Mutuelle",
+"telephone":"01 40 25 16 16",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"Auto par Thelem",
+"logo":""
+},
+{
+"nom":"AFFINEO ASSUR",
+"telephone":"voir carte verte",
+"categorie":"ASSURANCE",
+"assisteur":"FILASSISTANCE",
+"type":"ASSURANCE",
+"extra":"Groupe ENTIS",
+"logo":""
+},
+{
+"nom":"AGPM",
+"telephone":"0 800 75 75 75",
+"categorie":"ASSURANCE",
+"assisteur":"IMA",
+"type":"ASSURANCE",
+"extra":"militaires, police, etc...",
+"logo":""
+},
+{
+"nom":"ALLIANZ",
+"telephone":"01 40 25 59 18",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"ALLIZ by Allianz",
+"telephone":"application",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"ALOA",
+"telephone":"01 47 11 67 07",
+"categorie":"ASSURANCE",
+"assisteur":"FIDELIA",
+"type":"ASSURANCE",
+"extra":"Groupe Covéa",
+"logo":""
+},
+{
+"nom":"ALTIMA",
+"telephone":"0 800 080 241",
+"categorie":"ASSURANCE",
+"assisteur":"IMA",
+"type":"ASSURANCE",
+"extra":"groupe MAIF",
+"logo":""
+},
+{
+"nom":"AMAGUIZ.com",
+"telephone":"0 800 02 08 00",
+"categorie":"ASSURANCE",
+"assisteur":"MUTUAIDE",
+"type":"ASSURANCE",
+"extra":"Amaline assurances",
+"logo":""
+},
+{
+"nom":"AMF assurances",
+"telephone":"0 800 2000 14",
+"categorie":"ASSURANCE",
+"assisteur":"IMA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"AMP Assurances Mutuelle de Picardie",
+"telephone":"01 53 05 86 00",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"AREAS Assurances",
+"telephone":"01 49 93 73 83",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"ARISA",
+"telephone":"voir carte verte",
+"categorie":"ASSURANCE",
+"assisteur":"AXA",
+"type":"ASSURANCE",
+"extra":"Assurances temporaires",
+"logo":""
+},
+{
+"nom":"ARVAL bnp paribas group",
+"telephone":"0 800 32 88 17",
+"categorie":"ASSURANCE",
+"assisteur":"ACTA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"AUDI Assurance",
+"telephone":"01 40 25 52 71",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"Allianz",
+"logo":""
+},
+{
+"nom":"AVIVA",
+"telephone":"0 800 145 145",
+"categorie":"ASSURANCE",
+"assisteur":"OPTEVEN",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"AXA",
+"telephone":"01 55 92 26 92",
+"categorie":"ASSURANCE",
+"assisteur":"AXA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"AXERIA IARD",
+"telephone":"0 800 085 085",
+"categorie":"ASSURANCE",
+"assisteur":"EUROP ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"BNP PARIBAS",
+"telephone":"0 800 30 33 33",
+"categorie":"ASSURANCE",
+"assisteur":"ACTA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"BPCE Assurances",
+"telephone":"09 80 98 69 86",
+"categorie":"ASSURANCE",
+"assisteur":"IMA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"BRED Banque Populaire",
+"telephone":"09 80 98 69 86",
+"categorie":"ASSURANCE",
+"assisteur":"IMA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"CAISSE D'EPARGNE",
+"telephone":"09 69 36 45 45",
+"categorie":"ASSURANCE",
+"assisteur":"IMA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"CARMA",
+"telephone":"0 800 424 424",
+"categorie":"ASSURANCE",
+"assisteur":"FIDELIA",
+"type":"ASSURANCE",
+"extra":"Groupe CARREFOUR",
+"logo":""
+},
+{
+"nom":"CARREFOUR assurance",
+"telephone":"01 45 16 65 66",
+"categorie":"ASSURANCE",
+"assisteur":"FIDELIA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"CASINO Banque",
+"telephone":"01 41 85 91 40",
+"categorie":"ASSURANCE",
+"assisteur":"EUROP ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"CMMA Assurance",
+"telephone":"01 44 854 954",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"CNP Assurances",
+"telephone":"01 47 11 24 24",
+"categorie":"ASSURANCE",
+"assisteur":"FILASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"COVEA Risks",
+"telephone":"01 40 25 59 59",
+"categorie":"ASSURANCE",
+"assisteur":"FIDELIA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"CREDIT du NORD",
+"telephone":"01 40 25 58 95",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"SOCIETE GENERALE",
+"logo":""
+},
+{
+"nom":"CREDIT MUTUEL",
+"telephone":"02 43 80 20 80",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"Credit Mutuel de Bretagne",
+"telephone":"01 41 21 06 06",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"CMB",
+"logo":""
+},
+{
+"nom":"CROISEAU ASSURANCES",
+"telephone":"voir carte verte",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"Allianz",
+"logo":""
+},
+{
+"nom":"DIRECT ASSURANCE",
+"telephone":"01 55 92 27 20",
+"categorie":"ASSURANCE",
+"assisteur":"AXA",
+"type":"ASSURANCE",
+"extra":"AVANSUR",
+"logo":""
+},
+{
+"nom":"EUROFIL",
+"telephone":"01 71 25 06 25",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"Rachat par Allianz Direct 2025",
+"logo":""
+},
+{
+"nom":"FACIVI",
+"telephone":"01 47 04 09 01",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"ACMF",
+"logo":""
+},
+{
+"nom":"FLAT-PASS",
+"telephone":"voir carte verte",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"by Allianz",
+"logo":""
+},
+{
+"nom":"FLOA",
+"telephone":"01 41 85 91 40",
+"categorie":"ASSURANCE",
+"assisteur":"EUROP ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"par Lovys",
+"logo":""
+},
+{
+"nom":"GAMEST",
+"telephone":"09 69 36 99 60",
+"categorie":"ASSURANCE",
+"assisteur":"FILASSISTANCE",
+"type":"ASSURANCE",
+"extra":"Groupe ENTIS",
+"logo":""
+},
+{
+"nom":"GAN",
+"telephone":"01 55 98 71 56",
+"categorie":"ASSURANCE",
+"assisteur":"MUTUAIDE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"GENERALI",
+"telephone":"01 41 85 84 83",
+"categorie":"ASSURANCE",
+"assisteur":"EUROP ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"GMF",
+"telephone":"0800 00 12 13",
+"categorie":"ASSURANCE",
+"assisteur":"FIDELIA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"GROUPAMA",
+"telephone":"01 45 16 66 66",
+"categorie":"ASSURANCE",
+"assisteur":"MUTUAIDE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"GT-PASS",
+"telephone":"voir carte verte",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"by Allianz",
+"logo":""
+},
+{
+"nom":"LA BANQUE POSTALE",
+"telephone":"01 45 16 43 85",
+"categorie":"ASSURANCE",
+"assisteur":"MUTUAIDE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"LA BRESSANE",
+"telephone":"09 69 39 16 01",
+"categorie":"ASSURANCE",
+"assisteur":"FILASSISTANCE",
+"type":"ASSURANCE",
+"extra":"Groupe ENTIS",
+"logo":""
+},
+{
+"nom":"LA SAUVEGARDE",
+"telephone":"01 47 11 12 13",
+"categorie":"ASSURANCE",
+"assisteur":"FIDELIA",
+"type":"ASSURANCE",
+"extra":"via GMF",
+"logo":""
+},
+{
+"nom":"LCL",
+"telephone":"0 800 300 380",
+"categorie":"ASSURANCE",
+"assisteur":"MONDIAL ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"LE FINISTERE ASSURANCE",
+"telephone":"0 810 2000 29",
+"categorie":"ASSURANCE",
+"assisteur":"FIDELIA",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
+{
+"nom":"L'OLIVIER ASSURANCE",
+"telephone":"01 41 85 99 73",
+"categorie":"ASSURANCE",
+"assisteur":"EUROP ASSISTANCE",
+"type":"ASSURANCE",
+"extra":"",
+"logo":""
+},
