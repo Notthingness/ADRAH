@@ -938,12 +938,11 @@ Promise.allSettled([
   fetch('data.json').then(r => r.json()),
   fetch('data2.json').then(r => r.json()),
   fetch('data3.json').then(r => r.json())
-])
-.then(([json1, json2, json3]) => {
+]).then(results => {
 
-  const arr1 = json1.status === "fulfilled" ? json1.value : [];
-  const arr2 = json2.status === "fulfilled" ? json2.value : [];
-  const arr3 = json3.status === "fulfilled" ? json3.value : [];
+  const arr1 = results[0].status === "fulfilled" ? results[0].value : [];
+  const arr2 = results[1].status === "fulfilled" ? results[1].value : [];
+  const arr3 = results[2].status === "fulfilled" ? results[2].value : [];
 
   DATA = [...arr1, ...arr2, ...arr3].map(x => ({
     type: x.type || '',
@@ -958,26 +957,15 @@ Promise.allSettled([
     country: (x.pays || x.country || 'FR').toUpperCase()
   }));
 
-});
-
-  // Suppression doublons
+  // 🔥 SUPPRESSION DOUBLONS (ICI et PAS dehors)
   DATA = [...new Map(
-  DATA.map(item => [
+    DATA.map(item => [
+      `${item.name.toLowerCase().trim()}|${item.phone.replace(/\D/g,'')}`,
+      item
+    ])
+  ).values()];
 
-    `${item.name.toLowerCase().trim()}|${
-      item.phone.replace(/\D/g,'')
-    }`,
-
-    item
-
-  ])
-).values()];
-
-})
-.catch(err => {
-  console.log('Erreur JSON', err);
 });
-
 // RECHERCHE
 
 function matches(item, needle){
