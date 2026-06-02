@@ -951,6 +951,14 @@ fetch('data.json')
       country: (x.pays || x.country || 'FR').toUpperCase()
     }));
 
+    // Suppression des doublons
+    DATA = [...new Map(
+  DATA.map(item => [
+    `${item.name.toLowerCase()}|${item.phone}`,
+    item
+  ])
+).values()];
+
   })
   .catch(err => {
 
