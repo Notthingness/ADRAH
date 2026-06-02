@@ -934,37 +934,37 @@ cats.innerHTML = CATEGORIES.map(c => `
 
 // CHARGEMENT JSON / FETCH
 
-fetch('data.json')
-  .then(r => r.json())
-  .then(json => {
+Promise.all([
+  fetch('data.json').then(r => r.json()),
+  fetch('data2.json').then(r => r.json())
+])
+.then(([json1, json2]) => {
 
-    DATA = json.map(x => ({
-      type: x.type || '',
-      name: x.nom || x.name || '',
-      assistant: x.assisteur || x.assistant || '',
-      phone: String(x.telephone || x.phone || '')
-        .replace(/\s+/g,' ')
-        .trim(),
-      category: x.categorie || x.category || '',
-      extra: x.extra || '',
-      logo: x.logo || '',
-      country: (x.pays || x.country || 'FR').toUpperCase()
-    }));
+  DATA = [...json1, ...json2].map(x => ({
+    type: x.type || '',
+    name: x.nom || x.name || '',
+    assistant: x.assisteur || x.assistant || '',
+    phone: String(x.telephone || x.phone || '')
+      .replace(/\s+/g,' ')
+      .trim(),
+    category: x.categorie || x.category || '',
+    extra: x.extra || '',
+    logo: x.logo || '',
+    country: (x.pays || x.country || 'FR').toUpperCase()
+  }));
 
-    // Suppression des doublons
-    DATA = [...new Map(
-  DATA.map(item => [
-    `${item.name.toLowerCase()}|${item.phone}`,
-    item
-  ])
-).values()];
+  // Suppression doublons
+  DATA = [...new Map(
+    DATA.map(item => [
+      `${item.name}|${item.phone}`,
+      item
+    ])
+  ).values()];
 
-  })
-  .catch(err => {
-
-    console.log('Erreur JSON', err);
-
-  });
+})
+.catch(err => {
+  console.log('Erreur JSON', err);
+});
 
 // RECHERCHE
 
