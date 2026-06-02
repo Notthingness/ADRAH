@@ -912,25 +912,20 @@ const toggleFav = item => {
 
 // CATEGORIES
 
-cats.innerHTML = CATEGORIES.map(c => `
+document.addEventListener("DOMContentLoaded", () => {
 
-<div class="card" data-cat="${c.key}">
+  cats.innerHTML = CATEGORIES.map(c => `
+    <div class="card" data-cat="${c.key}">
+      <i class="ph ${c.icon}"></i>
+      <div>
+        <h3>${c.label}</h3>
+        <span>${c.sub}</span>
+      </div>
+      <span class="badge">24/7</span>
+    </div>
+  `).join('');
 
-  <i class="ph ${c.icon}"></i>
-
-  <div>
-
-    <h3>${c.label}</h3>
-
-    <span>${c.sub}</span>
-
-  </div>
-
-  <span class="badge">24/7</span>
-
-</div>
-
-`).join('');
+});
 
 // CHARGEMENT JSON / FETCH
 
