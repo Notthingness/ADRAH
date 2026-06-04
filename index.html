@@ -1204,7 +1204,7 @@ q.addEventListener('input', e => {
 cats.addEventListener('click', e => {
 
   const btn = e.target.closest('[data-cat]');
-  if(!btn || !dataReady) return;
+  if (!btn || !dataReady) return;
 
   const key = btn.dataset.cat.toUpperCase();
 
@@ -1222,35 +1222,18 @@ cats.addEventListener('click', e => {
       if (countryA === 'FR' && countryB !== 'FR') return -1;
       if (countryA !== 'FR' && countryB === 'FR') return 1;
 
-      return a.name.localeCompare(b.name, 'fr', { sensitivity:'base' });
+      return a.name.localeCompare('fr', { sensitivity: 'base' });
     })
     .slice(0, 2000);
 
   hint.textContent = key;
-
   render(rows);
 
   backTop.classList.remove('hidden');
 
   resultsEl.scrollIntoView({
-    behavior:'smooth',
-    block:'start'
-  });
-});
-    
-// BOUTON RETOUR
-
-backTop.addEventListener('click', ()=>{
-
-  resultsEl.classList.add('hidden');
-
-  backTop.classList.add('hidden');
-
-  q.value = '';
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
+    behavior: 'smooth',
+    block: 'start'
   });
 
 });
