@@ -1213,11 +1213,10 @@ cats.addEventListener('click', e => {
 
   const key = btn.dataset.cat;
 
-  const rows = DATA
-  .filter(d =>
-    (d.category || '').toUpperCase() === key ||
-    (d.type || '').toUpperCase() === key
-  )
+  const rows = DATA.filter(d =>
+  (d.category || '').toUpperCase().includes(key) ||
+  (d.type || '').toUpperCase().includes(key)
+);
   .sort((a, b) => {
 
     const countryA = (a.country || 'FR').toUpperCase();
