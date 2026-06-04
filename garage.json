@@ -3,7 +3,8 @@
   "telephone": "02 35 46 01 28",
   "adresse": "1 Rue Hector Berlioz, 76290 Montivilliers",
   "email": "carrosserie-perrin@orange.fr",
-  "services": "Mécanique, carrosserie, peinture, pare-brise, entretien véhicules"
+  "services": "Mécanique, carrosserie, peinture, pare-brise, entretien véhicules"'
+  "categorie": "GARAGE",
   "pourboire": true
 },
 {
@@ -11,7 +12,8 @@
   "telephone": "02 35 41 30 15",
   "adresse": "26 Rue d'Après Mannevillette, 76600 Le Havre",
   "email": "mannevillette.garage@gmail.com",
-  "services": "Mécanique, entretien, réparation, diagnostic, pneumatiques"
+  "services": "Mécanique, entretien, réparation, diagnostic, pneumatiques"'
+  "categorie": "GARAGE",
   "pourboire": true
 },
 {
@@ -19,7 +21,8 @@
   "telephone": "02 35 44 97 92",
   "adresse": "261 Rue Irène Joliot Curie, 76620 Le Havre",
   "email": "",
-  "services": "Mécanique, entretien, réparation, pneumatiques, diagnostic"
+  "services": "Mécanique, entretien, réparation, pneumatiques, diagnostic",
+  "categorie": "GARAGE",
   "pourboire": true
 },
 {
@@ -27,7 +30,8 @@
   "telephone": "06 61 20 54 48",
   "adresse": "2 Rue Marcel Toulouzan, 76600 Le Havre",
   "email": "",
-  "services": "Achat et vente de véhicules, Mécanique, Pneumatiques"
+  "services": "Achat et vente de véhicules, Mécanique, Pneumatiques",
+  "categorie": "GARAGE",
   "pourboire": true
 },
 
