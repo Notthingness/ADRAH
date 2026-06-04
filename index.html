@@ -760,7 +760,14 @@ CATÉGORIES
 
 <div class="kv" id="d-email-wrap">
   <b>Email</b>
-  <span id="d-email"></span>
+  <span
+    id="d-email"
+    style="
+      color:#1e5eff;
+      cursor:pointer;
+      text-decoration:underline;
+    ">
+  </span>
 </div>
       <div class="kv"><b>Disponibilité</b><span>24h/24 · 7j/7</span></div>
       <div>
@@ -792,8 +799,7 @@ CATÉGORIES
             
   <script>   
     // 1) Définition des catégories visibles
-    const CATEGORIES = [
-
+    
   const CATEGORIES = [
 
   { key:'VL', label:'VL', sub:'Véhicule léger', icon:'ph-car' },
@@ -1251,16 +1257,45 @@ function openDetail(item){
   dCountry.textContent = countryNames[item.country] || item.country || '—';
 
   if(item.extra){
-    dExtra.textContent = item.extra;
-    dExtraWrap.style.display = 'block';
-  } else {
-    dExtraWrap.style.display = 'none';
-  }
+  dExtra.textContent = item.extra;
+  dExtraWrap.style.display = 'block';
+} else {
+  dExtraWrap.style.display = 'none';
+}
 
-  dLogo.src = item.logo ||
-    'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
+// ADRESSE
+if(item.adresse){
 
-  drawer.classList.add('show');
+  dAddress.textContent = item.adresse;
+  dAddressWrap.style.display = 'block';
+
+}else{
+
+  dAddressWrap.style.display = 'none';
+
+}
+
+// EMAIL
+if(item.email){
+
+  dEmail.innerHTML = `
+    <a href="mailto:${item.email}">
+      ${item.email}
+    </a>
+  `;
+
+  dEmailWrap.style.display = 'block';
+
+}else{
+
+  dEmailWrap.style.display = 'none';
+
+}
+
+dLogo.src = item.logo ||
+'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
+
+drawer.classList.add('show');
 }
 
 // FERMER DRAWER
