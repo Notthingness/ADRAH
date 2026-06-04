@@ -1294,20 +1294,13 @@ if(item.adresse){
 if(item.email){
 
   dEmail.textContent = item.email;
-
-  dEmailWrap.style.display = 'block';
-
-  const dEmail = document.getElementById('d-email');
-
-// EMAIL
-if(item.email){
-
-  dEmail.textContent = item.email;
   dEmailWrap.style.display = 'block';
 
 }else{
 
+  dEmail.textContent = '';
   dEmailWrap.style.display = 'none';
+
 }
 
 dLogo.src = item.logo ||
