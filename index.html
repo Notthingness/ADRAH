@@ -1203,12 +1203,9 @@ cats.addEventListener('click', e => {
 
   const rows = DATA
   .filter(d =>
-
-    d.category === key ||
-
-    d.type === key
-
-  )
+  (d.category || '').toUpperCase() === key ||
+  (d.type || '').toUpperCase() === key
+)
 
   .sort((a, b) => {
 
