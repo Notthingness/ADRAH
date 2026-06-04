@@ -1065,9 +1065,12 @@ function render(rows){
     rows.length +
 
     (rows.length > 1 ? ' résultats' : ' résultat');
+  
+listEl.innerHTML = rows.map((r,i)=>{
 
-  listEl.innerHTML = rows.map((r,i)=>`
+  const isGarage = (r.category || '').toUpperCase() === 'GARAGE';
 
+  return `
 <div class="row" data-i="${i}">
 
   <div class="meta">
@@ -1076,13 +1079,15 @@ function render(rows){
 
     <div class="sub">
   ${
-    r.category === 'GARAGE'
+    isGarage
       ? ''
-      : `
-        ${r.category || r.type}
-        ${r.assistant ? `· ${r.assistant}` : ''}
-        ${r.country ? `· ${countryNames[r.country] || r.country}` : ''}
-      `
+      : [
+          r.category || r.type,
+          r.assistant,
+          r.country ? (countryNames[r.country] || r.country) : null
+        ]
+        .filter(Boolean)
+        .join(' · ')
   }
 </div>
 
