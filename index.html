@@ -1010,7 +1010,10 @@ services: x.services || '',
 logo: x.logo || '',
 country: (x.pays || x.country || 'FR').toUpperCase()
   }));
-
+  
+dataReady = true; // 🔥 OBLIGATOIRE
+});
+  
   // 🔥 SUPPRESSION DOUBLONS (ICI et PAS dehors)
   DATA = [...new Map(
     DATA.map(item => [
@@ -1204,8 +1207,8 @@ cats.addEventListener('click', e => {
 
   const rows = DATA
 .filter(d =>
-  (d.category || '').toUpperCase() === key ||
-  (d.type || '').toUpperCase() === key
+  d.category === key || d.type === key
+
 )
   .sort((a, b) => {
 
