@@ -1002,7 +1002,7 @@ Promise.allSettled([
     .replace(/\s+/g,' ')
     .trim(),
 
-  category: String(x.categorie || x.category || '')
+  category: (x.categorie || x.category || 'INCONNU')
   .trim()
   .toUpperCase(),
   extra: x.extra || '',
@@ -1213,10 +1213,11 @@ cats.addEventListener('click', e => {
 
   const key = btn.dataset.cat;
 
-  const rows = DATA.filter(d =>
-  (d.category || '').toUpperCase().includes(key) ||
-  (d.type || '').toUpperCase().includes(key)
-);
+  const rows = DATA
+  .filter(d =>
+    (d.category || '').toUpperCase().includes(key) ||
+    (d.type || '').toUpperCase().includes(key)
+  )
   .sort((a, b) => {
 
     const countryA = (a.country || 'FR').toUpperCase();
@@ -1229,7 +1230,6 @@ cats.addEventListener('click', e => {
 
   })
   .slice(0, 2000);
-
   
   hint.textContent = key;
 
