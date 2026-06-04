@@ -1208,14 +1208,13 @@ cats.addEventListener('click', e => {
 
   const key = btn.dataset.cat.toUpperCase();
 
-  const rows = DATA.filter(d => {
-  const cat = (d.category || '').trim().toUpperCase();
-  const type = (d.type || '').trim().toUpperCase();
+  const rows = DATA
+    .filter(d => {
+      const cat = (d.category || '').trim().toUpperCase();
+      const type = (d.type || '').trim().toUpperCase();
 
-  return cat === key || type === key;
-});
-  
-  })
+      return cat === key || type === key;
+    })
     .sort((a, b) => {
       const countryA = (a.country || 'FR').toUpperCase();
       const countryB = (b.country || 'FR').toUpperCase();
