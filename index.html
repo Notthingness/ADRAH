@@ -1075,9 +1075,15 @@ function render(rows){
     <div class="title">${r.name}</div>
 
     <div class="sub">
-  ${r.category || r.type}
-  ${r.assistant ? `· ${r.assistant}` : ''}
-  ${r.country ? `· ${countryNames[r.country] || r.country}` : ''}
+  ${
+    r.category === 'GARAGE'
+      ? ''
+      : `
+        ${r.category || r.type}
+        ${r.assistant ? `· ${r.assistant}` : ''}
+        ${r.country ? `· ${countryNames[r.country] || r.country}` : ''}
+      `
+  }
 </div>
 
   </div>
