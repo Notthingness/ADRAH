@@ -1000,7 +1000,8 @@ Promise.allSettled([
     phone: String(x.telephone || x.phone || '')
       .replace(/\s+/g,' ')
       .trim(),
-    category: (x.categorie || x.category || '')
+    category: (x.categorie || x.category || '').trim().toUpperCase(),
+    type: (x.type || '').trim().toUpperCase(),
   .trim()
   .toUpperCase(),
 extra: x.extra || '',
