@@ -932,19 +932,32 @@ const dAddress = document.getElementById('d-address');
 
 const dEmail = document.getElementById('d-email');
 
-dEmail.addEventListener('click', async () => {
+dEmail.addEventListener('click', async (e) => {
+
+  e.preventDefault();
+  e.stopPropagation();
 
   if(!dEmail.textContent) return;
 
   try{
-    await navigator.clipboard.writeText(dEmail.textContent);
-    alert('Email copié');
+
+    await navigator.clipboard.writeText(
+      dEmail.textContent.trim()
+    );
+
+    const old = dEmail.textContent;
+
+    dEmail.textContent = '✓ Copié';
+
+    setTimeout(() => {
+      dEmail.textContent = old;
+    }, 1000);
+
   }catch(err){
     console.error(err);
   }
 
 });
-
      
 // FAVORIS
 
