@@ -1078,18 +1078,18 @@ listEl.innerHTML = rows.map((r,i)=>{
     <div class="title">${r.name}</div>
 
     <div class="sub">
-  ${
-    isGarage
-      ? ''
-      : [
-          r.category || r.type,
-          r.assistant,
-          r.country ? (countryNames[r.country] || r.country) : null
-        ]
-        .filter(Boolean)
-        .join(' · ')
-  }
-</div>
+      ${
+        isGarage
+          ? ''
+          : [
+              r.category || r.type,
+              r.assistant,
+              r.country ? (countryNames[r.country] || r.country) : null
+            ]
+            .filter(Boolean)
+            .join(' · ')
+      }
+    </div>
 
   </div>
 
@@ -1114,10 +1114,9 @@ listEl.innerHTML = rows.map((r,i)=>{
   </div>
 
 </div>
+`;
 
-`).join('');
-
-}
+}).join('');
 
 function search(text){
 
