@@ -754,10 +754,25 @@ CATÉGORIES
     <span id="d-tel"></span>
   </div>
 </a>
-      <div class="kv"><b>Type</b><span id="d-type"></span></div>
-      <div class="kv"><b>Assisteur</b><span id="d-assist"></span></div>
-      <div class="kv" id="d-extra-wrap"><b>Informations</b><span id="d-extra"></span></div>
-      <div class="kv"><b>Pays</b><span id="d-country"></span></div>
+      <div class="kv" id="d-type-wrap">
+  <b>Type</b>
+  <span id="d-type"></span>
+</div>
+
+<div class="kv" id="d-assist-wrap">
+  <b>Assisteur</b>
+  <span id="d-assist"></span>
+</div>
+
+<div class="kv" id="d-extra-wrap">
+  <b>Informations</b>
+  <span id="d-extra"></span>
+</div>
+
+<div class="kv" id="d-country-wrap">
+  <b>Pays</b>
+  <span id="d-country"></span>
+</div>
       <div class="kv" id="d-address-wrap">
   <b>Adresse</b>
   <span id="d-address"></span>
@@ -773,7 +788,7 @@ CATÉGORIES
   <span id="d-services"></span>
 </div>
 
-<div class="kv">
+<div class="kv" id="d-availability-wrap">
   <b>Disponibilité</b>
   <span>24h/24 · 7j/7</span>
 </div>
@@ -886,6 +901,14 @@ const dCall = document.getElementById('d-call');
 const dAssist = document.getElementById('d-assist');
 
 const dType = document.getElementById('d-type');
+    
+const dTypeWrap = document.getElementById('d-type-wrap');
+    
+const dAssistWrap = document.getElementById('d-assist-wrap');
+    
+const dCountryWrap = document.getElementById('d-country-wrap');
+    
+const dAvailabilityWrap = document.getElementById('d-availability-wrap');    
 
 const dExtra = document.getElementById('d-extra');
 
@@ -894,7 +917,7 @@ const dExtraWrap = document.getElementById('d-extra-wrap');
 const dLogo = document.getElementById('d-logo');
     
 const backTop = document.getElementById('backTop');
-
+    
 const dAddressWrap = document.getElementById('d-address-wrap');
     
 const dEmailWrap = document.getElementById('d-email-wrap'); 
@@ -1276,6 +1299,9 @@ backTop.addEventListener('click', ()=>{
     
 function openDetail(item){
 
+  const isGarage =
+    (item.category || '').toUpperCase() === 'GARAGE';
+
   dName.textContent = item.name;
 
   dCat.textContent =
@@ -1291,6 +1317,18 @@ function openDetail(item){
 
   dAssist.textContent = item.assistant || '—';
   dType.textContent = item.type || '—';
+
+  dTypeWrap.style.display =
+  isGarage ? 'none' : 'block';
+
+  dAssistWrap.style.display =
+  isGarage ? 'none' : 'block';
+
+  dCountryWrap.style.display =
+  isGarage ? 'none' : 'block';
+
+  dAvailabilityWrap.style.display =
+  isGarage ? 'none' : 'block';
 
   // 🔥 NOUVEAU
   dCountry.textContent = countryNames[item.country] || item.country || '—';
