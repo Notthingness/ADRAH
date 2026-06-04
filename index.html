@@ -1204,47 +1204,40 @@ q.addEventListener('input', e => {
 cats.addEventListener('click', e => {
 
   const btn = e.target.closest('[data-cat]');
+  if(!btn || !dataReady) return;
 
-  if(!btn) return;
-
-  if(!dataReady) return;
-
-  categoryOpened = true;
-
-  const key = btn.dataset.cat;
+  const key = btn.dataset.cat.toUpperCase();
 
   const rows = DATA
-  .filter(d =>
-    (d.category || '').toUpperCase().includes(key) ||
-    (d.type || '').toUpperCase().includes(key)
-  )
-  .sort((a, b) => {
+    .filter(d => {
+      return (
+        (d.category || '').toUpperCase() === key ||
+        (d.type || '').toUpperCase() === key
+      );
+    })
+    .sort((a, b) => {
+      const countryA = (a.country || 'FR').toUpperCase();
+      const countryB = (b.country || 'FR').toUpperCase();
 
-    const countryA = (a.country || 'FR').toUpperCase();
-    const countryB = (b.country || 'FR').toUpperCase();
+      if (countryA === 'FR' && countryB !== 'FR') return -1;
+      if (countryA !== 'FR' && countryB === 'FR') return 1;
 
-    if (countryA === 'FR' && countryB !== 'FR') return -1;
-    if (countryA !== 'FR' && countryB === 'FR') return 1;
+      return a.name.localeCompare(b.name, 'fr', { sensitivity:'base' });
+    })
+    .slice(0, 2000);
 
-    return a.name.localeCompare(b.name, 'fr', { sensitivity:'base' });
-
-  })
-  .slice(0, 2000);
-  
   hint.textContent = key;
 
   render(rows);
-  
-  categoryOpened = true;
+
   backTop.classList.remove('hidden');
 
   resultsEl.scrollIntoView({
     behavior:'smooth',
     block:'start'
   });
-
 });
-
+    
 // BOUTON RETOUR
 
 backTop.addEventListener('click', ()=>{
