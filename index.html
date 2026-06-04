@@ -753,6 +753,15 @@ CATÉGORIES
       <div class="kv"><b>Assisteur</b><span id="d-assist"></span></div>
       <div class="kv" id="d-extra-wrap"><b>Informations</b><span id="d-extra"></span></div>
       <div class="kv"><b>Pays</b><span id="d-country"></span></div>
+      <div class="kv" id="d-address-wrap">
+  <b>Adresse</b>
+  <span id="d-address"></span>
+</div>
+
+<div class="kv" id="d-email-wrap">
+  <b>Email</b>
+  <span id="d-email"></span>
+</div>
       <div class="kv"><b>Disponibilité</b><span>24h/24 · 7j/7</span></div>
       <div>
       </div>
@@ -785,6 +794,8 @@ CATÉGORIES
     // 1) Définition des catégories visibles
     const CATEGORIES = [
 
+  const CATEGORIES = [
+
   { key:'VL', label:'VL', sub:'Véhicule léger', icon:'ph-car' },
 
   { key:'PL', label:'PL', sub:'Poids lourd', icon:'ph-truck' },
@@ -793,7 +804,9 @@ CATÉGORIES
 
   { key:'LOCATION', label:'LOCATION', sub:'Location', icon:'ph-key' },
 
-  { key:'ASSURANCE', label:'ASSURANCE', sub:'Assurance', icon:'ph-shield' }
+  { key:'ASSURANCE', label:'ASSURANCE', sub:'Assurance', icon:'ph-shield' },
+
+  { key:'GARAGE', label:'GARAGE', sub:'Partenaires', icon:'ph-wrench' }
 
 ];
 
@@ -869,7 +882,15 @@ const dLogo = document.getElementById('d-logo');
     
 const backTop = document.getElementById('backTop');
     
-const dCountry = document.getElementById('d-country');  
+const dCountry = document.getElementById('d-country'); 
+    
+const dAddress = document.getElementById('d-address');
+    
+const dEmail = document.getElementById('d-email');
+
+const dAddressWrap = document.getElementById('d-address-wrap');
+    
+const dEmailWrap = document.getElementById('d-email-wrap');    
     
 // FAVORIS
 
@@ -947,9 +968,11 @@ Promise.allSettled([
       .replace(/\s+/g,' ')
       .trim(),
     category: x.categorie || x.category || '',
-    extra: x.extra || '',
-    logo: x.logo || '',
-    country: (x.pays || x.country || 'FR').toUpperCase()
+extra: x.extra || '',
+adresse: x.adresse || '',
+email: x.email || '',
+logo: x.logo || '',
+country: (x.pays || x.country || 'FR').toUpperCase()
   }));
 
   // 🔥 SUPPRESSION DOUBLONS (ICI et PAS dehors)
@@ -1203,7 +1226,9 @@ backTop.addEventListener('click', ()=>{
 });
   
 // DRAWER
-
+    
+drawer.classList.add('show');
+    
 function openDetail(item){
 
   dName.textContent = item.name;
