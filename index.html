@@ -1204,9 +1204,14 @@ q.addEventListener('input', e => {
 cats.addEventListener('click', e => {
 
   const btn = e.target.closest('[data-cat]');
-  if (!btn || !dataReady) return;
+  if (!btn) return;
 
   const key = btn.dataset.cat.toUpperCase();
+
+  if (!dataReady) {
+    console.warn("DATA pas encore chargé");
+    return;
+  }
 
   const rows = DATA
     .filter(d => {
@@ -1222,14 +1227,18 @@ cats.addEventListener('click', e => {
       if (countryA === 'FR' && countryB !== 'FR') return -1;
       if (countryA !== 'FR' && countryB === 'FR') return 1;
 
-      return a.name.localeCompare('fr', { sensitivity: 'base' });
+      return a.name.localeCompare(b.name, 'fr', { sensitivity: 'base' });
     })
     .slice(0, 2000);
+
+  console.log("CAT CLICK :", key, "RESULTS :", rows.length);
 
   hint.textContent = key;
   render(rows);
 
   backTop.classList.remove('hidden');
+
+  resultsEl.classList.remove('hidden');
 
   resultsEl.scrollIntoView({
     behavior: 'smooth',
