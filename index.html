@@ -888,16 +888,34 @@ const dLogo = document.getElementById('d-logo');
     
 const backTop = document.getElementById('backTop');
     
-const dCountry = document.getElementById('d-country'); 
-    
-const dAddress = document.getElementById('d-address');
-    
-const dEmail = document.getElementById('d-email');
+const dAddressWrap = document.getElementById('d-address-wrap');
+
+const dEmailWrap = document.getElementById('d-email-wrap');
 
 const dAddressWrap = document.getElementById('d-address-wrap');
     
-const dEmailWrap = document.getElementById('d-email-wrap');    
+const dEmailWrap = document.getElementById('d-email-wrap');   
     
+const dCountry = document.getElementById('d-country');
+
+const dAddress = document.getElementById('d-address');
+
+const dEmail = document.getElementById('d-email');
+
+dEmail.addEventListener('click', async () => {
+
+  if(!dEmail.textContent) return;
+
+  try{
+    await navigator.clipboard.writeText(dEmail.textContent);
+    alert('Email copié');
+  }catch(err){
+    console.error(err);
+  }
+
+});
+
+     
 // FAVORIS
 
 const KEY = 'adrah:favs';
@@ -1285,28 +1303,13 @@ if(item.email){
 
   const dEmail = document.getElementById('d-email');
 
-// 👇 AJOUT ICI
-const dEmail = document.getElementById('d-email');
-
-dEmail.addEventListener('click', async () => {
-
-  if(!dEmail.textContent) return;
-
-  try {
-    await navigator.clipboard.writeText(dEmail.textContent);
-    alert('Email copié');
-  } catch(err) {
-    console.error(err);
-  }
- 
-});
-
-  if(item.email){
+// EMAIL
+if(item.email){
 
   dEmail.textContent = item.email;
   dEmailWrap.style.display = 'block';
 
-  }else{
+}else{
 
   dEmailWrap.style.display = 'none';
 }
