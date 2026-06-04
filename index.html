@@ -824,6 +824,7 @@ CATÉGORIES
 ];
 
 let DATA = [];
+let dataReady = false;    
 let current = [];
 let categoryOpened = false;
 
@@ -1001,8 +1002,9 @@ Promise.allSettled([
     .replace(/\s+/g,' ')
     .trim(),
 
-  category: (x.categorie || x.category || '').toUpperCase(),
-
+  category: String(x.categorie || x.category || '')
+  .trim()
+  .toUpperCase(),
   extra: x.extra || '',
   adresse: x.adresse || '',
   email: x.email || '',
@@ -1016,8 +1018,10 @@ Promise.allSettled([
 }));
 
   // 🔥 SUPPRESSION DOUBLONS (ICI et PAS dehors)
-  DATA = [...new Map(
-    DATA.map(item => [
+  DATA = [...new Map(...].values());
+  dataReady = true;
+   
+  DATA.map(item => [
       `${item.name.toLowerCase().trim()}|${item.phone.replace(/\D/g,'')}`,
       item
     ])
@@ -1202,34 +1206,31 @@ cats.addEventListener('click', e => {
 
   if(!btn) return;
 
+  if(!dataReady) return;
+
   categoryOpened = true;
 
   const key = btn.dataset.cat;
 
-  const rows = DATA.filter(d =>
-  (d.category || '').toUpperCase() === key ||
-  (d.type || '').toUpperCase() === key
-);
-
+  const rows = DATA
+  .filter(d =>
+    (d.category || '').toUpperCase() === key ||
+    (d.type || '').toUpperCase() === key
+  )
   .sort((a, b) => {
 
-  const countryA = (a.country || 'FR').toUpperCase();
-  const countryB = (b.country || 'FR').toUpperCase();
+    const countryA = (a.country || 'FR').toUpperCase();
+    const countryB = (b.country || 'FR').toUpperCase();
 
-  // 🇫🇷 France prioritaire
-  if (countryA === 'FR' && countryB !== 'FR') return -1;
-  if (countryA !== 'FR' && countryB === 'FR') return 1;
+    if (countryA === 'FR' && countryB !== 'FR') return -1;
+    if (countryA !== 'FR' && countryB === 'FR') return 1;
 
-  // Alphabetique
-  return a.name.localeCompare(
-    b.name,
-    'fr',
-    { sensitivity:'base' }
-  );
+    return a.name.localeCompare(b.name, 'fr', { sensitivity:'base' });
 
-})
-  .slice(0, 2000)
+  })
+  .slice(0, 2000);
 
+  
   hint.textContent = key;
 
   render(rows);
