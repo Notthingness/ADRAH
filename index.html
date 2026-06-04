@@ -994,21 +994,26 @@ Promise.allSettled([
   const arr4 = results[3].status === "fulfilled" ? results[3].value : [];
 
   DATA = [...arr1, ...arr2, ...arr3, ...arr4].map(x => ({
-    type: x.type || '',
-    name: x.nom || x.name || '',
-    assistant: x.assisteur || x.assistant || '',
-    phone: String(x.telephone || x.phone || '')
-      .replace(/\s+/g,' ')
-      .trim(),
-    category: (x.categorie || x.category || '').toUpperCase(),
-type: (x.type || '').toUpperCase(),
-extra: x.extra || '',
-adresse: x.adresse || '',
-email: x.email || '',
-services: x.services || '',   
-logo: x.logo || '',
-country: (x.pays || x.country || 'FR').toUpperCase()
-  }));
+  type: (x.type || '').toUpperCase(),
+  name: x.nom || x.name || '',
+  assistant: x.assisteur || x.assistant || '',
+  phone: String(x.telephone || x.phone || '')
+    .replace(/\s+/g,' ')
+    .trim(),
+
+  category: (x.categorie || x.category || '').toUpperCase(),
+
+  extra: x.extra || '',
+  adresse: x.adresse || '',
+  email: x.email || '',
+  services: x.services || '',
+  logo: x.logo || '',
+
+  country: (x.pays || x.country || 'FR').toUpperCase(),
+
+  // 🔥 AJOUT IMPORTANT
+  pourboire: x.pourboire === true
+}));
 
   // 🔥 SUPPRESSION DOUBLONS (ICI et PAS dehors)
   DATA = [...new Map(
@@ -1201,11 +1206,10 @@ cats.addEventListener('click', e => {
 
   const key = btn.dataset.cat;
 
-  const rows = DATA
-  .filter(d =>
+  const rows = DATA.filter(d =>
   (d.category || '').toUpperCase() === key ||
   (d.type || '').toUpperCase() === key
-)
+);
 
   .sort((a, b) => {
 
