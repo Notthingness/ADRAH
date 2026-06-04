@@ -681,6 +681,11 @@ html,body{
 .back-top.hidden{
   display:none !important;
 }
+
+#d-email a{
+  color:#1e5eff;
+  text-decoration:underline;
+}    
     
 </style>
 </head>
@@ -760,20 +765,22 @@ CATÉGORIES
 
 <div class="kv" id="d-email-wrap">
   <b>Email</b>
-  <span
-    id="d-email"
-    style="
-      color:#1e5eff;
-      cursor:pointer;
-      text-decoration:underline;
-    ">
-  </span>
+  <span id="d-email"></span>
 </div>
-      <div class="kv"><b>Disponibilité</b><span>24h/24 · 7j/7</span></div>
-      <div>
-      </div>
-    </div>
-  </aside>
+
+<div class="kv" id="d-services-wrap">
+  <b>Services</b>
+  <span id="d-services"></span>
+</div>
+
+<div class="kv">
+  <b>Disponibilité</b>
+  <span>24h/24 · 7j/7</span>
+</div>
+</div>
+<div>  
+</aside>
+  
             
 <!-- MENU SECRET -->
 <aside class="drawer" id="secretDrawer">
@@ -888,13 +895,13 @@ const dLogo = document.getElementById('d-logo');
     
 const backTop = document.getElementById('backTop');
 
-const dServices = document.getElementById('d-services');
-
-const dServicesWrap = document.getElementById('d-services-wrap');    
-
 const dAddressWrap = document.getElementById('d-address-wrap');
     
-const dEmailWrap = document.getElementById('d-email-wrap');   
+const dEmailWrap = document.getElementById('d-email-wrap'); 
+    
+const dServices = document.getElementById('d-services');
+
+const dServicesWrap = document.getElementById('d-services-wrap');   
     
 const dCountry = document.getElementById('d-country');
 
