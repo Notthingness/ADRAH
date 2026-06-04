@@ -888,6 +888,10 @@ const dLogo = document.getElementById('d-logo');
     
 const backTop = document.getElementById('backTop');
 
+const dServices = document.getElementById('d-services');
+
+const dServicesWrap = document.getElementById('d-services-wrap');    
+
 const dAddressWrap = document.getElementById('d-address-wrap');
     
 const dEmailWrap = document.getElementById('d-email-wrap');   
@@ -993,6 +997,7 @@ Promise.allSettled([
 extra: x.extra || '',
 adresse: x.adresse || '',
 email: x.email || '',
+services: x.services || '',   
 logo: x.logo || '',
 country: (x.pays || x.country || 'FR').toUpperCase()
   }));
@@ -1302,7 +1307,18 @@ if(item.email){
   dEmailWrap.style.display = 'none';
 
 }
+  
+if(item.services){
 
+  dServices.textContent = item.services;
+  dServicesWrap.style.display = 'block';
+
+}else{
+
+  dServicesWrap.style.display = 'none';
+
+}
+  
 dLogo.src = item.logo ||
 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
 
