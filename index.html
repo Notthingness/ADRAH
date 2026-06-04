@@ -994,26 +994,25 @@ Promise.allSettled([
   const arr4 = results[3].status === "fulfilled" ? results[3].value : [];
 
   DATA = [...arr1, ...arr2, ...arr3, ...arr4].map(x => ({
-    type: x.type || '',
+    type: (x.type || '').trim().toUpperCase(),
     name: x.nom || x.name || '',
     assistant: x.assisteur || x.assistant || '',
     phone: String(x.telephone || x.phone || '')
       .replace(/\s+/g,' ')
       .trim(),
+
     category: (x.categorie || x.category || '').trim().toUpperCase(),
-    type: (x.type || '').trim().toUpperCase(),
-extra: x.extra || '',
-adresse: x.adresse || '',
-email: x.email || '',
-services: x.services || '',   
-logo: x.logo || '',
-country: (x.pays || x.country || 'FR').toUpperCase()
+
+    extra: x.extra || '',
+    adresse: x.adresse || '',
+    email: x.email || '',
+    services: x.services || '',
+    logo: x.logo || '',
+
+    country: (x.pays || x.country || 'FR').toUpperCase()
   }));
-  
-dataReady = true; // 🔥 OBLIGATOIRE
-});
-  
-  // 🔥 SUPPRESSION DOUBLONS (ICI et PAS dehors)
+
+  // 🔥 SUPPRESSION DOUBLONS (ICI)
   DATA = [...new Map(
     DATA.map(item => [
       `${item.name.toLowerCase().trim()}|${item.phone.replace(/\D/g,'')}`,
@@ -1022,6 +1021,7 @@ dataReady = true; // 🔥 OBLIGATOIRE
   ).values()];
 
 });
+    
 // RECHERCHE
 
 function matches(item, needle){
