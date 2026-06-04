@@ -1000,7 +1000,9 @@ Promise.allSettled([
     phone: String(x.telephone || x.phone || '')
       .replace(/\s+/g,' ')
       .trim(),
-    category: x.categorie || x.category || '',
+    category: (x.categorie || x.category || '')
+  .trim()
+  .toUpperCase(),
 extra: x.extra || '',
 adresse: x.adresse || '',
 email: x.email || '',
@@ -1201,14 +1203,10 @@ cats.addEventListener('click', e => {
   const key = btn.dataset.cat;
 
   const rows = DATA
-  .filter(d =>
-
-    d.category === key ||
-
-    d.type === key
-
-  )
-
+.filter(d =>
+  (d.category || '').toUpperCase() === key ||
+  (d.type || '').toUpperCase() === key
+)
   .sort((a, b) => {
 
   const countryA = (a.country || 'FR').toUpperCase();
