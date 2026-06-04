@@ -1279,13 +1279,25 @@ if(item.adresse){
 // EMAIL
 if(item.email){
 
-  dEmail.innerHTML = `
-    <a href="mailto:${item.email}">
-      ${item.email}
-    </a>
-  `;
+  dEmail.textContent = item.email;
 
   dEmailWrap.style.display = 'block';
+
+  const dEmail = document.getElementById('d-email');
+
+// 👇 AJOUT ICI
+dEmail.addEventListener('click', async () => {
+
+  if(!dEmail.textContent) return;
+
+  try {
+    await navigator.clipboard.writeText(dEmail.textContent);
+    alert('Email copié');
+  } catch(err) {
+    console.error(err);
+  }
+
+});
 
 }else{
 
