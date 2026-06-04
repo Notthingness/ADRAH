@@ -1286,6 +1286,8 @@ if(item.email){
   const dEmail = document.getElementById('d-email');
 
 // 👇 AJOUT ICI
+const dEmail = document.getElementById('d-email');
+
 dEmail.addEventListener('click', async () => {
 
   if(!dEmail.textContent) return;
@@ -1296,13 +1298,17 @@ dEmail.addEventListener('click', async () => {
   } catch(err) {
     console.error(err);
   }
-
+ 
 });
 
-}else{
+  if(item.email){
+
+  dEmail.textContent = item.email;
+  dEmailWrap.style.display = 'block';
+
+  }else{
 
   dEmailWrap.style.display = 'none';
-
 }
 
 dLogo.src = item.logo ||
