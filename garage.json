@@ -63,7 +63,7 @@
   "pourboire": true
 },
 {
-  "nom": "GGE l’Émeraude",
+  "nom": "l’Émeraude",
   "telephone": "02 35 47 24 66",
   "adresse": "37 Rue Andrei Sakharov, 76610 Le Havre",
   "email": "",
@@ -88,5 +88,23 @@
   "services": "mécanique, entretien, réparation, diagnostic",
   "categorie": "GARAGE",
   "pourboire": false
-}
+},
+{
+  "nom": "Norauto LH",
+  "telephone": "02 35 54 69 69",
+  "adresse": "91 Avenue du Grand Hameau, 76620 Le Havre",
+  "email": "",
+  "services": "pneus, entretien, mécanique, freinage, climatisation, diagnostic",
+  "categorie": "GARAGE",
+  "pourboire": false
+},
+{
+  "nom": "Norauto MT",
+  "telephone": "02 35 30 05 83",
+  "adresse": "Centre Commercial La Lézarde, 76290 Montivilliers",
+  "email": "",
+  "services": "pneus, entretien, mécanique, freinage, climatisation, diagnostic",
+  "categorie": "GARAGE",
+  "pourboire": false
+}  
 ]
