@@ -45,16 +45,16 @@
   "pourboire": false
 },
 {
-  "nom": "Maison du Pneu ",
+  "nom": "Maison Pneu ",
   "telephone": "09 81 22 89 40",
   "adresse": "6 Route d'oudalle 76700 Harfleur",
   "email": "",
-  "services": "Pneumatiques, montage, équilibrage, réparation pneus",
+  "services": "pneumatiques, montage, équilibrage, réparation pneus",
   "categorie": "GARAGE",
   "pourboire": true
 },
  {
-  "nom": "Garage AJ Auto",
+  "nom": "AJ Auto",
   "telephone": "06 59 73 67 31",
   "adresse": "153 Bis Rue de la Libération, 76700 Gainneville",
   "email": "",
