@@ -36,11 +36,11 @@
   "pourboire": true
 },
   {
-  "nom": "Garage Perrin",
-  "telephone": "02 35 46 01 28",
-  "adresse": "1 Rue Hector Berlioz, 76290 Montivilliers",
-  "email": "carrosserie-perrin@orange.fr",
-  "services": "mécanique, carrosserie, peinture, pare-brise, entretien véhicules",
+  "nom": "SBGD",
+  "telephone": "02 32 92 69 16",
+  "adresse": "13 Rue de Valmy, 76600 Le Havre",
+  "email": "contact@sbgd-lehavre.fr",
+  "services": "mécanique, carrosserie, peinture, débosselage, pare-brise, réparation de jantes, véhicules électriques et hybrides",
   "categorie": "GARAGE",
   "pourboire": false
 },
