@@ -70,5 +70,14 @@
   "services": "mécanique, entretien, réparation, diagnostic",
   "categorie": "GARAGE",
   "pourboire": false
+},
+  {
+  "nom": "Garage Barbes",
+  "telephone": "02 35 51 43 22",
+  "adresse": "30 Rue Armand Barbes, 76600 Le Havre",
+  "email": "",
+  "services": "mécanique, entretien, réparation, diagnostic, pneumatiques",
+  "categorie": "GARAGE",
+  "pourboire": false
 }
 ]
