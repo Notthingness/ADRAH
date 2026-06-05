@@ -1044,7 +1044,7 @@ Promise.allSettled([
     email: x.email || '',
     services: x.services || '',
     logo: x.logo || '',
-
+    pourboire: x.pourboire || false,
     country: (x.pays || x.country || 'FR').toUpperCase()
   }));
 
@@ -1315,7 +1315,11 @@ function openDetail(item){
   const isGarage =
     (item.category || '').toUpperCase() === 'GARAGE';
 
-  dName.textContent = item.name;
+  dName.innerHTML =
+  item.name +
+  (item.pourboire
+    ? ' <span style="color:#00d26a;font-weight:700">💶</span>'
+    : '');
 
   dCat.textContent =
     item.category ||
