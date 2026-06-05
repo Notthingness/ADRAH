@@ -35,7 +35,7 @@
   "categorie": "GARAGE",
   "pourboire": true
 },
-  {
+{
   "nom": "SBGD",
   "telephone": "02 32 92 69 16",
   "adresse": "13 Rue de Valmy, 76600 Le Havre",
@@ -53,7 +53,7 @@
   "categorie": "GARAGE",
   "pourboire": true
 },
- {
+{
   "nom": "AJ Auto",
   "telephone": "06 59 73 67 31",
   "adresse": "153 Bis Rue de la Libération, 76700 Gainneville",
@@ -62,7 +62,7 @@
   "categorie": "GARAGE",
   "pourboire": true
 },
-  {
+{
   "nom": "Garage l’Émeraude",
   "telephone": "02 35 47 24 66",
   "adresse": "37 Rue Andrei Sakharov, 76610 Le Havre",
@@ -71,12 +71,21 @@
   "categorie": "GARAGE",
   "pourboire": false
 },
-  {
+{
   "nom": "Garage Barbes",
   "telephone": "02 35 51 43 22",
   "adresse": "30 Rue Armand Barbes, 76600 Le Havre",
   "email": "",
   "services": "mécanique, entretien, réparation, diagnostic, pneumatiques",
+  "categorie": "GARAGE",
+  "pourboire": false
+},
+{
+  "nom": "J&S Auto",
+  "telephone": "02 35 26 20 66",
+  "adresse": "116 Rue de la Vallée, 76600 Le Havre",
+  "email": "",
+  "services": "mécanique, entretien, réparation, diagnostic",
   "categorie": "GARAGE",
   "pourboire": false
 }
