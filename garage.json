@@ -43,5 +43,14 @@
   "services": "mécanique, carrosserie, peinture, débosselage, pare-brise, réparation de jantes, véhicules électriques et hybrides",
   "categorie": "GARAGE",
   "pourboire": false
-}
+},
+{
+  "nom": "La Maison du Pneu Harfleur",
+  "telephone": "09 81 22 89 40",
+  "adresse": "6 Route d'oudalle 76700 Harfleur",
+  "email": "",
+  "services": "Pneumatiques, montage, équilibrage, réparation pneus",
+  "categorie": "GARAGE",
+  "pourboire": true
+}  
 ]
