@@ -106,5 +106,23 @@
   "services": "pneus, entretien, mécanique, freinage, climatisation, diagnostic",
   "categorie": "GARAGE",
   "pourboire": false
-}  
+},
+{
+  "nom": "Eco Service",
+  "telephone": "02 35 46 33 95",
+  "adresse": "180 Rue Irène Joliot Curie, 76620 Le Havre",
+  "email": "gesauto@garage-eco-service.com",
+  "services": "mécanique, carrosserie, entretien, réparation, diagnostic, véhicules d'occasion",
+  "categorie": "GARAGE",
+  "pourboire": false
+},  
+{
+  "nom": "SD Auto",
+  "telephone": "02 35 46 16 88",
+  "adresse": "110 Rue Pierre Farcis, 76620 Le Havre",
+  "email": "",
+  "services": "mécanique, carrosserie, peinture, diagnostic, réparation toutes marques",
+  "categorie": "GARAGE",
+  "pourboire": false
+}
 ]
