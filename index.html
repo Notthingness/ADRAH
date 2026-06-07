@@ -1384,24 +1384,17 @@ if(item.adresse){
 
 }
 
-// EMAIL
+// EMAIL //
 if(item.email){
 
-  const email = item.email.trim();
-
-  dEmail.innerHTML = `
-    <a href="mailto:${email}"
-       style="color:#1e5eff;text-decoration:none;">
-      ${email}
-    </a>
-  `;
-
+  dEmail.textContent = item.email;
   dEmailWrap.style.display = 'block';
 
 }else{
 
-  dEmail.innerHTML = '';
+  dEmail.textContent = '';
   dEmailWrap.style.display = 'none';
+
 }
   
 if(item.services){
