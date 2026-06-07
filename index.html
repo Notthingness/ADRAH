@@ -1366,7 +1366,16 @@ function openDetail(item){
 // ADRESSE
 if(item.adresse){
 
-  dAddress.textContent = item.adresse;
+  const adresse = item.adresse.trim();
+
+  dAddress.innerHTML = `
+    <a href="https://maps.apple.com/?q=${encodeURIComponent(adresse)}"
+       target="_blank"
+       style="color:#1e5eff;text-decoration:none;">
+      ${adresse}
+    </a>
+  `;
+
   dAddressWrap.style.display = 'block';
 
 }else{
