@@ -1376,18 +1376,25 @@ if(item.adresse){
 }
 
 // EMAIL
-if(item.email){
+if(item.adresse){
 
-  dEmail.textContent = item.email;
-  dEmailWrap.style.display = 'block';
+  const adresse = item.adresse.trim();
+
+  dAddress.innerHTML = `
+    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}"
+       target="_blank"
+       style="color:#1e5eff;text-decoration:none;">
+      ${adresse}
+    </a>
+  `;
+
+  dAddressWrap.style.display = 'block';
 
 }else{
 
-  dEmail.textContent = '';
-  dEmailWrap.style.display = 'none';
+  dAddressWrap.style.display = 'none';
 
-}
-  
+}  
 if(item.services){
 
   dServices.textContent = item.services;
