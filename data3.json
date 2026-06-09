@@ -198,6 +198,24 @@
   "logo": ""
 },
 {
+  "nom": "Mutuelle nationale sapeurs pompiers",
+  "telephone": "09 77 40 84 16",
+  "categorie": "ASSURANCE",
+  "assisteur": "FILASSISTANCE",
+  "type": "ASSURANCE",
+  "pays": "FR",
+  "logo": ""
+},  
+{
+  "nom": "NEXX DIRECT",
+  "telephone": "",
+  "categorie": "ASSURANCE",
+  "assisteur": "FIDELIA",
+  "type": "ASSURANCE",
+  "pays": "FR",
+  "logo": ""
+},
+{
   "nom": "PACIFICA",
   "telephone": "01 53 74 33 00",
   "categorie": "ASSURANCE",
