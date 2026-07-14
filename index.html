@@ -35,7 +35,7 @@ body{
   font-family:Inter,system-ui,sans-serif;
 
   background:
-    linear-gradient(rgba(5,7,11,.25), rgba(5,7,11,.35)),
+    linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)),
     url("fond-adrah.PNG") center center / cover no-repeat fixed;
 
   -webkit-font-smoothing:antialiased;
@@ -141,12 +141,12 @@ a:focus{
   position:relative;
   overflow:hidden;
 
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.35);
 
-  border:1px solid rgba(255,255,255,.28);
+border:1px solid rgba(255,255,255,.55);
 
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
+backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
 
   box-shadow:
     0 8px 30px rgba(0,0,0,.25);
@@ -187,8 +187,8 @@ a:focus{
   inset:0;
   background:linear-gradient(
       135deg,
-      rgba(255,255,255,.18),
-      rgba(255,255,255,.02)
+      rgba(255,255,255,.35),
+      rgba(255,255,255,0)
   );
   pointer-events:none;
 }
