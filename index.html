@@ -35,7 +35,7 @@ body{
   font-family:Inter,system-ui,sans-serif;
 
   background:
-    linear-gradient(rgba(5,7,11,.70), rgba(5,7,11,.78)),
+    linear-gradient(rgba(5,7,11,.25), rgba(5,7,11,.35)),
     url("fond-adrah.PNG") center center / cover no-repeat fixed;
 
   -webkit-font-smoothing:antialiased;
@@ -132,29 +132,26 @@ a:focus{
   gap:18px;
 
   width:100%;
-  min-width:0;
-
   min-height:110px;
 
   padding:20px;
 
   border-radius:24px;
 
-  border:1px solid rgba(255,255,255,.08);
-
+  position:relative;
   overflow:hidden;
 
-  position:relative;
+  background:rgba(255,255,255,.12);
 
-  background:rgba(18,20,28,.58);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.28);
 
-  background-size:cover;
-  background-position:center;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
 
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.25);
 
-  transition:.2s;
+  transition:.25s;
 }
 
 .card:hover{
@@ -185,26 +182,16 @@ a:focus{
 }
     
 .card::before{
-
   content:"";
-
   position:absolute;
-
   inset:0;
-
-  background:
-
-  linear-gradient(
-
-    180deg,
-
-    rgba(255,255,255,.04),
-
-    rgba(255,255,255,0)
-
+  background:linear-gradient(
+      135deg,
+      rgba(255,255,255,.18),
+      rgba(255,255,255,.02)
   );
-  pointer-events:none;  
- }
+  pointer-events:none;
+}
     
 .meta{
 
@@ -250,10 +237,12 @@ a:focus{
 .results{
   margin-top:24px;
 
-  background:rgba(18,20,28,.03);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  background:rgba(255,255,255,.10);
 
+  border:1px solid rgba(255,255,255,.25);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   border:1px solid rgba(255,255,255,.06);
 
   border-radius:24px;
