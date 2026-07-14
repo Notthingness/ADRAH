@@ -13,12 +13,19 @@
   <style>
     :root{
   --bg:#05070b;
-  --panel:rgba(18,20,28,.88);
-  --panel-2:rgba(28,32,42,.92);
+
+  --panel:rgba(255,255,255,.18);
+  --panel-2:rgba(255,255,255,.25);
+
   --muted:#9ca3b5;
   --text:#ffffff;
-  --accent:#e01919;
-  --accent-2:#ff3434;
+
+  --blue:#005BFF;
+  --blue-light:#5EAFFF;
+  --blue-glow:rgba(0,91,255,.6);
+
+  --red:#e01919;
+  --red-light:#ff3434;
 }
 
 *{
@@ -199,10 +206,10 @@ a:focus{
     margin:0;
     font-size:34px;
     font-weight:800;
-    color:#005BFF;
+    color:var(--blue);
 
     text-shadow:
-        0 0 3px rgba(0,91,255,.9),
+        0 0 3px var(--blue-glow),
         0 0 8px rgba(0,91,255,.5);
 }
 
@@ -218,13 +225,14 @@ a:focus{
 .card i{
     animation: neonPulse 2.5s ease-in-out infinite; 
     font-size:40px;
-    color:#005BFF;
+    color:var(--blue);
 
-    text-shadow:
-        0 0 5px rgba(0,70,255,.9),
-        0 0 12px rgba(0,70,255,.7),
-        0 0 24px rgba(0,70,255,.45);
-}    
+text-shadow:
+0 0 5px var(--blue-glow),
+0 0 12px var(--blue-glow),
+0 0 24px rgba(0,91,255,.45);
+}
+    
 .card::before{
   content:"";
   position:absolute;
