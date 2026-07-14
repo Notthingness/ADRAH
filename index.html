@@ -192,6 +192,26 @@ a:focus{
   0 12px 30px rgba(0,0,0,.45);
 }
 
+/* ===== Animation néon ===== */
+
+@keyframes neonPulse{
+
+  0%,100%{
+
+    filter:brightness(1);
+
+  }
+
+  50%{
+
+    filter:brightness(1.35);
+
+  }
+
+}
+
+/* ========================= */
+    
 .card h3{
     margin:0;
     font-size:34px;
@@ -211,6 +231,7 @@ a:focus{
 }
 
 .card i{
+    animation: neonPulse 2.5s ease-in-out infinite; 
     font-size:40px;
     color:#005BFF;
 
