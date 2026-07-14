@@ -196,37 +196,29 @@ a:focus{
     margin:0;
     font-size:34px;
     font-weight:800;
-    color:#42A5FF;
+    color:#005BFF;
 
     text-shadow:
-        0 0 2px #ffffff,
-        0 0 6px #5db9ff,
-        0 0 12px #2f8cff,
-        0 0 24px #0066ff,
-        0 0 42px #0066ff;
+        0 0 3px rgba(0,70,255,.9),
+        0 0 8px rgba(0,70,255,.7),
+        0 0 18px rgba(0,70,255,.45);
 }
 
-.card span{
-    color:#8fd2ff;
+.card span:not(.badge){
+    color:#76B7FF;
 
-    text-shadow:
-        0 0 2px #ffffff,
-        0 0 6px #6cc4ff,
-        0 0 12px #008cff;
+    text-shadow:none;
 }
 
 .card i{
     font-size:40px;
-    color:#42A5FF;
+    color:#005BFF;
 
     text-shadow:
-        0 0 4px #ffffff,
-        0 0 10px #5db9ff,
-        0 0 22px #0066ff,
-        0 0 40px #0066ff,
-        0 0 70px #0066ff;
-}
-    
+        0 0 5px rgba(0,70,255,.9),
+        0 0 12px rgba(0,70,255,.7),
+        0 0 24px rgba(0,70,255,.45);
+}    
 .card::before{
   content:"";
   position:absolute;
@@ -251,11 +243,11 @@ a:focus{
 }
 
 .card h3,
-.card span{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
+.card span:not(.badge){
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
     
 .card span{
   display:block;
