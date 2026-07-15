@@ -220,67 +220,42 @@ box-shadow:
 /* ========================= */
     
 .card h3{
-    position:relative;
-    z-index:2;
 
-    margin:0;
+  color:#005BFF;
+  font-weight:900;
 
-    font-size:clamp(22px, 5vw, 34px);
-
-    font-weight:900;
-    letter-spacing:1px;
-
-    color:var(--blue);
-
-    text-shadow:
-
-      0 0 3px rgba(255,255,255,.9),
-
-      0 0 8px rgba(0,91,255,.9),
-
-      0 0 18px rgba(0,91,255,.7),
-
-      0 0 35px rgba(0,91,255,.5);
-  
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+  text-shadow:
+    0 0 2px #fff,
+    0 0 6px #fff,
+    0 0 12px #5EAFFF,
+    0 0 24px #005BFF,
+    0 0 40px #005BFF,
+    0 0 60px #005BFF;
 }
-
+    
 .card span:not(.badge){
-    position:relative;
-    z-index:2;
-  
-    display:block;
 
-    color:var(--blue);
+  color:#005BFF;
+  font-weight:800;
 
-    font-weight:700;
-
-    text-shadow:
-
-      0 0 2px rgba(255,255,255,.8),
-
-      0 0 8px rgba(0,91,255,.8),
-
-      0 0 18px rgba(0,91,255,.5);
+  text-shadow:
+    0 0 2px #fff,
+    0 0 8px #5EAFFF,
+    0 0 18px #005BFF,
+    0 0 35px #005BFF;
 }
     
 .card i{
-    position:relative;
-    z-index:2;
-  
-    animation: neonPulse 2.5s ease-in-out infinite;
-    font-size:46px;
-    color:var(--blue);
 
-    text-shadow:
+  color:#005BFF;
 
-      0 0 6px rgba(0,91,255,.9),
+  text-shadow:
+    0 0 4px #fff,
+    0 0 12px #5EAFFF,
+    0 0 24px #005BFF,
+    0 0 40px #005BFF;
 
-      0 0 18px rgba(0,91,255,.7),
-
-      0 0 35px rgba(0,91,255,.5);
+  animation:neonPulse 2.5s infinite;
 }
     
 .card::before{
@@ -410,45 +385,31 @@ box-shadow:
 }
 
 .row .title{
-    color:var(--blue);
 
+    color:#005BFF;
+    font-weight:900;
 
     text-shadow:
-
-      0 0 3px rgba(255,255,255,.9),
-
-      0 0 8px rgba(0,91,255,.9),
-
-      0 0 20px rgba(0,91,255,.7),
-
-      0 0 35px rgba(0,91,255,.5);
-  
-  font-size:20px;
-  font-weight:900;
-
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+      0 0 2px #fff,
+      0 0 8px #5EAFFF,
+      0 0 18px #005BFF,
+      0 0 35px #005BFF;
 }
+    
 .row .meta{
   min-width:0;
   overflow:hidden;
 }
    
 .row .sub{
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    font-size:14px;
 
-    color:#000;
-
-    font-weight:600;
-
-    text-shadow:none;
+    color:#005BFF;
+    font-weight:800;
 
     text-shadow:
-        0 0 3px rgba(0,91,255,.8);
+      0 0 2px #fff,
+      0 0 6px #5EAFFF,
+      0 0 12px #005BFF;
 }
 
 .actions{
@@ -730,21 +691,21 @@ html,body{
 
 .kv b{
 
-  display:block;
-  margin-bottom:6px;
-
-  color:#000;
-  font-size:13px;
-  font-weight:800;
-
+    font-size:14px;
+    font-weight:900;
+    color:#111;
 }
 
 .kv span{
 
-  font-size:17px;
-  font-weight:700;
-  color:#000;
+  font-size:18px;
+  font-weight:900;
+  color:#005BFF;
 
+  text-shadow:
+      0 0 2px #fff,
+      0 0 6px #5EAFFF,
+      0 0 12px #005BFF;
 }
 
 .hidden{
