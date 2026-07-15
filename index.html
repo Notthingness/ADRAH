@@ -180,20 +180,18 @@ a:focus{
 
  -webkit-backdrop-filter:blur(1px);
 
-  box-shadow:0 10px 25px rgba(0,0,0,.30);
+  box-shadow:
+
+    0 0 10px rgba(0,91,255,.18),
+
+    0 10px 25px rgba(0,0,0,.30);
 
   transition:.25s;
 }
 
 .card:hover{
 
-    transform:translateY(-4px);
-
-    border-color:rgba(0,91,255,.55);
-
-    box-shadow:
-        0 0 15px rgba(0,91,255,.30),
-        0 12px 30px rgba(0,0,0,.45);
+    transform:translateY(-3px);
 
 }
 
@@ -229,7 +227,6 @@ a:focus{
         0 0 20px var(--blue-glow),
         0 0 35px var(--blue-glow);
 
-    animation: neonPulse 2.5s ease-in-out infinite;
 }
 
 .card span:not(.badge){
@@ -241,10 +238,9 @@ a:focus{
         0 0 8px var(--blue),
         0 0 16px var(--blue-glow);
 
-    animation: neonPulse 2.5s ease-in-out infinite;
 }
 .card i{
-    animation: neonPulse 2.5s ease-in-out infinite; 
+    animation: neonPulse 2.5s ease-in-out infinite;
     font-size:40px;
     color:var(--blue);
 
