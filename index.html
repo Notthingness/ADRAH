@@ -200,17 +200,13 @@ a:focus{
 
 @keyframes neonPulse{
 
-  0%,100%{
+    0%,100%{
+        opacity:1;
+    }
 
-    filter:brightness(1);
-
-  }
-
-  50%{
-
-    filter:brightness(1.35);
-
-  }
+    50%{
+        opacity:.82;
+    }
 
 }
 
@@ -220,50 +216,47 @@ a:focus{
 
     margin:0;
 
-    color:#fff;
+    color:#ffffff;
 
     font-size:33px;
     font-weight:900;
-
     letter-spacing:.5px;
 
     text-shadow:
+        0 0 2px #ffffff,
+        0 0 6px #ffffff,
+        0 0 12px #4da3ff,
+        0 0 20px #005BFF;
 
-        0 0 3px #ffffff,
-
-        0 0 8px #0A5EFF,
-
-        0 0 14px rgba(10,94,255,.7);
 }
     
 .card span:not(.badge){
 
-    color:#fff;
+    color:#ffffff;
 
     font-size:18px;
     font-weight:700;
 
     text-shadow:
-    0 0 2px #ffffff,
-    0 0 6px rgba(10,94,255,.7);
+        0 0 2px #ffffff,
+        0 0 6px #4da3ff,
+        0 0 12px rgba(0,91,255,.8);
+
 }
     
 .card i{
 
-    color:#fff;
+    color:#ffffff;
 
     font-size:46px;
 
     text-shadow:
+        0 0 3px #ffffff,
+        0 0 8px #4da3ff,
+        0 0 16px #005BFF;
 
-        -1px 0 #0A5EFF,
-         1px 0 #0A5EFF,
-         0 -1px #0A5EFF,
-         0 1px #0A5EFF,
+    animation:neonPulse 2.5s ease-in-out infinite;
 
-         0 0 10px rgba(0,91,255,.8);
-
-    animation:none;
 }
     
 .card::before{
