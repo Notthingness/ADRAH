@@ -175,9 +175,8 @@ a:focus{
 
  -webkit-backdrop-filter: blur(12px);
 
-  isolation: isolate;
-  transform: translateZ(0);
-  will-change: transform;
+  transform:none;
+  will-change:auto;
   
   border:1px solid rgba(110,170,255,.45);
 
@@ -213,7 +212,12 @@ a:focus{
 /* ========================= */
     
 .card h3{
+    position:relative;
 
+    z-index:2;
+
+    isolation:isolate;
+  
     margin:0;
 
     color:#fff;
@@ -239,44 +243,23 @@ a:focus{
 
 }
 
-
 @keyframes neonText{
 
 from{
 text-shadow:
-0 0 2px #fff,
-0 0 8px #fff,
-0 0 15px #5EAFFF,
-0 0 30px #005BFF;
-}
-
-to{
-
-text-shadow:
-0 0 4px #fff,
-0 0 15px #5EAFFF,
-0 0 35px #005BFF,
-0 0 60px #005BFF;
-
-}
-
-}
-
-
-@keyframes neonTextSmall{
-
-from{
-text-shadow:
-0 0 2px #fff,
-0 0 8px #005BFF;
-}
-
-to{
-
-text-shadow:
+0 0 1px #fff,
 0 0 5px #fff,
-0 0 20px #005BFF,
-0 0 35px #005BFF;
+0 0 12px #5EAFFF,
+0 0 25px #005BFF;
+}
+
+to{
+
+text-shadow:
+0 0 2px #fff,
+0 0 10px #5EAFFF,
+0 0 25px #005BFF,
+0 0 45px #005BFF;
 
 }
 
@@ -315,8 +298,8 @@ text-shadow:
 
 .card h3,
 .card span:not(.badge){
-    overflow:hidden;
-    text-overflow:ellipsis;
+    overflow:visible;
+    text-overflow:clip;
     white-space:nowrap;
 }
     
