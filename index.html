@@ -161,7 +161,8 @@ a:focus{
   display:flex;
   align-items:center;
   gap:18px;
-
+  isolation:isolate;
+  
   width:100%;
   min-height:110px;
 
@@ -216,6 +217,9 @@ a:focus{
 /* ========================= */
     
 .card h3{
+    position:relative;
+    z-index:2;
+  
     margin:0;
     font-size:34px;
     font-weight:900;
@@ -230,6 +234,9 @@ a:focus{
 }
 
 .card span:not(.badge){
+    position:relative;
+    z-index:2;
+  
     display:block;
 
     color:var(--blue);
@@ -241,6 +248,9 @@ a:focus{
 }
     
 .card i{
+    position:relative;
+    z-index:2;
+  
     animation: neonPulse 2.5s ease-in-out infinite;
     font-size:40px;
     color:var(--blue);
@@ -255,9 +265,10 @@ text-shadow:
     content:"";
     position:absolute;
     inset:0;
+
     background:transparent;
-    pointer-events:none;
-}
+
+    z-index:0;
 
     pointer-events:none;
 }
