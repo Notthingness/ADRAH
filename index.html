@@ -99,6 +99,10 @@ header{
   box-shadow:0 10px 25px rgba(0,0,0,.30);
 
   color:var(--blue);
+  
+  text-shadow:
+  0 0 4px var(--blue),
+  0 0 10px var(--blue-glow);
 
   font-size:18px;
   font-weight:700;
@@ -110,8 +114,14 @@ header{
 
 .search input::placeholder{
 
-  color:var(--blue-light);
+  color:var(--blue);
+
   opacity:.65;
+
+  text-shadow:
+      0 0 3px var(--blue),
+      0 0 8px var(--blue-glow);
+
   text-align:center;
 }
     
