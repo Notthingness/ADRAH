@@ -284,18 +284,16 @@ a:focus{
 
     position:absolute;
 
-    width:320px;
-    height:320px;
+    inset:0;
 
-    right:-120px;
-    top:-120px;
-
-    background:radial-gradient(
-        circle,
-        rgba(70,145,255,.28) 0%,
-        rgba(70,145,255,.10) 45%,
-        transparent 75%
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.08),
+        transparent 45%
     );
+
+    pointer-events:none;
+}
 
     pointer-events:none;
 }
