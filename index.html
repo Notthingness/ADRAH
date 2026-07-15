@@ -89,7 +89,7 @@ header{
 
   background:rgba(255,255,255,.18);
 
-  border:1px solid rgba(255,255,255,.45);
+  border:1px solid rgba(0,91,255,.45);
 
   border-radius:20px;
 
@@ -127,11 +127,14 @@ header{
     
 .search input:focus{
 
-    border-color:#005BFF;
+    border-color:var(--blue);
 
     box-shadow:
-        0 0 10px rgba(0,91,255,.4),
-        0 0 25px rgba(0,91,255,.2);
+        0 0 12px var(--blue),
+        0 0 24px var(--blue-glow),
+        0 0 40px rgba(0,91,255,.35);
+
+    background:rgba(255,255,255,.22);
 }
     
 button,
@@ -184,12 +187,14 @@ a:focus{
 
 .card:hover{
 
-  transform:translateY(-3px);
+    transform:translateY(-4px);
 
-  border-color:rgba(255,255,255,.08);
+    border-color:rgba(0,91,255,.55);
 
-  box-shadow:
-  0 12px 30px rgba(0,0,0,.45);
+    box-shadow:
+        0 0 15px rgba(0,91,255,.30),
+        0 12px 30px rgba(0,0,0,.45);
+
 }
 
 /* ===== Animation néon ===== */
@@ -352,7 +357,12 @@ text-shadow:
   
 .row:hover{
 
-  background:rgba(255,255,255,.04);
+    background:rgba(255,255,255,.28);
+
+    border-color:rgba(0,91,255,.60);
+
+    box-shadow:
+        0 0 18px rgba(0,91,255,.35);
 
 }
 .row:last-child{
@@ -552,7 +562,8 @@ html,body{
   rgba(255,255,255,.35),
   url("fond-adrah.PNG") center/cover no-repeat;
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
 
   background-size:cover;
 
