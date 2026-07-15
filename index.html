@@ -222,15 +222,21 @@ box-shadow:
 .card h3{
     position:relative;
     z-index:2;
-  
+
     margin:0;
-    font-size:34px;
+
+    font-size:clamp(22px, 5vw, 34px);
+
     font-weight:900;
     letter-spacing:1px;
 
     color:var(--blue);
 
     text-shadow:none;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 .card span:not(.badge){
