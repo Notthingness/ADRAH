@@ -1402,13 +1402,12 @@ cats.addEventListener('click', e => {
 
   if (key === "ASSURANCE") {
 
-    return d.category === "ASSURANCE" ||
+  return d.category === "ASSURANCE" ||
+         d.category === "COURTIER" ||
+         d.type === "ASSURANCE" ||
+         d.type === "COURTIER";
 
-           d.type === "ASSURANCE" ||
-
-           d.type === "COURTIER";
-
-  }
+}
 
   return d.category === key || d.type === key;
 
