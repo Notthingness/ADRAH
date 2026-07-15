@@ -89,6 +89,7 @@ header{
   height:64px;
 
   padding:0 20px;
+  padding-top:2px;
 
   background:rgba(255,255,255,.18);
 
@@ -117,7 +118,9 @@ header{
 
   display:block;
 
-  line-height:64px;
+  line-height:normal;
+
+  vertical-align:middle;
 }
 
 .search input::placeholder{
@@ -129,9 +132,10 @@ header{
   text-align:center;
 
 }
-    
-.search input:focus{
 
+.search input:focus{
+  
+  line-height:normal;
   border-color:var(--blue);
 
   box-shadow:
