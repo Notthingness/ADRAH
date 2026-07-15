@@ -217,28 +217,34 @@ a:focus{
     
 .card h3{
     margin:0;
+
     font-size:34px;
-    font-weight:800;
-    color:var(--blue);
+    font-weight:900;
+    letter-spacing:1px;
 
-    text-shadow:
-        0 0 4px var(--blue),
-        0 0 10px var(--blue),
-        0 0 20px var(--blue-glow),
-        0 0 35px var(--blue-glow);
+    color:var(--text);
 
-}
-
-.card span:not(.badge){
-    display:block;
-    color:var(--blue);
+    -webkit-text-stroke:1px var(--blue);
 
     text-shadow:
         0 0 3px var(--blue),
         0 0 8px var(--blue),
-        0 0 16px var(--blue-glow);
-
+        0 0 18px var(--blue-glow);
 }
+
+.card span:not(.badge){
+    display:block;
+
+    color:var(--text);
+
+    -webkit-text-stroke:.6px var(--blue);
+
+    text-shadow:
+        0 0 2px var(--blue),
+        0 0 6px var(--blue),
+        0 0 14px var(--blue-glow);
+}
+    
 .card i{
     animation: neonPulse 2.5s ease-in-out infinite;
     font-size:40px;
@@ -254,12 +260,9 @@ text-shadow:
     content:"";
     position:absolute;
     inset:0;
-
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,0)
-    );
+    background:transparent;
+    pointer-events:none;
+}
 
     pointer-events:none;
 }
