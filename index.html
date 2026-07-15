@@ -232,8 +232,16 @@ box-shadow:
 
     color:var(--blue);
 
-    text-shadow:none;
+    text-shadow:
 
+      0 0 3px rgba(255,255,255,.9),
+
+      0 0 8px rgba(0,91,255,.9),
+
+      0 0 18px rgba(0,91,255,.7),
+
+      0 0 35px rgba(0,91,255,.5);
+  
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
@@ -247,7 +255,15 @@ box-shadow:
 
     color:var(--blue);
 
-    text-shadow:none;
+    font-weight:700;
+
+    text-shadow:
+
+      0 0 2px rgba(255,255,255,.8),
+
+      0 0 8px rgba(0,91,255,.8),
+
+      0 0 18px rgba(0,91,255,.5);
 }
     
 .card i{
@@ -258,7 +274,13 @@ box-shadow:
     font-size:46px;
     color:var(--blue);
 
-text-shadow:none;
+    text-shadow:
+
+      0 0 6px rgba(0,91,255,.9),
+
+      0 0 18px rgba(0,91,255,.7),
+
+      0 0 35px rgba(0,91,255,.5);
 }
     
 .card::before{
@@ -332,6 +354,10 @@ text-shadow:none;
 
 .results-head strong{
   font-size:15px;
+
+  color:#000;
+
+  font-weight:800;
 }
     
 .results-head .muted{
@@ -386,12 +412,19 @@ text-shadow:none;
 .row .title{
     color:var(--blue);
 
+
     text-shadow:
-        0 0 4px rgba(0,91,255,.9),
-        0 0 10px rgba(0,91,255,.6);
+
+      0 0 3px rgba(255,255,255,.9),
+
+      0 0 8px rgba(0,91,255,.9),
+
+      0 0 20px rgba(0,91,255,.7),
+
+      0 0 35px rgba(0,91,255,.5);
   
   font-size:20px;
-  font-weight:700;
+  font-weight:900;
 
   white-space:nowrap;
   overflow:hidden;
@@ -696,23 +729,22 @@ html,body{
 }
 
 .kv b{
-  display:block;
 
+  display:block;
   margin-bottom:6px;
 
   color:#000;
+  font-size:13px;
+  font-weight:800;
 
-  font-weight:700;
-
-  font-size:12px;
 }
 
 .kv span{
-  font-size:15px;
 
+  font-size:17px;
+  font-weight:700;
   color:#000;
 
-  font-weight:500;
 }
 
 .hidden{
@@ -819,7 +851,7 @@ html,body{
     </div>
 
     <section>
-      <h2 id="secretTrigger" style="margin:0 0 10px 2px;font-size:14px;color:#000;letter-spacing:.3px">
+      <h2 id="secretTrigger" style="margin:0 0 10px 2px;font-size:14px;color:#000;font-weight:800;letter-spacing:.3px">
 CATÉGORIES
 </h2>
       <div class="grid" id="cats">
