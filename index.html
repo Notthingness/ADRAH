@@ -1178,19 +1178,21 @@ function matches(item, needle){
 
   const hay = [
 
-    item.name,
+  item.name,
 
-    item.type,
+  item.type,
 
-    item.category,
+  item.category,
 
-    item.assistant,
+  item.assistant,
 
-    item.phone,
+  item.phone,
 
-    item.extra
+  item.extra,
 
-  ].join(' ').toLowerCase();
+  item.services
+
+].join(' ').toLowerCase();
 
   return hay.includes(needle.toLowerCase());
 
@@ -1312,14 +1314,15 @@ function search(text){
   const rows = DATA.filter(d => {
 
     const hay = [
-      d.name,
-      d.type,
-      d.category,
-      d.assistant,
-      d.phone,
-      d.extra,
-      d.country
-    ]
+  d.name,
+  d.type,
+  d.category,
+  d.assistant,
+  d.phone,
+  d.extra,
+  d.services,
+  d.country
+]
     .join(' ')
     .toLowerCase();
 
