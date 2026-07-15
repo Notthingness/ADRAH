@@ -101,9 +101,7 @@ header{
 
   color:var(--blue);
   
-  text-shadow:
-  0 0 4px var(--blue),
-  0 0 10px var(--blue-glow);
+  text-shadow:none;
 
   font-size:18px;
   font-weight:700;
@@ -117,11 +115,9 @@ header{
 
   color:var(--blue);
 
-  opacity:.65;
+  opacity:1;
 
-  text-shadow:
-      0 0 3px var(--blue),
-      0 0 8px var(--blue-glow);
+  text-shadow:none;
 
   text-align:center;
 }
@@ -1227,12 +1223,13 @@ listEl.innerHTML = rows.map((r,i)=>{
   <div class="actions">
 
     <a
-      class="btn btn-call"
-      href="tel:${(r.phone || '').replace(/\s+/g,'')}">
+  class="btn btn-call"
+  href="tel:${(r.phone || '').replace(/\s+/g,'')}"
+  onclick="event.stopPropagation();">
 
-      <i class="ph ph-phone"></i>
+  <i class="ph ph-phone"></i>
 
-    </a>
+</a>
 
     <button
       class="btn btn-ghost ${isFav(r) ? 'on' : ''}"
@@ -1524,6 +1521,12 @@ document
 // CLICK RESULTATS
 
 listEl.addEventListener('click', e => {
+
+  if(e.target.closest('.btn-call')){
+    return;
+  }
+
+  const fav = e.target.closest('[data-fav]');
 
   const fav = e.target.closest('[data-fav]');
 
