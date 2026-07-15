@@ -1223,9 +1223,9 @@ listEl.innerHTML = rows.map((r,i)=>{
   <div class="actions">
 
     <a
-  class="btn btn-call"
-  href="tel:${(r.phone || '').replace(/\s+/g,'')}"
-  onclick="event.stopPropagation();">
+class="btn btn-call"
+href="tel:${(r.phone || '').replace(/\s+/g,'')}"
+onclick="event.stopPropagation();">
 
   <i class="ph ph-phone"></i>
 
@@ -1525,8 +1525,6 @@ listEl.addEventListener('click', e => {
   if(e.target.closest('.btn-call')){
     return;
   }
-
-  const fav = e.target.closest('[data-fav]');
 
   const fav = e.target.closest('[data-fav]');
 
