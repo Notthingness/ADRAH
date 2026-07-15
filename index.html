@@ -219,8 +219,12 @@ a:focus{
     color:var(--blue);
 
     text-shadow:
-        0 0 3px var(--blue-glow),
-        0 0 8px rgba(0,91,255,.5);
+        0 0 4px var(--blue),
+        0 0 10px var(--blue),
+        0 0 20px var(--blue-glow),
+        0 0 35px var(--blue-glow);
+
+    animation: neonPulse 2.5s ease-in-out infinite;
 }
 
 .card span:not(.badge){
@@ -228,10 +232,12 @@ a:focus{
     color:var(--blue);
 
     text-shadow:
-        0 0 3px rgba(0,91,255,.9),
-        0 0 8px rgba(0,91,255,.6);
-}
+        0 0 3px var(--blue),
+        0 0 8px var(--blue),
+        0 0 16px var(--blue-glow);
 
+    animation: neonPulse 2.5s ease-in-out infinite;
+}
 .card i{
     animation: neonPulse 2.5s ease-in-out infinite; 
     font-size:40px;
