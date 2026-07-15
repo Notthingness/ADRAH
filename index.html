@@ -160,6 +160,8 @@ a:focus{
   align-items:center;
   gap:22px;
 
+  isolation:isolate;
+
   position:relative;
   overflow:hidden;
 
@@ -213,18 +215,9 @@ a:focus{
     
 .card h3{
 
-    filter:none;
-
-    mix-blend-mode:normal;
-
-    transform:translateZ(0);
-  
     position:relative;
-
     z-index:2;
 
-    isolation:isolate;
-  
     margin:0;
 
     color:#fff;
@@ -234,7 +227,12 @@ a:focus{
 
     letter-spacing:1px;
 
-    animation: neonText 2s infinite alternate;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 6px #5EAFFF,
+      0 0 14px #005BFF;
+
+    animation: neonText 2s ease-in-out infinite alternate;
 
 }
 
@@ -246,42 +244,66 @@ a:focus{
     font-size:18px;
     font-weight:800;
 
-    animation: neonTextSmall 2s infinite alternate;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 6px #5EAFFF,
+      0 0 14px #005BFF;
+
+    animation: neonTextSmall 2s ease-in-out infinite alternate;
 
 }
+
 
 @keyframes neonText{
 
 from{
-text-shadow:
-0 0 1px #fff,
-0 0 5px #fff,
-0 0 12px #5EAFFF,
-0 0 25px #005BFF;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 6px #5EAFFF,
+      0 0 14px #005BFF;
 }
 
 to{
+    text-shadow:
+      0 0 3px #fff,
+      0 0 10px #5EAFFF,
+      0 0 22px #005BFF;
+}
 
-text-shadow:
-0 0 2px #fff,
-0 0 10px #5EAFFF,
-0 0 25px #005BFF,
-0 0 45px #005BFF;
+}
 
+
+@keyframes neonTextSmall{
+
+from{
+    text-shadow:
+      0 0 2px #fff,
+      0 0 5px #5EAFFF,
+      0 0 12px #005BFF;
+}
+
+to{
+    text-shadow:
+      0 0 3px #fff,
+      0 0 8px #5EAFFF,
+      0 0 18px #005BFF;
 }
 
 }  
     
 .card i{
 
-    color:#ffffff;
+    color:#fff;
 
     font-size:46px;
 
     text-shadow:
-        0 0 3px #ffffff,
-        0 0 8px #4da3ff,
-        0 0 16px #005BFF;
+
+        0 0 2px #fff,
+
+        0 0 6px #5EAFFF,
+
+        0 0 14px #005BFF;
 
     animation:neonPulse 2.5s ease-in-out infinite;
 
