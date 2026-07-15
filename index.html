@@ -1398,10 +1398,21 @@ cats.addEventListener('click', e => {
   const key = btn.dataset.cat;
 
   const rows = DATA
-.filter(d =>
-  d.category === key || d.type === key
+.filter(d => {
 
-)
+  if (key === "ASSURANCE") {
+
+    return d.category === "ASSURANCE" ||
+
+           d.type === "ASSURANCE" ||
+
+           d.type === "COURTIER";
+
+  }
+
+  return d.category === key || d.type === key;
+
+})
   .sort((a, b) => {
 
   const countryA = (a.country || 'FR').toUpperCase();
