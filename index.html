@@ -220,31 +220,67 @@ a:focus{
 
     margin:0;
 
-    color:#ffffff;
+    color:#fff;
 
     font-size:33px;
     font-weight:900;
-    letter-spacing:.5px;
 
-    text-shadow:
-        0 0 2px #ffffff,
-        0 0 6px #ffffff,
-        0 0 12px #4da3ff,
-        0 0 20px #005BFF;
+    letter-spacing:1px;
+
+    animation: neonText 2s infinite alternate;
 
 }
-    
+
+
 .card span:not(.badge){
 
-    color:#ffffff;
+    color:#5EAFFF;
 
     font-size:18px;
-    font-weight:700;
+    font-weight:800;
 
-    text-shadow:
-        0 0 2px #ffffff,
-        0 0 6px #4da3ff,
-        0 0 12px rgba(0,91,255,.8);
+    animation: neonTextSmall 2s infinite alternate;
+
+}
+
+
+@keyframes neonText{
+
+from{
+text-shadow:
+0 0 2px #fff,
+0 0 8px #fff,
+0 0 15px #5EAFFF,
+0 0 30px #005BFF;
+}
+
+to{
+
+text-shadow:
+0 0 4px #fff,
+0 0 15px #5EAFFF,
+0 0 35px #005BFF,
+0 0 60px #005BFF;
+
+}
+
+}
+
+
+@keyframes neonTextSmall{
+
+from{
+text-shadow:
+0 0 2px #fff,
+0 0 8px #005BFF;
+}
+
+to{
+
+text-shadow:
+0 0 5px #fff,
+0 0 20px #005BFF,
+0 0 35px #005BFF;
 
 }
     
@@ -265,8 +301,6 @@ a:focus{
     
 .card::before{
     display:none;
-}
-
     pointer-events:none;
 }
     
