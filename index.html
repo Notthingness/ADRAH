@@ -42,7 +42,11 @@ body{
   font-family:Inter,system-ui,sans-serif;
 
   background:
-    url("fond-adrah.PNG") center center / cover no-repeat fixed;
+    linear-gradient(
+        rgba(255,255,255,.16),
+        rgba(255,255,255,.10)
+    ),
+    url("fond-adrah.PNG") center/cover no-repeat fixed;
 
   background-position:center center;
   background-size:cover;
@@ -992,7 +996,7 @@ CATÉGORIES
     <img id="d-logo" alt="">
 
     <div>
-      <div id="d-name" style="font-weight:700"></div>
+      <div id="d-name"></div>
       <div id="d-cat" class="muted" style="font-size:12px"></div>
     </div>
   </div>
