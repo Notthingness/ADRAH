@@ -421,48 +421,64 @@ to{
     align-items:center;
     justify-content:space-between;
 
-    padding:18px 20px;
+    gap:18px;
 
-    background:rgba(255,255,255,.18);
+    padding:22px;
 
-    border:1px solid rgba(0,91,255,.35);
+    border-radius:30px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(110,170,255,.45);
 
     box-shadow:
-    0 0 15px rgba(0,91,255,.20);
-  
-    border-radius:22px;
-
-    backdrop-filter:blur(4px);
-
-    -webkit-backdrop-filter:blur(4px);
+        inset 0 1px 1px rgba(255,255,255,.45),
+        inset 0 -8px 25px rgba(255,255,255,.06),
+        0 10px 35px rgba(0,0,0,.35),
+        0 0 25px rgba(0,91,255,.18);
 
     transition:.25s;
 }
-  
+
 .row:hover{
 
-    background:rgba(255,255,255,.28);
-
-    border-color:rgba(0,91,255,.60);
+    transform:translateY(-3px);
 
     box-shadow:
-        0 0 18px rgba(0,91,255,.35);
+        inset 0 1px 1px rgba(255,255,255,.45),
+        inset 0 -8px 25px rgba(255,255,255,.06),
+        0 15px 40px rgba(0,0,0,.40),
+        0 0 35px rgba(0,91,255,.35);
 
 }
+    
 .row:last-child{
   border-bottom:none;
 }
 
 .row .title{
 
-    color:#005BFF;
+    color:#fff;
+
+    font-size:18px;
+
     font-weight:900;
 
     text-shadow:
-      0 0 2px #fff,
-      0 0 8px #5EAFFF,
-      0 0 18px #005BFF,
-      0 0 35px #005BFF;
+
+        0 0 2px #fff,
+
+        0 0 6px #5EAFFF,
+
+        0 0 14px #005BFF;
+
+    animation:neonText 2s ease-in-out infinite alternate;
 }
     
 .row .meta{
@@ -472,13 +488,19 @@ to{
    
 .row .sub{
 
-    color:#005BFF;
+    margin-top:5px;
+
+    color:#5EAFFF;
+
     font-weight:800;
 
     text-shadow:
-      0 0 2px #fff,
-      0 0 6px #5EAFFF,
-      0 0 12px #005BFF;
+        0 0 2px #fff,
+        0 0 5px #5EAFFF,
+        0 0 12px #005BFF;
+
+    animation:neonTextSmall 2s ease-in-out infinite alternate;
+
 }
 
 .actions{
@@ -535,10 +557,14 @@ a{
     
 .list .btn-call{
 
-  width:52px;
-  height:52px;
-
+  width:60px;
+  height:60px;
+  
+  box-shadow:
+  0 0 20px rgba(255,0,0,.35);
+  
   border-radius:50%;
+  
 
   padding:0;
 }
@@ -619,23 +645,45 @@ html,body{
         
 .btn-ghost{
 
-  width:50px;
-  height:50px;
+    width:56px;
+    height:56px;
 
-  background:rgba(255,255,255,.06);
+    border-radius:20px;
 
-  color:white;
+    background:rgba(255,255,255,.08);
 
-  border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(110,170,255,.45);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.25),
+        0 0 18px rgba(0,91,255,.18);
+
+}
+
+.btn-ghost i{
+
+    font-size:22px;
+
+    text-shadow:
+        0 0 2px #fff,
+        0 0 8px #5EAFFF;
+
 }
 
 .btn-ghost.on{
 
-  background:#1e5eff;
+    background:#005BFF;
 
-  color:white;
+    border-color:#5EAFFF;
 
-  border-color:#1e5eff;
+    box-shadow:
+        0 0 12px #005BFF,
+        0 0 30px rgba(0,91,255,.45);
+
 }
 
 .drawer{
@@ -648,8 +696,11 @@ html,body{
   height:100%;
 
   background:
-  rgba(255,255,255,.35),
-  url("fond-adrah.PNG") center/cover no-repeat;
+linear-gradient(
+    rgba(255,255,255,.16),
+    rgba(255,255,255,.10)
+),
+url("fond-adrah.PNG") center/cover no-repeat;
 
   backdrop-filter:blur(20px);
   -webkit-backdrop-filter:blur(20px);
@@ -749,13 +800,23 @@ html,body{
 } 
     
 .kv{
-  background:rgba(255,255,255,.03);
 
-  border:1px solid rgba(255,255,255,.06);
+    background:rgba(255,255,255,.08);
 
-  border-radius:18px;
+    border:1px solid rgba(110,170,255,.40);
 
-  padding:14px;
+    border-radius:24px;
+
+    padding:18px;
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.35),
+        0 0 18px rgba(0,91,255,.18);
+
 }
 
 .kv b{
@@ -767,14 +828,19 @@ html,body{
 
 .kv span{
 
-  font-size:18px;
-  font-weight:900;
-  color:#005BFF;
+    color:#5EAFFF;
 
-  text-shadow:
-      0 0 2px #fff,
-      0 0 6px #5EAFFF,
-      0 0 12px #005BFF;
+    font-size:19px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 0 2px #fff,
+        0 0 6px #5EAFFF,
+        0 0 14px #005BFF;
+
+    animation:neonTextSmall 2s ease-in-out infinite alternate;
+
 }
 
 .hidden{
@@ -861,7 +927,22 @@ html,body{
 #d-email a{
   color:#1e5eff;
   text-decoration:underline;
-}    
+} 
+    
+#d-name{
+
+    font-size:34px;
+
+    font-weight:900;
+
+    color:white;
+
+    text-shadow:
+        0 0 2px #fff,
+        0 0 8px #5EAFFF,
+        0 0 18px #005BFF;
+
+}  
     
 </style>
 </head>
