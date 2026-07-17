@@ -1066,8 +1066,27 @@ document.getElementById("d-call").href=
 
 document.getElementById("d-type").textContent=item.type;
 
-
 document.getElementById("d-assist").textContent=item.assistant;
+
+
+const typeEl = document.getElementById("d-type").parentElement;
+const assistEl = document.getElementById("d-assist").parentElement;
+
+
+if(item.category === "GARAGE"){
+
+    typeEl.style.display = "block";
+    assistEl.style.display = "none";
+
+}
+
+
+if(item.category === "ASSURANCE"){
+
+    typeEl.style.display = "block";
+    assistEl.style.display = "block";
+
+}
 
 
 const address = document.getElementById("d-address");
