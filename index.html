@@ -873,11 +873,13 @@ x["e-mail"] ||
 "",
 
 
-email:x.email || "",
-
 
 services:x.services || "",
 
+adresse:
+x.adresse ||
+x.address ||
+"",
 
 logo:x.logo || ""
 
@@ -1152,10 +1154,15 @@ const servicesBox = document.getElementById("servicesBox");
 
 // AFFICHAGE SELON CATEGORIE
 
-addressBox.style.display="block";
-emailBox.style.display="block";
-servicesBox.style.display="block";
+typeBox.style.display="block";
 
+assistBox.style.display="block";
+
+addressBox.style.display="block";
+
+emailBox.style.display="block";
+
+servicesBox.style.display="block";
 
 if(item.category === "GARAGE"){
 
@@ -1163,10 +1170,10 @@ if(item.category === "GARAGE"){
 
 }
 
-
 else if(item.category === "ASSURANCE"){
 
     addressBox.style.display="none";
+
     servicesBox.style.display="none";
 
 }
