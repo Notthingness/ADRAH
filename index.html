@@ -51,6 +51,8 @@ color:white;
 
 background:#05070b;
 
+overflow-x:hidden;
+
 }
 
 
@@ -60,7 +62,10 @@ content:"";
 
 position:fixed;
 
-inset:0;
+top:0;
+left:0;
+right:0;
+bottom:0;
 
 background:
 
@@ -79,17 +84,18 @@ background-size:cover;
 background-repeat:no-repeat;
 
 
-z-index:-1;
+z-index:0;
+
+pointer-events:none;
 
 }
 
-html{
-
-background:#05070b;
-
-}
 
 .app{
+
+position:relative;
+
+z-index:1;
 
 max-width:560px;
 
@@ -558,6 +564,13 @@ text-shadow:
 
 0 0 10px #005BFF;
 
+}
+
+
+.info span,
+.info a{
+
+cursor:pointer;
 
 }
 
@@ -647,12 +660,20 @@ margin:20px 0;
 <div class="info">
 
 
+<div id="typeBox">
+
 <b>Type</b>
 <span id="d-type"></span>
 
+</div>
+
+
+<div id="assistBox">
 
 <b>Assisteur</b>
 <span id="d-assist"></span>
+
+</div>
 
 
 <b>Adresse</b>
@@ -1095,22 +1116,30 @@ document.getElementById("d-type").textContent=item.type;
 document.getElementById("d-assist").textContent=item.assistant;
 
 
-const typeEl = document.getElementById("d-type").parentElement;
-const assistEl = document.getElementById("d-assist").parentElement;
+const typeBox = document.getElementById("typeBox");
+const assistBox = document.getElementById("assistBox");
 
 
 if(item.category === "GARAGE"){
 
-    typeEl.style.display = "block";
-    assistEl.style.display = "none";
+    typeBox.style.display="block";
+    assistBox.style.display="none";
 
 }
 
 
-if(item.category === "ASSURANCE"){
+else if(item.category === "ASSURANCE"){
 
-    typeEl.style.display = "block";
-    assistEl.style.display = "block";
+    typeBox.style.display="block";
+    assistBox.style.display="block";
+
+}
+
+
+else{
+
+    typeBox.style.display="block";
+    assistBox.style.display="block";
 
 }
 
