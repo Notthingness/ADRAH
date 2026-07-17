@@ -859,6 +859,11 @@ x.assisteur ||
 x.assistant ||
 "",
 
+adresse:
+x.adresse ||
+x.address ||
+"",
+
 
 email:
 x.email ||
@@ -1145,9 +1150,15 @@ const addressBox = document.getElementById("addressBox");
 const emailBox = document.getElementById("emailBox");
 const servicesBox = document.getElementById("servicesBox");
 
+// AFFICHAGE SELON CATEGORIE
+
+addressBox.style.display="block";
+emailBox.style.display="block";
+servicesBox.style.display="block";
+
+
 if(item.category === "GARAGE"){
 
-    typeBox.style.display="block";
     assistBox.style.display="none";
 
 }
@@ -1155,15 +1166,14 @@ if(item.category === "GARAGE"){
 
 else if(item.category === "ASSURANCE"){
 
-    typeBox.style.display="block";
-    assistBox.style.display="block";
+    addressBox.style.display="none";
+    servicesBox.style.display="none";
 
 }
 
 
 else{
 
-    typeBox.style.display="block";
     assistBox.style.display="block";
 
 }
