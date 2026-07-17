@@ -641,7 +641,9 @@ margin:20px 0;
 
 
 <b>Adresse</b>
-<span id="d-address"></span>
+<span>
+<a id="d-address" target="_blank"></a>
+</span>
 
 
 <b>Email</b>
@@ -1068,10 +1070,50 @@ document.getElementById("d-type").textContent=item.type;
 document.getElementById("d-assist").textContent=item.assistant;
 
 
-document.getElementById("d-address").textContent=item.adresse;
+const address = document.getElementById("d-address");
+
+address.textContent = item.adresse || "—";
+
+if(item.adresse){
+
+address.href =
+"https://maps.apple.com/?q=" +
+encodeURIComponent(item.adresse);
+
+address.style.color="#00a2ff";
+address.style.textDecoration="underline";
+
+}else{
+
+address.removeAttribute("href");
+
+}
 
 
-document.getElementById("d-email").textContent=item.email;
+const email = document.getElementById("d-email");
+
+
+email.onclick = async ()=>{
+
+if(!item.email) return;
+
+
+await navigator.clipboard.writeText(item.email);
+
+
+const old=email.textContent;
+
+email.textContent="✓ Copié";
+
+
+setTimeout(()=>{
+
+email.textContent=old;
+
+},1200);
+
+
+};
 
 
 document.getElementById("d-services").textContent=item.services;
