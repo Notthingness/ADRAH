@@ -859,10 +859,6 @@ x.assisteur ||
 x.assistant ||
 "",
 
-adresse:
-x.adresse ||
-x.address ||
-"",
 
 
 email:
@@ -1235,33 +1231,6 @@ email.textContent=old;
 document.getElementById("d-services").textContent=item.services;
 
 
-// AFFICHAGE SELON CATEGORIE
-
-if(item.category === "GARAGE"){
-
-    addressBox.style.display="block";
-    emailBox.style.display="block";
-    servicesBox.style.display="block";
-
-}
-
-
-else if(item.category === "ASSURANCE"){
-
-    addressBox.style.display="none";
-    emailBox.style.display="block";
-    servicesBox.style.display="block";
-
-}
-
-
-else{
-
-    addressBox.style.display="none";
-    emailBox.style.display="block";
-    servicesBox.style.display="block";
-
-}
 
 
 
