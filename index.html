@@ -851,13 +851,16 @@ x.category ||
 ).toUpperCase(),
 
 
-type:x.type || "",
+type: String(
+    x.type ?? ""
+).trim(),
 
 
-assistant:
-x.assisteur ||
-x.assistant ||
-"",
+assistant: String(
+    x.assisteur ??
+    x.assistant ??
+    ""
+).trim(),
 
 
 
