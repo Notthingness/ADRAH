@@ -1204,26 +1204,21 @@ address.removeAttribute("href");
 
 const email = document.getElementById("d-email");
 
+email.textContent = item.email || "—";
 
 email.onclick = async ()=>{
 
-if(!item.email) return;
+    if(!item.email) return;
 
+    await navigator.clipboard.writeText(item.email);
 
-await navigator.clipboard.writeText(item.email);
+    const old=email.textContent;
 
+    email.textContent="✓ Copié";
 
-const old=email.textContent;
-
-email.textContent="✓ Copié";
-
-
-setTimeout(()=>{
-
-email.textContent=old;
-
-},1200);
-
+    setTimeout(()=>{
+        email.textContent=old;
+    },1200);
 
 };
 
