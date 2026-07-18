@@ -1091,15 +1091,27 @@ let key=card.dataset.cat;
 
 
 
-let rows=DATA.filter(x=>
-
-x.category===key ||
-
-x.type===key
-
+let rows = DATA.filter(x =>
+    x.category === key ||
+    x.type === key
 );
 
+rows.sort((a, b) => {
 
+    // France en premier
+    if ((a.pays || "") === "FR" && (b.pays || "") !== "FR") return -1;
+    if ((a.pays || "") !== "FR" && (b.pays || "") === "FR") return 1;
+
+    // Assistance avant Courtier
+    if (a.category === "ASSURANCE" && b.category === "COURTIER") return -1;
+    if (a.category === "COURTIER" && b.category === "ASSURANCE") return 1;
+
+    // Puis ordre alphabétique
+    return a.name.localeCompare(b.name, "fr", {
+        sensitivity: "base"
+    });
+
+});
 
 render(rows);
 
