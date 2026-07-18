@@ -1098,15 +1098,25 @@ let rows = DATA.filter(x =>
 
 rows.sort((a, b) => {
 
-    // France en premier
-    if ((a.pays || "") === "FR" && (b.pays || "") !== "FR") return -1;
-    if ((a.pays || "") !== "FR" && (b.pays || "") === "FR") return 1;
+    // France avant les autres
+    if ((a.pays === "FR") !== (b.pays === "FR")) {
+        return a.pays === "FR" ? -1 : 1;
+    }
 
-    // Assistance avant Courtier
-    if (a.category === "ASSURANCE" && b.category === "COURTIER") return -1;
-    if (a.category === "COURTIER" && b.category === "ASSURANCE") return 1;
+    // Assurance avant Courtier
+    const ordre = {
+        "ASSURANCE": 0,
+        "COURTIER": 1
+    };
 
-    // Puis ordre alphabétique
+    const oa = ordre[a.category] ?? 99;
+    const ob = ordre[b.category] ?? 99;
+
+    if (oa !== ob) {
+        return oa - ob;
+    }
+
+    // Enfin A → Z
     return a.name.localeCompare(b.name, "fr", {
         sensitivity: "base"
     });
