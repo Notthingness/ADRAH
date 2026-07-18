@@ -1150,27 +1150,19 @@ const servicesBox = document.getElementById("servicesBox");
 
 // AFFICHAGE SELON CATEGORIE
 
-typeBox.style.display="block";
+typeBox.style.display = "block";
+assistBox.style.display = "block";
+addressBox.style.display = "none";
+emailBox.style.display = "none";
+servicesBox.style.display = "none";
 
-assistBox.style.display="block";
+if (item.category === "GARAGE") {
 
-addressBox.style.display="block";
+    assistBox.style.display = "none";
 
-emailBox.style.display="block";
-
-servicesBox.style.display="block";
-
-if(item.category === "GARAGE"){
-
-    assistBox.style.display="none";
-
-}
-
-else if(item.category === "ASSURANCE"){
-
-    addressBox.style.display="none";
-
-    servicesBox.style.display="none";
+    addressBox.style.display = "block";
+    emailBox.style.display = "block";
+    servicesBox.style.display = "block";
 
 }
 
