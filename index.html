@@ -473,7 +473,51 @@ text-decoration:none;
 
 }
 
+.back-btn{
 
+width:100%;
+
+height:58px;
+
+border:none;
+
+border-radius:20px;
+
+background:rgba(0,91,255,.25);
+
+border:2px solid #005BFF;
+
+color:white;
+
+font-size:18px;
+
+font-weight:900;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+box-shadow:
+0 0 15px rgba(0,91,255,.6);
+
+transition:.2s;
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 0 25px rgba(0,91,255,.8);
+
+}
 
 /* DRAWER */
 
@@ -610,7 +654,12 @@ CATÉGORIES
 
 
 
-<section id="results" style="display:none">
+<div id="backBox" style="display:none; margin:20px 0;">
+    <button id="backBtn" class="back-btn">
+        <i class="ph ph-arrow-left"></i>
+        Retour aux catégories
+    </button>
+</div>
 
 
 <h2 id="count"></h2>
@@ -919,6 +968,9 @@ const list=document.getElementById("list");
 
 const count=document.getElementById("count");
 
+const backBox = document.getElementById("backBox");
+  
+const backBtn = document.getElementById("backBtn");
 
 
 function render(rows){
@@ -938,7 +990,7 @@ return;
 
 
 results.style.display="block";
-
+backBox.style.display = "block";
 
 count.textContent=
 
@@ -1019,6 +1071,7 @@ let n=text.toLowerCase().trim();
 if(!n){
 
 results.style.display="none";
+backBox.style.display="none";  
 
 return;
 
@@ -1277,7 +1330,22 @@ drawer.classList.remove("show");
 
 };
 
+backBtn.onclick = () => {
 
+    q.value = "";
+
+    results.style.display = "none";
+
+    backBox.style.display = "none";
+
+    list.innerHTML = "";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+};
 
 </script>
 
