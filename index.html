@@ -850,7 +850,8 @@ x.category ||
 ""
 ).toUpperCase(),
 
-
+pays: x.pays || "",
+  
 type: String(
     x.type ?? ""
 ).trim(),
@@ -884,7 +885,20 @@ logo:x.logo || ""
 
 }));
 
+DATA.sort((a, b) => {
 
+    if ((a.pays || "") === "FR" && (b.pays || "") !== "FR") return -1;
+
+    if ((a.pays || "") !== "FR" && (b.pays || "") === "FR") return 1;
+
+    return a.name.localeCompare(b.name, "fr", {
+
+        sensitivity: "base"
+
+    });
+
+});
+  
 console.log(DATA);
 
 
