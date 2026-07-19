@@ -1032,7 +1032,8 @@ return;
 
 
 
-results.style.display="block";
+results.style.display = "block";
+results.classList.add("show");
 backBox.style.display = "block";
 
 count.textContent=
@@ -1113,12 +1114,15 @@ let n=text.toLowerCase().trim();
 
 if(!n){
 
-results.style.display = "block";
-results.classList.add("show");
+    results.classList.remove("show");
 
-backBox.style.display = "block";
+    setTimeout(() => {
+        results.style.display = "none";
+    },300);
 
-return;
+    backBox.style.display = "none";
+
+    return;
 
 }
 
@@ -1233,13 +1237,9 @@ setTimeout(() => {
 
 }, 300);
     
-render(rows);
-
 
 
 });
-
-
 
 
 
