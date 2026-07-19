@@ -1270,6 +1270,20 @@ let rows = DATA.filter(x => {
 
 rows.sort((a, b) => {
 
+    // 1 - France en premier
+    const paysA = (a.pays || "").toUpperCase();
+    const paysB = (b.pays || "").toUpperCase();
+
+    if (paysA === "FR" && paysB !== "FR") {
+        return -1;
+    }
+
+    if (paysA !== "FR" && paysB === "FR") {
+        return 1;
+    }
+
+
+    // 2 - Alphabétique
     return a.name.trim().localeCompare(
         b.name.trim(),
         "fr",
