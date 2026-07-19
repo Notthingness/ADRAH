@@ -951,7 +951,51 @@ icon:"ph-wrench"
 
 ];
 
+const SECRET_CATEGORIES = [
 
+{
+key:"POLICE",
+label:"POLICE",
+sub:"Police Nationale",
+icon:"ph-shield-star"
+},
+
+{
+key:"GENDARMERIE",
+label:"GENDARMERIE",
+sub:"Brigades",
+icon:"ph-badge"
+},
+
+{
+key:"POMPIERS",
+label:"POMPIERS",
+sub:"SDIS",
+icon:"ph-fire-truck"
+},
+
+{
+key:"SAMU",
+label:"SAMU",
+sub:"Urgences",
+icon:"ph-ambulance"
+},
+
+{
+key:"AUTOROUTE",
+label:"AUTOROUTE",
+sub:"DIR / PC",
+icon:"ph-road-horizon"
+},
+
+{
+key:"ADRAH",
+label:"ADRAH",
+sub:"Numéros utiles",
+icon:"ph-phone-call"
+}
+
+];
 
 let DATA=[];
 
@@ -963,7 +1007,29 @@ const cats=document.getElementById("cats");
 
 
 
-cats.innerHTML=CATEGORIES.map(c=>`
+function renderCategories(data){
+
+cats.innerHTML = data.map(c=>`
+
+<div class="card" data-cat="${c.key}">
+
+<i class="ph ${c.icon}"></i>
+
+<div>
+
+<h3>${c.label}</h3>
+
+<span>${c.sub}</span>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+renderCategories(CATEGORIES);
 
 <div class="card" data-cat="${c.key}">
 
@@ -985,7 +1051,46 @@ cats.innerHTML=CATEGORIES.map(c=>`
 `).join("");
 
 
+renderCategories(CATEGORIES);
 
+let secretClicks = 0;
+let secretMode = false;
+
+const secretTrigger = document.getElementById("secretTrigger");
+
+secretTrigger.onclick = ()=>{
+
+    secretClicks++;
+
+    setTimeout(()=>{
+
+        secretClicks=0;
+
+    },1200);
+
+    if(secretClicks>=3){
+
+        secretClicks=0;
+
+        secretMode=!secretMode;
+
+        cats.classList.add("hide");
+
+        setTimeout(()=>{
+
+            renderCategories(
+                secretMode
+                ? SECRET_CATEGORIES
+                : CATEGORIES
+            );
+
+            cats.classList.remove("hide");
+
+        },300);
+
+    }
+
+};
 
 
 /* CHARGEMENT DES JSON */
