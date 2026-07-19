@@ -1163,51 +1163,45 @@ rows.length+
 
 
 
-list.innerHTML=rows.map((r,i)=>`
+list.innerHTML = rows.map((r,i)=>`
 
 <div class="row" data-i="${i}">
 
-<div>
+    <div>
 
-<div class="title">
-${r.name}
-</div>
+        <div class="title">
+            ${r.name}
+        </div>
 
-<div class="sub">
+        <div class="sub">
+            ${r.category}
+            ${
+                r.category !== "GARAGE"
+                ? " · " + r.assistant
+                : ""
+            }
+        </div>
 
-${r.category}
+        <div class="tip-slot">
+            ${
+                r.category === "GARAGE" && r.pourboire
+                ? `
+                <div class="tip-label">
+                    <i class="ph ph-coins"></i>
+                    Pourboire
+                </div>
+                `
+                : ""
+            }
+        </div>
 
-${
-r.category !== "GARAGE"
-? " · "+r.assistant
-: ""
-}
+    </div>
 
-</div>
-
-<div class="tip-slot">
-${
-r.category === "GARAGE" && r.pourboire
-? `
-<div class="tip-label">
-    <i class="ph ph-coins"></i>
-    Pourboire
-</div>
-`
-: ""
-}
-</div>
-
-<a class="call"
-href="tel:${r.phone}">
-
-<i class="ph ph-phone"></i>
-
-</a>
-
+    <a class="call" href="tel:${r.phone}">
+        <i class="ph ph-phone"></i>
+    </a>
 
 </div>
-
 
 `).join("");
   
