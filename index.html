@@ -1011,7 +1011,7 @@ category:
 x.categorie ||
 x.category ||
 ""
-).toUpperCase(),
+).trim().toUpperCase(),
 
 pays: x.pays || "",
   
@@ -1274,7 +1274,12 @@ let key = card.dataset.cat;
 let rows = DATA.filter(x => {
 
     if(key === "ASSURANCE"){
-        return x.category === "ASSURANCE" || x.category === "COURTIER";
+
+        return (
+            x.category === "ASSURANCE" ||
+            x.category === "COURTIER"
+        );
+
     }
 
     return x.category === key;
