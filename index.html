@@ -183,8 +183,45 @@ display:grid;
 
 gap:16px;
 
+transition:.35s ease;
+
+opacity:1;
+
+transform:translateX(0);
+
 }
 
+/* Animation de la grille */
+
+.grid.hide{
+
+opacity:0;
+
+transform:translateX(-60px) scale(.96);
+
+pointer-events:none;
+
+}
+
+/* Animation des résultats */
+
+#results{
+
+transition:.35s ease;
+
+opacity:0;
+
+transform:translateX(60px);
+
+}
+
+#results.show{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
 
 
 /* CARTES */
@@ -1071,6 +1108,7 @@ let n=text.toLowerCase().trim();
 if(!n){
 
 results.style.display="none";
+results.classList.add("show");    
 backBox.style.display="none";  
 
 return;
@@ -1175,7 +1213,19 @@ rows.sort((a, b) => {
     });
 
 });
+    
+cats.classList.add("hide");
 
+setTimeout(()=>{
+
+    cats.classList.add("hide");
+
+setTimeout(()=>{
+
+    cats.style.display = "none";
+
+},300);
+    
 render(rows);
 
 
@@ -1339,6 +1389,14 @@ backBtn.onclick = () => {
     backBox.style.display = "none";
 
     list.innerHTML = "";
+
+    cats.style.display = "grid";
+
+setTimeout(()=>{
+
+    cats.classList.remove("hide");
+
+},20);
 
     window.scrollTo({
         top: 0,
