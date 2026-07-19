@@ -986,7 +986,7 @@ DATA=[
 
 DATA=DATA.map(x=>({
 
-name:x.nom || x.name || "",
+name:(x.nom || x.name || "").trim(),
 
 phone:String(
 x.telephone || x.phone || ""
@@ -1271,9 +1271,13 @@ rows.sort((a, b) => {
     }
 
     // Alphabétique par nom
-    return a.name.localeCompare(b.name, "fr", {
-        sensitivity: "base"
-    });
+    return a.name.trim().localeCompare(
+        b.name.trim(),
+        "fr",
+        {
+            sensitivity:"base"
+        }
+    );
 
 });
     
