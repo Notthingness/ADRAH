@@ -411,44 +411,30 @@ box-shadow:
 
     display:inline-flex;
     align-items:center;
-    gap:8px;
+    gap:6px;
 
-    margin-top:10px;
+    margin-top:8px;
 
-    padding:6px 12px;
+    padding:4px 10px;
 
     border-radius:999px;
 
-    background:linear-gradient(
-        180deg,
-        rgba(255,214,74,.22),
-        rgba(255,179,0,.12)
-    );
+    background:rgba(255,213,74,.12);
 
-    border:1px solid rgba(255,214,74,.55);
+    border:1px solid rgba(255,213,74,.45);
 
     color:#FFD54A;
 
-    font-size:13px;
-    font-weight:800;
-
-    text-shadow:
-        0 0 8px rgba(255,213,74,.45);
+    font-size:12px;
+    font-weight:700;
 
     box-shadow:
-        inset 0 0 10px rgba(255,213,74,.08);
+        0 0 10px rgba(255,213,74,.15);
+
 }
 
 .tip-label i{
-    font-size:16px;
-}
-
-    color:#222;
-    font-size:18px;
-
-    box-shadow:
-        0 0 12px rgba(255,200,0,.7);
-
+    font-size:14px;
 }
 
 .title{
@@ -465,7 +451,6 @@ text-shadow:
 
 
 }
-
 
 
 .sub{
@@ -1180,12 +1165,7 @@ list.innerHTML=rows.map((r,i)=>`
 
 <div class="row" data-i="${i}">
 
-${r.category === "GARAGE" && r.pourboire ? `
-<div class="tip-label">
-    <i class="ph ph-coins"></i>
-    Pourboire
-</div>
-` : ""}
+
 
 <div>
 
@@ -1204,6 +1184,19 @@ ${r.category}
 ${
 r.category !== "GARAGE" && r.assistant
 ? " · "+r.assistant
+: ""
+}
+
+</div>
+
+${
+r.category === "GARAGE" && r.pourboire
+? `
+<div class="tip-label">
+    <i class="ph ph-coins"></i>
+    Pourboire
+</div>
+`
 : ""
 }
 
