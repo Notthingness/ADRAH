@@ -1011,7 +1011,9 @@ category:
 x.categorie ||
 x.category ||
 ""
-).trim().toUpperCase(),
+)
+.trim()
+.toUpperCase(),
 
 pays: x.pays || "",
   
@@ -1285,15 +1287,6 @@ let rows = DATA.filter(x => {
 
 
 rows.sort((a,b)=>{
-
-    const paysA = (a.pays || "").trim().toUpperCase();
-    const paysB = (b.pays || "").trim().toUpperCase();
-
-
-    if(paysA === "FR" && paysB !== "FR") return -1;
-
-    if(paysA !== "FR" && paysB === "FR") return 1;
-
 
     return (a.name || "").localeCompare(
         (b.name || ""),
