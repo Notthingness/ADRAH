@@ -301,11 +301,11 @@ transform:translateY(-4px);
 /* COULEURS MENU SECRET */
 
 .card[data-cat="POLICE"]{
-    --cat-color:#1e6cff;
+    --cat-color:#0055ff;
 }
 
 .card[data-cat="GENDARMERIE"]{
-    --cat-color:#0066cc;
+    --cat-color:#003f8f;
 }
 
 .card[data-cat="POMPIERS"]{
@@ -333,8 +333,8 @@ transform:translateY(-4px);
 
     box-shadow:
     0 0 15px var(--cat-color),
-    0 0 40px var(--cat-color),
-    inset 0 0 25px var(--cat-color);
+    0 0 40px color-mix(in srgb, var(--cat-color), transparent 40%),
+    inset 0 0 25px color-mix(in srgb, var(--cat-color), transparent 75%);
 
 }
 
