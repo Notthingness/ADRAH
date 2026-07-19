@@ -1206,24 +1206,29 @@ const backBtn = document.getElementById("backBtn");
 
 function render(rows){
 
-
 current=rows;
 
 
 if(!rows.length){
 
-results.classList.remove("show");
+    results.style.display = "block";
+    results.classList.add("show");
 
-setTimeout(() => {
+    backBox.style.display = "block";
 
-    results.style.display = "none";
+    count.textContent = "0 résultat";
 
-},300);
+    list.innerHTML = `
+        <div class="row">
+            <div>
+                <div class="title">Aucun résultat</div>
+                <div class="sub">Cette catégorie est vide.</div>
+            </div>
+        </div>
+    `;
 
-return;
-
+    return;
 }
-
 
 
 results.style.display = "block";
