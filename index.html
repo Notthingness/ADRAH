@@ -363,14 +363,54 @@ transform:translateY(-4px);
 }
 
 
-/* Aucun résultat */
+/* COULEUR DES RESULTATS MENU SECRET */
+
+#list[data-cat="POLICE"] .title,
+#list[data-cat="POLICE"] .sub{
+    color:#00B7FF;
+    text-shadow:
+    0 0 10px #00B7FF;
+}
+
+
+#list[data-cat="GENDARMERIE"] .title,
+#list[data-cat="GENDARMERIE"] .sub{
+    color:#2E7DFF;
+    text-shadow:
+    0 0 10px #2E7DFF;
+}
+
 
 #list[data-cat="POMPIERS"] .title,
 #list[data-cat="POMPIERS"] .sub{
     color:#ff1e1e;
     text-shadow:
     0 0 10px #ff1e1e;
-}    
+}
+
+
+#list[data-cat="SAMU"] .title,
+#list[data-cat="SAMU"] .sub{
+    color:#00bfa5;
+    text-shadow:
+    0 0 10px #00bfa5;
+}
+
+
+#list[data-cat="AUTOROUTE"] .title,
+#list[data-cat="AUTOROUTE"] .sub{
+    color:#ffcc00;
+    text-shadow:
+    0 0 10px #ffcc00;
+}
+
+
+#list[data-cat="ADRAH"] .title,
+#list[data-cat="ADRAH"] .sub{
+    color:#00a2ff;
+    text-shadow:
+    0 0 10px #00a2ff;
+}   
 
 /* Halo personnalisé */
 
@@ -1320,9 +1360,11 @@ const backBox = document.getElementById("backBox");
 const backBtn = document.getElementById("backBtn");
 
 
-function render(rows){
+function render(rows, category=""){
 
 current=rows;
+
+list.dataset.cat = category;
 
 
 if(!rows.length){
@@ -1539,7 +1581,7 @@ cats.addEventListener("click",e=>{
 
         cats.style.display="none";
 
-        render(rows);
+        render(rows, key);
 
         results.classList.add("show");
 
