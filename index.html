@@ -1012,6 +1012,8 @@ x.categorie ||
 x.category ||
 ""
 )
+normalize("NFD")
+.replace(/[\u0300-\u036f]/g, "")
 .trim()
 .toUpperCase(),
 
@@ -1273,12 +1275,12 @@ let rows = DATA.filter(x => {
 
     if(key === "ASSURANCE"){
 
-        return (
-            x.category === "ASSURANCE" ||
-            x.category === "COURTIER"
-        );
+    return (
+        x.category.includes("ASSURANCE") ||
+        x.category.includes("COURTIER")
+    );
 
-    }
+}
 
     return x.category === key;
 
