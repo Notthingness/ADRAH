@@ -1017,7 +1017,9 @@ String(
 .trim()
 .toUpperCase(),
     
-pays: x.pays || "",
+pays: String(x.pays || "")
+.trim()
+.toUpperCase(),
   
 type: String(
     x.type ?? ""
