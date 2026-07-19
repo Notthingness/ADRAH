@@ -301,23 +301,23 @@ transform:translateY(-4px);
 /* COULEURS MENU SECRET */
 
 .card[data-cat="POLICE"]{
-    --cat-color:#0066ff;
+    --cat-color:#1e6cff;
 }
 
 .card[data-cat="GENDARMERIE"]{
-    --cat-color:#003cff;
+    --cat-color:#0066cc;
 }
 
 .card[data-cat="POMPIERS"]{
-    --cat-color:#ff3030;
+    --cat-color:#ff1e1e;
 }
 
 .card[data-cat="SAMU"]{
-    --cat-color:#00d084;
+    --cat-color:#00bfa5;
 }
 
 .card[data-cat="AUTOROUTE"]{
-    --cat-color:#ffb000;
+    --cat-color:#ffcc00;
 }
 
 .card[data-cat="ADRAH"]{
@@ -333,8 +333,8 @@ transform:translateY(-4px);
 
     box-shadow:
     0 0 15px var(--cat-color),
-    0 0 40px color-mix(in srgb, var(--cat-color), transparent 50%),
-    inset 0 0 25px color-mix(in srgb, var(--cat-color), transparent 70%);
+    0 0 40px var(--cat-color),
+    inset 0 0 25px var(--cat-color);
 
 }
 
@@ -396,16 +396,12 @@ text-shadow:
 
 
 
-.card span:not(.badge){
+.card[data-cat] span:not(.badge){
 
-color:#00a2ff;
-
-font-weight:900;
-
+color:var(--cat-color);
 
 text-shadow:
-
-0 0 10px #005BFF;
+0 0 10px var(--cat-color);
 
 }
 
