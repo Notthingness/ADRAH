@@ -324,6 +324,53 @@ transform:translateY(-4px);
     --cat-color:#00a2ff;
 }
 
+/* Couleur des résultats selon catégorie */
+
+#list[data-cat="POLICE"] .row{
+    border-color:#00B7FF;
+    box-shadow:
+    0 0 20px #00B7FF;
+}
+
+#list[data-cat="GENDARMERIE"] .row{
+    border-color:#2E7DFF;
+    box-shadow:
+    0 0 20px #2E7DFF;
+}
+
+#list[data-cat="POMPIERS"] .row{
+    border-color:#ff1e1e;
+    box-shadow:
+    0 0 20px #ff1e1e;
+}
+
+#list[data-cat="SAMU"] .row{
+    border-color:#00bfa5;
+    box-shadow:
+    0 0 20px #00bfa5;
+}
+
+#list[data-cat="AUTOROUTE"] .row{
+    border-color:#ffcc00;
+    box-shadow:
+    0 0 20px #ffcc00;
+}
+
+#list[data-cat="ADRAH"] .row{
+    border-color:#00a2ff;
+    box-shadow:
+    0 0 20px #00a2ff;
+}
+
+
+/* Aucun résultat */
+
+#list[data-cat="POMPIERS"] .title,
+#list[data-cat="POMPIERS"] .sub{
+    color:#ff1e1e;
+    text-shadow:
+    0 0 10px #ff1e1e;
+}    
 
 /* Halo personnalisé */
 
