@@ -1260,13 +1260,9 @@ search(e.target.value);
 
 cats.addEventListener("click",e=>{
 
-
 let card=e.target.closest(".card");
 
-
 if(!card)return;
-
-
 
 let key = card.dataset.cat;
 
@@ -1287,24 +1283,20 @@ let rows = DATA.filter(x => {
 });
 
 
-rows.sort((a, b) => {
 
-    // 1 - France en premier
-    const paysA = (a.pays || "").toUpperCase();
-    const paysB = (b.pays || "").toUpperCase();
+rows.sort((a,b)=>{
 
-    if (paysA === "FR" && paysB !== "FR") {
-        return -1;
-    }
-
-    if (paysA !== "FR" && paysB === "FR") {
-        return 1;
-    }
+    const paysA = (a.pays || "").trim().toUpperCase();
+    const paysB = (b.pays || "").trim().toUpperCase();
 
 
-    // 2 - Alphabétique
-    return a.name.trim().localeCompare(
-        b.name.trim(),
+    if(paysA === "FR" && paysB !== "FR") return -1;
+
+    if(paysA !== "FR" && paysB === "FR") return 1;
+
+
+    return (a.name || "").localeCompare(
+        (b.name || ""),
         "fr",
         {
             sensitivity:"base"
@@ -1312,23 +1304,27 @@ rows.sort((a, b) => {
     );
 
 });
-    
+
+
+console.log("Catégorie :", key);
+console.log("Résultats :", rows.length);
+console.log(rows);
+
+
 cats.classList.add("hide");
 
-setTimeout(() => {
+setTimeout(()=>{
 
-    cats.style.display = "none";
+    cats.style.display="none";
 
     render(rows);
 
     results.classList.add("show");
 
-}, 300);
-    
+},300);
 
 
 });
-
 
 
 
