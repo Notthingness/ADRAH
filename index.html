@@ -1205,20 +1205,21 @@ rows.sort((a, b) => {
         return a.pays === "FR" ? -1 : 1;
     }
 
-    // Assurance avant Courtier
     const ordre = {
         "ASSURANCE": 0,
         "COURTIER": 1
     };
 
-    const oa = ordre[a.category] ?? 99;
-    const ob = ordre[b.category] ?? 99;
+    const typeA = a.type || a.category;
+    const typeB = b.type || b.category;
+
+    const oa = ordre[typeA] ?? 99;
+    const ob = ordre[typeB] ?? 99;
 
     if (oa !== ob) {
         return oa - ob;
     }
 
-    // Enfin A → Z
     return a.name.localeCompare(b.name, "fr", {
         sensitivity: "base"
     });
