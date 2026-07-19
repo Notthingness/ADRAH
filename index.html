@@ -1254,22 +1254,22 @@ if(!card)return;
 
 
 
-let key=card.dataset.cat;
+let key = card.dataset.cat;
 
 
+let rows = DATA.filter(x => {
 
-let rows = DATA.filter(x =>
-    x.category === key
-);
+    if(key === "ASSURANCE"){
+        return x.category === "ASSURANCE" || x.category === "COURTIER";
+    }
+
+    return x.category === key;
+
+});
+
 
 rows.sort((a, b) => {
 
-    // France avant les autres
-    if ((a.pays === "FR") !== (b.pays === "FR")) {
-        return a.pays === "FR" ? -1 : 1;
-    }
-
-    // Alphabétique par nom
     return a.name.trim().localeCompare(
         b.name.trim(),
         "fr",
