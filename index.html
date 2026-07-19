@@ -298,7 +298,56 @@ transform:translateY(-4px);
 
 }
 
+/* COULEURS MENU SECRET */
 
+.card[data-cat="POLICE"]{
+    --cat-color:#0066ff;
+}
+
+.card[data-cat="GENDARMERIE"]{
+    --cat-color:#003cff;
+}
+
+.card[data-cat="POMPIERS"]{
+    --cat-color:#ff3030;
+}
+
+.card[data-cat="SAMU"]{
+    --cat-color:#00d084;
+}
+
+.card[data-cat="AUTOROUTE"]{
+    --cat-color:#ffb000;
+}
+
+.card[data-cat="ADRAH"]{
+    --cat-color:#00a2ff;
+}
+
+
+/* Halo personnalisé */
+
+.card[data-cat]{
+
+    border-color:var(--cat-color);
+
+    box-shadow:
+    0 0 15px var(--cat-color),
+    0 0 40px color-mix(in srgb, var(--cat-color), transparent 50%),
+    inset 0 0 25px color-mix(in srgb, var(--cat-color), transparent 70%);
+
+}
+
+
+.card[data-cat] i,
+.card[data-cat] h3{
+
+    text-shadow:
+    0 0 5px white,
+    0 0 15px var(--cat-color),
+    0 0 35px var(--cat-color);
+
+}
 
 .card i{
 
