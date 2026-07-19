@@ -415,20 +415,23 @@ box-shadow:
 
 }
     
-.tip-label{
+.tip-slot{
+    height:34px;          /* réserve toujours la même place */
+    display:flex;
+    align-items:flex-end;
+    margin-top:8px;
+}
 
+.tip-label{
     display:inline-flex;
     align-items:center;
     gap:6px;
-
-    margin-top:8px;
 
     padding:4px 10px;
 
     border-radius:999px;
 
     background:rgba(255,213,74,.12);
-
     border:1px solid rgba(255,213,74,.45);
 
     color:#FFD54A;
@@ -438,7 +441,6 @@ box-shadow:
 
     box-shadow:
         0 0 10px rgba(255,213,74,.15);
-
 }
 
 .tip-label i{
@@ -1183,6 +1185,7 @@ r.category !== "GARAGE"
 
 </div>
 
+<div class="tip-slot">
 ${
 r.category === "GARAGE" && r.pourboire
 ? `
@@ -1193,7 +1196,6 @@ r.category === "GARAGE" && r.pourboire
 `
 : ""
 }
-
 </div>
 
 <a class="call"
