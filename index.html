@@ -1007,16 +1007,16 @@ x.telephone || x.phone || ""
 ),
 
 category:
-(
-x.categorie ||
-x.category ||
-""
+String(
+    x.categorie ||
+    x.category ||
+    ""
 )
-normalize("NFD")
+.normalize("NFD")
 .replace(/[\u0300-\u036f]/g, "")
 .trim()
 .toUpperCase(),
-
+    
 pays: x.pays || "",
   
 type: String(
