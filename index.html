@@ -327,7 +327,14 @@ transform:translateY(-4px);
 
 /* Halo personnalisé */
 
-.card[data-cat]{
+/* UNIQUEMENT LE MENU SECRET */
+
+.card[data-cat="POLICE"],
+.card[data-cat="GENDARMERIE"],
+.card[data-cat="POMPIERS"],
+.card[data-cat="SAMU"],
+.card[data-cat="AUTOROUTE"],
+.card[data-cat="ADRAH"]{
 
     border-color:var(--cat-color);
 
@@ -335,6 +342,27 @@ transform:translateY(-4px);
     0 0 15px var(--cat-color),
     0 0 40px color-mix(in srgb, var(--cat-color), transparent 40%),
     inset 0 0 25px color-mix(in srgb, var(--cat-color), transparent 75%);
+
+}
+
+
+.card[data-cat="POLICE"] i,
+.card[data-cat="POLICE"] h3,
+.card[data-cat="GENDARMERIE"] i,
+.card[data-cat="GENDARMERIE"] h3,
+.card[data-cat="POMPIERS"] i,
+.card[data-cat="POMPIERS"] h3,
+.card[data-cat="SAMU"] i,
+.card[data-cat="SAMU"] h3,
+.card[data-cat="AUTOROUTE"] i,
+.card[data-cat="AUTOROUTE"] h3,
+.card[data-cat="ADRAH"] i,
+.card[data-cat="ADRAH"] h3{
+
+    text-shadow:
+    0 0 5px white,
+    0 0 15px var(--cat-color),
+    0 0 35px var(--cat-color);
 
 }
 
