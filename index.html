@@ -1165,24 +1165,18 @@ list.innerHTML=rows.map((r,i)=>`
 
 <div class="row" data-i="${i}">
 
-
-
 <div>
 
-
 <div class="title">
-
 ${r.name}
-
 </div>
-
 
 <div class="sub">
 
 ${r.category}
 
 ${
-r.category !== "GARAGE" && r.assistant
+r.category !== "GARAGE"
 ? " · "+r.assistant
 : ""
 }
@@ -1203,8 +1197,6 @@ r.category === "GARAGE" && r.pourboire
 </div>
 
 </div>
-
-
 
 <a class="call"
 href="tel:${r.phone}">
@@ -1283,7 +1275,7 @@ x.services
 
 .includes(n);
 
-
+j
 });
 
 
