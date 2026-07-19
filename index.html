@@ -630,28 +630,81 @@ float:right;
 }
 
 
-.info span{
+/* ---------- Cartes d'informations ---------- */
 
-display:block;
+.info{
 
-color:#00a2ff;
+display:flex;
 
-font-weight:800;
+flex-direction:column;
 
-margin-bottom:15px;
+gap:16px;
 
-
-text-shadow:
-
-0 0 10px #005BFF;
+margin-top:25px;
 
 }
 
+.info-box{
 
-.info span,
-.info a{
+padding:18px;
 
-cursor:pointer;
+border-radius:22px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(0,162,255,.35);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 0 12px rgba(0,91,255,.25),
+
+inset 0 0 12px rgba(255,255,255,.03);
+
+transition:.25s;
+
+}
+
+.info-box:hover{
+
+transform:translateY(-2px);
+
+border-color:#00a2ff;
+
+box-shadow:
+
+0 0 18px rgba(0,162,255,.45);
+
+}
+
+.info-title{
+
+font-size:14px;
+
+font-weight:700;
+
+color:white;
+
+opacity:.8;
+
+margin-bottom:8px;
+
+}
+
+.info-value{
+
+font-size:24px;
+
+font-weight:900;
+
+color:#00a2ff;
+
+text-shadow:
+
+0 0 10px rgba(0,162,255,.6);
+
+word-break:break-word;
 
 }
 
@@ -746,22 +799,49 @@ margin:20px 0;
 <div class="info">
 
 
-<div id="typeBox">
+<div id="typeBox" class="info-box">
 
-<b>Type</b>
-<span id="d-type"></span>
+<div class="info-title">
+ Type
+</div>
+
+<div id="d-type" class="info-value"></div>
 
 </div>
 
 
-<div id="assistBox">
+<div id="assistBox" class="info-box">
 
-<b>Assisteur</b>
-<span id="d-assist"></span>
+<div class="info-title">
+ Assisteur
+</div>
+
+<div id="d-assist" class="info-value"></div>
 
 </div>
 
+<div id="countryBox" class="info-box">
 
+<div class="info-title">
+ Pays
+</div>
+
+<div id="d-country" class="info-value"></div>
+
+</div>
+    
+<div id="availableBox" class="info-box">
+
+<div class="info-title">
+ Disponibilité
+</div>
+
+<div class="info-value">
+24h/24 • 7j/7
+</div>
+
+</div>
+    
 <div id="addressBox">
 
 <b>Adresse</b>
