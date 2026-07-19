@@ -376,6 +376,7 @@ margin-top:25px;
 
 .row{
 
+position:relative;    
 
 display:flex;
 
@@ -406,7 +407,34 @@ box-shadow:
 
 }
 
+.tip-badge{
 
+    position:absolute;
+    top:12px;
+    right:75px;
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        180deg,
+        #ffd54a,
+        #ffb300
+    );
+
+    color:#222;
+    font-size:18px;
+
+    box-shadow:
+        0 0 12px rgba(255,200,0,.7);
+
+}
 
 .title{
 
@@ -791,7 +819,9 @@ CATÉGORIES
 
 <a id="d-call" class="call">
 
-<i class="ph ph-phone"></i>
+<div class="tip-badge">
+    <i class="ph ph-coins"></i>
+</div>
 
 <span id="d-tel"></span>
 
@@ -1052,7 +1082,8 @@ adresse:
 x.adresse ||
 x.address ||
 "",
-
+pourboire: x.pourboire === true,
+    
 logo:x.logo || ""
 
 }));
@@ -1134,8 +1165,13 @@ rows.length+
 
 list.innerHTML=rows.map((r,i)=>`
 
-<div class="row"
-data-i="${i}">
+<div class="row" data-i="${i}">
+
+${r.category === "GARAGE" && r.pourboire ? `
+<div class="tip-badge">
+    💶
+</div>
+` : ""}
 
 
 <div>
