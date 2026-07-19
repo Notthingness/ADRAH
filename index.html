@@ -1294,10 +1294,32 @@ let rows = DATA.filter(x => {
 
 
 
-rows.sort((a,b)=>{
+DATA.sort((a,b)=>{
 
-    return (a.name || "").localeCompare(
-        (b.name || ""),
+    // 1 - Pays : France avant étranger
+    const paysA = a.pays === "FR" ? 0 : 1;
+    const paysB = b.pays === "FR" ? 0 : 1;
+
+    if(paysA !== paysB){
+        return paysA - paysB;
+    }
+
+
+    // 2 - Catégorie : Assurance avant Courtier
+    const typeA =
+        a.category.includes("COURT") ? 1 : 0;
+
+    const typeB =
+        b.category.includes("COURT") ? 1 : 0;
+
+    if(typeA !== typeB){
+        return typeA - typeB;
+    }
+
+
+    // 3 - Nom alphabétique
+    return a.name.localeCompare(
+        b.name,
         "fr",
         {
             sensitivity:"base"
