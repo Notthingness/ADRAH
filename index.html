@@ -819,9 +819,6 @@ CATÉGORIES
 
 <a id="d-call" class="call">
 
-<div class="tip-badge">
-    <i class="ph ph-coins"></i>
-</div>
 
 <span id="d-tel"></span>
 
@@ -1082,6 +1079,7 @@ adresse:
 x.adresse ||
 x.address ||
 "",
+    
 pourboire: x.pourboire === true,
     
 logo:x.logo || ""
@@ -1169,10 +1167,9 @@ list.innerHTML=rows.map((r,i)=>`
 
 ${r.category === "GARAGE" && r.pourboire ? `
 <div class="tip-badge">
-    💶
+    <i class="ph ph-coins"></i>
 </div>
 ` : ""}
-
 
 <div>
 
