@@ -1018,7 +1018,13 @@ current=rows;
 
 if(!rows.length){
 
-results.style.display="none";
+results.classList.remove("show");
+
+setTimeout(() => {
+
+    results.style.display = "none";
+
+},300);
 
 return;
 
@@ -1107,9 +1113,10 @@ let n=text.toLowerCase().trim();
 
 if(!n){
 
-results.style.display="none";
-results.classList.add("show");    
-backBox.style.display="none";  
+results.style.display = "block";
+results.classList.add("show");
+
+backBox.style.display = "block";
 
 return;
 
@@ -1216,15 +1223,15 @@ rows.sort((a, b) => {
     
 cats.classList.add("hide");
 
-setTimeout(()=>{
-
-    cats.classList.add("hide");
-
-setTimeout(()=>{
+setTimeout(() => {
 
     cats.style.display = "none";
 
-},300);
+    render(rows);
+
+    results.classList.add("show");
+
+}, 300);
     
 render(rows);
 
@@ -1384,7 +1391,13 @@ backBtn.onclick = () => {
 
     q.value = "";
 
-    results.style.display = "none";
+    results.classList.remove("show");
+
+    setTimeout(() => {
+
+        results.style.display = "none";
+
+    },300);
 
     backBox.style.display = "none";
 
@@ -1392,15 +1405,15 @@ backBtn.onclick = () => {
 
     cats.style.display = "grid";
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-    cats.classList.remove("hide");
+        cats.classList.remove("hide");
 
-},20);
+    },20);
 
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        top:0,
+        behavior:"smooth"
     });
 
 };
