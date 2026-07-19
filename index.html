@@ -1009,23 +1009,20 @@ const cats=document.getElementById("cats");
 
 function renderCategories(data){
 
-cats.innerHTML = data.map(c=>`
+    cats.innerHTML = data.map(c=>`
 
-<div class="card" data-cat="${c.key}">
+    <div class="card" data-cat="${c.key}">
 
-<i class="ph ${c.icon}"></i>
+        <i class="ph ${c.icon}"></i>
 
-<div>
+        <div>
+            <h3>${c.label}</h3>
+            <span>${c.sub}</span>
+        </div>
 
-<h3>${c.label}</h3>
+    </div>
 
-<span>${c.sub}</span>
-
-</div>
-
-</div>
-
-`).join("");
+    `).join("");
 
 }
 
