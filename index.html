@@ -1010,6 +1010,9 @@ category:
 String(
     x.categorie ||
     x.category ||
+    x.type ||
+    x.famille ||
+    x.service ||
     ""
 )
 .normalize("NFD")
@@ -1278,12 +1281,13 @@ let rows = DATA.filter(x => {
     if(key === "ASSURANCE"){
 
     return (
-        x.category.includes("ASSURANCE") ||
-        x.category.includes("COURTIER")
+        x.category.includes("ASSUR") ||
+        x.category.includes("COURT") ||
+        x.type.toUpperCase().includes("ASSUR") ||
+        x.assistant.toUpperCase().includes("ASSUR")
     );
 
 }
-
     return x.category === key;
 
 });
