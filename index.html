@@ -475,6 +475,34 @@ text-decoration:none;
 
 }
 
+#d-call{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+
+    width:100%;
+    height:68px;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        180deg,
+        #0d67ff,
+        #005BFF
+    );
+
+    color:white;
+
+    font-size:20px;
+    font-weight:900;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 0 25px rgba(0,91,255,.55);
+}
+    
 .back-btn{
 
 width:100%;
@@ -598,79 +626,35 @@ float:right;
 /* ---------- Cartes d'informations ---------- */
 
 .info{
-
-display:flex;
-
-flex-direction:column;
-
-gap:16px;
-
-margin-top:25px;
-
+    margin-top:30px;
 }
 
 .info-box{
-
-padding:18px;
-
-border-radius:22px;
-
-background:rgba(255,255,255,.04);
-
-border:1px solid rgba(0,162,255,.35);
-
-backdrop-filter:blur(18px);
-
-box-shadow:
-
-0 0 12px rgba(0,91,255,.25),
-
-inset 0 0 12px rgba(255,255,255,.03);
-
-transition:.25s;
-
+    padding:18px 0;
+    border:none;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:none;
+    box-shadow:none;
+    border-radius:0;
 }
 
-.info-box:hover{
-
-transform:translateY(-2px);
-
-border-color:#00a2ff;
-
-box-shadow:
-
-0 0 18px rgba(0,162,255,.45);
-
+.info-box:last-child{
+    border-bottom:none;
 }
 
 .info-title{
-
-font-size:14px;
-
-font-weight:700;
-
-color:white;
-
-opacity:.8;
-
-margin-bottom:8px;
-
+    color:#cfcfcf;
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:8px;
 }
 
 .info-value{
-
-font-size:24px;
-
-font-weight:900;
-
-color:#00a2ff;
-
-text-shadow:
-
-0 0 10px rgba(0,162,255,.6);
-
-word-break:break-word;
-
+    color:#00a2ff;
+    font-size:22px;
+    font-weight:900;
+    text-shadow:
+        0 0 12px rgba(0,162,255,.45);
 }
 
 
