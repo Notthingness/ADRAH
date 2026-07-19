@@ -375,50 +375,38 @@ margin-top:25px;
 
 
 .row{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
 
-position:relative;    
+    padding:20px;
 
-display:flex;
+    min-height:135px;
 
-align-items:center;
+    margin-bottom:15px;
 
-justify-content:space-between;
+    border-radius:25px;
 
+    background:rgba(0,0,0,.55);
 
-padding:20px;
+    border:1px solid #005BFF;
 
-
-border-radius:25px;
-
-
-margin-bottom:15px;
-
-
-background:rgba(0,0,0,.55);
-
-
-border:1px solid #005BFF;
-
-
-box-shadow:
-
-0 0 20px rgba(0,91,255,.5);
-
-
+    box-shadow:
+        0 0 20px rgba(0,91,255,.5);
 }
     
 .row > div:first-child{
-
     flex:1;
-
     min-width:0;
-
 }
     
 .tip-slot{
-    height:34px;          /* réserve toujours la même place */
     display:flex;
-    align-items:flex-end;
+    align-items:center;
+
+    height:32px;
+
     margin-top:8px;
 }
 
@@ -448,19 +436,26 @@ box-shadow:
 }
 
 .title{
-    font-size:18px;
-    font-weight:900;
-    text-shadow:0 0 15px #005BFF;
-
-    min-height:42px;   /* réserve la même hauteur pour le nom */
     display:flex;
     align-items:flex-end;
+
+    min-height:44px;
+
+    font-size:18px;
+    font-weight:900;
+
+    text-shadow:
+        0 0 15px #005BFF;
 }
 
 
 .sub{
+    display:flex;
+    align-items:flex-start;
 
-    margin-top:5px;
+    min-height:48px;
+
+    margin-top:6px;
 
     color:#8fd3ff;
 
@@ -468,41 +463,37 @@ box-shadow:
 
     line-height:1.2;
 
-    max-width:260px;
-
+    overflow-wrap:anywhere;
 }
 
 
 
 .call{
 
-    width:55px;
-    height:55px;
+    width:60px;
+    height:60px;
 
-    min-width:55px;
-    min-height:55px;
+    min-width:60px;
+    min-height:60px;
 
-    flex-shrink:0;
+    flex:0 0 60px;
 
     border-radius:50%;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     background:#005BFF;
 
     color:white;
 
-    font-size:25px;
-
-    box-shadow:
-    0 0 25px #005BFF;
+    font-size:26px;
 
     text-decoration:none;
 
+    box-shadow:
+        0 0 25px #005BFF;
 }
 
 #d-call{
