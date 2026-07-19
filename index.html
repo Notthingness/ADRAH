@@ -367,15 +367,6 @@ transform:translateY(-4px);
 }
 
 
-.card[data-cat] i,
-.card[data-cat] h3{
-
-    text-shadow:
-    0 0 5px white,
-    0 0 15px var(--cat-color),
-    0 0 35px var(--cat-color);
-
-}
 
 .card i{
 
@@ -424,7 +415,12 @@ text-shadow:
 
 
 
-.card[data-cat] span:not(.badge){
+.card[data-cat="POLICE"] span,
+.card[data-cat="GENDARMERIE"] span,
+.card[data-cat="POMPIERS"] span,
+.card[data-cat="SAMU"] span,
+.card[data-cat="AUTOROUTE"] span,
+.card[data-cat="ADRAH"] span{
 
 color:var(--cat-color);
 
