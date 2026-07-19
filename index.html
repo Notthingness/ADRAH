@@ -1200,26 +1200,26 @@ let rows = DATA.filter(x =>
 
 rows.sort((a, b) => {
 
-    // France avant les autres
+    // 1. France avant les autres
     if ((a.pays === "FR") !== (b.pays === "FR")) {
         return a.pays === "FR" ? -1 : 1;
     }
 
+    // 2. Assurance avant Courtier
     const ordre = {
         "ASSURANCE": 0,
         "COURTIER": 1
     };
 
-    const typeA = a.type || a.category;
-    const typeB = b.type || b.category;
+    // On utilise le type s'il existe, sinon la catégorie
+    const typeA = (a.type || a.category).toUpperCase();
+    const typeB = (b.type || b.category).toUpperCase();
 
-    const oa = ordre[typeA] ?? 99;
-    const ob = ordre[typeB] ?? 99;
-
-    if (oa !== ob) {
-        return oa - ob;
+    if ((ordre[typeA] ?? 99) !== (ordre[typeB] ?? 99)) {
+        return (ordre[typeA] ?? 99) - (ordre[typeB] ?? 99);
     }
 
+    // 3. Enfin A → Z
     return a.name.localeCompare(b.name, "fr", {
         sensitivity: "base"
     });
