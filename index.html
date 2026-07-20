@@ -1274,37 +1274,67 @@ secretTrigger.onclick = ()=>{
 
 /* CHARGEMENT DES JSON */
 
-Promise.all([
+const fichiers = [
+"data.json",
+"data2.json",
+"data3.json",
+"garage.json",
+"adrah.json",
+"police.json",
+"gendarmerie.json",
+"autoroute.json",
+"pompiers.json",
+"samu.json"
+];
 
-fetch("data.json").then(r=>r.json()),
-fetch("data2.json").then(r=>r.json()),
-fetch("data3.json").then(r=>r.json()),
-fetch("garage.json").then(r=>r.json()),
-fetch("adrah.json").then(r=>r.json()),
-fetch("police.json").then(r=>r.json()),
-fetch("gendarmerie.json").then(r=>r.json()),
-fetch("autoroute.json").then(r=>r.json()),
-fetch("pompiers.json").then(r=>r.json()),
-fetch("samu.json").then(r=>r.json())
 
-])
+Promise.all(
+
+    fichiers.map(fichier =>
+
+        fetch(fichier)
+        .then(r=>{
+
+            if(!r.ok){
+
+                throw new Error(fichier + " introuvable");
+
+            }
+
+            return r.json();
+
+        })
+
+    )
+
+)
 
 .then(files=>{
 
-DATA=[
+    DATA=[
 
-...files[0],
-...files[1],
-...files[2],
-...files[3],
-...files[4],
-...files[5],
-...files[6],
-...files[7],
-...files[8],
-...files[9]
+        ...files[0],
+        ...files[1],
+        ...files[2],
+        ...files[3],
+        ...files[4],
+        ...files[5],
+        ...files[6],
+        ...files[7],
+        ...files[8],
+        ...files[9]
 
-];
+    ];
+
+    console.log("Données chargées :", DATA.length);
+
+})
+
+.catch(err=>{
+
+    console.error("Erreur chargement JSON :", err);
+
+});
 
 DATA = DATA.map(x=>({
 
