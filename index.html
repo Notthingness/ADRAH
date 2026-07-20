@@ -1276,7 +1276,7 @@ secretTrigger.onclick = ()=>{
 /* CHARGEMENT DES JSON */
 
 
-Promise.all([
+Promise.allSettled([
 
 fetch("data.json").then(r=>r.json()),
 
@@ -1294,12 +1294,29 @@ fetch("gendarmerie.json").then(r=>r.json()),
 
 fetch("autoroute.json").then(r=>r.json()),
 
-fetch("pompier.json").then(r=>r.json()),
+fetch("pompiers.json").then(r=>r.json()),
 
 fetch("samu.json").then(r=>r.json())
 
 ])
-.then(files=>{
+
+.then(results=>{
+
+
+DATA = results
+
+.filter(r=>r.status==="fulfilled")
+
+.flatMap(r=>r.value);
+
+
+console.log("TOTAL CHARGÉ :", DATA.length);
+
+
+DATA_READY=true;
+
+
+});
 
 
 DATA=[
