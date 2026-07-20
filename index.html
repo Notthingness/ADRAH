@@ -1163,8 +1163,8 @@ icon:"ph-shield-star"
 },
 
 {
-key:"POMPIERS",
-label:"POMPIERS",
+key:"POMPIER",
+label:"POMPIER",
 sub:"SDIS",
 icon:"ph-fire-truck"
 },
@@ -1193,6 +1193,7 @@ icon:"ph-phone-call"
 ];
 
 let DATA=[];
+let DATA_READY=false;
 
 let current=[];
 
@@ -1371,7 +1372,8 @@ pourboire:x.pourboire === true
 
 console.log("DONNÉES FINAL :",DATA);
 
-
+DATA_READY=true;
+    
 DATA.sort((a,b)=>{
 
     if(a.pays==="FR" && b.pays!=="FR") return -1;
@@ -1587,6 +1589,11 @@ search(e.target.value);
 
 
 cats.addEventListener("click",e=>{
+
+    if(!DATA_READY){
+        console.log("Données pas encore chargées");
+        return;
+    }
 
     const card=e.target.closest(".card");
     if(!card) return;
