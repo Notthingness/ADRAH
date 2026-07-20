@@ -1291,24 +1291,42 @@ const fichiers = [
 
 Promise.all(
 
-    fichiers.map(fichier =>
+    fichiers.map(fichier => {
 
-        fetch(fichier)
+        console.log("Chargement :", fichier);
+
+        return fetch(fichier)
         .then(r=>{
 
-    if(!r.ok){
-        throw new Error("Fichier impossible à charger : " + fichier);
-    }
+            console.log("Réponse :", fichier, r.status);
 
             if(!r.ok){
-                throw new Error(fichier + " introuvable");
+                throw new Error("Impossible de charger : " + fichier);
             }
 
-            return r.json();
+            return r.text();
 
         })
+        .then(txt=>{
 
-    )
+            console.log("Contenu reçu :", fichier);
+
+            try{
+
+                return JSON.parse(txt);
+
+            }catch(e){
+
+                throw new Error(
+                    "JSON invalide dans : " + fichier + 
+                    " → " + e.message
+                );
+
+            }
+
+        });
+
+    })
 
 )
 
