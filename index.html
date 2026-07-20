@@ -712,7 +712,7 @@ margin-top:25px;
     
 .info-value a{
     color:#00a2ff;
-    text-decoration:underline;
+    text-decoration:none;
 
     text-shadow:
         0 0 10px rgba(0,162,255,.45);
@@ -1748,20 +1748,22 @@ address.removeAttribute("href");
 const email = document.getElementById("d-email");
 
 email.textContent = item.email || "—";
+email.style.cursor = item.email ? "pointer" : "default";
+email.style.textDecoration = "none";
 
-email.onclick = async ()=>{
+email.onclick = async () => {
 
-    if(!item.email) return;
+    if (!item.email) return;
 
     await navigator.clipboard.writeText(item.email);
 
-    const old=email.textContent;
+    const old = email.textContent;
 
-    email.textContent="✓ Copié";
+    email.textContent = "✓ Copié";
 
-    setTimeout(()=>{
-        email.textContent=old;
-    },1200);
+    setTimeout(() => {
+        email.textContent = old;
+    }, 1200);
 
 };
 
