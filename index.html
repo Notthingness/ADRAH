@@ -1296,6 +1296,10 @@ Promise.all(
         fetch(fichier)
         .then(r=>{
 
+    if(!r.ok){
+        throw new Error("Fichier impossible à charger : " + fichier);
+    }
+
             if(!r.ok){
                 throw new Error(fichier + " introuvable");
             }
