@@ -1310,7 +1310,13 @@ DATA = DATA.map(x=>({
 
 name:(x.nom || x.name || "").trim(),
 
-phone:String(x.telephone || x.phone || ""),
+phone:String(
+x.telephone ||
+x.phone ||
+x.tel ||
+x.numero ||
+""
+),
 
 category:String(
 x.categorie ||
@@ -1320,6 +1326,7 @@ x.service ||
 )
 .normalize("NFD")
 .replace(/[\u0300-\u036f]/g,"")
+.replace(/\s+/g,"")
 .trim()
 .toUpperCase(),
 
@@ -1347,6 +1354,9 @@ DATA.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
 
 console.log("Données prêtes :", DATA.length);
 
+})
+.catch(err=>{
+    console.error("ERREUR CHARGEMENT JSON :", err);
 });
 
 
