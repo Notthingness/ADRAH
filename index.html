@@ -710,6 +710,24 @@ margin-top:25px;
 
 }
     
+.info-value a{
+    color:#00a2ff;
+    text-decoration:underline;
+
+    text-shadow:
+        0 0 10px rgba(0,162,255,.45);
+}
+
+#d-services{
+    white-space:pre-wrap;
+    line-height:1.45;
+    font-size:20px;
+}
+
+#d-email{
+    overflow-wrap:anywhere;
+} 
+    
 .back-btn{
 
 width:100%;
@@ -1030,32 +1048,21 @@ CATÉGORIES
 
 </div>
     
-<div id="addressBox">
-
-<b>Adresse</b>
-
-<span>
-<a id="d-address" target="_blank"></a>
-</span>
-
+<div id="addressBox" class="info-box">
+    <div class="info-title">Adresse</div>
+    <div class="info-value">
+        <a id="d-address" target="_blank"></a>
+    </div>
 </div>
 
-
-<div id="emailBox">
-
-<b>Email</b>
-
-<span id="d-email"></span>
-
+<div id="emailBox" class="info-box">
+    <div class="info-title">Email</div>
+    <div class="info-value" id="d-email"></div>
 </div>
 
-
-<div id="servicesBox">
-
-<b>Services</b>
-
-<span id="d-services"></span>
-
+<div id="servicesBox" class="info-box">
+    <div class="info-title">Services</div>
+    <div class="info-value" id="d-services"></div>
 </div>
 
 </div>
