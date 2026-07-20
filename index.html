@@ -1193,8 +1193,6 @@ icon:"ph-phone-call"
 ];
 
 let DATA=[];
-let DATA_READY=false;
-let DATA_PROMISE;
 
 let current=[];
 
@@ -1276,7 +1274,7 @@ secretTrigger.onclick = ()=>{
 
 /* CHARGEMENT DES JSON */
 
-DATA_PROMISE = Promise.all([
+Promise.all([
 
 fetch("data.json").then(r=>r.json()),
 fetch("data2.json").then(r=>r.json()),
@@ -1290,6 +1288,7 @@ fetch("pompiers.json").then(r=>r.json()),
 fetch("samu.json").then(r=>r.json())
 
 ])
+
 .then(files=>{
 
 DATA=[
@@ -1306,7 +1305,6 @@ DATA=[
 ...files[9]
 
 ];
-
 
 DATA = DATA.map(x=>({
 
@@ -1345,8 +1343,11 @@ pourboire:x.pourboire === true
 
 }));
 
+DATA.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
 
-DATA.sort((a,b)=>{
+console.log("Données prêtes :", DATA.length);
+
+});
 
 if(a.pays==="FR" && b.pays!=="FR") return -1;
 
@@ -1556,17 +1557,10 @@ search(e.target.value);
 
 cats.addEventListener("click",e=>{
 
-if(!DATA_READY){
 
-    DATA_PROMISE.then(()=>{
+const card=e.target.closest(".card");
 
-        cats.click();
-
-    });
-
-    return;
-
-}
+if(!card) return;
 
 
 const card=e.target.closest(".card");
