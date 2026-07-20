@@ -1275,48 +1275,22 @@ secretTrigger.onclick = ()=>{
 
 /* CHARGEMENT DES JSON */
 
-
-Promise.allSettled([
+Promise.all([
 
 fetch("data.json").then(r=>r.json()),
-
 fetch("data2.json").then(r=>r.json()),
-
 fetch("data3.json").then(r=>r.json()),
-
 fetch("garage.json").then(r=>r.json()),
-
 fetch("adrah.json").then(r=>r.json()),
-
 fetch("police.json").then(r=>r.json()),
-
 fetch("gendarmerie.json").then(r=>r.json()),
-
 fetch("autoroute.json").then(r=>r.json()),
-
 fetch("pompiers.json").then(r=>r.json()),
-
 fetch("samu.json").then(r=>r.json())
 
 ])
 
-.then(results=>{
-
-
-DATA = results
-
-.filter(r=>r.status==="fulfilled")
-
-.flatMap(r=>r.value);
-
-
-console.log("TOTAL CHARGÉ :", DATA.length);
-
-
-DATA_READY=true;
-
-
-});
+.then(files=>{
 
 
 DATA=[
@@ -1335,17 +1309,13 @@ DATA=[
 ];
 
 
-console.log("TOTAL CHARGÉ :", DATA.length);
-console.log(DATA);
-
-
 DATA = DATA.map(x=>({
 
 name:(x.nom || x.name || "").trim(),
 
 phone:String(
-x.telephone || 
-x.phone || 
+x.telephone ||
+x.phone ||
 ""
 ),
 
@@ -1383,13 +1353,16 @@ adresse:x.adresse || "",
 
 pourboire:x.pourboire === true
 
-
 }));
 
 
-console.log("DONNÉES FINAL :",DATA);
-
 DATA_READY=true;
+
+
+console.log("DONNÉES CHARGÉES :", DATA.length);
+
+
+});
     
 DATA.sort((a,b)=>{
 
@@ -1611,10 +1584,6 @@ cats.addEventListener("click",e=>{
 
     if(!card) return;
 
-    if(!DATA_READY){
-        console.log("Données pas encore chargées");
-        return;
-    }
 
     const key=card.dataset.cat;
 
