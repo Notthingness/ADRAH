@@ -1346,11 +1346,8 @@ x.category ||
 x.service ||
 ""
 )
-.normalize("NFD")
-.replace(/[\u0300-\u036f]/g,"")
-.replace(/\s+/g,"")
-.trim()
-.toUpperCase(),
+.toUpperCase()
+.trim(),
 
 pays:String(x.pays || "")
 .toUpperCase()
