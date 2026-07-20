@@ -1275,7 +1275,7 @@ secretTrigger.onclick = ()=>{
 /* CHARGEMENT DES JSON */
 
 
-Promise.allSettled([
+Promise.all([
 
 fetch("data.json").then(r=>r.json()),
 
@@ -1284,110 +1284,95 @@ fetch("data2.json").then(r=>r.json()),
 fetch("data3.json").then(r=>r.json()),
 
 fetch("garage.json").then(r=>r.json()),
-    
+
 fetch("adrah.json").then(r=>r.json()),
-    
+
 fetch("police.json").then(r=>r.json()),
-    
+
 fetch("gendarmerie.json").then(r=>r.json()),
-    
+
 fetch("autoroute.json").then(r=>r.json()),
-    
+
 fetch("pompier.json").then(r=>r.json()),
-    
+
 fetch("samu.json").then(r=>r.json())
-    
+
 ])
-
-
-.then(r=>{
+.then(files=>{
 
 
 DATA=[
 
-...(r[0].value || []),
+...files[0],
+...files[1],
+...files[2],
+...files[3],
+...files[4],
+...files[5],
+...files[6],
+...files[7],
+...files[8],
+...files[9]
 
-...(r[1].value || []),
-
-...(r[2].value || []),
-
-...(r[3].value || []),
-    
-...(r[4].value || []),
-    
-...(r[5].value || []),
-    
-...(r[6].value || []),    
-    
-...(r[7].value || []),
-
-...(r[8].value || []),
-    
-...(r[9].value || [])
-    
 ];
 
 
-DATA=DATA.map(x=>({
+console.log("TOTAL CHARGÉ :", DATA.length);
+console.log(DATA);
+
+
+DATA = DATA.map(x=>({
 
 name:(x.nom || x.name || "").trim(),
 
 phone:String(
-x.telephone || x.phone || ""
+x.telephone || 
+x.phone || 
+""
 ),
 
-category:
-String(
-    x.categorie ||
-    x.category ||
-    x.type ||
-    x.famille ||
-    x.service ||
-    ""
+category:String(
+x.categorie ||
+x.category ||
+x.service ||
+""
 )
 .normalize("NFD")
-.replace(/[\u0300-\u036f]/g, "")
+.replace(/[\u0300-\u036f]/g,"")
 .trim()
 .toUpperCase(),
-    
-pays: String(x.pays || "")
-.trim()
-.toUpperCase(),
-  
-type: String(
-    x.type ?? ""
+
+
+pays:String(x.pays || "")
+.toUpperCase()
+.trim(),
+
+
+type:String(x.type || "").trim(),
+
+assistant:String(
+x.assisteur ||
+x.assistant ||
+""
 ).trim(),
 
 
-assistant: String(
-    x.assisteur ??
-    x.assistant ??
-    ""
-).trim(),
-
-
-
-email:
-x.email ||
-x.mail ||
-x.Email ||
-x["e-mail"] ||
-"",
-
-
+email:x.email || "",
 
 services:x.services || "",
 
-adresse:
-x.adresse ||
-x.address ||
-"",
-    
-pourboire: x.pourboire === true,
-    
-logo:x.logo || ""
+adresse:x.adresse || "",
+
+pourboire:x.pourboire === true
+
 
 }));
+
+
+console.log("DONNÉES FINAL :",DATA);
+
+
+});
 
 DATA.sort((a,b)=>{
 
