@@ -730,6 +730,16 @@ margin-top:25px;
 #d-email{
     overflow-wrap:anywhere;
     text-decoration:none !important;
+    color:#00a2ff !important;
+    -webkit-text-decoration:none !important;
+    text-decoration-line:none !important;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-user-select:none;
+    user-select:none;
+}
+    
+#d-email::selection{
+    background:transparent;
 }
     
 #d-address{
@@ -1762,7 +1772,7 @@ const email = document.getElementById("d-email");
     
 email.style.webkitTapHighlightColor = "transparent";
 email.textContent = item.email || "—";
-email.style.cursor = item.email ? "pointer" : "default";
+email.style.cursor = "default";
 email.style.textDecoration = "none";
 
 email.onclick = async () => {
