@@ -897,8 +897,16 @@ transform:translateX(0);
     color:#00a2ff;
 
     text-shadow:
-        0 0 10px rgba(0,162,255,.45);
+        0 0 10px rgba(0,162,255,.45);    
 }
+    
+.secret-card{
+    transform:translateX(-10px);
+}
+
+.secret-card:hover{
+    transform:translateX(-10px) translateY(-4px);
+}    
     
 </style>
 
@@ -1165,7 +1173,7 @@ function renderCategories(data){
 
     cats.innerHTML = data.map(c=>`
 
-    <div class="card" data-cat="${c.key}">
+    <div class="card ${secretMode ? 'secret-card' : ''}" data-cat="${c.key}">
 
         <i class="ph ${c.icon}"></i>
 
