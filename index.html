@@ -732,6 +732,15 @@ margin-top:25px;
     text-decoration:none !important;
 }
     
+#d-address{
+
+    -webkit-tap-highlight-color: transparent;
+
+    -webkit-user-select: none;
+
+    user-select: none;
+} 
+    
 .back-btn{
 
 width:100%;
@@ -1750,7 +1759,8 @@ address.removeAttribute("href");
 
 
 const email = document.getElementById("d-email");
-
+    
+email.style.webkitTapHighlightColor = "transparent";
 email.textContent = item.email || "—";
 email.style.cursor = item.email ? "pointer" : "default";
 email.style.textDecoration = "none";
