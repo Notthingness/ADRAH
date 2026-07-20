@@ -1296,9 +1296,7 @@ Promise.all(
         .then(r=>{
 
             if(!r.ok){
-
                 throw new Error(fichier + " introuvable");
-
             }
 
             return r.json();
@@ -1311,30 +1309,24 @@ Promise.all(
 
 .then(files=>{
 
-    DATA=[
 
-        ...files[0],
-        ...files[1],
-        ...files[2],
-        ...files[3],
-        ...files[4],
-        ...files[5],
-        ...files[6],
-        ...files[7],
-        ...files[8],
-        ...files[9]
+DATA=[
 
-    ];
+    ...files[0],
+    ...files[1],
+    ...files[2],
+    ...files[3],
+    ...files[4],
+    ...files[5],
+    ...files[6],
+    ...files[7],
+    ...files[8],
+    ...files[9]
 
-    console.log("Données chargées :", DATA.length);
+];
 
-})
 
-.catch(err=>{
-
-    console.error("Erreur chargement JSON :", err);
-
-});
+// NORMALISATION DES DONNEES
 
 DATA = DATA.map(x=>({
 
@@ -1360,9 +1352,12 @@ x.service ||
 .trim()
 .toUpperCase(),
 
-pays:String(x.pays || "").toUpperCase().trim(),
+pays:String(x.pays || "")
+.toUpperCase()
+.trim(),
 
-type:String(x.type || "").trim(),
+type:String(x.type || "")
+.trim(),
 
 assistant:String(
 x.assisteur ||
@@ -1380,15 +1375,25 @@ pourboire:x.pourboire === true
 
 }));
 
-DATA.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
+
+DATA.sort((a,b)=>
+a.name.localeCompare(b.name,"fr")
+);
+
 
 console.log("Données prêtes :", DATA.length);
 
-})
-.catch(err=>{
-    console.error("ERREUR CHARGEMENT JSON :", err);
-});
 
+})
+
+.catch(err=>{
+
+console.error(
+"ERREUR CHARGEMENT JSON :",
+err
+);
+
+});
 
 
 /* RECHERCHE */
