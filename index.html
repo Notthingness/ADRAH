@@ -229,7 +229,8 @@ transform:translateX(0);
 
 .card{
 
-
+justify-content:center;
+    
 position:relative;
 
 
@@ -453,10 +454,14 @@ transform:translateY(-4px);
 
 }
 
-
+.card > div{
+    flex:1;
+    text-align:center;
+}
 
 .card i{
 
+flex-shrink:0;    
 
 font-size:45px;
 
@@ -1644,7 +1649,9 @@ const assistBox = document.getElementById("assistBox");
 const addressBox = document.getElementById("addressBox");
 const emailBox = document.getElementById("emailBox");
 const servicesBox = document.getElementById("servicesBox");
-
+const countryBox = document.getElementById("countryBox");
+const availableBox = document.getElementById("availableBox");
+    
 // AFFICHAGE SELON CATEGORIE
 
 typeBox.style.display = "block";
@@ -1655,18 +1662,25 @@ servicesBox.style.display = "none";
 
 if (item.category === "GARAGE") {
 
+    typeBox.style.display = "none";
     assistBox.style.display = "none";
+    countryBox.style.display = "none";
+    availableBox.style.display = "none";
 
     addressBox.style.display = "block";
     emailBox.style.display = "block";
     servicesBox.style.display = "block";
 
-}
+} else {
 
+    typeBox.style.display = "block";
+    assistBox.style.display = "block";
+    countryBox.style.display = "block";
+    availableBox.style.display = "block";
 
-else{
-
-    assistBox.style.display="block";
+    addressBox.style.display = "none";
+    emailBox.style.display = "none";
+    servicesBox.style.display = "none";
 
 }
 
