@@ -309,7 +309,7 @@ transform:translateY(-4px);
     --cat-color:#2E7DFF;
 }
 
-.card[data-cat="POMPIERS"]{
+.card[data-cat="POMPIER"]{
     --cat-color:#ff1e1e;
 }
 
@@ -339,7 +339,7 @@ transform:translateY(-4px);
     0 0 20px #2E7DFF;
 }
 
-#list[data-cat="POMPIERS"] .row{
+#list[data-cat="POMPIER"] .row{
     border-color:#ff1e1e;
     box-shadow:
     0 0 20px #ff1e1e;
@@ -382,8 +382,8 @@ transform:translateY(-4px);
 }
 
 
-#list[data-cat="POMPIERS"] .title,
-#list[data-cat="POMPIERS"] .sub{
+#list[data-cat="POMPIER"] .title,
+#list[data-cat="POMPIER"] .sub{
     color:#ff1e1e;
     text-shadow:
     0 0 10px #ff1e1e;
@@ -419,7 +419,7 @@ transform:translateY(-4px);
 
 .card[data-cat="POLICE"],
 .card[data-cat="GENDARMERIE"],
-.card[data-cat="POMPIERS"],
+.card[data-cat="POMPIER"],
 .card[data-cat="SAMU"],
 .card[data-cat="AUTOROUTE"],
 .card[data-cat="ADRAH"]{
@@ -438,8 +438,8 @@ transform:translateY(-4px);
 .card[data-cat="POLICE"] h3,
 .card[data-cat="GENDARMERIE"] i,
 .card[data-cat="GENDARMERIE"] h3,
-.card[data-cat="POMPIERS"] i,
-.card[data-cat="POMPIERS"] h3,
+.card[data-cat="POMPIER"] i,
+.card[data-cat="POMPIER"] h3,
 .card[data-cat="SAMU"] i,
 .card[data-cat="SAMU"] h3,
 .card[data-cat="AUTOROUTE"] i,
@@ -504,7 +504,7 @@ text-shadow:
 
 .card[data-cat="POLICE"] span,
 .card[data-cat="GENDARMERIE"] span,
-.card[data-cat="POMPIERS"] span,
+.card[data-cat="POMPIER"] span,
 .card[data-cat="SAMU"] span,
 .card[data-cat="AUTOROUTE"] span,
 .card[data-cat="ADRAH"] span{
@@ -1590,12 +1590,22 @@ search(e.target.value);
 
 cats.addEventListener("click",e=>{
 
+    const card=e.target.closest(".card");
+
+    if(!card) return;
+
     if(!DATA_READY){
-        console.log("Données pas encore chargées");
+
+        console.log("Chargement des données en cours...");
+
+        setTimeout(()=>{
+
+            card.click();
+
+        },500);
+
         return;
     }
-
-    const card=e.target.closest(".card");
     if(!card) return;
 
     const key=card.dataset.cat;
