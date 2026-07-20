@@ -900,13 +900,14 @@ transform:translateX(0);
         0 0 10px rgba(0,162,255,.45);    
 }
     
-.secret-card{
-    transform:translateX(-10px);
+/* Décale légèrement uniquement les cartes du menu secret */
+.grid.secret-mode .card{
+    transform:translateX(-12px);
 }
 
-.secret-card:hover{
-    transform:translateX(-10px) translateY(-4px);
-}    
+.grid.secret-mode .card:hover{
+    transform:translateX(-12px) translateY(-4px);
+} 
     
 </style>
 
@@ -1173,7 +1174,7 @@ function renderCategories(data){
 
     cats.innerHTML = data.map(c=>`
 
-    <div class="card ${secretMode ? 'secret-card' : ''}" data-cat="${c.key}">
+    <div class="card" data-cat="${c.key}">
 
         <i class="ph ${c.icon}"></i>
 
@@ -1209,25 +1210,32 @@ secretTrigger.onclick = ()=>{
 
     if(secretClicks>=3){
 
-        secretClicks=0;
+    secretClicks = 0;
 
-        secretMode=!secretMode;
+    secretMode = !secretMode;
 
-        cats.classList.add("hide");
+    // Active ou désactive le décalage
+    if(secretMode){
+        cats.classList.add("secret-mode");
+    }else{
+        cats.classList.remove("secret-mode");
+    }
 
-        setTimeout(()=>{
+    cats.classList.add("hide");
 
-            renderCategories(
-                secretMode
+    setTimeout(()=>{
+
+        renderCategories(
+            secretMode
                 ? SECRET_CATEGORIES
                 : CATEGORIES
-            );
+        );
 
-            cats.classList.remove("hide");
+        cats.classList.remove("hide");
 
-        },300);
+    },300);
 
-    }
+}
 
 };
 
