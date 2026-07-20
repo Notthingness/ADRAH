@@ -1286,74 +1286,98 @@ const fichiers = [
 "autoroute.json",
 "pompiers.json",
 "samu.json"
+
 ];
 
 
 Promise.all(
 
-    fichiers.map(fichier => {
+fichiers.map(fichier => {
 
-        console.log("Chargement :", fichier);
+console.log("Chargement :", fichier);
 
-        return fetch(fichier)
-        .then(r=>{
 
-            console.log("Réponse :", fichier, r.status);
+return fetch(fichier)
 
-            if(!r.ok){
-                throw new Error("Impossible de charger : " + fichier);
-            }
+.then(r=>{
 
-            return r.text();
 
-        })
-        .then(txt=>{
+if(!r.ok){
 
-            console.log("Contenu reçu :", fichier);
+throw new Error(
+fichier + " introuvable"
+);
 
-            try{
+}
 
-                return JSON.parse(txt);
 
-            }catch(e){
+return r.text();
 
-                throw new Error(
-                    "JSON invalide dans : " + fichier + 
-                    " → " + e.message
-                );
 
-            }
+})
 
-        });
 
-    })
+.then(txt=>{
+
+
+// FICHIER VIDE = TABLEAU VIDE
+
+if(!txt.trim()){
+
+console.warn(
+fichier + " est vide → ignoré"
+);
+
+return [];
+
+}
+
+
+try{
+
+
+return JSON.parse(txt);
+
+
+}
+
+catch(e){
+
+
+throw new Error(
+
+"Erreur JSON dans " 
++ fichier 
++ " : "
++ e.message
+
+);
+
+
+}
+
+
+});
+
+
+})
+
 
 )
+
 
 .then(files=>{
 
 
-DATA=[
-
-    ...files[0],
-    ...files[1],
-    ...files[2],
-    ...files[3],
-    ...files[4],
-    ...files[5],
-    ...files[6],
-    ...files[7],
-    ...files[8],
-    ...files[9]
-
-];
+DATA = files.flat();
 
 
-// NORMALISATION DES DONNEES
 
 DATA = DATA.map(x=>({
 
+
 name:(x.nom || x.name || "").trim(),
+
 
 phone:String(
 x.telephone ||
@@ -1362,6 +1386,7 @@ x.tel ||
 x.numero ||
 ""
 ),
+
 
 category:String(
 x.categorie ||
@@ -1372,12 +1397,19 @@ x.service ||
 .toUpperCase()
 .trim(),
 
-pays:String(x.pays || "")
+
+pays:String(
+x.pays || ""
+)
 .toUpperCase()
 .trim(),
 
-type:String(x.type || "")
+
+type:String(
+x.type || ""
+)
 .trim(),
+
 
 assistant:String(
 x.assisteur ||
@@ -1385,28 +1417,45 @@ x.assistant ||
 ""
 ).trim(),
 
+
 email:x.email || "",
+
 
 services:x.services || "",
 
+
 adresse:x.adresse || "",
 
+
 pourboire:x.pourboire === true
+
 
 }));
 
 
+
 DATA.sort((a,b)=>
-a.name.localeCompare(b.name,"fr")
+
+a.name.localeCompare(
+b.name,
+"fr"
+)
+
 );
 
 
-console.log("Données prêtes :", DATA.length);
+
+console.log(
+"Données prêtes :",
+DATA.length
+);
 
 
 })
 
+
 .catch(err=>{
+
 
 document.body.innerHTML += `
 
@@ -1428,6 +1477,7 @@ z-index:99999;
 </div>
 
 `;
+
 
 });
 
