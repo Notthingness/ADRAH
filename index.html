@@ -1811,7 +1811,6 @@ if (item.category === "GARAGE") {
     typeBox.style.display = "block";
     assistBox.style.display = "block";
     countryBox.style.display = "block";
-    availableBox.style.display = "block";
 
     addressBox.style.display = "none";
     emailBox.style.display = "none";
@@ -1866,9 +1865,35 @@ email.onclick = async () => {
 
 document.getElementById("d-services").textContent=item.services;
 
+/* COULEUR DYNAMIQUE DU DRAWER */
 
+const colors = {
+    POLICE: "#00B7FF",
+    GENDARMERIE: "#2E7DFF",
+    POMPIERS: "#ff1e1e",
+    SAMU: "#00bfa5",
+    AUTOROUTE: "#ffcc00",
+    ADRAH: "#00a2ff"
+};
 
+const c = colors[item.category] || "#00a2ff";
 
+document.getElementById("d-cat").style.color = c;
+
+document.getElementById("d-name").style.textShadow =
+    `0 0 15px ${c}`;
+
+document.getElementById("d-call").style.background = c;
+
+document.getElementById("d-call").style.boxShadow =
+    `0 0 25px ${c}`;
+
+document.querySelectorAll(".info-value").forEach(el=>{
+    el.style.color = c;
+    el.style.textShadow = `0 0 12px ${c}`;
+});
+
+/* FIN COULEUR DYNAMIQUE */
 
 drawer.classList.add("show");
 
