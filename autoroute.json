@@ -1,17 +1,32 @@
 [
 {
-"nom":"Pont de normandie",
+"nom":"Pont de Normandie",
 "telephone":"02 35 24 64 90",
+"type":"Pont",  
 "categorie":"AUTOROUTE"
 },
 {
-"nom":"Pont de tancarville",
+"nom":"Pont de Tancarville",
 "telephone":"02 35 39 65 60",
+"type":"Pont",  
 "categorie":"AUTOROUTE"
 },
+{
+"nom":"pont de Brotonne",
+"telephone":"02 35 95 90 10",
+"type":"Pont",  
+"categorie":"AUTOROUTE"
+},  
 {
 "nom":"SAPN",
 "telephone":"02 35 18 54 61",
+"type":"Pc Autoroute", 
 "categorie":"AUTOROUTE"
-}
+},
+{
+"nom":"DIRNO",
+"telephone":"",
+"type":"COG", 
+"categorie":"AUTOROUTE"
+}  
 ]
