@@ -1549,12 +1549,12 @@ list.innerHTML = rows.map((r,i)=>`
         </div>
 
         <div class="sub">
-            ${r.category}
             ${
-                r.category !== "GARAGE"
-                ? " · " + r.assistant
-                : ""
-            }
+["POLICE","GENDARMERIE","POMPIERS","SAMU","AUTOROUTE","ADRAH","GARAGE"]
+.includes(r.category)
+? r.category
+: r.category + " · " + r.assistant
+}
         </div>
 
         <div class="tip-slot">
