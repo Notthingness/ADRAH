@@ -2,52 +2,61 @@
 {
 "nom":"ADRAH",
 "telephone":"02 32 85 08 80",
+"type":"Dépôt",  
 "categorie":"ADRAH"
 },
 {
 "nom":"Christophe",
 "telephone":"06 49 51 56 38",
+"type":"Chef",  
 "categorie":"ADRAH"
 },
 {
 "nom":"Guillaume",
 "telephone":"07 78 45 60 43",
+"type":"Collègue",  
 "categorie":"ADRAH"
 },
 {
 "nom":"Tony DC",
 "telephone":"06 59 76 19 59",
+"type":"Collègue",  
 "categorie":"ADRAH"
 },
 {
 "nom":"François Le F",
 "telephone":"06 69 24 25 71",
+"type":"Collègue",  
 "categorie":"ADRAH"
 },
 {
 "nom":"Cyril la cylex boy",
 "telephone":"06 63 36 14 29",
+"type":"Collègue",  
 "categorie":"ADRAH"
 },
 {
 "nom":"Alexandre",
 "telephone":"06 95 22 15 75",
+"type":"Collègue",  
 "categorie":"ADRAH"
 },
 {
 "nom":"Benoît",
 "telephone":"06 22 36 26 59",
+"type":"Collègue",  
 "categorie":"ADRAH"
 },
 {
 "nom":"Jean-Michel",
 "telephone":"06 14 60 64 51",
+"type":"Collègue",  
 "categorie":"ADRAH"
 },  
 {
 "nom":"Douglas",
 "telephone":"06 67 66 12 85",
+"type":"Collègue",  
 "categorie":"ADRAH"
 }
 ]
-
