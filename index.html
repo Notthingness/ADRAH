@@ -1795,6 +1795,15 @@ addressBox.style.display = "none";
 emailBox.style.display = "none";
 servicesBox.style.display = "none";
 
+const specialCategories = [
+    "POLICE",
+    "GENDARMERIE",
+    "POMPIERS",
+    "SAMU",
+    "AUTOROUTE",
+    "ADRAH"
+];
+
 if (item.category === "GARAGE") {
 
     typeBox.style.display = "none";
@@ -1808,9 +1817,23 @@ if (item.category === "GARAGE") {
 
 } else {
 
+    } else {
+
     typeBox.style.display = "block";
-    assistBox.style.display = "block";
-    countryBox.style.display = "block";
+
+    if (specialCategories.includes(item.category)) {
+
+        assistBox.style.display = "none";
+        countryBox.style.display = "none";
+
+    } else {
+
+        assistBox.style.display = "block";
+        countryBox.style.display = "block";
+
+    }
+
+    availableBox.style.display = "block";
 
     addressBox.style.display = "none";
     emailBox.style.display = "none";
