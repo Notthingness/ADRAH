@@ -18,7 +18,7 @@
   "pourboire": true
 },
 {
-  "nom": "VP Auto",
+  "nom": "VP Automobile",
   "telephone": "02 35 44 97 92",
   "adresse": "261 Rue Irène Joliot Curie, 76620 Le Havre",
   "email": "",
@@ -27,7 +27,7 @@
   "pourboire": true
 },
 {
-  "nom": "RsK Auto",
+  "nom": "RSK Automobile",
   "telephone": "06 61 20 54 48",
   "adresse": "2 Rue Marcel Toulouzan, 76600 Le Havre",
   "email": "rsk76@outlook.fr",
@@ -45,7 +45,7 @@
   "pourboire": false
 },
 {
-  "nom": "La Maison Du Pneu ",
+  "nom": "La Maison Du Pneu",
   "telephone": "09 81 22 89 40",
   "adresse": "6 Route d'oudalle 76700 Harfleur",
   "email": "la-maisondupneu@outlook.fr",
@@ -117,7 +117,7 @@
   "pourboire": false
 },  
 {
-  "nom": "SD Auto",
+  "nom": "SD Automobile",
   "telephone": "02 35 46 16 88",
   "adresse": "110 Rue Pierre Farcis, 76620 Le Havre",
   "email": "",
