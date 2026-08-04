@@ -63,7 +63,7 @@
   "pourboire": true
 },
 {
-  "nom": "l’Émeraude",
+  "nom": "Garage De l’Émeraude",
   "telephone": "02 35 47 24 66",
   "adresse": "37 Rue Andrei Sakharov, 76610 Le Havre",
   "email": "",
@@ -90,7 +90,7 @@
   "pourboire": false
 },
 {
-  "nom": "Norauto LH",
+  "nom": "Norauto Le Havre",
   "telephone": "02 35 54 69 69",
   "adresse": "91 Avenue du Grand Hameau, 76620 Le Havre",
   "email": "mag010@norauto.fr",
@@ -99,7 +99,7 @@
   "pourboire": false
 },
 {
-  "nom": "Norauto MT",
+  "nom": "Norauto Montivilliers",
   "telephone": "02 35 30 05 83",
   "adresse": "Centre Commercial La Lézarde, 76290 Montivilliers",
   "email": "mag028@norauto.fr",
