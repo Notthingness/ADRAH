@@ -1257,15 +1257,23 @@ secretTrigger.onclick = ()=>{
 
     setTimeout(()=>{
 
-        renderCategories(
-            secretMode
-                ? SECRET_CATEGORIES
-                : CATEGORIES
-        );
+    renderCategories(
+        secretMode
+            ? SECRET_CATEGORIES
+            : CATEGORIES
+    );
 
-        cats.classList.remove("hide");
+    requestAnimationFrame(()=>{
 
-    },300);
+        requestAnimationFrame(()=>{
+
+            cats.classList.remove("hide");
+
+        });
+
+    });
+
+},300);
 
 }
 
