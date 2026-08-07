@@ -243,6 +243,8 @@ transform:translateX(0);
 
     border-radius:30px;
 
+    overflow:hidden;
+
     background:
     linear-gradient(
         135deg,
@@ -262,27 +264,51 @@ transform:translateX(0);
 
     transition:
         transform .25s ease,
-        opacity .25s ease,
-        box-shadow .25s ease;
+        box-shadow .25s ease,
+        opacity .25s ease;
 
     transform:translateZ(0);
 
-    will-change:
-        transform,
-        opacity;
+    will-change:transform;
 
     backface-visibility:hidden;
     -webkit-backface-visibility:hidden;
 
-    perspective:1000px;
-
-    contain:layout paint style;
 }
 
+.card::before{
 
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:50%;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    pointer-events:none;
+
+}
+    
 .card:hover{
 
-transform:translateY(-4px);
+    transform:
+    translateY(-4px)
+    scale(1.01);
+
+    box-shadow:
+        0 0 20px rgba(0,91,255,.9),
+        0 0 50px rgba(0,91,255,.45),
+        inset 0 0 25px rgba(0,91,255,.2);
 
 }
 
@@ -444,21 +470,16 @@ transform:translateY(-4px);
 
 .card i{
 
+    font-size:45px;
 
-font-size:45px;
+    color:white;
 
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #00a2ff,
+        0 0 35px #005BFF;
 
-color:white;
-
-
-text-shadow:
-
-0 0 5px white,
-
-0 0 15px #00a2ff,
-
-0 0 35px #005BFF;
-
+    flex-shrink:0;
 
 }
 
@@ -466,24 +487,18 @@ text-shadow:
 
 .card h3{
 
+    margin:0;
 
-margin:0;
+    font-size:34px;
 
+    font-weight:900;
 
-font-size:34px;
+    line-height:1;
 
-
-font-weight:900;
-
-    
-text-shadow:
-
-0 0 5px white,
-
-0 0 15px #00a2ff,
-
-0 0 35px #005BFF;
-
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #00a2ff,
+        0 0 35px #005BFF;
 
 }
 
