@@ -1244,7 +1244,9 @@ secretTrigger.onclick = ()=>{
 
     cats.classList.add("hide");
 
-    setTimeout(()=>{
+setTimeout(()=>{
+
+    cats.style.visibility = "hidden";
 
     renderCategories(
         secretMode
@@ -1255,6 +1257,8 @@ secretTrigger.onclick = ()=>{
     requestAnimationFrame(()=>{
 
         requestAnimationFrame(()=>{
+
+            cats.style.visibility = "visible";
 
             cats.classList.remove("hide");
 
