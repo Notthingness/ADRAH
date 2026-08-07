@@ -1263,18 +1263,7 @@ secretTrigger.onclick = ()=>{
             : CATEGORIES
     );
 
-    cats.style.visibility = "hidden";
-
-    requestAnimationFrame(()=>{
-
-        setTimeout(()=>{
-
-            cats.style.visibility = "visible";
-            cats.classList.remove("hide");
-
-        },220);
-
-    });
+    cats.classList.remove("hide");
 
 },300);
 
