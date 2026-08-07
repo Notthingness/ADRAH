@@ -1238,9 +1238,9 @@ secretTrigger.onclick = ()=>{
 
         secretClicks=0;
 
-    },1200);
+    },800);
 
-    if(secretClicks>=3){
+    if(secretClicks>=2){
 
     secretClicks = 0;
 
@@ -1257,15 +1257,26 @@ secretTrigger.onclick = ()=>{
 
     setTimeout(()=>{
 
-        renderCategories(
-            secretMode
-                ? SECRET_CATEGORIES
-                : CATEGORIES
-        );
+    renderCategories(
+        secretMode
+            ? SECRET_CATEGORIES
+            : CATEGORIES
+    );
 
-        cats.classList.remove("hide");
+    cats.style.visibility = "hidden";
 
-    },300);
+    requestAnimationFrame(()=>{
+
+        setTimeout(()=>{
+
+            cats.style.visibility = "visible";
+            cats.classList.remove("hide");
+
+        },120);
+
+    });
+
+},300);
 
 }
 
