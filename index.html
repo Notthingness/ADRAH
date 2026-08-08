@@ -311,7 +311,40 @@ transition:.25s;
 
 }    
     
+.card{
+overflow:hidden;
+}
 
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:shine 5s infinite;
+
+    pointer-events:none;
+
+}
+    
 .card:hover{
 
 transform:translateY(-2px);
@@ -973,20 +1006,16 @@ transform:translateX(0);
 
 /* Animation du titre */
 
-@keyframes glow{
-0%,100%{
-text-shadow:
-0 0 10px #005BFF;
-}
-50%{
-text-shadow:
-0 0 25px #00A2FF,
-0 0 40px #00A2FF;
-}
-}
+@keyframes shine{
 
-h2{
-animation:glow 3s infinite;
+    0%{
+        left:-150%;
+    }
+
+    100%{
+        left:200%;
+    }
+
 }
     
     
