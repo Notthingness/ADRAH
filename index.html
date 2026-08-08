@@ -309,39 +309,6 @@ transition:.25s;
 
     pointer-events:none;
 
-}    
-    
-.card{
-overflow:hidden;
-}
-
-.card::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-150%;
-
-    width:60%;
-
-    height:100%;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.15),
-        transparent
-    );
-
-    transform:skewX(-25deg);
-
-    animation:shine 5s infinite;
-
-    pointer-events:none;
 
 }
     
@@ -532,12 +499,17 @@ text-shadow:
 .card h3{
 
 margin:0;
+
 font-size:34px;
+
 font-weight:900;
 
 text-shadow:
+
 0 0 5px white,
+
 0 0 15px #00a2ff,
+
 0 0 35px #005BFF;
 
 }
@@ -994,19 +966,6 @@ transform:translateX(0);
     transform:translateX(-12px);
 }
 
-/* Animation du titre */
-
-@keyframes shine{
-
-    0%{
-        left:-150%;
-    }
-
-    100%{
-        left:200%;
-    }
-
-}
     
     
 </style>
