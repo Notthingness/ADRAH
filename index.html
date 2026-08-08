@@ -1006,15 +1006,21 @@ transform:translateX(0);
 
 /* Animation du titre */
 
-@keyframes shine{
+@keyframes cardGlow{
 
-    0%{
-        left:-150%;
-    }
+0%,100%{
+text-shadow:
+0 0 5px white,
+0 0 15px #00a2ff,
+0 0 35px #005BFF;
+}
 
-    100%{
-        left:200%;
-    }
+50%{
+text-shadow:
+0 0 8px white,
+0 0 25px #00a2ff,
+0 0 60px #00a2ff;
+}
 
 }
     
