@@ -902,7 +902,90 @@ transform:translateX(0);
 
 }
 
+/* COULEUR DU MENU DETAIL SELON CATEGORIE */
 
+.drawer[data-cat="POLICE"]{
+    --cat-color:#00B7FF;
+}
+
+.drawer[data-cat="GENDARMERIE"]{
+    --cat-color:#2E7DFF;
+}
+
+.drawer[data-cat="POMPIERS"]{
+    --cat-color:#ff1e1e;
+}
+
+.drawer[data-cat="SAMU"]{
+    --cat-color:#00bfa5;
+}
+
+.drawer[data-cat="AUTOROUTE"]{
+    --cat-color:#ffcc00;
+}
+
+.drawer[data-cat="ADRAH"]{
+    --cat-color:#00a2ff;
+}
+
+
+/* Application de la couleur au panneau */
+
+.drawer[data-cat]{
+    border-left-color:var(--cat-color);
+
+    box-shadow:
+        0 0 25px color-mix(in srgb, var(--cat-color), transparent 55%);
+}
+
+
+/* Titre */
+
+.drawer[data-cat] #d-name{
+    color:var(--cat-color);
+
+    text-shadow:
+        0 0 8px white,
+        0 0 18px var(--cat-color),
+        0 0 35px var(--cat-color);
+}
+
+
+/* Catégorie */
+
+.drawer[data-cat] #d-cat{
+    color:var(--cat-color);
+
+    text-shadow:
+        0 0 10px var(--cat-color);
+}
+
+
+/* Valeurs */
+
+.drawer[data-cat] .info-value{
+    color:var(--cat-color);
+
+    text-shadow:
+        0 0 12px var(--cat-color);
+}
+
+
+/* Bouton téléphone */
+
+.drawer[data-cat] #d-call{
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--cat-color), white 15%),
+            var(--cat-color)
+        );
+
+    box-shadow:
+        0 6px 20px color-mix(in srgb, var(--cat-color), transparent 55%),
+        0 0 30px color-mix(in srgb, var(--cat-color), transparent 45%);
+}
+    
 .close{
     width:52px;
     height:52px;
@@ -1810,7 +1893,7 @@ if(!row)return;
 
 let item=current[row.dataset.i];
 
-
+drawer.dataset.cat = item.category;
 
 document.getElementById("d-name").textContent=item.name;
 
