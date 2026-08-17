@@ -1734,12 +1734,13 @@ block:"start"
 
 function normalize(text){
 
-    return String(text || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g,"")
-        .replace(/[-_]/g," ")
-        .replace(/\s+/g," ")
+    return String(text ?? "")
+        .toLocaleLowerCase("fr-FR")
+        .normalize("NFKD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[’']/g, "")
+        .replace(/[-_]/g, " ")
+        .replace(/\s+/g, " ")
         .trim();
 
 }
@@ -1793,9 +1794,12 @@ function search(text){
 
 
             // Tous les mots recherchés doivent être présents
+            const searchableCompact = searchable.replace(/\s/g, "");
+
             const matches = words.every(word =>
-                searchable.includes(word)
-            );
+                searchable.includes(word) ||
+                searchableCompact.includes(word.replace(/\s/g, ""))
+);
 
 
             if(!matches) return null;
