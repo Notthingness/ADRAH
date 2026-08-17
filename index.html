@@ -1732,59 +1732,154 @@ block:"start"
 }
 
 
-function search(text){
+function normalize(text){
 
-
-let n=text.toLowerCase().trim();
-
-
-
-if(!n){
-
-    results.classList.remove("show");
-
-    setTimeout(() => {
-        results.style.display = "none";
-    },300);
-
-    backBox.style.display = "none";
-
-    return;
+    return String(text || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g,"")
+        .replace(/[-_]/g," ")
+        .replace(/\s+/g," ")
+        .trim();
 
 }
 
 
+function search(text){
 
-let rows=DATA.filter(x=>{
-
-
-return [
-
-x.name,
-
-x.phone,
-
-x.category,
-
-x.type,
-
-x.assistant,
-
-x.services
-
-]
-
-.join(" ")
-
-.toLowerCase()
-
-.includes(n);
-
-});
+    const n = normalize(text);
 
 
+    // Recherche vide → retour normal
+    if(!n){
 
-render(rows);
+        results.classList.remove("show");
+
+        setTimeout(() => {
+            results.style.display = "none";
+        },300);
+
+        backBox.style.display = "none";
+
+        return;
+    }
+
+
+    // Découpe la recherche en plusieurs mots
+    const words = n.split(" ").filter(Boolean);
+
+
+    let rows = DATA
+        .map(item => {
+
+            const name     = normalize(item.name);
+            const phone    = normalize(item.phone);
+            const category = normalize(item.category);
+            const type     = normalize(item.type);
+            const assistant= normalize(item.assistant);
+            const services = normalize(item.services);
+            const country  = normalize(item.pays);
+
+
+            const searchable = [
+                name,
+                phone,
+                category,
+                type,
+                assistant,
+                services,
+                country
+            ].join(" ");
+
+
+            // Tous les mots recherchés doivent être présents
+            const matches = words.every(word =>
+                searchable.includes(word)
+            );
+
+
+            if(!matches) return null;
+
+
+            // SCORE DE PERTINENCE
+            let score = 0;
+
+
+            words.forEach(word => {
+
+                // Nom = priorité maximale
+                if(name === word)
+                    score += 100;
+
+                else if(name.startsWith(word))
+                    score += 70;
+
+                else if(name.includes(word))
+                    score += 50;
+
+
+                // Catégorie
+                if(category === word)
+                    score += 40;
+
+                else if(category.includes(word))
+                    score += 25;
+
+
+                // Type
+                if(type.includes(word))
+                    score += 20;
+
+
+                // Assisteur
+                if(assistant.includes(word))
+                    score += 15;
+
+
+                // Services
+                if(services.includes(word))
+                    score += 10;
+
+
+                // Téléphone
+                if(phone.includes(word))
+                    score += 10;
+
+            });
+
+
+            return {
+                item,
+                score
+            };
+
+        })
+        .filter(Boolean);
+
+
+    // Meilleurs résultats en premier
+    rows.sort((a,b) => {
+
+        if(b.score !== a.score)
+            return b.score - a.score;
+
+
+        return a.item.name.localeCompare(
+            b.item.name,
+            "fr",
+            {
+                sensitivity:"base"
+            }
+        );
+
+    });
+
+
+    // On récupère uniquement les données
+    rows = rows.map(x => x.item);
+
+
+    render(rows);
 
 
 }
