@@ -25,7 +25,13 @@
 },
 {
 "nom":"DIRNO",
-"telephone":"",
+"telephone":"06 68 36 11 52",
+"type":"COG", 
+"categorie":"AUTOROUTE"
+},
+{
+"nom":"COG",
+"telephone":"02 32 08 79 52",
 "type":"COG", 
 "categorie":"AUTOROUTE"
 }  
