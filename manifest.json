@@ -1,20 +1,16 @@
 {
-  "name": "ADRAH Assistance",
+  "name": "ADRAH — Assistance • Dépannage • Remorquage",
   "short_name": "ADRAH",
-  "start_url": "index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#1e90ff",
+  "background_color": "#05070b",
+  "theme_color": "#005BFF",
   "icons": [
     {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
