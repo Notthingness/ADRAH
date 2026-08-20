@@ -1075,11 +1075,11 @@ function render(rows,category=""){
        ===================================================== */
     list.innerHTML=rows.map((r,i)=>`
         <div
-            class="row"
-            data-i="${i}"
-            data-cat="${r.category}"
-            style="--cat-color:${getCategoryColor(r.category)}"
-        >
+    class="row"
+    data-i="${i}"
+    data-cat="${r.category}"
+    style="--cat-color:${getCategoryColor(category || r.category)}"
+>
             <div>
                 <div class="title">
                     ${r.name}
