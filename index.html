@@ -164,200 +164,239 @@ h2{
     overflow:hidden;
 }
 /* =========================================================
-   ⚡ ÉCLAIR — STYLE THE FLASH
+   ⚡ VRAI ÉCLAIR SVG — ANIMATION DANS LA CARTE
    ========================================================= */
 
-.card::after{
-    content:"";
+.card{
+    position:relative;
+    overflow:hidden;
+}
+
+/* Le SVG est au-dessus du fond mais sous le contenu */
+.card .card-lightning{
     position:absolute;
-    inset:0px;
-    z-index:3;
+    inset:0;
+    width:100%;
+    height:100%;
+
+    z-index:2;
     pointer-events:none;
 
-    /* éclair principal */
-    background:
-        linear-gradient(
-            112deg,
-            transparent 0%,
-            transparent 36%,
-            rgba(255,255,255,0) 39%,
-            rgba(255,255,255,.95) 40%,
-            rgba(255,255,255,1) 40.5%,
-            rgba(255,255,255,.15) 41.5%,
-            transparent 43%,
-            transparent 100%
-        );
+    overflow:hidden;
 
     opacity:0;
 
-    filter:
-        drop-shadow(0 0 3px white)
-        drop-shadow(0 0 8px white)
-        drop-shadow(0 0 18px var(--cat-color))
-        drop-shadow(0 0 35px var(--cat-color));
-
     mix-blend-mode:screen;
 
-    animation:flashLightning 4s infinite;
+    filter:
+        drop-shadow(0 0 2px #fff)
+        drop-shadow(0 0 6px #fff)
+        drop-shadow(0 0 14px var(--cat-color))
+        drop-shadow(0 0 28px var(--cat-color));
+
+    animation:
+        lightningFlash
+        var(--lightning-duration, 4.8s)
+        infinite;
 }
 
-
 /* =========================================================
-   ⚡ RAMIFICATIONS
+   ÉCLAIR PRINCIPAL
    ========================================================= */
 
-.card::before{
-    content:"";
-    position:absolute;
-    inset:0px;
-    z-index:3;
-    pointer-events:none;
+.card .lightning-main{
+    fill:none;
 
-    background:
+    stroke:#fff;
 
-        /* branche 1 */
-        linear-gradient(
-            145deg,
-            transparent 0%,
-            transparent 48%,
-            rgba(255,255,255,.9) 49%,
-            rgba(255,255,255,.15) 50%,
-            transparent 51%
-        ),
+    stroke-width:2.8;
 
-        /* branche 2 */
-        linear-gradient(
-            35deg,
-            transparent 0%,
-            transparent 55%,
-            rgba(255,255,255,.8) 56%,
-            rgba(255,255,255,.1) 57%,
-            transparent 58%
-        ),
+    stroke-linecap:round;
+    stroke-linejoin:round;
 
-        /* branche 3 */
-        linear-gradient(
-            160deg,
-            transparent 0%,
-            transparent 30%,
-            rgba(255,255,255,.7) 31%,
-            transparent 32%
-        );
-
-    opacity:0;
+    vector-effect:non-scaling-stroke;
 
     filter:
-        drop-shadow(0 0 5px white)
-        drop-shadow(0 0 15px var(--cat-color));
-
-    mix-blend-mode:screen;
-
-    animation:flashBranches 4s infinite;
+        drop-shadow(0 0 3px #fff)
+        drop-shadow(0 0 8px #fff);
 }
 
-
 /* =========================================================
-   ⚡ ÉCLAIR — REBOND À L'INTÉRIEUR DE LA CARTE
+   HALO COLORÉ
    ========================================================= */
 
-@keyframes flashLightning{
+.card .lightning-glow{
+    fill:none;
 
-    /* départ invisible */
+    stroke:var(--cat-color);
+
+    stroke-width:7;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    opacity:.85;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:
+        blur(4px);
+}
+
+/* =========================================================
+   PETITES RAMIFICATIONS
+   ========================================================= */
+
+.card .lightning-branch{
+    fill:none;
+
+    stroke:#fff;
+
+    stroke-width:1.5;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    opacity:.9;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:
+        drop-shadow(0 0 4px #fff)
+        drop-shadow(0 0 10px var(--cat-color));
+}
+
+/* =========================================================
+   ANIMATION — APPARITION / CLAQUEMENTS / REBONDS
+   ========================================================= */
+
+@keyframes lightningFlash{
+
+    /* repos */
     0%{
         opacity:0;
-        transform:translate(-120%, -20%) skewX(-12deg) scaleX(.8);
+        transform:
+            translateX(-115%)
+            translateY(12%)
+            rotate(-2deg)
+            scale(.85);
     }
 
-    /* arrivée */
-    12%{
+    /* apparition brutale */
+    9%{
+        opacity:0;
+    }
+
+    10%{
         opacity:1;
-        transform:translate(-45%, -10%) skewX(-12deg) scaleX(1);
+        transform:
+            translateX(-55%)
+            translateY(-3%)
+            rotate(1deg)
+            scale(.95);
     }
 
-    /* premier impact */
-    16%{
+    /* premier claquement */
+    13%{
         opacity:.15;
-        transform:translate(-20%, 5%) skewX(-12deg) scaleX(1.05);
+        transform:
+            translateX(-35%)
+            translateY(5%)
+            rotate(-1deg)
+            scale(1.02);
+    }
+
+    15%{
+        opacity:1;
+        transform:
+            translateX(-20%)
+            translateY(-3%)
+            rotate(1deg)
+            scale(.98);
     }
 
     /* rebond */
-    20%{
-        opacity:1;
-        transform:translate(5%, -5%) skewX(-12deg) scaleX(.95);
-    }
-
-    /* deuxième rebond */
-    24%{
-        opacity:.2;
-        transform:translate(25%, 8%) skewX(-12deg) scaleX(1.05);
-    }
-
-    /* dernier claquement */
-    28%{
-        opacity:1;
-        transform:translate(45%, -3%) skewX(-12deg) scaleX(.9);
-    }
-
-    /* extinction */
-    34%{
-        opacity:0;
-        transform:translate(75%, 10%) skewX(-12deg) scaleX(.8);
-    }
-
-    /* attente */
-    100%{
-        opacity:0;
-        transform:translate(120%, 10%) skewX(-12deg) scaleX(.8);
-    }
-}
-
-
-/* =========================================================
-   ⚡ RAMIFICATIONS — REBONDS SYNCHRONISÉS
-   ========================================================= */
-
-@keyframes flashBranches{
-
-    0%{
-        opacity:0;
-        transform:translate(-100%, -15%) rotate(-3deg);
-    }
-
-    12%{
-        opacity:.85;
-        transform:translate(-40%, -5%) rotate(0deg);
-    }
-
-    16%{
-        opacity:.1;
-        transform:translate(-15%, 5%) rotate(1deg);
+    18%{
+        opacity:.35;
+        transform:
+            translateX(0%)
+            translateY(7%)
+            rotate(-2deg)
+            scale(1.04);
     }
 
     20%{
-        opacity:.8;
-        transform:translate(5%, -5%) rotate(-1deg);
+        opacity:1;
+        transform:
+            translateX(12%)
+            translateY(-4%)
+            rotate(1deg)
+            scale(1);
     }
 
-    24%{
-        opacity:.1;
-        transform:translate(25%, 8%) rotate(2deg);
+    /* deuxième claquement */
+    23%{
+        opacity:.15;
+        transform:
+            translateX(28%)
+            translateY(6%)
+            rotate(-1deg)
+            scale(1.06);
     }
 
+    25%{
+        opacity:1;
+        transform:
+            translateX(42%)
+            translateY(-2%)
+            rotate(2deg)
+            scale(.96);
+    }
+
+    /* dernier mouvement */
     28%{
         opacity:.7;
-        transform:translate(45%, -2%) rotate(-1deg);
+        transform:
+            translateX(60%)
+            translateY(5%)
+            rotate(-2deg)
+            scale(.9);
     }
 
+    31%{
+        opacity:.15;
+    }
+
+    /* disparition */
     34%{
         opacity:0;
-        transform:translate(75%, 10%) rotate(2deg);
+        transform:
+            translateX(115%)
+            translateY(-8%)
+            rotate(2deg)
+            scale(.8);
     }
 
+    /* longue pause */
     100%{
         opacity:0;
-        transform:translate(100%, 10%) rotate(2deg);
+        transform:
+            translateX(130%)
+            translateY(10%)
+            rotate(2deg)
+            scale(.8);
     }
 }
+
+/* =========================================================
+   CONTENU TOUJOURS AU-DESSUS DE L'ÉCLAIR
+   ========================================================= */
+
+.card > i,
+.card > div{
+    position:relative;
+    z-index:4;
+}   
 .card:hover{
     transform:translateY(-2px);
 }
@@ -990,16 +1029,148 @@ const cats=document.getElementById("cats");
 function renderCategories(data){
     cats.innerHTML = data.map(c=>`
         <div
-            class="card"
-            data-cat="${c.key}"
-            style="--cat-color:${getCategoryColor(c.key)}"
-        >
-            <i class="ph ${c.icon}"></i>
-            <div>
-                <h3>${c.label}</h3>
-                <span>${c.sub}</span>
-            </div>
-        </div>
+    class="card"
+    data-cat="${c.key}"
+    style="
+        --cat-color:${getCategoryColor(c.key)};
+        --lightning-duration:${(4 + Math.random() * 2).toFixed(2)}s;
+    "
+>
+
+    <!-- ⚡ ÉCLAIR -->
+    <svg
+        class="card-lightning"
+        viewBox="0 0 500 120"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+    >
+
+        <!-- Halo -->
+        <path
+            class="lightning-glow"
+            d="
+                M 20 62
+                L 52 45
+                L 78 50
+                L 101 31
+                L 125 42
+                L 151 27
+                L 178 49
+                L 203 39
+                L 229 55
+                L 255 36
+                L 281 45
+                L 307 30
+                L 334 47
+                L 359 35
+                L 385 52
+                L 412 42
+                L 439 58
+                L 475 43
+            "
+        />
+
+        <!-- Éclair principal -->
+        <path
+            class="lightning-main"
+            d="
+                M 20 62
+                L 52 45
+                L 78 50
+                L 101 31
+                L 125 42
+                L 151 27
+                L 178 49
+                L 203 39
+                L 229 55
+                L 255 36
+                L 281 45
+                L 307 30
+                L 334 47
+                L 359 35
+                L 385 52
+                L 412 42
+                L 439 58
+                L 475 43
+            "
+        />
+
+        <!-- Ramification haut -->
+        <path
+            class="lightning-branch"
+            d="
+                M 101 31
+                L 88 18
+                L 101 9
+                L 96 1
+            "
+        />
+
+        <!-- Ramification haut 2 -->
+        <path
+            class="lightning-branch"
+            d="
+                M 151 27
+                L 166 13
+                L 159 3
+                L 171 -4
+            "
+        />
+
+        <!-- Ramification bas -->
+        <path
+            class="lightning-branch"
+            d="
+                M 178 49
+                L 165 67
+                L 177 75
+                L 166 91
+            "
+        />
+
+        <!-- Ramification centrale -->
+        <path
+            class="lightning-branch"
+            d="
+                M 255 36
+                L 245 20
+                L 254 10
+                L 247 0
+            "
+        />
+
+        <!-- Ramification bas 2 -->
+        <path
+            class="lightning-branch"
+            d="
+                M 307 30
+                L 320 16
+                L 313 6
+                L 327 -3
+            "
+        />
+
+        <!-- Ramification finale -->
+        <path
+            class="lightning-branch"
+            d="
+                M 385 52
+                L 374 70
+                L 386 78
+                L 378 94
+            "
+        />
+
+    </svg>
+
+    <i class="ph ${c.icon}"></i>
+
+    <div>
+        <h3>${c.label}</h3>
+        <span>${c.sub}</span>
+    </div>
+
+</div>
     `).join("");
 }
 renderCategories(CATEGORIES);
