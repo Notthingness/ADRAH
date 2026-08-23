@@ -223,6 +223,13 @@ h2{
     transition:.25s;
 
     overflow:hidden;
+
+    /*
+       Très important :
+       crée un vrai contexte de découpage
+       pour les éclairs.
+    */
+    isolation:isolate;
 }
 
 .card:hover{
@@ -231,58 +238,97 @@ h2{
 
 
 /* =========================================================
-   ⚡ ÉCLAIR — VERSION CENTRÉE ET DÉCOUPÉE DANS LA CARTE
+   ⚡ SYSTÈME ÉCLAIRS
    ========================================================= */
 
-.card{
-    position:relative;
+/*
+   Le layer occupe exactement la carte.
+
+   Aucun débordement possible.
+   Le border-radius est appliqué directement
+   au conteneur.
+*/
+
+.lightning-layer{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
     overflow:hidden;
+
+    border-radius:30px;
+
+    pointer-events:none;
+
+    z-index:1;
+
     isolation:isolate;
 }
 
-/* L'éclair reste entièrement à l'intérieur */
-.card .card-lightning{
+
+/*
+   Chaque éclair SVG est positionné
+   à l'intérieur du layer.
+*/
+
+.dynamic-lightning{
+
     position:absolute;
 
-    left:8%;
-    top:10%;
-    width:84%;
-    height:80%;
+    inset:0;
 
-    z-index:0;
-    pointer-events:none;
+    width:100%;
+    height:100%;
 
     overflow:hidden;
 
+    pointer-events:none;
+
     opacity:0;
+
+    /*
+       Découpage supplémentaire.
+       Cela évite absolument toute forme
+       rectangulaire visible.
+    */
+
+    clip-path:
+        inset(
+            1px
+            1px
+            1px
+            1px
+            round 29px
+        );
+
+    border-radius:29px;
 
     mix-blend-mode:screen;
 
-    transform-origin:center center;
+    transform:translateZ(0);
 
-    /* IMPORTANT :
-       aucune partie de l'éclair ne peut dépasser
-       de la zone arrondie de la carte */
-    clip-path:inset(0 round 28px);
-
-    animation:
-        realisticLightning
-        var(--lightning-duration, 7s)
-        infinite;
+    will-change:opacity;
 }
 
+
 /* =========================================================
-   ÉCLAIR PRINCIPAL
+   ⚡ ÉCLAIR CENTRAL
    ========================================================= */
 
-.card .lightning-main{
+.bolt-core{
+
     fill:none;
 
     stroke:#ffffff;
 
-    stroke-width:1;
+    stroke-width:1.05;
 
     stroke-linecap:round;
+
     stroke-linejoin:round;
 
     vector-effect:non-scaling-stroke;
@@ -290,56 +336,67 @@ h2{
     filter:
         drop-shadow(0 0 1px #ffffff)
         drop-shadow(0 0 3px #ffffff)
-        drop-shadow(0 0 7px var(--cat-color));
+        drop-shadow(0 0 7px var(--cat-color))
+        drop-shadow(0 0 12px var(--cat-color));
 }
 
+
 /* =========================================================
-   HALO COLORÉ
+   ⚡ GLOW
    ========================================================= */
 
-.card .lightning-glow{
+.bolt-glow{
+
     fill:none;
 
     stroke:var(--cat-color);
 
-    stroke-width:3.5;
+    stroke-width:4;
 
     stroke-linecap:round;
+
     stroke-linejoin:round;
 
-    opacity:.30;
+    opacity:.38;
 
     vector-effect:non-scaling-stroke;
 
-    filter:blur(3px);
+    filter:
+        blur(3px);
 }
 
+
 /* =========================================================
-   HALO TRÈS LARGE
+   ⚡ HALO
    ========================================================= */
 
-.card .lightning-halo{
+.bolt-halo{
+
     fill:none;
 
     stroke:var(--cat-color);
 
-    stroke-width:6;
+    stroke-width:8;
 
     stroke-linecap:round;
+
     stroke-linejoin:round;
 
-    opacity:.09;
+    opacity:.12;
 
     vector-effect:non-scaling-stroke;
 
-    filter:blur(6px);
+    filter:
+        blur(7px);
 }
 
+
 /* =========================================================
-   PETITES BRANCHES
+   ⚡ RAMIFICATIONS
    ========================================================= */
 
-.card .lightning-branch{
+.bolt-branch{
+
     fill:none;
 
     stroke:#ffffff;
@@ -347,9 +404,10 @@ h2{
     stroke-width:.65;
 
     stroke-linecap:round;
+
     stroke-linejoin:round;
 
-    opacity:.75;
+    opacity:.72;
 
     vector-effect:non-scaling-stroke;
 
@@ -358,97 +416,53 @@ h2{
         drop-shadow(0 0 5px var(--cat-color));
 }
 
-.card .lightning-branch-glow{
-    fill:none;
-
-    stroke:var(--cat-color);
-
-    stroke-width:3;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-
-    opacity:.30;
-
-    vector-effect:non-scaling-stroke;
-
-    filter:blur(2.5px);
-}
 
 /* =========================================================
-   ⚡ ANIMATION — PLUS LENTE ET MOINS MÉCANIQUE
+   ⚡ ANIMATION DU FLASH
    ========================================================= */
 
-@keyframes realisticLightning{
+.lightning-flash{
+
+    animation:
+        lightningFlash
+        var(--flash-time)
+        ease-out
+        forwards;
+}
+
+
+@keyframes lightningFlash{
 
     0%{
         opacity:0;
-
-        transform:
-            translate(
-                var(--lightning-x, 0px),
-                var(--lightning-y, 0px)
-            )
-            rotate(
-                var(--lightning-rotate, 0deg)
-            )
-            scale(.96);
     }
 
-    78%{
-        opacity:0;
-
-        transform:
-            translate(
-                var(--lightning-x, 0px),
-                var(--lightning-y, 0px)
-            )
-            rotate(
-                var(--lightning-rotate, 0deg)
-            )
-            scale(.96);
+    8%{
+        opacity:.88;
     }
 
-    /* apparition */
-    79%{
-        opacity:.85;
+    15%{
+        opacity:.18;
     }
 
-    /* disparition extrêmement rapide */
-    79.7%{
-        opacity:.08;
-    }
-
-    /* second claquement */
-    80.2%{
+    23%{
         opacity:1;
     }
 
-    80.8%{
-        opacity:.15;
+    31%{
+        opacity:.06;
     }
 
-    /* dernier petit rebond */
-    81.4%{
-        opacity:.75;
+    42%{
+        opacity:.76;
     }
 
-    82.2%{
-        opacity:.05;
+    55%{
+        opacity:.12;
     }
 
-    83%{
-        opacity:0;
-
-        transform:
-            translate(
-                var(--lightning-x, 0px),
-                var(--lightning-y, 0px)
-            )
-            rotate(
-                var(--lightning-rotate, 0deg)
-            )
-            scale(.98);
+    68%{
+        opacity:.35;
     }
 
     100%{
@@ -1134,6 +1148,10 @@ h2{
         font-size:40px;
     }
 
+    .lightning-layer{
+        border-radius:30px;
+    }
+
 }
 
 </style>
@@ -1546,140 +1564,210 @@ const cats =
 
 
 /* =========================================================
-   ⚡ GÉNÉRATEUR D'ÉCLAIRS ALÉATOIRES
+   ⚡ GÉNÉRATION D'UN ÉCLAIR
    ========================================================= */
 
-
 /*
-    Génère un chemin complètement différent
-    à chaque éclair.
+   L'éclair ne commence PLUS à l'extérieur de la carte.
+
+   Il est entièrement généré dans la zone intérieure.
+
+   Cela supprime l'effet :
+   "rectangle autour de la carte".
 */
 
 function createBoltPath(width,height){
 
-    const side =
-        Math.floor(Math.random()*4);
-
-    let x,y;
-
     /*
-        Départ aléatoire autour des bords
+       Marge de sécurité importante.
     */
 
-    if(side===0){
+    const marginX =
+        Math.max(18,width*.08);
 
-        x=Math.random()*width;
-        y=-20;
-
-    }
-    else if(side===1){
-
-        x=width+20;
-        y=Math.random()*height;
-
-    }
-    else if(side===2){
-
-        x=Math.random()*width;
-        y=height+20;
-
-    }
-    else{
-
-        x=-20;
-        y=Math.random()*height;
-
-    }
+    const marginY =
+        Math.max(15,height*.12);
 
 
     /*
-        Direction vers l'intérieur
+       Zone intérieure disponible.
     */
 
-    let targetX =
-        width*.25 +
-        Math.random()*width*.5;
+    const minX=marginX;
+    const maxX=width-marginX;
 
-    let targetY =
-        height*.2 +
-        Math.random()*height*.6;
+    const minY=marginY;
+    const maxY=height-marginY;
 
 
     /*
-        Nombre de ricochets
+       Point de départ aléatoire.
+
+       Il est toujours DANS la carte.
     */
+
+    let x =
+        minX +
+        Math.random()*(maxX-minX);
+
+    let y =
+        minY +
+        Math.random()*(maxY-minY);
+
+
+    /*
+       Point d'arrivée vers le centre.
+
+       Le centre est volontairement privilégié
+       pour éviter que les éclairs longent les bords.
+    */
+
+    const centerX =
+        width*.50;
+
+    const centerY =
+        height*.50;
+
+
+    const targetX =
+        centerX +
+        (Math.random()-.5) *
+        width*.28;
+
+    const targetY =
+        centerY +
+        (Math.random()-.5) *
+        height*.28;
+
 
     const points=[];
 
     points.push([x,y]);
 
 
+    /*
+       4 à 7 segments.
+
+       Cela donne le côté "ricochet".
+    */
+
     const segments =
         4 +
-        Math.floor(Math.random()*5);
+        Math.floor(
+            Math.random()*4
+        );
 
 
-    for(let i=1;i<=segments;i++){
+    /*
+       Direction globale.
+    */
+
+    const dx =
+        targetX-x;
+
+    const dy =
+        targetY-y;
+
+
+    for(
+        let i=1;
+        i<=segments;
+        i++
+    ){
 
         const progress =
             i/segments;
 
 
-        /*
-            trajectoire générale
-        */
-
-        let baseX =
+        let px =
             x +
-            (targetX-x)*progress;
+            dx*progress;
 
-        let baseY =
+        let py =
             y +
-            (targetY-y)*progress;
+            dy*progress;
 
 
         /*
-            gros déplacement aléatoire
-            = effet ricochet
+           Chaos variable.
+
+           Plus on approche du centre,
+           plus le déplacement devient fin.
         */
 
         const chaos =
-            20 +
-            Math.random()*55;
+            (1-progress)*28 +
+            8;
 
 
-        baseX +=
+        px +=
             (Math.random()-.5) *
             chaos;
 
-        baseY +=
+        py +=
             (Math.random()-.5) *
             chaos;
 
 
         /*
-            On évite de sortir complètement
-            de la carte
+           Empêche l'éclair de toucher
+           les coins de la carte.
         */
 
-        baseX =
-            Math.max(-40,
-            Math.min(width+40,baseX));
+        px =
+            Math.max(
+                minX,
+                Math.min(maxX,px)
+            );
 
-        baseY =
-            Math.max(-40,
-            Math.min(height+40,baseY));
+        py =
+            Math.max(
+                minY,
+                Math.min(maxY,py)
+            );
 
 
         points.push([
-            baseX,
-            baseY
+            px,
+            py
         ]);
+
     }
 
 
     /*
-        Construction SVG
+       Petit déplacement final
+       pour éviter une trajectoire trop parfaite.
+    */
+
+    const last =
+        points[points.length-1];
+
+
+    last[0] =
+        Math.max(
+            minX,
+            Math.min(
+                maxX,
+                last[0] +
+                (Math.random()-.5)*12
+            )
+        );
+
+
+    last[1] =
+        Math.max(
+            minY,
+            Math.min(
+                maxY,
+                last[1] +
+                (Math.random()-.5)*10
+            )
+        );
+
+
+    /*
+       Construction du SVG.
     */
 
     let d=
@@ -1692,7 +1780,11 @@ function createBoltPath(width,height){
         points[0][1].toFixed(1);
 
 
-    for(let i=1;i<points.length;i++){
+    for(
+        let i=1;
+        i<points.length;
+        i++
+    ){
 
         d +=
             " L "
@@ -1702,6 +1794,7 @@ function createBoltPath(width,height){
             " "
             +
             points[i][1].toFixed(1);
+
     }
 
 
@@ -1714,110 +1807,200 @@ function createBoltPath(width,height){
 
 
 /* =========================================================
-   ⚡ RAMIFICATIONS ALÉATOIRES
+   ⚡ RAMIFICATIONS
    ========================================================= */
 
-function createBranches(points,width,height){
+function createBranches(
+    points,
+    width,
+    height
+){
 
     let html="";
 
 
     /*
-        seulement certains points
-        deviennent des ramifications
+       On ne crée pas de branches partout.
+
+       Cela rend l'éclair beaucoup plus naturel.
     */
 
-    points.forEach((point,index)=>{
+    for(
+        let i=1;
+        i<points.length-1;
+        i++
+    ){
 
-        if(index===0)
-            return;
+        /*
+           Environ 45% des points
+           peuvent avoir une branche.
+        */
 
-        if(Math.random()>.55)
-            return;
+        if(Math.random()>.45)
+            continue;
 
 
-        const [x,y]=point;
+        const [x,y]=points[i];
 
 
         /*
-            direction aléatoire
+           Branche courte.
+
+           Les anciennes branches étaient parfois
+           trop longues et pouvaient révéler
+           les limites de la carte.
         */
 
-        const direction =
-            Math.random()<.5
-            ? -1
-            : 1;
-
-
         const length =
-            18 +
-            Math.random()*45;
+            10 +
+            Math.random()*28;
+
+
+        const angle =
+            Math.random() *
+            Math.PI *
+            2;
 
 
         const x2 =
             x +
-            direction*length;
+            Math.cos(angle)*length;
 
 
         const y2 =
             y +
-            (Math.random()-.5)*length;
+            Math.sin(angle)*length;
+
+
+        /*
+           Deuxième petit ricochet.
+        */
+
+        const length2 =
+            5 +
+            Math.random()*16;
 
 
         const x3 =
             x2 +
-            direction*(8+Math.random()*25);
+            Math.cos(angle +
+                (Math.random()-.5)*.9
+            ) *
+            length2;
 
 
         const y3 =
             y2 +
-            (Math.random()-.5)*25;
+            Math.sin(angle +
+                (Math.random()-.5)*.9
+            ) *
+            length2;
 
 
-        const path=
-            `M ${x.toFixed(1)} ${y.toFixed(1)}
-             L ${x2.toFixed(1)} ${y2.toFixed(1)}
-             L ${x3.toFixed(1)} ${y3.toFixed(1)}`;
+        /*
+           Sécurité :
+           on garde les branches dans la carte.
+        */
+
+        const safeX2 =
+            Math.max(
+                8,
+                Math.min(
+                    width-8,
+                    x2
+                )
+            );
+
+
+        const safeY2 =
+            Math.max(
+                8,
+                Math.min(
+                    height-8,
+                    y2
+                )
+            );
+
+
+        const safeX3 =
+            Math.max(
+                8,
+                Math.min(
+                    width-8,
+                    x3
+                )
+            );
+
+
+        const safeY3 =
+            Math.max(
+                8,
+                Math.min(
+                    height-8,
+                    y3
+                )
+            );
 
 
         html +=
             `<path
                 class="bolt-branch"
-                d="${path}"
+                d="
+                    M ${x.toFixed(1)} ${y.toFixed(1)}
+                    L ${safeX2.toFixed(1)} ${safeY2.toFixed(1)}
+                    L ${safeX3.toFixed(1)} ${safeY3.toFixed(1)}
+                "
             ></path>`;
 
-    });
+    }
 
 
     return html;
+
 }
 
 
 /* =========================================================
-   ⚡ CRÉATION D'UN ÉCLAIR
+   ⚡ CRÉATION DU FLASH
    ========================================================= */
 
 function createLightning(card){
 
     const layer =
-        card.querySelector(".lightning-layer");
+        card.querySelector(
+            ".lightning-layer"
+        );
 
 
     if(!layer)
         return;
 
 
+    /*
+       Taille réelle de la carte.
+    */
+
     const rect =
         card.getBoundingClientRect();
 
 
     const width =
-        Math.max(200,rect.width);
+        Math.max(
+            180,
+            rect.width
+        );
 
 
     const height =
-        Math.max(100,rect.height);
+        Math.max(
+            90,
+            rect.height
+        );
 
+
+    /*
+       Génération complètement nouvelle.
+    */
 
     const bolt =
         createBoltPath(
@@ -1833,6 +2016,10 @@ function createLightning(card){
             height
         );
 
+
+    /*
+       SVG.
+    */
 
     const svg =
         document.createElementNS(
@@ -1860,12 +2047,14 @@ function createLightning(card){
 
 
     /*
-        Durée différente à chaque fois
+       Flash volontairement variable.
+
+       Plus lent que l'ancien.
     */
 
     const flashTime =
-        180 +
-        Math.random()*320;
+        420 +
+        Math.random()*420;
 
 
     svg.style.setProperty(
@@ -1875,7 +2064,7 @@ function createLightning(card){
 
 
     /*
-        Halo très large
+       HALO.
     */
 
     const halo =
@@ -1884,10 +2073,12 @@ function createLightning(card){
             "path"
         );
 
+
     halo.setAttribute(
         "class",
         "bolt-halo"
     );
+
 
     halo.setAttribute(
         "d",
@@ -1896,7 +2087,7 @@ function createLightning(card){
 
 
     /*
-        Glow
+       GLOW.
     */
 
     const glow =
@@ -1905,10 +2096,12 @@ function createLightning(card){
             "path"
         );
 
+
     glow.setAttribute(
         "class",
         "bolt-glow"
     );
+
 
     glow.setAttribute(
         "d",
@@ -1917,7 +2110,7 @@ function createLightning(card){
 
 
     /*
-        branches
+       RAMIFICATIONS.
     */
 
     const branchGroup =
@@ -1926,12 +2119,13 @@ function createLightning(card){
             "g"
         );
 
-    branchGroup.innerHTML =
+
+    branchGroup.innerHTML=
         branches;
 
 
     /*
-        cœur
+       CŒUR BLANC.
     */
 
     const core =
@@ -1940,16 +2134,26 @@ function createLightning(card){
             "path"
         );
 
+
     core.setAttribute(
         "class",
         "bolt-core"
     );
+
 
     core.setAttribute(
         "d",
         bolt.d
     );
 
+
+    /*
+       Ordre :
+       halo
+       glow
+       branches
+       cœur
+    */
 
     svg.appendChild(halo);
 
@@ -1964,52 +2168,72 @@ function createLightning(card){
 
 
     /*
-        Nettoyage automatique
+       Suppression.
     */
 
     setTimeout(()=>{
 
-        svg.remove();
+        if(svg.parentNode)
+            svg.remove();
 
-    },flashTime+100);
-
+    },flashTime+80);
 
 }
 
 
 /* =========================================================
-   ⚡ BOUCLE ALÉATOIRE PAR CARTE
+   ⚡ BOUCLE ALÉATOIRE
    ========================================================= */
 
 function startLightning(card){
 
+    /*
+       Empêche de lancer deux boucles
+       sur la même carte.
+    */
+
+    if(card.dataset.lightningStarted==="1")
+        return;
+
+
+    card.dataset.lightningStarted="1";
+
+
     function nextFlash(){
 
-        if(!document.body.contains(card))
+        if(!document.body.contains(card)){
+
+            card.dataset.lightningStarted="0";
+
             return;
+
+        }
 
 
         /*
-            Délai très variable.
+           Pause aléatoire.
 
-            On peut avoir :
-            0.15 s
-            0.7 s
-            1.3 s
-            2 s
+           Le but :
+           ne PAS donner l'impression
+           d'une animation en boucle.
 
-            donc ça donne une impression
-            beaucoup moins programmée.
+           Certains éclairs arrivent vite,
+           d'autres beaucoup plus tard.
         */
 
         const delay =
-            180 +
-            Math.random()*1400;
+            900 +
+            Math.random()*2600;
 
 
         setTimeout(()=>{
 
+            if(!document.body.contains(card))
+                return;
+
+
             createLightning(card);
+
 
             nextFlash();
 
@@ -2019,13 +2243,14 @@ function startLightning(card){
 
 
     /*
-        Décalage initial différent
-        pour chaque carte.
+       Chaque carte commence à un moment
+       différent.
     */
 
     setTimeout(
         nextFlash,
-        Math.random()*1800
+        400 +
+        Math.random()*3000
     );
 
 }
@@ -2066,8 +2291,7 @@ function renderCategories(data){
 
 
     /*
-        Démarre un système d'éclairs
-        indépendant pour chaque carte.
+       Démarrage indépendant.
     */
 
     cats
@@ -3256,39 +3480,24 @@ backBtn.onclick=()=>{
     );
 
 
+    /*
+       IMPORTANT :
+       On recrée les cartes afin que
+       leur système d'éclairs reparte proprement.
+    */
+
+    renderCategories(
+        secretMode
+        ? SECRET_CATEGORIES
+        : CATEGORIES
+    );
+
+
     setTimeout(()=>{
 
         cats.classList.remove(
             "hide"
         );
-
-        /*
-            Important :
-            quand les cartes sont recréées,
-            leurs éclairs redémarrent.
-        */
-
-        cats
-            .querySelectorAll(".card")
-            .forEach(card=>{
-
-                /*
-                    On ne redémarre pas deux fois
-                    les cartes existantes.
-                */
-
-                if(
-                    !card.dataset.lightningStarted
-                ){
-
-                    card.dataset.lightningStarted=
-                        "1";
-
-                    startLightning(card);
-
-                }
-
-            });
 
     },20);
 
