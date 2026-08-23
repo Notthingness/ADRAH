@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,15 +14,16 @@
 <title>ADRAH</title>
 
 <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
-      rel="stylesheet">
+rel="stylesheet">
+
 
 <style>
 
 /* =========================================================
-   VARIABLES GÉNÉRALES
+   VARIABLES
    ========================================================= */
 
 :root{
@@ -38,21 +40,15 @@
 body{
     margin:0;
     min-height:100vh;
-
     font-family:Inter,sans-serif;
-
     color:white;
-
     background:#05070b;
-
     overflow-x:hidden;
 }
 
 body::before{
     content:"";
-
     position:fixed;
-
     inset:0;
 
     background:
@@ -67,19 +63,15 @@ body::before{
     background-repeat:no-repeat;
 
     z-index:0;
-
     pointer-events:none;
 }
 
 .app{
     position:relative;
-
     z-index:1;
 
     max-width:560px;
-
     margin:auto;
-
     padding:20px;
 }
 
@@ -93,7 +85,6 @@ body::before{
     height:62px;
 
     border-radius:22px;
-
     border:2px solid var(--blue);
 
     background:rgba(0,0,0,.6);
@@ -104,8 +95,6 @@ body::before{
     font-weight:900;
 
     text-align:center;
-
-    outline:none;
 
     box-shadow:
         0 0 10px var(--blue),
@@ -123,13 +112,10 @@ body::before{
 
 h2{
     font-size:15px;
-
     color:#00a2ff;
 
     text-shadow:
         0 0 10px #005BFF;
-
-    cursor:pointer;
 }
 
 #count{
@@ -148,21 +134,17 @@ h2{
 
 .grid{
     display:grid;
-
     gap:16px;
 
     transition:.35s ease;
 
     opacity:1;
-
     transform:translateX(0);
 }
 
 .grid.hide{
     opacity:0;
-
     transform:translateX(-60px);
-
     pointer-events:none;
 }
 
@@ -177,13 +159,11 @@ h2{
     transition:.35s ease;
 
     opacity:0;
-
     transform:translateX(60px);
 }
 
 #results.show{
     opacity:1;
-
     transform:translateX(0);
 }
 
@@ -196,7 +176,6 @@ h2{
     position:relative;
 
     display:flex;
-
     align-items:center;
 
     gap:20px;
@@ -223,7 +202,8 @@ h2{
     box-shadow:
         0 0 15px var(--cat-color),
 
-        0 0 40px color-mix(
+        0 0 40px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 60%
@@ -231,7 +211,8 @@ h2{
 
         inset 0 0 30px rgba(255,255,255,.04),
 
-        inset 0 0 25px color-mix(
+        inset 0 0 25px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 75%
@@ -248,16 +229,17 @@ h2{
 
 
 /* =========================================================
-   ⚡ ÉCLAIR — CONTENEUR
+   ⚡ NOUVEL ÉCLAIR
    ========================================================= */
 
 .card-lightning{
     position:absolute;
 
-    inset:0;
+    left:-10%;
+    top:-15%;
 
-    width:100%;
-    height:100%;
+    width:120%;
+    height:130%;
 
     z-index:2;
 
@@ -269,40 +251,54 @@ h2{
 
     mix-blend-mode:screen;
 
+    /*
+       Chaque carte reçoit des valeurs
+       différentes depuis le JS.
+    */
     animation:
-        lightningStrike
-        var(--lightning-duration,6s)
+        lightningTravel
+        var(--lightning-time)
+        var(--lightning-delay)
         infinite;
-
-    animation-delay:
-        var(--lightning-delay,0s);
 }
 
 
-/* =========================================================
-   ⚡ HALO LARGE
-   ========================================================= */
+/* ---------------------------------------------------------
+   TRAJECTOIRE PRINCIPALE
+   --------------------------------------------------------- */
 
-.lightning-wide{
+.lightning-path{
     fill:none;
 
-    stroke:var(--cat-color);
+    stroke:#ffffff;
 
-    stroke-width:9;
+    stroke-width:1.4;
 
     stroke-linecap:round;
-
     stroke-linejoin:round;
 
-    opacity:.10;
+    vector-effect:non-scaling-stroke;
 
-    filter:blur(8px);
+    /*
+       Le chemin est beaucoup plus long
+       que nécessaire pour permettre
+       le déplacement du trait.
+    */
+
+    stroke-dasharray:85 500;
+
+    stroke-dashoffset:585;
+
+    filter:
+        drop-shadow(0 0 1px #fff)
+        drop-shadow(0 0 3px #fff)
+        drop-shadow(0 0 7px var(--cat-color));
 }
 
 
-/* =========================================================
-   ⚡ HALO MOYEN
-   ========================================================= */
+/* ---------------------------------------------------------
+   HALO IMMÉDIAT
+   --------------------------------------------------------- */
 
 .lightning-glow{
     fill:none;
@@ -312,117 +308,231 @@ h2{
     stroke-width:4;
 
     stroke-linecap:round;
-
     stroke-linejoin:round;
 
-    opacity:.40;
+    opacity:.45;
+
+    vector-effect:non-scaling-stroke;
+
+    stroke-dasharray:90 500;
+    stroke-dashoffset:590;
 
     filter:blur(3px);
 }
 
 
-/* =========================================================
-   ⚡ CŒUR BLANC
-   ========================================================= */
+/* ---------------------------------------------------------
+   HALO LARGE
+   --------------------------------------------------------- */
 
-.lightning-main{
+.lightning-wide{
     fill:none;
 
-    stroke:#ffffff;
+    stroke:var(--cat-color);
 
-    stroke-width:1.15;
+    stroke-width:8;
 
     stroke-linecap:round;
-
     stroke-linejoin:round;
 
-    filter:
-        drop-shadow(0 0 1px #ffffff)
-        drop-shadow(0 0 3px #ffffff)
-        drop-shadow(0 0 7px var(--cat-color))
-        drop-shadow(0 0 14px var(--cat-color));
+    opacity:.14;
+
+    vector-effect:non-scaling-stroke;
+
+    stroke-dasharray:100 500;
+    stroke-dashoffset:600;
+
+    filter:blur(8px);
 }
 
 
-/* =========================================================
-   ⚡ RAMIFICATIONS
-   ========================================================= */
+/* ---------------------------------------------------------
+   PETITES DÉCHARGES / RICOCHETS
+   --------------------------------------------------------- */
 
 .lightning-branch{
     fill:none;
 
     stroke:#ffffff;
 
-    stroke-width:.75;
+    stroke-width:.8;
 
     stroke-linecap:round;
-
     stroke-linejoin:round;
 
-    opacity:.85;
+    opacity:.9;
+
+    vector-effect:non-scaling-stroke;
+
+    stroke-dasharray:35 300;
+    stroke-dashoffset:335;
 
     filter:
-        drop-shadow(0 0 2px #ffffff)
+        drop-shadow(0 0 2px #fff)
         drop-shadow(0 0 5px var(--cat-color));
+}
+
+.lightning-branch-glow{
+    fill:none;
+
+    stroke:var(--cat-color);
+
+    stroke-width:3.5;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    opacity:.4;
+
+    vector-effect:non-scaling-stroke;
+
+    stroke-dasharray:45 300;
+    stroke-dashoffset:345;
+
+    filter:blur(3px);
 }
 
 
 /* =========================================================
-   ⚡ ANIMATION
-   ========================================================= */
+   ⚡ ANIMATION PRINCIPALE
+   =========================================================
 
-@keyframes lightningStrike{
+   IMPORTANT :
+
+   L'éclair reste invisible longtemps.
+
+   Lorsqu'il arrive :
+   - il entre progressivement
+   - traverse la carte
+   - rebondit
+   - accélère
+   - disparaît
+
+   Il n'y a donc plus de gros
+   "FLASH → PAUSE → FLASH".
+*/
+
+@keyframes lightningTravel{
 
     0%{
         opacity:0;
+
+        transform:
+            translate(
+                var(--lightning-x),
+                var(--lightning-y)
+            )
+            rotate(
+                var(--lightning-rotate)
+            )
+            scale(.94);
     }
 
-    72%{
+    /* Approche */
+    68%{
         opacity:0;
     }
 
-    /* apparition brutale */
-    73%{
+    69%{
+        opacity:.15;
+
+        transform:
+            translate(
+                calc(var(--lightning-x) - 10px),
+                calc(var(--lightning-y) + 2px)
+            )
+            rotate(
+                var(--lightning-rotate)
+            )
+            scale(.97);
+    }
+
+    /* Entrée rapide */
+    70%{
+        opacity:.85;
+
+        transform:
+            translate(
+                var(--lightning-x),
+                var(--lightning-y)
+            )
+            rotate(
+                var(--lightning-rotate)
+            )
+            scale(1);
+    }
+
+    /* Traversée */
+    72%{
+        opacity:1;
+    }
+
+    /* Premier ricochet */
+    73.2%{
+        opacity:.45;
+
+        transform:
+            translate(
+                calc(var(--lightning-x) + 7px),
+                calc(var(--lightning-y) - 3px)
+            )
+            rotate(
+                calc(var(--lightning-rotate) + 1deg)
+            )
+            scale(1.01);
+    }
+
+    /* Deuxième rebond */
+    74.1%{
         opacity:.95;
+
+        transform:
+            translate(
+                calc(var(--lightning-x) - 5px),
+                calc(var(--lightning-y) + 2px)
+            )
+            rotate(
+                calc(var(--lightning-rotate) - 1deg)
+            )
+            scale(.995);
     }
 
-    /* extinction instantanée */
-    73.5%{
-        opacity:.08;
+    /* Petit claquement */
+    75.3%{
+        opacity:.25;
     }
 
-    /* deuxième claquement */
-    74.2%{
-        opacity:1;
-    }
-
-    75%{
-        opacity:.18;
-    }
-
-    /* gros flash */
-    76%{
-        opacity:1;
-    }
-
-    77%{
-        opacity:.55;
-    }
-
-    /* petit rebond */
-    78%{
+    /* Dernière décharge */
+    76.2%{
         opacity:.9;
+
+        transform:
+            translate(
+                calc(var(--lightning-x) + 4px),
+                var(--lightning-y)
+            )
+            rotate(
+                var(--lightning-rotate)
+            )
+            scale(1.015);
     }
 
-    79%{
-        opacity:.18;
+    /* Départ */
+    78%{
+        opacity:.15;
+
+        transform:
+            translate(
+                calc(var(--lightning-x) + 16px),
+                calc(var(--lightning-y) - 4px)
+            )
+            rotate(
+                calc(var(--lightning-rotate) + 2deg)
+            )
+            scale(.97);
     }
 
     80%{
-        opacity:.55;
-    }
-
-    81%{
         opacity:0;
     }
 
@@ -433,13 +543,13 @@ h2{
 
 
 /* =========================================================
-   CONTENU DES CARTES
+   ICÔNES / TEXTE DES CARTES
    ========================================================= */
 
-.card > i{
+.card i{
     position:relative;
 
-    z-index:5;
+    z-index:3;
 
     font-size:45px;
 
@@ -451,13 +561,11 @@ h2{
         0 0 35px var(--cat-color);
 }
 
-.card > div{
+.card h3{
     position:relative;
 
-    z-index:5;
-}
+    z-index:3;
 
-.card h3{
     margin:0;
 
     font-size:30px;
@@ -475,6 +583,10 @@ h2{
 }
 
 .card span{
+    position:relative;
+
+    z-index:3;
+
     color:var(--cat-color);
 
     text-shadow:
@@ -490,7 +602,6 @@ h2{
     position:relative;
 
     display:flex;
-
     align-items:center;
 
     gap:18px;
@@ -517,7 +628,8 @@ h2{
     border:1px solid var(--cat-color);
 
     box-shadow:
-        0 0 20px color-mix(
+        0 0 20px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 50%
@@ -532,7 +644,6 @@ h2{
 
 .row > div:first-child{
     flex:1;
-
     min-width:0;
 }
 
@@ -543,7 +654,6 @@ h2{
 
 .tip-slot{
     display:flex;
-
     align-items:center;
 
     height:22px;
@@ -569,7 +679,6 @@ h2{
     color:#FFD54A;
 
     font-size:12px;
-
     font-weight:700;
 
     box-shadow:
@@ -587,13 +696,11 @@ h2{
 
 .title{
     display:flex;
-
     align-items:flex-end;
 
     min-height:26px;
 
     font-size:18px;
-
     font-weight:900;
 
     color:#ffffff;
@@ -603,11 +710,6 @@ h2{
         0 0 12px rgba(255,255,255,.75),
         0 0 20px rgba(255,255,255,.35);
 }
-
-
-/* =========================================================
-   SOUS-TITRE
-   ========================================================= */
 
 .sub{
     display:flex;
@@ -632,7 +734,8 @@ h2{
     overflow-wrap:anywhere;
 
     text-shadow:
-        0 0 8px color-mix(
+        0 0 8px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 40%
@@ -674,7 +777,7 @@ h2{
 
 
 /* =========================================================
-   DRAWER — BOUTON APPEL
+   BOUTON DRAWER
    ========================================================= */
 
 #d-call{
@@ -695,32 +798,31 @@ h2{
     background:
         linear-gradient(
             180deg,
-
             color-mix(
                 in srgb,
                 var(--cat-color),
                 white 15%
             ),
-
             var(--cat-color)
         );
 
     color:white;
 
     font-size:17px;
-
     font-weight:900;
 
     text-decoration:none;
 
     box-shadow:
-        0 6px 20px color-mix(
+        0 6px 20px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 55%
         ),
 
-        0 0 30px color-mix(
+        0 0 30px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 45%
@@ -731,10 +833,124 @@ h2{
 
 #d-call:hover{
     transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 35px
+        color-mix(
+            in srgb,
+            var(--cat-color),
+            transparent 40%
+        );
 }
 
 #d-call i{
     font-size:22px;
+}
+
+
+/* =========================================================
+   DRAWER INFOS
+   ========================================================= */
+
+.info-value a{
+    color:var(--cat-color) !important;
+
+    text-decoration:none !important;
+
+    text-shadow:
+        0 0 10px
+        color-mix(
+            in srgb,
+            var(--cat-color),
+            transparent 45%
+        );
+}
+
+#d-services{
+    white-space:pre-wrap;
+
+    line-height:1.45;
+
+    font-size:20px;
+}
+
+#d-email{
+    overflow-wrap:anywhere;
+
+    text-decoration:none !important;
+
+    color:var(--cat-color) !important;
+
+    -webkit-tap-highlight-color:transparent;
+
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+#d-address{
+    -webkit-tap-highlight-color:transparent;
+
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+
+/* =========================================================
+   RETOUR
+   ========================================================= */
+
+.back-btn{
+    width:100%;
+    height:58px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--cat-color),
+            transparent 75%
+        );
+
+    border:2px solid var(--cat-color);
+
+    color:white;
+
+    font-size:18px;
+    font-weight:900;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    box-shadow:
+        0 0 15px
+        color-mix(
+            in srgb,
+            var(--cat-color),
+            transparent 40%
+        );
+
+    transition:.2s;
+}
+
+.back-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 25px
+        color-mix(
+            in srgb,
+            var(--cat-color),
+            transparent 20%
+        );
 }
 
 
@@ -771,7 +987,8 @@ h2{
     overflow:auto;
 
     box-shadow:
-        0 0 25px color-mix(
+        0 0 25px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 55%
@@ -784,20 +1001,10 @@ h2{
 
 
 /* =========================================================
-   DRAWER — TITRES
+   DRAWER TITRES
    ========================================================= */
 
-#d-name{
-    font-size:36px;
-
-    font-weight:900;
-
-    margin:10px 0 0;
-
-    line-height:1.15;
-
-    text-align:center;
-
+.drawer #d-name{
     color:#ffffff;
 
     text-shadow:
@@ -806,19 +1013,18 @@ h2{
         0 0 30px rgba(255,255,255,.35);
 }
 
-#d-cat{
-    margin:8px 0 20px;
-
-    font-size:17px;
-
-    font-weight:800;
-
-    text-align:center;
-
+.drawer #d-cat{
     color:var(--cat-color);
 
     text-shadow:
         0 0 10px var(--cat-color);
+}
+
+.drawer .info-value{
+    color:var(--cat-color);
+
+    text-shadow:
+        0 0 12px var(--cat-color);
 }
 
 
@@ -855,7 +1061,8 @@ h2{
     transition:.25s;
 
     box-shadow:
-        0 0 15px color-mix(
+        0 0 15px
+        color-mix(
             in srgb,
             var(--cat-color),
             transparent 75%
@@ -870,7 +1077,7 @@ h2{
 
 
 /* =========================================================
-   INFOS
+   CARTES INFOS
    ========================================================= */
 
 .info{
@@ -882,7 +1089,8 @@ h2{
 
     border:none;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
 
     background:none;
 
@@ -920,120 +1128,36 @@ h2{
         0 0 12px var(--cat-color);
 }
 
-
-/* =========================================================
-   INFOS DRAWER
-   ========================================================= */
-
-.info-value a{
-    color:var(--cat-color) !important;
-
-    text-decoration:none !important;
-
-    -webkit-text-decoration:none;
-
-    text-shadow:
-        0 0 10px color-mix(
-            in srgb,
-            var(--cat-color),
-            transparent 45%
-        );
-}
-
-#d-services{
-    white-space:pre-wrap;
-
-    line-height:1.45;
-
-    font-size:20px;
-}
-
-#d-email{
-    overflow-wrap:anywhere;
-
-    text-decoration:none !important;
-
-    color:var(--cat-color) !important;
-
-    -webkit-text-decoration:none !important;
-
-    text-decoration-line:none !important;
-
-    -webkit-tap-highlight-color:transparent;
-
-    -webkit-user-select:none;
-
-    user-select:none;
-
-    cursor:pointer;
-}
-
-#d-address{
-    -webkit-tap-highlight-color:transparent;
-
-    -webkit-user-select:none;
-
-    user-select:none;
-}
-
-
-/* =========================================================
-   BOUTON RETOUR
-   ========================================================= */
-
-.back-btn{
-    width:100%;
-
-    height:58px;
-
-    border:none;
-
-    border-radius:20px;
-
-    background:
-        color-mix(
-            in srgb,
-            var(--cat-color),
-            transparent 75%
-        );
-
-    border:2px solid var(--cat-color);
-
-    color:white;
-
-    font-size:18px;
+#d-name{
+    font-size:36px;
 
     font-weight:900;
 
-    cursor:pointer;
+    margin:10px 0 0;
 
-    display:flex;
+    line-height:1.15;
 
-    align-items:center;
+    text-align:center;
 
-    justify-content:center;
+    color:var(--cat-color);
 
-    gap:12px;
-
-    box-shadow:
-        0 0 15px color-mix(
-            in srgb,
-            var(--cat-color),
-            transparent 40%
-        );
-
-    transition:.2s;
+    text-shadow:
+        0 0 10px var(--cat-color);
 }
 
-.back-btn:hover{
-    transform:translateY(-2px);
+#d-cat{
+    margin:8px 0 20px;
 
-    box-shadow:
-        0 0 25px color-mix(
-            in srgb,
-            var(--cat-color),
-            transparent 20%
-        );
+    font-size:17px;
+
+    font-weight:800;
+
+    text-align:center;
+
+    color:var(--cat-color);
+
+    text-shadow:
+        0 0 10px var(--cat-color);
 }
 
 </style>
@@ -1059,23 +1183,15 @@ h2{
 </div>
 
 
-<!-- =====================================================
-     TITRE CATÉGORIES
-     ===================================================== -->
-
 <h2 id="secretTrigger">
-    CATÉGORIES
+CATÉGORIES
 </h2>
 
 
-<!-- =====================================================
-     CATÉGORIES
-     ===================================================== -->
-
 <div
     class="grid"
-    id="cats"
-></div>
+    id="cats">
+</div>
 
 
 <!-- =====================================================
@@ -1111,6 +1227,7 @@ Retour aux catégories
 
 <div id="list"></div>
 
+
 </section>
 
 
@@ -1144,8 +1261,6 @@ Retour aux catégories
     class="call"
 >
 
-<i class="ph ph-phone"></i>
-
 <span id="d-tel"></span>
 
 </a>
@@ -1160,13 +1275,13 @@ Retour aux catégories
 >
 
 <div class="info-title">
-    Type
+Type
 </div>
 
 <div
     id="d-type"
-    class="info-value"
-></div>
+    class="info-value">
+</div>
 
 </div>
 
@@ -1177,13 +1292,13 @@ Retour aux catégories
 >
 
 <div class="info-title">
-    Assisteur
+Assisteur
 </div>
 
 <div
     id="d-assist"
-    class="info-value"
-></div>
+    class="info-value">
+</div>
 
 </div>
 
@@ -1194,13 +1309,13 @@ Retour aux catégories
 >
 
 <div class="info-title">
-    Pays
+Pays
 </div>
 
 <div
     id="d-country"
-    class="info-value"
-></div>
+    class="info-value">
+</div>
 
 </div>
 
@@ -1211,11 +1326,11 @@ Retour aux catégories
 >
 
 <div class="info-title">
-    Disponibilité
+Disponibilité
 </div>
 
 <div class="info-value">
-    24h/24 • 7j/7
+24h/24 • 7j/7
 </div>
 
 </div>
@@ -1227,15 +1342,15 @@ Retour aux catégories
 >
 
 <div class="info-title">
-    Adresse
+Adresse
 </div>
 
 <div class="info-value">
 
 <a
     id="d-address"
-    target="_blank"
-></a>
+    target="_blank">
+</a>
 
 </div>
 
@@ -1248,13 +1363,13 @@ Retour aux catégories
 >
 
 <div class="info-title">
-    Email
+Email
 </div>
 
 <div
     class="info-value"
-    id="d-email"
-></div>
+    id="d-email">
+</div>
 
 </div>
 
@@ -1265,13 +1380,13 @@ Retour aux catégories
 >
 
 <div class="info-title">
-    Services
+Services
 </div>
 
 <div
     class="info-value"
-    id="d-services"
-></div>
+    id="d-services">
+</div>
 
 </div>
 
@@ -1283,8 +1398,9 @@ Retour aux catégories
 
 <script>
 
+
 /* =========================================================
-   COULEURS DES CATÉGORIES
+   COULEURS
    ========================================================= */
 
 const CATEGORY_COLORS = {
@@ -1306,10 +1422,6 @@ const CATEGORY_COLORS = {
 };
 
 
-/* =========================================================
-   COULEUR
-   ========================================================= */
-
 function getCategoryColor(category){
 
     const key =
@@ -1322,7 +1434,10 @@ function getCategoryColor(category){
 }
 
 
-function applyCategoryColor(element,category){
+function applyCategoryColor(
+    element,
+    category
+){
 
     if(!element)
         return;
@@ -1346,7 +1461,7 @@ function applyCategoryColor(element,category){
 
 
 /* =========================================================
-   CATÉGORIES NORMALES
+   CATÉGORIES
    ========================================================= */
 
 const CATEGORIES=[
@@ -1396,10 +1511,6 @@ const CATEGORIES=[
 ];
 
 
-/* =========================================================
-   CATÉGORIES SECRÈTES
-   ========================================================= */
-
 const SECRET_CATEGORIES=[
 
 {
@@ -1448,7 +1559,6 @@ const SECRET_CATEGORIES=[
 
 
 let DATA=[];
-
 let current=[];
 
 const cats =
@@ -1456,12 +1566,12 @@ const cats =
 
 
 /* =========================================================
-   SVG ÉCLAIR
+   ⚡ GÉNÉRATION D'UN ÉCLAIR
    ========================================================= */
 
-function createLightning(){
+function lightningSVG(){
 
-return `
+    return `
 
 <svg
     class="card-lightning"
@@ -1470,189 +1580,199 @@ return `
     aria-hidden="true"
 >
 
+    <!-- HALO LARGE -->
 
-<!-- HALO LARGE -->
-
-<path
-    class="lightning-wide"
-    d="
-        M 75 18
-        L 110 32
-        L 132 23
-        L 165 45
-        L 192 35
-        L 225 58
-        L 255 43
-        L 286 67
-        L 320 50
-        L 355 72
-        L 390 54
-        L 425 82
-        L 465 65
-        L 505 92
-    "
-/>
-
-
-<!-- HALO PRINCIPAL -->
-
-<path
-    class="lightning-glow"
-    d="
-        M 75 18
-        L 110 32
-        L 132 23
-        L 165 45
-        L 192 35
-        L 225 58
-        L 255 43
-        L 286 67
-        L 320 50
-        L 355 72
-        L 390 54
-        L 425 82
-        L 465 65
-        L 505 92
-    "
-/>
+    <path
+        class="lightning-wide"
+        d="
+            M -20 108
+            L 18 96
+            L 42 103
+            L 74 87
+            L 101 94
+            L 130 76
+            L 158 83
+            L 188 65
+            L 216 73
+            L 247 55
+            L 276 63
+            L 308 47
+            L 338 57
+            L 369 40
+            L 400 51
+            L 431 35
+            L 465 46
+            L 500 28
+            L 580 18
+        "
+    />
 
 
-<!-- CŒUR DE L'ÉCLAIR -->
+    <!-- HALO PRINCIPAL -->
 
-<path
-    class="lightning-main"
-    d="
-        M 75 18
-        L 110 32
-        L 132 23
-        L 165 45
-        L 192 35
-        L 225 58
-        L 255 43
-        L 286 67
-        L 320 50
-        L 355 72
-        L 390 54
-        L 425 82
-        L 465 65
-        L 505 92
-    "
-/>
-
-
-<!-- RAMIFICATION -->
-
-<path
-    class="lightning-branch"
-    d="
-        M 132 23
-        L 125 9
-        L 137 1
-        L 132 -10
-    "
-/>
+    <path
+        class="lightning-glow"
+        d="
+            M -20 108
+            L 18 96
+            L 42 103
+            L 74 87
+            L 101 94
+            L 130 76
+            L 158 83
+            L 188 65
+            L 216 73
+            L 247 55
+            L 276 63
+            L 308 47
+            L 338 57
+            L 369 40
+            L 400 51
+            L 431 35
+            L 465 46
+            L 500 28
+            L 580 18
+        "
+    />
 
 
-<path
-    class="lightning-branch"
-    d="
-        M 192 35
-        L 181 22
-        L 187 12
-        L 176 3
-    "
-/>
+    <!-- CŒUR BLANC -->
+
+    <path
+        class="lightning-path"
+        d="
+            M -20 108
+            L 18 96
+            L 42 103
+            L 74 87
+            L 101 94
+            L 130 76
+            L 158 83
+            L 188 65
+            L 216 73
+            L 247 55
+            L 276 63
+            L 308 47
+            L 338 57
+            L 369 40
+            L 400 51
+            L 431 35
+            L 465 46
+            L 500 28
+            L 580 18
+        "
+    />
 
 
-<path
-    class="lightning-branch"
-    d="
-        M 255 43
-        L 247 29
-        L 257 17
-        L 250 7
-    "
-/>
+    <!-- RICOCHET HAUT 1 -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 101 94
+            L 92 76
+            L 101 63
+            L 94 48
+            L 106 34
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 101 94
+            L 92 76
+            L 101 63
+            L 94 48
+            L 106 34
+        "
+    />
 
 
-<path
-    class="lightning-branch"
-    d="
-        M 320 50
-        L 330 35
-        L 322 24
-        L 335 13
-    "
-/>
+    <!-- RICOCHET HAUT 2 -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 188 65
+            L 178 49
+            L 187 37
+            L 180 24
+            L 191 12
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 188 65
+            L 178 49
+            L 187 37
+            L 180 24
+            L 191 12
+        "
+    />
 
 
-<path
-    class="lightning-branch"
-    d="
-        M 390 54
-        L 380 39
-        L 390 28
-        L 383 18
-    "
-/>
+    <!-- RICOCHET BAS -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 276 63
+            L 288 78
+            L 280 91
+            L 293 106
+            L 285 122
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 276 63
+            L 288 78
+            L 280 91
+            L 293 106
+            L 285 122
+        "
+    />
 
 
-<path
-    class="lightning-branch"
-    d="
-        M 465 65
-        L 478 51
-        L 471 39
-        L 484 28
-    "
-/>
+    <!-- RICOCHET HAUT 3 -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 369 40
+            L 360 24
+            L 370 13
+            L 365 1
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 369 40
+            L 360 24
+            L 370 13
+            L 365 1
+        "
+    />
 
 
-<!-- RAMIFICATIONS BASSES -->
+    <!-- PETITE DÉCHARGE -->
 
-<path
-    class="lightning-branch"
-    d="
-        M 165 45
-        L 151 60
-        L 158 72
-        L 146 84
-    "
-/>
-
-
-<path
-    class="lightning-branch"
-    d="
-        M 286 67
-        L 273 82
-        L 281 94
-        L 268 107
-    "
-/>
-
-
-<path
-    class="lightning-branch"
-    d="
-        M 355 72
-        L 366 88
-        L 357 100
-        L 368 111
-    "
-/>
-
-
-<path
-    class="lightning-branch"
-    d="
-        M 425 82
-        L 412 97
-        L 420 109
-        L 408 122
-    "
-/>
-
+    <path
+        class="lightning-branch"
+        d="
+            M 431 35
+            L 444 23
+            L 440 11
+            L 452 2
+        "
+    />
 
 </svg>
 
@@ -1667,36 +1787,68 @@ return `
 
 function renderCategories(data){
 
-    cats.innerHTML = data.map(c=>`
+    cats.innerHTML = data.map(c=>{
 
-        <div
-            class="card"
-            data-cat="${c.key}"
+        const duration =
+            (6 + Math.random()*5)
+            .toFixed(2);
 
-            style="
-                --cat-color:${getCategoryColor(c.key)};
-                --lightning-duration:${(5 + Math.random() * 3).toFixed(2)}s;
-                --lightning-delay:${(-Math.random() * 6).toFixed(2)}s;
-            "
-        >
+        const delay =
+            (-Math.random()*8)
+            .toFixed(2);
 
-            ${createLightning()}
+        const x =
+            (-15 + Math.random()*30)
+            .toFixed(0);
 
-            <i class="ph ${c.icon}"></i>
+        const y =
+            (-8 + Math.random()*16)
+            .toFixed(0);
 
-            <div>
+        const rotate =
+            (-2 + Math.random()*4)
+            .toFixed(1);
 
-                <h3>${c.label}</h3>
+        return `
 
-                <span>${c.sub}</span>
+<div
+    class="card"
+    data-cat="${c.key}"
 
-            </div>
+    style="
+        --cat-color:${getCategoryColor(c.key)};
+        --lightning-time:${duration}s;
+        --lightning-delay:${delay}s;
+        --lightning-x:${x}px;
+        --lightning-y:${y}px;
+        --lightning-rotate:${rotate}deg;
+    "
+>
 
-        </div>
+${lightningSVG()}
 
-    `).join("");
+<i class="ph ${c.icon}"></i>
+
+<div>
+
+<h3>
+${c.label}
+</h3>
+
+<span>
+${c.sub}
+</span>
+
+</div>
+
+</div>
+
+`;
+
+    }).join("");
 
 }
+
 
 renderCategories(CATEGORIES);
 
@@ -1706,11 +1858,12 @@ renderCategories(CATEGORIES);
    ========================================================= */
 
 let secretClicks=0;
-
 let secretMode=false;
 
 const secretTrigger =
-    document.getElementById("secretTrigger");
+    document.getElementById(
+        "secretTrigger"
+    );
 
 
 secretTrigger.onclick=()=>{
@@ -1728,9 +1881,7 @@ secretTrigger.onclick=()=>{
 
         secretMode=!secretMode;
 
-
         cats.classList.add("hide");
-
 
         setTimeout(()=>{
 
@@ -1750,7 +1901,7 @@ secretTrigger.onclick=()=>{
 
 
 /* =========================================================
-   CHARGEMENT JSON
+   CHARGEMENT DES JSON
    ========================================================= */
 
 const fichiers=[
@@ -1778,7 +1929,6 @@ Promise.all(
             fichier
         );
 
-
         return fetch(fichier)
 
         .then(r=>{
@@ -1786,7 +1936,7 @@ Promise.all(
             if(!r.ok){
 
                 throw new Error(
-                    fichier +
+                    fichier+
                     " introuvable"
                 );
 
@@ -1796,20 +1946,18 @@ Promise.all(
 
         })
 
-
         .then(txt=>{
 
             if(!txt.trim()){
 
                 console.warn(
-                    fichier +
+                    fichier+
                     " est vide → ignoré"
                 );
 
                 return [];
 
             }
-
 
             try{
 
@@ -1820,12 +1968,9 @@ Promise.all(
             catch(e){
 
                 throw new Error(
-                    "Erreur JSON dans "
-                    +
-                    fichier
-                    +
-                    " : "
-                    +
+                    "Erreur JSON dans "+
+                    fichier+
+                    " : "+
                     e.message
                 );
 
@@ -1842,7 +1987,6 @@ Promise.all(
 
     DATA=files.flat();
 
-
     DATA=DATA.map(x=>({
 
         name:
@@ -1852,7 +1996,6 @@ Promise.all(
                 ""
             ).trim(),
 
-
         phone:String(
             x.telephone ||
             x.phone ||
@@ -1860,7 +2003,6 @@ Promise.all(
             x.numero ||
             ""
         ),
-
 
         category:String(
             x.categorie ||
@@ -1871,7 +2013,6 @@ Promise.all(
         .toUpperCase()
         .trim(),
 
-
         pays:String(
             x.pays ||
             ""
@@ -1879,19 +2020,16 @@ Promise.all(
         .toUpperCase()
         .trim(),
 
-
         type:String(
             x.type ||
             ""
         ).trim(),
-
 
         assistant:String(
             x.assisteur ||
             x.assistant ||
             ""
         ).trim(),
-
 
         email:x.email || "",
 
@@ -1925,27 +2063,32 @@ Promise.all(
 
     document.body.innerHTML += `
 
-        <div
-            style="
-                position:fixed;
-                bottom:10px;
-                left:10px;
-                right:10px;
-                background:red;
-                color:white;
-                padding:20px;
-                border-radius:15px;
-                font-size:16px;
-                z-index:99999;
-            "
-        >
+<div
+    style="
+        position:fixed;
+        bottom:10px;
+        left:10px;
+        right:10px;
 
-            ❌ ERREUR :
-            ${err.message}
+        background:red;
+        color:white;
 
-        </div>
+        padding:20px;
 
-    `;
+        border-radius:15px;
+
+        font-size:16px;
+
+        z-index:99999;
+    "
+>
+
+❌ ERREUR :
+${err.message}
+
+</div>
+
+`;
 
 });
 
@@ -1954,33 +2097,35 @@ Promise.all(
    ÉLÉMENTS
    ========================================================= */
 
-const q =
+const q=
     document.getElementById("q");
 
-const results =
+const results=
     document.getElementById("results");
 
-const list =
+const list=
     document.getElementById("list");
 
-const count =
+const count=
     document.getElementById("count");
 
-const backBox =
+const backBox=
     document.getElementById("backBox");
 
-const backBtn =
+const backBtn=
     document.getElementById("backBtn");
 
 
 /* =========================================================
-   RENDU DES RÉSULTATS
+   RENDU
    ========================================================= */
 
-function render(rows,category=""){
+function render(
+    rows,
+    category=""
+){
 
     current=rows;
-
 
     const selectedColor =
         getCategoryColor(category);
@@ -1995,8 +2140,6 @@ function render(rows,category=""){
     list.dataset.cat=category;
 
 
-    /* AUCUN RÉSULTAT */
-
     if(!rows.length){
 
         results.style.display="block";
@@ -2005,33 +2148,34 @@ function render(rows,category=""){
 
         backBox.style.display="block";
 
-        count.textContent="0 résultat";
+        count.textContent=
+            "0 résultat";
 
 
         list.innerHTML=`
 
-            <div
-                class="row"
-                style="
-                    --cat-color:${selectedColor}
-                "
-            >
+<div
+    class="row"
+    style="
+        --cat-color:${selectedColor}
+    "
+>
 
-                <div>
+<div>
 
-                    <div class="title">
-                        Aucun résultat
-                    </div>
+<div class="title">
+Aucun résultat
+</div>
 
-                    <div class="sub">
-                        Cette catégorie est vide.
-                    </div>
+<div class="sub">
+Cette catégorie est vide.
+</div>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-        `;
+`;
 
         return;
 
@@ -2045,86 +2189,86 @@ function render(rows,category=""){
     backBox.style.display="block";
 
 
-    count.textContent =
-        rows.length +
+    count.textContent=
+        rows.length+
         " résultat(s)";
 
 
-    list.innerHTML=rows.map((r,i)=>`
+    list.innerHTML=
 
-        <div
-            class="row"
+        rows.map((r,i)=>`
 
-            data-i="${i}"
+<div
+    class="row"
+    data-i="${i}"
+    data-cat="${r.category}"
 
-            data-cat="${r.category}"
+    style="
+        --cat-color:
+        ${getCategoryColor(
+            category || r.category
+        )}
+    "
+>
 
-            style="
-                --cat-color:${getCategoryColor(
-                    category || r.category
-                )}
-            "
-        >
+<div>
 
-            <div>
+<div class="title">
+${r.name}
+</div>
 
-                <div class="title">
-                    ${r.name}
-                </div>
+<div class="sub">
 
-                <div class="sub">
+${r.category}
 
-                    ${r.category}
+${
+    r.category!=="GARAGE"
+        ? " · "+r.assistant
+        : ""
+}
 
-                    ${
-                        r.category !== "GARAGE"
-                            ? " · " + r.assistant
-                            : ""
-                    }
-
-                </div>
-
-
-                <div class="tip-slot">
-
-                    ${
-                        r.category === "GARAGE"
-                        &&
-                        r.pourboire
-
-                            ? `
-
-                                <div class="tip-label">
-
-                                    <i class="ph ph-coins"></i>
-
-                                    Pourboire
-
-                                </div>
-
-                              `
-
-                            : ""
-
-                    }
-
-                </div>
-
-            </div>
+</div>
 
 
-            <a
-                class="call"
-                href="tel:${r.phone}"
-            >
+<div class="tip-slot">
 
-                <i class="ph ph-phone"></i>
+${
+    r.category==="GARAGE" &&
+    r.pourboire
 
-            </a>
+    ? `
 
-        </div>
+<div class="tip-label">
 
-    `).join("");
+<i class="ph ph-coins"></i>
+
+Pourboire
+
+</div>
+
+`
+
+    : ""
+}
+
+</div>
+
+</div>
+
+
+<a
+    class="call"
+    href="tel:${r.phone}"
+>
+
+<i class="ph ph-phone"></i>
+
+</a>
+
+
+</div>
+
+`).join("");
 
 
     setTimeout(()=>{
@@ -2195,7 +2339,6 @@ function search(text){
 
         },300);
 
-
         backBox.style.display="none";
 
         return;
@@ -2203,34 +2346,36 @@ function search(text){
     }
 
 
-    const words =
+    const words=
         n.split(" ")
         .filter(Boolean);
 
 
-    let rows=DATA
+    let rows=
+
+        DATA
 
         .map(item=>{
 
-            const name =
+            const name=
                 normalize(item.name);
 
-            const phone =
+            const phone=
                 normalize(item.phone);
 
-            const category =
+            const category=
                 normalize(item.category);
 
-            const type =
+            const type=
                 normalize(item.type);
 
-            const assistant =
+            const assistant=
                 normalize(item.assistant);
 
-            const services =
+            const services=
                 normalize(item.services);
 
-            const country =
+            const country=
                 normalize(item.pays);
 
 
@@ -2247,11 +2392,14 @@ function search(text){
             ].join(" ");
 
 
-            const searchableCompact =
-                searchable.replace(/\s/g,"");
+            const searchableCompact=
+                searchable.replace(
+                    /\s/g,
+                    ""
+                );
 
 
-            const matches =
+            const matches=
                 words.every(word=>
 
                     searchable.includes(word)
@@ -2259,7 +2407,10 @@ function search(text){
                     ||
 
                     searchableCompact.includes(
-                        word.replace(/\s/g,"")
+                        word.replace(
+                            /\s/g,
+                            ""
+                        )
                     )
 
                 );
@@ -2316,6 +2467,7 @@ function search(text){
 
         })
 
+
         .filter(Boolean);
 
 
@@ -2336,7 +2488,7 @@ function search(text){
     });
 
 
-    rows =
+    rows=
         rows.map(x=>x.item);
 
 
@@ -2361,7 +2513,7 @@ cats.addEventListener(
     "click",
     e=>{
 
-        const card =
+        const card=
             e.target.closest(".card");
 
 
@@ -2369,7 +2521,7 @@ cats.addEventListener(
             return;
 
 
-        const key =
+        const key=
             card.dataset.cat;
 
 
@@ -2378,33 +2530,34 @@ cats.addEventListener(
 
         if(key==="ASSURANCE"){
 
-            rows=DATA.filter(x=>
+            rows=
+                DATA.filter(x=>
 
-                x.category.includes("ASSUR")
+                    x.category.includes("ASSUR")
 
-                ||
+                    ||
 
-                x.category.includes("COURT")
+                    x.category.includes("COURT")
 
-                ||
+                    ||
 
-                x.type
-                    .toUpperCase()
-                    .includes("ASSUR")
+                    x.type
+                        .toUpperCase()
+                        .includes("ASSUR")
 
-                ||
+                    ||
 
-                x.assistant
-                    .toUpperCase()
-                    .includes("ASSUR")
+                    x.assistant
+                        .toUpperCase()
+                        .includes("ASSUR")
 
-            );
+                );
 
         }
 
         else{
 
-            rows =
+            rows=
                 DATA.filter(
                     x=>x.category===key
                 );
@@ -2415,16 +2568,14 @@ cats.addEventListener(
         rows.sort((a,b)=>{
 
             if(
-                a.pays==="FR"
-                &&
+                a.pays==="FR" &&
                 b.pays!=="FR"
             )
                 return -1;
 
 
             if(
-                a.pays!=="FR"
-                &&
+                a.pays!=="FR" &&
                 b.pays==="FR"
             )
                 return 1;
@@ -2441,19 +2592,15 @@ cats.addEventListener(
         });
 
 
-        const color =
-            getCategoryColor(key);
-
-
         results.style.setProperty(
             "--cat-color",
-            color
+            getCategoryColor(key)
         );
 
 
         backBtn.style.setProperty(
             "--cat-color",
-            color
+            getCategoryColor(key)
         );
 
 
@@ -2483,8 +2630,10 @@ cats.addEventListener(
    DRAWER
    ========================================================= */
 
-const drawer =
-    document.getElementById("drawer");
+const drawer=
+    document.getElementById(
+        "drawer"
+    );
 
 
 list.addEventListener(
@@ -2497,7 +2646,7 @@ list.addEventListener(
             return;
 
 
-        const row =
+        const row=
             e.target.closest(".row");
 
 
@@ -2505,7 +2654,7 @@ list.addEventListener(
             return;
 
 
-        const item =
+        const item=
             current[row.dataset.i];
 
 
@@ -2517,77 +2666,77 @@ list.addEventListener(
 
         document.getElementById(
             "d-name"
-        ).textContent =
+        ).textContent=
             item.name;
 
 
         document.getElementById(
             "d-cat"
-        ).textContent =
+        ).textContent=
             item.category;
 
 
         document.getElementById(
             "d-tel"
-        ).textContent =
+        ).textContent=
             item.phone;
 
 
         document.getElementById(
             "d-call"
-        ).href =
+        ).href=
             "tel:"+item.phone;
 
 
         document.getElementById(
             "d-type"
-        ).textContent =
+        ).textContent=
             item.type;
 
 
         document.getElementById(
             "d-assist"
-        ).textContent =
+        ).textContent=
             item.assistant;
 
 
         document.getElementById(
             "d-country"
-        ).textContent =
+        ).textContent=
             item.pays;
 
 
-        const typeBox =
+        const typeBox=
             document.getElementById(
                 "typeBox"
             );
 
-        const assistBox =
+        const assistBox=
             document.getElementById(
                 "assistBox"
             );
 
-        const addressBox =
+        const addressBox=
             document.getElementById(
                 "addressBox"
             );
 
-        const emailBox =
+        const emailBox=
             document.getElementById(
                 "emailBox"
             );
 
-        const servicesBox =
+        const servicesBox=
             document.getElementById(
                 "servicesBox"
             );
 
-        const countryBox =
+        const countryBox=
             document.getElementById(
                 "countryBox"
             );
 
-        const availableBox =
+        const availableBox=
             document.getElementById(
                 "availableBox"
             );
@@ -2596,10 +2745,6 @@ list.addEventListener(
         typeBox.style.display="block";
 
         assistBox.style.display="block";
-
-        countryBox.style.display="block";
-
-        availableBox.style.display="block";
 
         addressBox.style.display="none";
 
@@ -2626,36 +2771,51 @@ list.addEventListener(
 
         }
 
+        else{
+
+            typeBox.style.display="block";
+
+            assistBox.style.display="block";
+
+            countryBox.style.display="block";
+
+            availableBox.style.display="block";
+
+            addressBox.style.display="none";
+
+            emailBox.style.display="none";
+
+            servicesBox.style.display="none";
+
+        }
+
 
         /* ADRESSE */
 
-        const address =
+        const address=
             document.getElementById(
                 "d-address"
             );
 
 
-        address.textContent =
+        address.textContent=
             item.adresse || "—";
 
 
         if(item.adresse){
 
-            address.href =
-                "https://maps.apple.com/?q="
-                +
+            address.href=
+                "https://maps.apple.com/?q="+
                 encodeURIComponent(
                     item.adresse
                 );
 
-
-            address.style.color =
+            address.style.color=
                 getCategoryColor(
                     item.category
                 );
 
-
-            address.style.textDecoration =
+            address.style.textDecoration=
                 "none";
 
         }
@@ -2671,14 +2831,20 @@ list.addEventListener(
 
         /* EMAIL */
 
-        const email =
+        const email=
             document.getElementById(
                 "d-email"
             );
 
 
-        email.textContent =
+        email.textContent=
             item.email || "—";
+
+
+        email.style.cursor="default";
+
+        email.style.textDecoration=
+            "none";
 
 
         email.onclick=async()=>{
@@ -2695,17 +2861,17 @@ list.addEventListener(
                     );
 
 
-                const old =
+                const old=
                     email.textContent;
 
 
-                email.textContent =
+                email.textContent=
                     "✓ Copié";
 
 
                 setTimeout(()=>{
 
-                    email.textContent =
+                    email.textContent=
                         old;
 
                 },1200);
@@ -2728,7 +2894,7 @@ list.addEventListener(
 
         document.getElementById(
             "d-services"
-        ).textContent =
+        ).textContent=
             item.services;
 
 
@@ -2818,9 +2984,11 @@ backBtn.onclick=()=>{
 
 };
 
+
 </script>
 
 </div>
 
 </body>
+
 </html>
