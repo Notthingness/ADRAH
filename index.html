@@ -164,7 +164,7 @@ h2{
     overflow:hidden;
 }
 /* =========================================================
-   ⚡ VRAI ÉCLAIR SVG — ANIMATION DANS LA CARTE
+   ⚡ ÉCLAIR RÉALISTE
    ========================================================= */
 
 .card{
@@ -172,31 +172,27 @@ h2{
     overflow:hidden;
 }
 
-/* Le SVG est au-dessus du fond mais sous le contenu */
+/* Conteneur */
 .card .card-lightning{
     position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
+    inset:-15%;
+    width:130%;
+    height:130%;
 
     z-index:2;
     pointer-events:none;
 
-    overflow:hidden;
+    overflow:visible;
 
     opacity:0;
 
     mix-blend-mode:screen;
 
-    filter:
-        drop-shadow(0 0 2px #fff)
-        drop-shadow(0 0 6px #fff)
-        drop-shadow(0 0 14px var(--cat-color))
-        drop-shadow(0 0 28px var(--cat-color));
+    transform-origin:center;
 
     animation:
-        lightningFlash
-        var(--lightning-duration, 4.8s)
+        realisticLightning
+        var(--lightning-duration, 5.5s)
         infinite;
 }
 
@@ -207,9 +203,9 @@ h2{
 .card .lightning-main{
     fill:none;
 
-    stroke:#fff;
+    stroke:#ffffff;
 
-    stroke-width:2.8;
+    stroke-width:2.2;
 
     stroke-linecap:round;
     stroke-linejoin:round;
@@ -217,12 +213,14 @@ h2{
     vector-effect:non-scaling-stroke;
 
     filter:
-        drop-shadow(0 0 3px #fff)
-        drop-shadow(0 0 8px #fff);
+        drop-shadow(0 0 2px #fff)
+        drop-shadow(0 0 5px #fff)
+        drop-shadow(0 0 11px var(--cat-color))
+        drop-shadow(0 0 22px var(--cat-color));
 }
 
 /* =========================================================
-   HALO COLORÉ
+   HALO
    ========================================================= */
 
 .card .lightning-glow{
@@ -230,17 +228,34 @@ h2{
 
     stroke:var(--cat-color);
 
-    stroke-width:7;
+    stroke-width:9;
 
     stroke-linecap:round;
     stroke-linejoin:round;
 
-    opacity:.85;
+    opacity:.55;
 
     vector-effect:non-scaling-stroke;
 
-    filter:
-        blur(4px);
+    filter:blur(5px);
+}
+
+/* Halo secondaire très large */
+.card .lightning-halo{
+    fill:none;
+
+    stroke:var(--cat-color);
+
+    stroke-width:15;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    opacity:.20;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:blur(11px);
 }
 
 /* =========================================================
@@ -250,9 +265,9 @@ h2{
 .card .lightning-branch{
     fill:none;
 
-    stroke:#fff;
+    stroke:#ffffff;
 
-    stroke-width:1.5;
+    stroke-width:1.15;
 
     stroke-linecap:round;
     stroke-linejoin:round;
@@ -262,140 +277,148 @@ h2{
     vector-effect:non-scaling-stroke;
 
     filter:
-        drop-shadow(0 0 4px #fff)
-        drop-shadow(0 0 10px var(--cat-color));
+        drop-shadow(0 0 3px #fff)
+        drop-shadow(0 0 8px var(--cat-color));
+}
+
+/* Ramifications colorées */
+.card .lightning-branch-glow{
+    fill:none;
+
+    stroke:var(--cat-color);
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    opacity:.45;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:blur(3px);
 }
 
 /* =========================================================
-   ANIMATION — APPARITION / CLAQUEMENTS / REBONDS
+   ANIMATION
    ========================================================= */
 
-@keyframes lightningFlash{
+@keyframes realisticLightning{
 
-    /* repos */
+    /* LONG REPOS */
     0%{
         opacity:0;
+
         transform:
-            translateX(-115%)
-            translateY(12%)
-            rotate(-2deg)
-            scale(.85);
+            translate(
+                var(--lightning-x, 0px),
+                var(--lightning-y, 0px)
+            )
+            rotate(
+                var(--lightning-rotate, 0deg)
+            )
+            scale(.92);
     }
 
-    /* apparition brutale */
-    9%{
+    72%{
         opacity:0;
+
+        transform:
+            translate(
+                var(--lightning-x, 0px),
+                var(--lightning-y, 0px)
+            )
+            rotate(
+                var(--lightning-rotate, 0deg)
+            )
+            scale(.92);
     }
 
-    10%{
-        opacity:1;
-        transform:
-            translateX(-55%)
-            translateY(-3%)
-            rotate(1deg)
-            scale(.95);
-    }
+    /* PREMIER ÉCLAIR */
+    73%{
+        opacity:.95;
 
-    /* premier claquement */
-    13%{
-        opacity:.15;
         transform:
-            translateX(-35%)
-            translateY(5%)
-            rotate(-1deg)
-            scale(1.02);
-    }
-
-    15%{
-        opacity:1;
-        transform:
-            translateX(-20%)
-            translateY(-3%)
-            rotate(1deg)
-            scale(.98);
-    }
-
-    /* rebond */
-    18%{
-        opacity:.35;
-        transform:
-            translateX(0%)
-            translateY(7%)
-            rotate(-2deg)
-            scale(1.04);
-    }
-
-    20%{
-        opacity:1;
-        transform:
-            translateX(12%)
-            translateY(-4%)
-            rotate(1deg)
+            translate(
+                var(--lightning-x, 0px),
+                var(--lightning-y, 0px)
+            )
+            rotate(
+                var(--lightning-rotate, 0deg)
+            )
             scale(1);
     }
 
-    /* deuxième claquement */
-    23%{
-        opacity:.15;
-        transform:
-            translateX(28%)
-            translateY(6%)
-            rotate(-1deg)
-            scale(1.06);
+    74%{
+        opacity:.12;
     }
 
-    25%{
+    /* CLAQUEMENT */
+    75%{
         opacity:1;
+    }
+
+    76.5%{
+        opacity:.20;
+    }
+
+    /* GROS FLASH */
+    78%{
+        opacity:1;
+
         transform:
-            translateX(42%)
-            translateY(-2%)
-            rotate(2deg)
-            scale(.96);
+            translate(
+                var(--lightning-x, 0px),
+                var(--lightning-y, 0px)
+            )
+            rotate(
+                var(--lightning-rotate, 0deg)
+            )
+            scale(1.015);
     }
 
-    /* dernier mouvement */
-    28%{
-        opacity:.7;
+    79%{
+        opacity:.35;
+    }
+
+    /* PETIT REBOND */
+    80%{
+        opacity:.9;
+
         transform:
-            translateX(60%)
-            translateY(5%)
-            rotate(-2deg)
-            scale(.9);
+            translate(
+                var(--lightning-x, 0px),
+                var(--lightning-y, 0px)
+            )
+            rotate(
+                var(--lightning-rotate, 0deg)
+            )
+            scale(.99);
     }
 
-    31%{
-        opacity:.15;
+    /* EXTINCTION */
+    82%{
+        opacity:.08;
     }
 
-    /* disparition */
-    34%{
+    84%{
         opacity:0;
+
         transform:
-            translateX(115%)
-            translateY(-8%)
-            rotate(2deg)
-            scale(.8);
+            translate(
+                var(--lightning-x, 0px),
+                var(--lightning-y, 0px)
+            )
+            rotate(
+                var(--lightning-rotate, 0deg)
+            )
+            scale(.94);
     }
 
-    /* longue pause */
+    /* REPOS */
     100%{
         opacity:0;
-        transform:
-            translateX(130%)
-            translateY(10%)
-            rotate(2deg)
-            scale(.8);
     }
-}
-
-/* =========================================================
-   CONTENU TOUJOURS AU-DESSUS DE L'ÉCLAIR
-   ========================================================= */
-
-.card > i,
-.card > div{
-    position:relative;
-    z-index:4;
 }   
 .card:hover{
     transform:translateY(-2px);
@@ -1032,41 +1055,197 @@ function renderCategories(data){
     class="card"
     data-cat="${c.key}"
     style="
-        --cat-color:${getCategoryColor(c.key)};
-        --lightning-duration:${(4 + Math.random() * 2).toFixed(2)}s;
-    "
+    --cat-color:${getCategoryColor(c.key)};
+    --lightning-duration:${(5 + Math.random() * 3).toFixed(2)}s;
+    --lightning-x:${(-35 + Math.random() * 70).toFixed(0)}px;
+    --lightning-y:${(-8 + Math.random() * 16).toFixed(0)}px;
+    --lightning-rotate:${(-5 + Math.random() * 10).toFixed(1)}deg;
+"
 >
 
     <!-- ⚡ ÉCLAIR -->
     <svg
-        class="card-lightning"
-        viewBox="0 0 500 120"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-    >
+    class="card-lightning"
+    viewBox="0 0 560 140"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+>
 
-        <!-- Halo -->
-        <path
-            class="lightning-glow"
-            d="
-                M 20 62
-                L 52 45
-                L 78 50
-                L 101 31
-                L 125 42
-                L 151 27
-                L 178 49
-                L 203 39
-                L 229 55
-                L 255 36
-                L 281 45
-                L 307 30
-                L 334 47
-                L 359 35
-                L 385 52
-                L 412 42
-                L 439 58
-                L 475 43
+    <!-- =================================================
+         HALO LARGE
+         ================================================= -->
+
+    <path
+        class="lightning-halo"
+        d="
+            M 420 -15
+            L 390 18
+            L 405 23
+            L 350 55
+            L 370 60
+            L 315 91
+            L 330 97
+            L 270 150
+        "
+    />
+
+    <!-- =================================================
+         HALO PRINCIPAL
+         ================================================= -->
+
+    <path
+        class="lightning-glow"
+        d="
+            M 420 -15
+            L 390 18
+            L 405 23
+            L 350 55
+            L 370 60
+            L 315 91
+            L 330 97
+            L 270 150
+        "
+    />
+
+    <!-- =================================================
+         ÉCLAIR PRINCIPAL
+         ================================================= -->
+
+    <path
+        class="lightning-main"
+        d="
+            M 420 -15
+            L 389 17
+            L 404 23
+            L 351 54
+            L 369 60
+            L 314 91
+            L 329 97
+            L 269 150
+        "
+    />
+
+    <!-- =================================================
+         RAMIFICATION 1
+         ================================================= -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 389 17
+            L 358 8
+            L 338 20
+            L 315 11
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 389 17
+            L 358 8
+            L 338 20
+            L 315 11
+        "
+    />
+
+    <!-- =================================================
+         RAMIFICATION 2
+         ================================================= -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 404 23
+            L 426 38
+            L 450 30
+            L 470 42
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 404 23
+            L 426 38
+            L 450 30
+            L 470 42
+        "
+    />
+
+    <!-- =================================================
+         RAMIFICATION 3
+         ================================================= -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 351 54
+            L 325 48
+            L 302 61
+            L 280 55
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 351 54
+            L 325 48
+            L 302 61
+            L 280 55
+        "
+    />
+
+    <!-- =================================================
+         RAMIFICATION 4
+         ================================================= -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 369 60
+            L 395 72
+            L 420 68
+            L 443 82
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 369 60
+            L 395 72
+            L 420 68
+            L 443 82
+        "
+    />
+
+    <!-- =================================================
+         RAMIFICATION 5
+         ================================================= -->
+
+    <path
+        class="lightning-branch-glow"
+        d="
+            M 314 91
+            L 286 87
+            L 263 101
+            L 238 96
+        "
+    />
+
+    <path
+        class="lightning-branch"
+        d="
+            M 314 91
+            L 286 87
+            L 263 101
+            L 238 96
+        "
+    />
+
+</svg>
             "
         />
 
