@@ -176,23 +176,69 @@ h2{
         );
     pointer-events:none;
 }
+/* =========================================================
+   ⚡ PETIT ÉCLAIR ÉLECTRIQUE
+   ========================================================= */
+
 .card::after{
     content:"";
     position:absolute;
-    top:0;
-    left:-150%;
-    width:60%;
-    height:100%;
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.15),
-            transparent
-        );
-    transform:skewX(-25deg);
-    animation:shine 5s infinite;
+    top:10%;
+    left:-10%;
+    width:4px;
+    height:80%;
+    background:white;
+    border-radius:50%;
+    
+    box-shadow:
+        0 0 5px white,
+        0 0 12px white,
+        0 0 25px var(--cat-color),
+        0 0 45px var(--cat-color);
+
+    opacity:0;
+    transform:rotate(12deg);
     pointer-events:none;
+
+    animation:cardLightning 5s infinite;
+}
+
+@keyframes cardLightning{
+
+    /* attente */
+    0%{
+        left:-10%;
+        opacity:0;
+    }
+
+    /* petit flash */
+    45%{
+        left:-10%;
+        opacity:0;
+    }
+
+    /* apparition */
+    46%{
+        opacity:1;
+    }
+
+    /* éclair traverse */
+    48%{
+        left:110%;
+        opacity:1;
+    }
+
+    /* disparition */
+    49%{
+        left:110%;
+        opacity:0;
+    }
+
+    /* attente */
+    100%{
+        left:110%;
+        opacity:0;
+    }
 }
 .card:hover{
     transform:translateY(-2px);
@@ -604,17 +650,7 @@ h2{
     text-shadow:
         0 0 10px var(--cat-color);
 }
-/* =========================================================
-   ANIMATION SHINE
-   ========================================================= */
-@keyframes shine{
-    0%{
-        left:-150%;
-    }
-    100%{
-        left:200%;
-    }
-}
+
 </style>
 </head>
 <body>
