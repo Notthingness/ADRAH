@@ -162,107 +162,199 @@ h2{
         );
     transition:.25s;
     overflow:hidden;
-}
-/* =========================================================
-   ⚡ ÉCLAIR — FLASH STYLE
+}/* =========================================================
+   ⚡ ÉCLAIR — STYLE THE FLASH
    ========================================================= */
 
 .card::after{
     content:"";
     position:absolute;
-    inset:-20%;
-    z-index:2;
+    inset:-10px;
+    z-index:3;
     pointer-events:none;
 
+    /* éclair principal */
     background:
-        /* éclair principal */
         linear-gradient(
-            115deg,
-            transparent 42%,
-            rgba(255,255,255,0) 44%,
-            rgba(255,255,255,.95) 47%,
-            rgba(255,255,255,.15) 49%,
-            transparent 52%
-        ),
-
-        /* ramifications */
-        linear-gradient(
-            70deg,
-            transparent 48%,
-            rgba(255,255,255,.8) 49%,
-            transparent 50%
-        ),
-
-        linear-gradient(
-            135deg,
-            transparent 35%,
-            rgba(255,255,255,.65) 36%,
-            transparent 37%
+            112deg,
+            transparent 0%,
+            transparent 36%,
+            rgba(255,255,255,0) 39%,
+            rgba(255,255,255,.95) 40%,
+            rgba(255,255,255,1) 40.5%,
+            rgba(255,255,255,.15) 41.5%,
+            transparent 43%,
+            transparent 100%
         );
-
-    filter:
-        drop-shadow(0 0 5px white)
-        drop-shadow(0 0 15px var(--cat-color))
-        drop-shadow(0 0 30px var(--cat-color));
 
     opacity:0;
 
-    animation:
-        lightning 5s infinite;
-
-    transform:translateX(-20%) skewX(-15deg);
+    filter:
+        drop-shadow(0 0 3px white)
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 18px var(--cat-color))
+        drop-shadow(0 0 35px var(--cat-color));
 
     mix-blend-mode:screen;
+
+    animation:flashLightning 6s infinite;
 }
 
 
-/* ⚡ ÉCLAIR QUI CLAQUE */
+/* =========================================================
+   ⚡ RAMIFICATIONS
+   ========================================================= */
 
-@keyframes lightning{
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-15px;
+    z-index:3;
+    pointer-events:none;
 
-    /* attente */
+    background:
+
+        /* branche 1 */
+        linear-gradient(
+            145deg,
+            transparent 0%,
+            transparent 48%,
+            rgba(255,255,255,.9) 49%,
+            rgba(255,255,255,.15) 50%,
+            transparent 51%
+        ),
+
+        /* branche 2 */
+        linear-gradient(
+            35deg,
+            transparent 0%,
+            transparent 55%,
+            rgba(255,255,255,.8) 56%,
+            rgba(255,255,255,.1) 57%,
+            transparent 58%
+        ),
+
+        /* branche 3 */
+        linear-gradient(
+            160deg,
+            transparent 0%,
+            transparent 30%,
+            rgba(255,255,255,.7) 31%,
+            transparent 32%
+        );
+
+    opacity:0;
+
+    filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 15px var(--cat-color));
+
+    mix-blend-mode:screen;
+
+    animation:flashBranches 6s infinite;
+}
+
+
+/* =========================================================
+   ⚡ ÉCLAIR PRINCIPAL
+   ========================================================= */
+
+@keyframes flashLightning{
+
+    /* longue attente */
     0%{
         opacity:0;
-        transform:translateX(-25%) skewX(-15deg);
+        transform:translateX(-120%) skewX(-12deg);
     }
 
-    92%{
+    87%{
         opacity:0;
     }
 
-    /* premier flash */
-    93%{
+    /* arrivée brutale */
+    88%{
         opacity:1;
-        transform:translateX(-5%) skewX(-15deg);
+        transform:translateX(-35%) skewX(-12deg);
     }
 
-    94%{
+    /* disparition instantanée */
+    89%{
+        opacity:.05;
+        transform:translateX(-10%) skewX(-12deg);
+    }
+
+    /* deuxième claquement */
+    90%{
+        opacity:1;
+        transform:translateX(10%) skewX(-12deg);
+    }
+
+    91%{
         opacity:.15;
     }
 
-    /* deuxième flash */
-    95%{
-        opacity:1;
-        transform:translateX(5%) skewX(-15deg);
-    }
-
-    96%{
-        opacity:.05;
-    }
-
-    /* flash final */
-    97%{
+    /* troisième flash */
+    92%{
         opacity:.9;
-        transform:translateX(15%) skewX(-15deg);
+        transform:translateX(35%) skewX(-12deg);
     }
 
-    98%{
+    93%{
         opacity:0;
     }
 
     100%{
         opacity:0;
-        transform:translateX(30%) skewX(-15deg);
+        transform:translateX(120%) skewX(-12deg);
+    }
+}
+
+
+/* =========================================================
+   ⚡ RAMIFICATIONS — SYNCHRONISÉES
+   ========================================================= */
+
+@keyframes flashBranches{
+
+    0%{
+        opacity:0;
+        transform:translateX(-100%) rotate(-2deg);
+    }
+
+    87%{
+        opacity:0;
+    }
+
+    88%{
+        opacity:.85;
+        transform:translateX(-20%) rotate(0deg);
+    }
+
+    89%{
+        opacity:.1;
+    }
+
+    90%{
+        opacity:.8;
+        transform:translateX(15%) rotate(1deg);
+    }
+
+    91%{
+        opacity:0;
+    }
+
+    92%{
+        opacity:.65;
+        transform:translateX(40%);
+    }
+
+    93%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+        transform:translateX(100%);
     }
 }
 .card:hover{
