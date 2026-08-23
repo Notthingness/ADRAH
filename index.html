@@ -201,68 +201,7 @@ h2{
    ========================================================= */
 
 .card .lightning-main{
-    fill:none;
 
-    stroke:#ffffff;
-
-    stroke-width:2.2;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-
-    vector-effect:non-scaling-stroke;
-
-    filter:
-        drop-shadow(0 0 2px #fff)
-        drop-shadow(0 0 5px #fff)
-        drop-shadow(0 0 11px var(--cat-color))
-        drop-shadow(0 0 22px var(--cat-color));
-}
-
-/* =========================================================
-   HALO
-   ========================================================= */
-
-.card .lightning-glow{
-    fill:none;
-
-    stroke:var(--cat-color);
-
-    stroke-width:9;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-
-    opacity:.55;
-
-    vector-effect:non-scaling-stroke;
-
-    filter:blur(5px);
-}
-
-/* Halo secondaire très large */
-.card .lightning-halo{
-    fill:none;
-
-    stroke:var(--cat-color);
-
-    stroke-width:15;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-
-    opacity:.20;
-
-    vector-effect:non-scaling-stroke;
-
-    filter:blur(11px);
-}
-
-/* =========================================================
-   PETITES RAMIFICATIONS
-   ========================================================= */
-
-.card .lightning-branch{
     fill:none;
 
     stroke:#ffffff;
@@ -270,15 +209,88 @@ h2{
     stroke-width:1.15;
 
     stroke-linecap:round;
-    stroke-linejoin:round;
 
-    opacity:.9;
+    stroke-linejoin:round;
 
     vector-effect:non-scaling-stroke;
 
     filter:
+
+        drop-shadow(0 0 1px #fff)
+
         drop-shadow(0 0 3px #fff)
-        drop-shadow(0 0 8px var(--cat-color));
+
+        drop-shadow(0 0 7px var(--cat-color));
+}
+
+/* =========================================================
+   HALO
+   ========================================================= */
+
+.card .lightning-glow{
+
+    fill:none;
+
+    stroke:var(--cat-color);
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.28;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:blur(3px);
+}
+
+/* Halo secondaire très large */
+.card .lightning-halo{
+
+    fill:none;
+
+    stroke:var(--cat-color);
+
+    stroke-width:7;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.10;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:blur(7px);
+}
+
+/* =========================================================
+   PETITES RAMIFICATIONS
+   ========================================================= */
+
+.card .lightning-branch{
+
+    fill:none;
+
+    stroke:#ffffff;
+
+    stroke-width:.75;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.85;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:
+
+        drop-shadow(0 0 2px #fff)
+
+        drop-shadow(0 0 5px var(--cat-color));
 }
 
 /* Ramifications colorées */
@@ -1071,23 +1083,340 @@ function renderCategories(data){
     aria-hidden="true"
 >
 
-    <!-- =================================================
-         HALO LARGE
-         ================================================= -->
+    <!-- =====================================================
+         HALO TRÈS DIFFUS
+         ===================================================== -->
 
-    <path
-        class="lightning-halo"
-        d="
-            M 420 -15
-            L 390 18
-            L 405 23
-            L 350 55
-            L 370 60
-            L 315 91
-            L 330 97
-            L 270 150
-        "
-    />
+    <g class="lightning-halo">
+
+        <path d="
+            M 278 78
+            L 267 70
+            L 274 61
+            L 258 54
+            L 249 42
+        "/>
+
+        <path d="
+            M 278 78
+            L 292 68
+            L 288 57
+            L 301 50
+            L 315 36
+        "/>
+
+        <path d="
+            M 278 78
+            L 263 84
+            L 249 96
+            L 231 92
+        "/>
+
+        <path d="
+            M 278 78
+            L 293 84
+            L 309 94
+            L 326 91
+        "/>
+
+    </g>
+
+
+    <!-- =====================================================
+         FILAMENTS PRINCIPAUX
+         ===================================================== -->
+
+    <g class="lightning-glow">
+
+        <!-- haut gauche -->
+        <path d="
+            M 278 78
+            L 267 70
+            L 274 61
+            L 258 54
+            L 249 42
+        "/>
+
+        <!-- haut droit -->
+        <path d="
+            M 278 78
+            L 292 68
+            L 288 57
+            L 301 50
+            L 315 36
+        "/>
+
+        <!-- gauche -->
+        <path d="
+            M 278 78
+            L 263 84
+            L 249 96
+            L 231 92
+        "/>
+
+        <!-- droite -->
+        <path d="
+            M 278 78
+            L 293 84
+            L 309 94
+            L 326 91
+        "/>
+
+        <!-- bas -->
+        <path d="
+            M 278 78
+            L 275 91
+            L 281 103
+            L 276 119
+        "/>
+
+    </g>
+
+
+    <!-- =====================================================
+         CŒUR BLANC
+         ===================================================== -->
+
+    <g class="lightning-main">
+
+        <!-- filament haut gauche -->
+        <path d="
+            M 278 78
+            L 267 70
+            L 274 61
+            L 258 54
+            L 249 42
+        "/>
+
+        <!-- filament haut droit -->
+        <path d="
+            M 278 78
+            L 292 68
+            L 288 57
+            L 301 50
+            L 315 36
+        "/>
+
+        <!-- filament gauche -->
+        <path d="
+            M 278 78
+            L 263 84
+            L 249 96
+            L 231 92
+        "/>
+
+        <!-- filament droit -->
+        <path d="
+            M 278 78
+            L 293 84
+            L 309 94
+            L 326 91
+        "/>
+
+        <!-- filament bas -->
+        <path d="
+            M 278 78
+            L 275 91
+            L 281 103
+            L 276 119
+        "/>
+
+    </g>
+
+
+    <!-- =====================================================
+         PETITES RAMIFICATIONS — HAUT GAUCHE
+         ===================================================== -->
+
+    <g class="lightning-branch">
+
+        <path d="
+            M 267 70
+            L 255 68
+            L 247 60
+            L 237 63
+        "/>
+
+        <path d="
+            M 258 54
+            L 250 48
+            L 239 50
+            L 232 43
+        "/>
+
+        <path d="
+            M 274 61
+            L 278 52
+            L 274 45
+            L 281 38
+        "/>
+
+
+        <!-- =================================================
+             HAUT DROIT
+             ================================================= -->
+
+        <path d="
+            M 292 68
+            L 303 63
+            L 314 66
+            L 323 59
+        "/>
+
+        <path d="
+            M 301 50
+            L 312 47
+            L 319 39
+            L 332 42
+        "/>
+
+        <path d="
+            M 315 36
+            L 321 27
+            L 318 20
+        "/>
+
+
+        <!-- =================================================
+             GAUCHE
+             ================================================= -->
+
+        <path d="
+            M 263 84
+            L 251 81
+            L 240 84
+            L 230 78
+        "/>
+
+        <path d="
+            M 249 96
+            L 238 103
+            L 227 101
+            L 219 108
+        "/>
+
+        <path d="
+            M 249 96
+            L 246 106
+            L 238 112
+        "/>
+
+
+        <!-- =================================================
+             DROITE
+             ================================================= -->
+
+        <path d="
+            M 293 84
+            L 305 80
+            L 317 84
+            L 326 78
+        "/>
+
+        <path d="
+            M 309 94
+            L 320 100
+            L 332 97
+            L 341 103
+        "/>
+
+        <path d="
+            M 326 91
+            L 337 87
+            L 348 90
+        "/>
+
+
+        <!-- =================================================
+             BAS
+             ================================================= -->
+
+        <path d="
+            M 275 91
+            L 266 98
+            L 257 96
+            L 249 103
+        "/>
+
+        <path d="
+            M 281 103
+            L 290 110
+            L 288 119
+            L 296 125
+        "/>
+
+        <path d="
+            M 276 119
+            L 268 126
+            L 270 135
+        "/>
+
+    </g>
+
+
+    <!-- =====================================================
+         MICRO-FILAMENTS
+         ===================================================== -->
+
+    <g class="lightning-branch">
+
+        <path d="
+            M 247 60
+            L 239 57
+            L 234 51
+        "/>
+
+        <path d="
+            M 281 38
+            L 287 31
+            L 284 25
+        "/>
+
+        <path d="
+            M 323 59
+            L 334 55
+            L 340 48
+        "/>
+
+        <path d="
+            M 230 78
+            L 220 73
+            L 214 66
+        "/>
+
+        <path d="
+            M 219 108
+            L 210 112
+            L 204 120
+        "/>
+
+        <path d="
+            M 341 103
+            L 351 108
+            L 360 105
+        "/>
+
+        <path d="
+            M 348 90
+            L 357 84
+            L 365 86
+        "/>
+
+        <path d="
+            M 257 96
+            L 250 91
+            L 242 90
+        "/>
+
+        <path d="
+            M 296 125
+            L 303 132
+            L 311 130
+        "/>
+
+    </g>
+
+</svg>
 
     <!-- =================================================
          HALO PRINCIPAL
