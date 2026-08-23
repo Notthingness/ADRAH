@@ -197,7 +197,7 @@ h2{
 
     mix-blend-mode:screen;
 
-    animation:flashLightning 6s infinite;
+    animation:flashLightning 4s infinite;
 }
 
 
@@ -251,110 +251,110 @@ h2{
 
     mix-blend-mode:screen;
 
-    animation:flashBranches 6s infinite;
+    animation:flashBranches 4s infinite;
 }
 
 
 /* =========================================================
-   ⚡ ÉCLAIR PRINCIPAL
+   ⚡ ÉCLAIR — REBOND À L'INTÉRIEUR DE LA CARTE
    ========================================================= */
 
 @keyframes flashLightning{
 
-    /* longue attente */
+    /* départ invisible */
     0%{
         opacity:0;
-        transform:translateX(-120%) skewX(-12deg);
+        transform:translate(-120%, -20%) skewX(-12deg) scaleX(.8);
     }
 
-    87%{
-        opacity:0;
-    }
-
-    /* arrivée brutale */
-    88%{
+    /* arrivée */
+    12%{
         opacity:1;
-        transform:translateX(-35%) skewX(-12deg);
+        transform:translate(-45%, -10%) skewX(-12deg) scaleX(1);
     }
 
-    /* disparition instantanée */
-    89%{
-        opacity:.05;
-        transform:translateX(-10%) skewX(-12deg);
-    }
-
-    /* deuxième claquement */
-    90%{
-        opacity:1;
-        transform:translateX(10%) skewX(-12deg);
-    }
-
-    91%{
+    /* premier impact */
+    16%{
         opacity:.15;
+        transform:translate(-20%, 5%) skewX(-12deg) scaleX(1.05);
     }
 
-    /* troisième flash */
-    92%{
-        opacity:.9;
-        transform:translateX(35%) skewX(-12deg);
+    /* rebond */
+    20%{
+        opacity:1;
+        transform:translate(5%, -5%) skewX(-12deg) scaleX(.95);
     }
 
-    93%{
+    /* deuxième rebond */
+    24%{
+        opacity:.2;
+        transform:translate(25%, 8%) skewX(-12deg) scaleX(1.05);
+    }
+
+    /* dernier claquement */
+    28%{
+        opacity:1;
+        transform:translate(45%, -3%) skewX(-12deg) scaleX(.9);
+    }
+
+    /* extinction */
+    34%{
         opacity:0;
+        transform:translate(75%, 10%) skewX(-12deg) scaleX(.8);
     }
 
+    /* attente */
     100%{
         opacity:0;
-        transform:translateX(120%) skewX(-12deg);
+        transform:translate(120%, 10%) skewX(-12deg) scaleX(.8);
     }
 }
 
 
 /* =========================================================
-   ⚡ RAMIFICATIONS — SYNCHRONISÉES
+   ⚡ RAMIFICATIONS — REBONDS SYNCHRONISÉS
    ========================================================= */
 
 @keyframes flashBranches{
 
     0%{
         opacity:0;
-        transform:translateX(-100%) rotate(-2deg);
+        transform:translate(-100%, -15%) rotate(-3deg);
     }
 
-    87%{
-        opacity:0;
-    }
-
-    88%{
+    12%{
         opacity:.85;
-        transform:translateX(-20%) rotate(0deg);
+        transform:translate(-40%, -5%) rotate(0deg);
     }
 
-    89%{
+    16%{
         opacity:.1;
+        transform:translate(-15%, 5%) rotate(1deg);
     }
 
-    90%{
+    20%{
         opacity:.8;
-        transform:translateX(15%) rotate(1deg);
+        transform:translate(5%, -5%) rotate(-1deg);
     }
 
-    91%{
+    24%{
+        opacity:.1;
+        transform:translate(25%, 8%) rotate(2deg);
+    }
+
+    28%{
+        opacity:.7;
+        transform:translate(45%, -2%) rotate(-1deg);
+    }
+
+    34%{
         opacity:0;
-    }
-
-    92%{
-        opacity:.65;
-        transform:translateX(40%);
-    }
-
-    93%{
-        opacity:0;
+        transform:translate(75%, 10%) rotate(2deg);
     }
 
     100%{
         opacity:0;
-        transform:translateX(100%);
+        transform:translate(100%, 10%) rotate(2deg);
     }
 }
 .card:hover{
