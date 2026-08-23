@@ -163,81 +163,106 @@ h2{
     transition:.25s;
     overflow:hidden;
 }
-.card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:30px;
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.12),
-            rgba(255,255,255,.03)
-        );
-    pointer-events:none;
-}
 /* =========================================================
-   ⚡ PETIT ÉCLAIR ÉLECTRIQUE
+   ⚡ ÉCLAIR — FLASH STYLE
    ========================================================= */
 
 .card::after{
     content:"";
     position:absolute;
-    top:10%;
-    left:-10%;
-    width:4px;
-    height:80%;
-    background:white;
-    border-radius:50%;
-    
-    box-shadow:
-        0 0 5px white,
-        0 0 12px white,
-        0 0 25px var(--cat-color),
-        0 0 45px var(--cat-color);
-
-    opacity:0;
-    transform:rotate(12deg);
+    inset:-20%;
+    z-index:2;
     pointer-events:none;
 
-    animation:cardLightning 5s infinite;
+    background:
+        /* éclair principal */
+        linear-gradient(
+            115deg,
+            transparent 42%,
+            rgba(255,255,255,0) 44%,
+            rgba(255,255,255,.95) 47%,
+            rgba(255,255,255,.15) 49%,
+            transparent 52%
+        ),
+
+        /* ramifications */
+        linear-gradient(
+            70deg,
+            transparent 48%,
+            rgba(255,255,255,.8) 49%,
+            transparent 50%
+        ),
+
+        linear-gradient(
+            135deg,
+            transparent 35%,
+            rgba(255,255,255,.65) 36%,
+            transparent 37%
+        );
+
+    filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 15px var(--cat-color))
+        drop-shadow(0 0 30px var(--cat-color));
+
+    opacity:0;
+
+    animation:
+        lightning 5s infinite;
+
+    transform:translateX(-20%) skewX(-15deg);
+
+    mix-blend-mode:screen;
 }
 
-@keyframes cardLightning{
+
+/* ⚡ ÉCLAIR QUI CLAQUE */
+
+@keyframes lightning{
 
     /* attente */
     0%{
-        left:-10%;
+        opacity:0;
+        transform:translateX(-25%) skewX(-15deg);
+    }
+
+    92%{
         opacity:0;
     }
 
-    /* petit flash */
-    45%{
-        left:-10%;
-        opacity:0;
-    }
-
-    /* apparition */
-    46%{
+    /* premier flash */
+    93%{
         opacity:1;
+        transform:translateX(-5%) skewX(-15deg);
     }
 
-    /* éclair traverse */
-    48%{
-        left:110%;
+    94%{
+        opacity:.15;
+    }
+
+    /* deuxième flash */
+    95%{
         opacity:1;
+        transform:translateX(5%) skewX(-15deg);
     }
 
-    /* disparition */
-    49%{
-        left:110%;
+    96%{
+        opacity:.05;
+    }
+
+    /* flash final */
+    97%{
+        opacity:.9;
+        transform:translateX(15%) skewX(-15deg);
+    }
+
+    98%{
         opacity:0;
     }
 
-    /* attente */
     100%{
-        left:110%;
         opacity:0;
+        transform:translateX(30%) skewX(-15deg);
     }
 }
 .card:hover{
