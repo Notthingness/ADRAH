@@ -41,15 +41,21 @@ rel="stylesheet">
 body{
     margin:0;
     min-height:100vh;
+
     font-family:Inter,sans-serif;
+
     color:white;
+
     background:#05070b;
+
     overflow-x:hidden;
 }
 
 body::before{
     content:"";
+
     position:fixed;
+
     inset:0;
 
     background:
@@ -64,15 +70,19 @@ body::before{
     background-repeat:no-repeat;
 
     z-index:0;
+
     pointer-events:none;
 }
 
 .app{
     position:relative;
+
     z-index:1;
 
     max-width:560px;
+
     margin:auto;
+
     padding:20px;
 }
 
@@ -86,6 +96,7 @@ body::before{
     height:62px;
 
     border-radius:22px;
+
     border:2px solid var(--blue);
 
     background:rgba(0,0,0,.6);
@@ -93,7 +104,9 @@ body::before{
     color:white;
 
     font-size:18px;
+
     font-weight:900;
+
     text-align:center;
 
     outline:none;
@@ -101,6 +114,14 @@ body::before{
     box-shadow:
         0 0 10px var(--blue),
         0 0 35px rgba(0,91,255,.6);
+
+    transition:.25s;
+}
+
+.search input:focus{
+    box-shadow:
+        0 0 12px var(--blue),
+        0 0 45px rgba(0,91,255,.8);
 }
 
 .search input::placeholder{
@@ -114,6 +135,7 @@ body::before{
 
 h2{
     font-size:15px;
+
     color:#00a2ff;
 
     text-shadow:
@@ -136,17 +158,21 @@ h2{
 
 .grid{
     display:grid;
+
     gap:16px;
 
     transition:.35s ease;
 
     opacity:1;
+
     transform:translateX(0);
 }
 
 .grid.hide{
     opacity:0;
+
     transform:translateX(-60px);
+
     pointer-events:none;
 }
 
@@ -161,11 +187,13 @@ h2{
     transition:.35s ease;
 
     opacity:0;
+
     transform:translateX(60px);
 }
 
 #results.show{
     opacity:1;
+
     transform:translateX(0);
 }
 
@@ -179,6 +207,7 @@ h2{
     position:relative;
 
     display:flex;
+
     align-items:center;
 
     gap:20px;
@@ -220,15 +249,12 @@ h2{
             transparent 75%
         );
 
-    transition:.25s;
+    transition:
+        transform .25s,
+        box-shadow .2s;
 
     overflow:hidden;
 
-    /*
-       Très important :
-       crée un vrai contexte de découpage
-       pour les éclairs.
-    */
     isolation:isolate;
 }
 
@@ -238,16 +264,8 @@ h2{
 
 
 /* =========================================================
-   ⚡ SYSTÈME ÉCLAIRS
+   ⚡ COUCHE FOUDRE
    ========================================================= */
-
-/*
-   Le layer occupe exactement la carte.
-
-   Aucun débordement possible.
-   Le border-radius est appliqué directement
-   au conteneur.
-*/
 
 .lightning-layer{
 
@@ -264,16 +282,58 @@ h2{
 
     pointer-events:none;
 
-    z-index:1;
+    z-index:2;
 
     isolation:isolate;
+
+    /*
+       Très léger éclairage général.
+       Il est animé par JS.
+    */
+
+    transition:
+        background .08s ease;
 }
 
 
-/*
-   Chaque éclair SVG est positionné
-   à l'intérieur du layer.
-*/
+/* =========================================================
+   ⚡ FLASH GLOBAL
+   ========================================================= */
+
+.lightning-flash-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:30px;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    background:
+        radial-gradient(
+            ellipse at var(--flash-x) var(--flash-y),
+            color-mix(
+                in srgb,
+                white,
+                var(--cat-color) 35%
+            ),
+            transparent 62%
+        );
+
+    mix-blend-mode:screen;
+
+    z-index:0;
+
+    filter:blur(8px);
+}
+
+
+/* =========================================================
+   ⚡ SVG
+   ========================================================= */
 
 .dynamic-lightning{
 
@@ -290,11 +350,7 @@ h2{
 
     opacity:0;
 
-    /*
-       Découpage supplémentaire.
-       Cela évite absolument toute forme
-       rectangulaire visible.
-    */
+    border-radius:30px;
 
     clip-path:
         inset(
@@ -305,64 +361,13 @@ h2{
             round 29px
         );
 
-    border-radius:29px;
-
     mix-blend-mode:screen;
 
     transform:translateZ(0);
 
     will-change:opacity;
-}
 
-
-/* =========================================================
-   ⚡ ÉCLAIR CENTRAL
-   ========================================================= */
-
-.bolt-core{
-
-    fill:none;
-
-    stroke:#ffffff;
-
-    stroke-width:1.05;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-    vector-effect:non-scaling-stroke;
-
-    filter:
-        drop-shadow(0 0 1px #ffffff)
-        drop-shadow(0 0 3px #ffffff)
-        drop-shadow(0 0 7px var(--cat-color))
-        drop-shadow(0 0 12px var(--cat-color));
-}
-
-
-/* =========================================================
-   ⚡ GLOW
-   ========================================================= */
-
-.bolt-glow{
-
-    fill:none;
-
-    stroke:var(--cat-color);
-
-    stroke-width:4;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-    opacity:.38;
-
-    vector-effect:non-scaling-stroke;
-
-    filter:
-        blur(3px);
+    z-index:3;
 }
 
 
@@ -376,23 +381,77 @@ h2{
 
     stroke:var(--cat-color);
 
-    stroke-width:8;
+    stroke-width:13;
 
     stroke-linecap:round;
 
     stroke-linejoin:round;
 
-    opacity:.12;
+    opacity:.18;
 
     vector-effect:non-scaling-stroke;
 
     filter:
-        blur(7px);
+        blur(8px);
 }
 
 
 /* =========================================================
-   ⚡ RAMIFICATIONS
+   ⚡ GLOW
+   ========================================================= */
+
+.bolt-glow{
+
+    fill:none;
+
+    stroke:var(--cat-color);
+
+    stroke-width:5;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.55;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:
+        blur(2.8px)
+        drop-shadow(
+            0 0 8px var(--cat-color)
+        );
+}
+
+
+/* =========================================================
+   ⚡ CŒUR BLANC
+   ========================================================= */
+
+.bolt-core{
+
+    fill:none;
+
+    stroke:#ffffff;
+
+    stroke-width:1.15;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:
+        drop-shadow(0 0 1px #ffffff)
+        drop-shadow(0 0 3px #ffffff)
+        drop-shadow(0 0 7px #ffffff)
+        drop-shadow(0 0 13px var(--cat-color));
+}
+
+
+/* =========================================================
+   ⚡ PETITES BRANCHES
    ========================================================= */
 
 .bolt-branch{
@@ -407,62 +466,84 @@ h2{
 
     stroke-linejoin:round;
 
-    opacity:.72;
+    opacity:.85;
 
     vector-effect:non-scaling-stroke;
 
     filter:
-        drop-shadow(0 0 2px #ffffff)
+        drop-shadow(0 0 2px white)
         drop-shadow(0 0 5px var(--cat-color));
 }
 
 
 /* =========================================================
-   ⚡ ANIMATION DU FLASH
+   ⚡ MICRO-BRANCHES
    ========================================================= */
 
-.lightning-flash{
+.bolt-mini{
+
+    fill:none;
+
+    stroke:#ffffff;
+
+    stroke-width:.45;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.55;
+
+    vector-effect:non-scaling-stroke;
+
+    filter:
+        drop-shadow(0 0 2px white)
+        drop-shadow(0 0 4px var(--cat-color));
+}
+
+
+/* =========================================================
+   ⚡ ANIMATION
+   ========================================================= */
+
+.lightning-strike{
 
     animation:
-        lightningFlash
-        var(--flash-time)
-        ease-out
+        realisticLightning
+        var(--strike-duration)
+        linear
         forwards;
 }
 
 
-@keyframes lightningFlash{
+@keyframes realisticLightning{
 
     0%{
         opacity:0;
     }
 
-    8%{
-        opacity:.88;
-    }
-
-    15%{
-        opacity:.18;
-    }
-
-    23%{
+    5%{
         opacity:1;
     }
 
-    31%{
-        opacity:.06;
+    9%{
+        opacity:.08;
     }
 
-    42%{
-        opacity:.76;
+    14%{
+        opacity:.95;
     }
 
-    55%{
+    20%{
         opacity:.12;
     }
 
-    68%{
-        opacity:.35;
+    26%{
+        opacity:.82;
+    }
+
+    34%{
+        opacity:.04;
     }
 
     100%{
@@ -527,7 +608,7 @@ h2{
 
 
 /* =========================================================
-   RÉSULTAT
+   RÉSULTATS
    ========================================================= */
 
 .row{
@@ -535,6 +616,7 @@ h2{
     position:relative;
 
     display:flex;
+
     align-items:center;
 
     gap:18px;
@@ -576,6 +658,7 @@ h2{
 
 .row > div:first-child{
     flex:1;
+
     min-width:0;
 }
 
@@ -587,6 +670,7 @@ h2{
 .tip-slot{
 
     display:flex;
+
     align-items:center;
 
     height:22px;
@@ -613,6 +697,7 @@ h2{
     color:#FFD54A;
 
     font-size:12px;
+
     font-weight:700;
 
     box-shadow:
@@ -631,11 +716,13 @@ h2{
 .title{
 
     display:flex;
+
     align-items:flex-end;
 
     min-height:26px;
 
     font-size:18px;
+
     font-weight:900;
 
     color:#ffffff;
@@ -685,9 +772,11 @@ h2{
 .call{
 
     width:52px;
+
     height:52px;
 
     min-width:52px;
+
     min-height:52px;
 
     flex:0 0 52px;
@@ -697,6 +786,7 @@ h2{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     background:var(--cat-color);
@@ -721,6 +811,7 @@ h2{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:12px;
@@ -798,6 +889,7 @@ h2{
     position:fixed;
 
     top:0;
+
     right:0;
 
     height:100%;
@@ -871,11 +963,13 @@ h2{
 .close{
 
     width:52px;
+
     height:52px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     border:none;
@@ -1098,6 +1192,7 @@ h2{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:12px;
@@ -1137,6 +1232,7 @@ h2{
 
     .card{
         min-height:112px;
+
         padding:20px;
     }
 
@@ -1399,27 +1495,17 @@ Services
 const CATEGORY_COLORS = {
 
     VL:"#2E7DFF",
-
     PL:"#2E7DFF",
-
     MOTO:"#2E7DFF",
-
     LOCATION:"#2E7DFF",
-
     ASSURANCE:"#2E7DFF",
-
     GARAGE:"#2E7DFF",
 
     POLICE:"#00B7FF",
-
     GENDARMERIE:"#2E7DFF",
-
     POMPIERS:"#ff1e1e",
-
     SAMU:"#00bfa5",
-
     AUTOROUTE:"#ffcc00",
-
     ADRAH:"#00a2ff"
 
 };
@@ -1446,15 +1532,12 @@ function applyCategoryColor(element,category){
         .toUpperCase()
         .trim();
 
-    const color =
-        getCategoryColor(key);
-
     element.style.setProperty(
         "--cat-color",
-        color
+        getCategoryColor(key)
     );
 
-    element.dataset.cat = key;
+    element.dataset.cat=key;
 }
 
 
@@ -1559,85 +1642,96 @@ let DATA=[];
 
 let current=[];
 
-const cats =
+const cats=
     document.getElementById("cats");
 
 
 /* =========================================================
-   ⚡ GÉNÉRATION D'UN ÉCLAIR
+   ⚡ GÉNÉRATEUR DE FOUDRE RÉALISTE
    ========================================================= */
 
 /*
-   L'éclair ne commence PLUS à l'extérieur de la carte.
+   Cette fonction crée une trajectoire beaucoup
+   plus naturelle.
 
-   Il est entièrement généré dans la zone intérieure.
+   L'éclair avance de proche en proche,
+   avec des changements de direction brusques.
 
-   Cela supprime l'effet :
-   "rectangle autour de la carte".
+   Il ne cherche PAS le centre de la carte.
 */
 
 function createBoltPath(width,height){
 
-    /*
-       Marge de sécurité importante.
-    */
+    const marginX=
+        Math.max(14,width*.035);
 
-    const marginX =
-        Math.max(18,width*.08);
-
-    const marginY =
-        Math.max(15,height*.12);
+    const marginY=
+        Math.max(12,height*.08);
 
 
     /*
-       Zone intérieure disponible.
+       Choix aléatoire d'une direction.
+
+       La foudre peut :
+       - partir du haut
+       - partir du bas
+       - partir d'un côté
+       - traverser la carte en diagonale
     */
 
-    const minX=marginX;
-    const maxX=width-marginX;
-
-    const minY=marginY;
-    const maxY=height-marginY;
-
-
-    /*
-       Point de départ aléatoire.
-
-       Il est toujours DANS la carte.
-    */
-
-    let x =
-        minX +
-        Math.random()*(maxX-minX);
-
-    let y =
-        minY +
-        Math.random()*(maxY-minY);
+    const side=
+        Math.floor(
+            Math.random()*4
+        );
 
 
-    /*
-       Point d'arrivée vers le centre.
+    let x,y;
 
-       Le centre est volontairement privilégié
-       pour éviter que les éclairs longent les bords.
-    */
+    if(side===0){
 
-    const centerX =
-        width*.50;
+        x=
+            marginX+
+            Math.random()*
+            (width-marginX*2);
 
-    const centerY =
-        height*.50;
+        y=marginY;
 
+    }
 
-    const targetX =
-        centerX +
-        (Math.random()-.5) *
-        width*.28;
+    else if(side===1){
 
-    const targetY =
-        centerY +
-        (Math.random()-.5) *
-        height*.28;
+        x=
+            width-marginX;
+
+        y=
+            marginY+
+            Math.random()*
+            (height-marginY*2);
+
+    }
+
+    else if(side===2){
+
+        x=
+            marginX+
+            Math.random()*
+            (width-marginX*2);
+
+        y=
+            height-marginY;
+
+    }
+
+    else{
+
+        x=marginX;
+
+        y=
+            marginY+
+            Math.random()*
+            (height-marginY*2);
+
+    }
 
 
     const points=[];
@@ -1646,27 +1740,72 @@ function createBoltPath(width,height){
 
 
     /*
-       4 à 7 segments.
+       Direction générale.
 
-       Cela donne le côté "ricochet".
+       On choisit une cible opposée,
+       mais l'éclair ne suivra jamais
+       une ligne droite.
     */
 
-    const segments =
-        4 +
-        Math.floor(
-            Math.random()*4
-        );
+    let targetX;
+    let targetY;
+
+
+    if(side===0){
+
+        targetX=
+            width*.25+
+            Math.random()*width*.5;
+
+        targetY=
+            height-marginY;
+
+    }
+
+    else if(side===1){
+
+        targetX=marginX;
+
+        targetY=
+            height*.25+
+            Math.random()*height*.5;
+
+    }
+
+    else if(side===2){
+
+        targetX=
+            width*.25+
+            Math.random()*width*.5;
+
+        targetY=marginY;
+
+    }
+
+    else{
+
+        targetX=
+            width-marginX;
+
+        targetY=
+            height*.25+
+            Math.random()*height*.5;
+
+    }
 
 
     /*
-       Direction globale.
+       Nombre de morceaux.
+
+       Plus il y en a,
+       plus l'éclair est nerveux.
     */
 
-    const dx =
-        targetX-x;
-
-    const dy =
-        targetY-y;
+    const segments=
+        7+
+        Math.floor(
+            Math.random()*6
+        );
 
 
     for(
@@ -1675,109 +1814,116 @@ function createBoltPath(width,height){
         i++
     ){
 
-        const progress =
+        const progress=
             i/segments;
 
 
-        let px =
-            x +
-            dx*progress;
+        const idealX=
+            x+
+            (targetX-x)*progress;
 
-        let py =
-            y +
-            dy*progress;
-
-
-        /*
-           Chaos variable.
-
-           Plus on approche du centre,
-           plus le déplacement devient fin.
-        */
-
-        const chaos =
-            (1-progress)*28 +
-            8;
-
-
-        px +=
-            (Math.random()-.5) *
-            chaos;
-
-        py +=
-            (Math.random()-.5) *
-            chaos;
+        const idealY=
+            y+
+            (targetY-y)*progress;
 
 
         /*
-           Empêche l'éclair de toucher
-           les coins de la carte.
+           Gros déplacement aléatoire.
+
+           C'est CE qui casse l'aspect
+           "zigzag artificiel".
         */
 
-        px =
+        const chaos=
             Math.max(
-                minX,
-                Math.min(maxX,px)
+                8,
+                Math.min(
+                    width,
+                    height
+                )*.20
+            )
+            *
+            (1-
+                Math.abs(
+                    progress-.5
+                )*.55
             );
 
-        py =
+
+        let px=
+            idealX+
+            (Math.random()-.5)*
+            chaos;
+
+        let py=
+            idealY+
+            (Math.random()-.5)*
+            chaos;
+
+
+        /*
+           On conserve une trajectoire
+           relativement cohérente.
+        */
+
+        if(
+            i>1 &&
+            Math.random()<.35
+        ){
+
+            const previous=
+                points[
+                    points.length-1
+                ];
+
+
+            px=
+                previous[0]+
+                (px-previous[0])*.72;
+
+
+            py=
+                previous[1]+
+                (py-previous[1])*.72;
+
+        }
+
+
+        /*
+           Sécurité des bords.
+        */
+
+        px=
             Math.max(
-                minY,
-                Math.min(maxY,py)
+                marginX,
+                Math.min(
+                    width-marginX,
+                    px
+                )
             );
 
 
-        points.push([
-            px,
-            py
-        ]);
+        py=
+            Math.max(
+                marginY,
+                Math.min(
+                    height-marginY,
+                    py
+                )
+            );
+
+
+        points.push([px,py]);
 
     }
 
 
     /*
-       Petit déplacement final
-       pour éviter une trajectoire trop parfaite.
-    */
-
-    const last =
-        points[points.length-1];
-
-
-    last[0] =
-        Math.max(
-            minX,
-            Math.min(
-                maxX,
-                last[0] +
-                (Math.random()-.5)*12
-            )
-        );
-
-
-    last[1] =
-        Math.max(
-            minY,
-            Math.min(
-                maxY,
-                last[1] +
-                (Math.random()-.5)*10
-            )
-        );
-
-
-    /*
-       Construction du SVG.
+       Construction du chemin.
     */
 
     let d=
-        "M "
-        +
-        points[0][0].toFixed(1)
-        +
-        " "
-        +
-        points[0][1].toFixed(1);
+        `M ${points[0][0].toFixed(1)} ${points[0][1].toFixed(1)}`;
 
 
     for(
@@ -1786,14 +1932,12 @@ function createBoltPath(width,height){
         i++
     ){
 
-        d +=
-            " L "
-            +
-            points[i][0].toFixed(1)
-            +
-            " "
-            +
-            points[i][1].toFixed(1);
+        /*
+           Petites cassures supplémentaires.
+        */
+
+        d+=
+            ` L ${points[i][0].toFixed(1)} ${points[i][1].toFixed(1)}`;
 
     }
 
@@ -1807,7 +1951,7 @@ function createBoltPath(width,height){
 
 
 /* =========================================================
-   ⚡ RAMIFICATIONS
+   ⚡ BRANCHES PRINCIPALES
    ========================================================= */
 
 function createBranches(
@@ -1819,12 +1963,6 @@ function createBranches(
     let html="";
 
 
-    /*
-       On ne crée pas de branches partout.
-
-       Cela rend l'éclair beaucoup plus naturel.
-    */
-
     for(
         let i=1;
         i<points.length-1;
@@ -1832,11 +1970,15 @@ function createBranches(
     ){
 
         /*
-           Environ 45% des points
-           peuvent avoir une branche.
+           Toutes les branches ne sont pas
+           créées à chaque point.
+
+           Cela donne un côté beaucoup plus naturel.
         */
 
-        if(Math.random()>.45)
+        if(
+            Math.random()>.55
+        )
             continue;
 
 
@@ -1844,113 +1986,184 @@ function createBranches(
 
 
         /*
-           Branche courte.
+           Direction de la branche.
 
-           Les anciennes branches étaient parfois
-           trop longues et pouvaient révéler
-           les limites de la carte.
+           Elle part généralement sur le côté
+           de la trajectoire.
         */
 
-        const length =
-            10 +
-            Math.random()*28;
+        const prev=
+            points[i-1];
+
+        const next=
+            points[i+1];
 
 
-        const angle =
-            Math.random() *
-            Math.PI *
-            2;
+        const dx=
+            next[0]-prev[0];
+
+        const dy=
+            next[1]-prev[1];
 
 
-        const x2 =
-            x +
-            Math.cos(angle)*length;
+        const baseAngle=
+            Math.atan2(dy,dx);
 
 
-        const y2 =
-            y +
-            Math.sin(angle)*length;
+        const angle=
+            baseAngle+
+            (
+                Math.random()<.5
+                ? -1
+                : 1
+            )
+            *
+            (
+                .7+
+                Math.random()*.8
+            );
+
+
+        const length=
+            12+
+            Math.random()*35;
+
+
+        const x2=
+            x+
+            Math.cos(angle)*
+            length;
+
+
+        const y2=
+            y+
+            Math.sin(angle)*
+            length;
 
 
         /*
-           Deuxième petit ricochet.
+           Deuxième segment.
         */
 
-        const length2 =
-            5 +
-            Math.random()*16;
+        const angle2=
+            angle+
+            (Math.random()-.5)*
+            1.1;
 
 
-        const x3 =
-            x2 +
-            Math.cos(angle +
-                (Math.random()-.5)*.9
-            ) *
+        const length2=
+            6+
+            Math.random()*18;
+
+
+        const x3=
+            x2+
+            Math.cos(angle2)*
             length2;
 
 
-        const y3 =
-            y2 +
-            Math.sin(angle +
-                (Math.random()-.5)*.9
-            ) *
+        const y3=
+            y2+
+            Math.sin(angle2)*
             length2;
 
 
-        /*
-           Sécurité :
-           on garde les branches dans la carte.
-        */
-
-        const safeX2 =
+        const sx2=
             Math.max(
-                8,
+                6,
                 Math.min(
-                    width-8,
+                    width-6,
                     x2
                 )
             );
 
 
-        const safeY2 =
+        const sy2=
             Math.max(
-                8,
+                6,
                 Math.min(
-                    height-8,
+                    height-6,
                     y2
                 )
             );
 
 
-        const safeX3 =
+        const sx3=
             Math.max(
-                8,
+                6,
                 Math.min(
-                    width-8,
+                    width-6,
                     x3
                 )
             );
 
 
-        const safeY3 =
+        const sy3=
             Math.max(
-                8,
+                6,
                 Math.min(
-                    height-8,
+                    height-6,
                     y3
                 )
             );
 
 
-        html +=
-            `<path
-                class="bolt-branch"
-                d="
-                    M ${x.toFixed(1)} ${y.toFixed(1)}
-                    L ${safeX2.toFixed(1)} ${safeY2.toFixed(1)}
-                    L ${safeX3.toFixed(1)} ${safeY3.toFixed(1)}
-                "
-            ></path>`;
+        html+=`
+
+<path
+    class="bolt-branch"
+    d="
+        M ${x.toFixed(1)} ${y.toFixed(1)}
+        L ${sx2.toFixed(1)} ${sy2.toFixed(1)}
+        L ${sx3.toFixed(1)} ${sy3.toFixed(1)}
+    "
+></path>
+`;
+
+        /*
+           Une toute petite ramification
+           supplémentaire.
+        */
+
+        if(
+            Math.random()<.38
+        ){
+
+            const miniAngle=
+                angle+
+                (Math.random()-.5)*
+                1.5;
+
+
+            const miniLength=
+                7+
+                Math.random()*12;
+
+
+            const mx=
+                sx2+
+                Math.cos(miniAngle)*
+                miniLength;
+
+
+            const my=
+                sy2+
+                Math.sin(miniAngle)*
+                miniLength;
+
+
+            html+=`
+
+<path
+    class="bolt-mini"
+    d="
+        M ${sx2.toFixed(1)} ${sy2.toFixed(1)}
+        L ${mx.toFixed(1)} ${my.toFixed(1)}
+    "
+></path>
+`;
+
+        }
 
     }
 
@@ -1961,12 +2174,12 @@ function createBranches(
 
 
 /* =========================================================
-   ⚡ CRÉATION DU FLASH
+   ⚡ CRÉATION D'UNE DÉCHARGE
    ========================================================= */
 
 function createLightning(card){
 
-    const layer =
+    const layer=
         card.querySelector(
             ".lightning-layer"
         );
@@ -1976,22 +2189,18 @@ function createLightning(card){
         return;
 
 
-    /*
-       Taille réelle de la carte.
-    */
-
-    const rect =
+    const rect=
         card.getBoundingClientRect();
 
 
-    const width =
+    const width=
         Math.max(
             180,
             rect.width
         );
 
 
-    const height =
+    const height=
         Math.max(
             90,
             rect.height
@@ -1999,17 +2208,31 @@ function createLightning(card){
 
 
     /*
-       Génération complètement nouvelle.
+       Position du flash général.
     */
 
-    const bolt =
+    const flashX=
+        20+
+        Math.random()*60;
+
+
+    const flashY=
+        20+
+        Math.random()*60;
+
+
+    /*
+       Génération.
+    */
+
+    const bolt=
         createBoltPath(
             width,
             height
         );
 
 
-    const branches =
+    const branches=
         createBranches(
             bolt.points,
             width,
@@ -2018,10 +2241,37 @@ function createLightning(card){
 
 
     /*
-       SVG.
+       FLASH GLOBAL
     */
 
-    const svg =
+    const bg=
+        document.createElement("div");
+
+
+    bg.className=
+        "lightning-flash-bg";
+
+
+    bg.style.setProperty(
+        "--flash-x",
+        `${flashX}%`
+    );
+
+
+    bg.style.setProperty(
+        "--flash-y",
+        `${flashY}%`
+    );
+
+
+    layer.appendChild(bg);
+
+
+    /*
+       SVG
+    */
+
+    const svg=
         document.createElementNS(
             "http://www.w3.org/2000/svg",
             "svg"
@@ -2030,7 +2280,7 @@ function createLightning(card){
 
     svg.setAttribute(
         "class",
-        "dynamic-lightning lightning-flash"
+        "dynamic-lightning lightning-strike"
     );
 
 
@@ -2047,27 +2297,28 @@ function createLightning(card){
 
 
     /*
-       Flash volontairement variable.
+       Durée très courte.
 
-       Plus lent que l'ancien.
+       Une vraie décharge ne reste pas
+       allumée tranquillement.
     */
 
-    const flashTime =
-        420 +
-        Math.random()*420;
+    const duration=
+        240+
+        Math.random()*260;
 
 
     svg.style.setProperty(
-        "--flash-time",
-        `${flashTime}ms`
+        "--strike-duration",
+        `${duration}ms`
     );
 
 
     /*
-       HALO.
+       HALO
     */
 
-    const halo =
+    const halo=
         document.createElementNS(
             "http://www.w3.org/2000/svg",
             "path"
@@ -2087,10 +2338,10 @@ function createLightning(card){
 
 
     /*
-       GLOW.
+       GLOW
     */
 
-    const glow =
+    const glow=
         document.createElementNS(
             "http://www.w3.org/2000/svg",
             "path"
@@ -2110,10 +2361,10 @@ function createLightning(card){
 
 
     /*
-       RAMIFICATIONS.
+       BRANCHES
     */
 
-    const branchGroup =
+    const branchGroup=
         document.createElementNS(
             "http://www.w3.org/2000/svg",
             "g"
@@ -2125,10 +2376,10 @@ function createLightning(card){
 
 
     /*
-       CŒUR BLANC.
+       CŒUR
     */
 
-    const core =
+    const core=
         document.createElementNS(
             "http://www.w3.org/2000/svg",
             "path"
@@ -2147,14 +2398,6 @@ function createLightning(card){
     );
 
 
-    /*
-       Ordre :
-       halo
-       glow
-       branches
-       cœur
-    */
-
     svg.appendChild(halo);
 
     svg.appendChild(glow);
@@ -2168,7 +2411,42 @@ function createLightning(card){
 
 
     /*
-       Suppression.
+       Animation du flash global.
+    */
+
+    bg.animate(
+        [
+            {
+                opacity:0
+            },
+            {
+                opacity:.75,
+                offset:.07
+            },
+            {
+                opacity:.08,
+                offset:.16
+            },
+            {
+                opacity:.48,
+                offset:.24
+            },
+            {
+                opacity:0
+            }
+        ],
+        {
+            duration:
+                duration*.95,
+
+            easing:
+                "steps(5,end)"
+        }
+    );
+
+
+    /*
+       Nettoyage.
     */
 
     setTimeout(()=>{
@@ -2176,7 +2454,42 @@ function createLightning(card){
         if(svg.parentNode)
             svg.remove();
 
-    },flashTime+80);
+        if(bg.parentNode)
+            bg.remove();
+
+    },duration+100);
+
+
+    /*
+       Petite chance d'avoir un
+       SECOND coup immédiatement.
+
+       C'est ce qui donne l'impression
+       d'une vraie foudre qui crépite.
+    */
+
+    if(
+        Math.random()<.62
+    ){
+
+        const secondDelay=
+            70+
+            Math.random()*150;
+
+
+        setTimeout(()=>{
+
+            if(
+                document.body.contains(card)
+            ){
+
+                createLightning(card);
+
+            }
+
+        },secondDelay);
+
+    }
 
 }
 
@@ -2187,12 +2500,9 @@ function createLightning(card){
 
 function startLightning(card){
 
-    /*
-       Empêche de lancer deux boucles
-       sur la même carte.
-    */
-
-    if(card.dataset.lightningStarted==="1")
+    if(
+        card.dataset.lightningStarted==="1"
+    )
         return;
 
 
@@ -2201,7 +2511,9 @@ function startLightning(card){
 
     function nextFlash(){
 
-        if(!document.body.contains(card)){
+        if(
+            !document.body.contains(card)
+        ){
 
             card.dataset.lightningStarted="0";
 
@@ -2211,25 +2523,30 @@ function startLightning(card){
 
 
         /*
-           Pause aléatoire.
+           Beaucoup de variation.
 
-           Le but :
-           ne PAS donner l'impression
-           d'une animation en boucle.
+           Certaines cartes peuvent rester
+           calmes quelques secondes.
 
-           Certains éclairs arrivent vite,
-           d'autres beaucoup plus tard.
+           Puis BAM ⚡️
         */
 
-        const delay =
-            900 +
-            Math.random()*2600;
+        const delay=
+            1200+
+            Math.random()*4200;
 
 
         setTimeout(()=>{
 
-            if(!document.body.contains(card))
+            if(
+                !document.body.contains(card)
+            ){
+
+                card.dataset.lightningStarted="0";
+
                 return;
+
+            }
 
 
             createLightning(card);
@@ -2243,14 +2560,14 @@ function startLightning(card){
 
 
     /*
-       Chaque carte commence à un moment
-       différent.
+       Décalage initial différent
+       pour chaque carte.
     */
 
     setTimeout(
         nextFlash,
-        400 +
-        Math.random()*3000
+        500+
+        Math.random()*3500
     );
 
 }
@@ -2262,7 +2579,8 @@ function startLightning(card){
 
 function renderCategories(data){
 
-    cats.innerHTML =
+    cats.innerHTML=
+
         data.map(c=>`
 
 <div
@@ -2290,10 +2608,6 @@ function renderCategories(data){
 `).join("");
 
 
-    /*
-       Démarrage indépendant.
-    */
-
     cats
         .querySelectorAll(".card")
         .forEach(card=>{
@@ -2305,7 +2619,9 @@ function renderCategories(data){
 }
 
 
-renderCategories(CATEGORIES);
+renderCategories(
+    CATEGORIES
+);
 
 
 /* =========================================================
@@ -2334,14 +2650,19 @@ secretTrigger.onclick=()=>{
     },800);
 
 
-    if(secretClicks>=2){
+    if(
+        secretClicks>=2
+    ){
 
         secretClicks=0;
 
-        secretMode=!secretMode;
+        secretMode=
+            !secretMode;
 
 
-        cats.classList.add("hide");
+        cats.classList.add(
+            "hide"
+        );
 
 
         setTimeout(()=>{
@@ -2386,78 +2707,87 @@ const fichiers=[
 
 Promise.all(
 
-    fichiers.map(fichier=>{
+    fichiers.map(
+        fichier=>{
 
-        console.log(
-            "Chargement :",
-            fichier
-        );
-
-
-        return fetch(fichier)
-
-        .then(r=>{
-
-            if(!r.ok){
-
-                throw new Error(
-                    fichier+
-                    " introuvable"
-                );
-
-            }
-
-            return r.text();
-
-        })
-
-        .then(txt=>{
-
-            if(!txt.trim()){
-
-                console.warn(
-                    fichier+
-                    " est vide → ignoré"
-                );
-
-                return [];
-
-            }
+            console.log(
+                "Chargement :",
+                fichier
+            );
 
 
-            try{
+            return fetch(
+                fichier
+            )
 
-                return JSON.parse(txt);
+            .then(r=>{
 
-            }
+                if(!r.ok){
 
-            catch(e){
+                    throw new Error(
+                        fichier+
+                        " introuvable"
+                    );
 
-                throw new Error(
-                    "Erreur JSON dans "
-                    +
-                    fichier
-                    +
-                    " : "
-                    +
-                    e.message
-                );
+                }
 
-            }
+                return r.text();
 
-        });
+            })
 
-    })
+            .then(txt=>{
+
+                if(
+                    !txt.trim()
+                ){
+
+                    console.warn(
+                        fichier+
+                        " est vide → ignoré"
+                    );
+
+                    return [];
+
+                }
+
+
+                try{
+
+                    return JSON.parse(
+                        txt
+                    );
+
+                }
+
+                catch(e){
+
+                    throw new Error(
+                        "Erreur JSON dans "
+                        +
+                        fichier
+                        +
+                        " : "
+                        +
+                        e.message
+                    );
+
+                }
+
+            });
+
+        }
+    )
 
 )
 
-
 .then(files=>{
 
-    DATA=files.flat();
+    DATA=
+        files.flat();
 
 
-    DATA=DATA.map(x=>({
+    DATA=
+        DATA.map(x=>({
 
         name:
             (
@@ -2513,11 +2843,12 @@ Promise.all(
     }));
 
 
-    DATA.sort((a,b)=>
-        a.name.localeCompare(
-            b.name,
-            "fr"
-        )
+    DATA.sort(
+        (a,b)=>
+            a.name.localeCompare(
+                b.name,
+                "fr"
+            )
     );
 
 
@@ -2528,10 +2859,9 @@ Promise.all(
 
 })
 
-
 .catch(err=>{
 
-    document.body.innerHTML += `
+    document.body.innerHTML+=`
 
 <div style="
     position:fixed;
@@ -2565,22 +2895,34 @@ Promise.all(
    ========================================================= */
 
 const q=
-    document.getElementById("q");
+    document.getElementById(
+        "q"
+    );
 
 const results=
-    document.getElementById("results");
+    document.getElementById(
+        "results"
+    );
 
 const list=
-    document.getElementById("list");
+    document.getElementById(
+        "list"
+    );
 
 const count=
-    document.getElementById("count");
+    document.getElementById(
+        "count"
+    );
 
 const backBox=
-    document.getElementById("backBox");
+    document.getElementById(
+        "backBox"
+    );
 
 const backBtn=
-    document.getElementById("backBtn");
+    document.getElementById(
+        "backBtn"
+    );
 
 
 /* =========================================================
@@ -2596,7 +2938,9 @@ function render(
 
 
     const selectedColor=
-        getCategoryColor(category);
+        getCategoryColor(
+            category
+        );
 
 
     results.style.setProperty(
@@ -2605,16 +2949,23 @@ function render(
     );
 
 
-    list.dataset.cat=category;
+    list.dataset.cat=
+        category;
 
 
-    if(!rows.length){
+    if(
+        !rows.length
+    ){
 
-        results.style.display="block";
+        results.style.display=
+            "block";
 
-        results.classList.add("show");
+        results.classList.add(
+            "show"
+        );
 
-        backBox.style.display="block";
+        backBox.style.display=
+            "block";
 
         count.textContent=
             "0 résultat";
@@ -2624,7 +2975,9 @@ function render(
 
 <div
     class="row"
-    style="--cat-color:${selectedColor}"
+    style="
+        --cat-color:${selectedColor}
+    "
 >
 
 <div>
@@ -2644,14 +2997,21 @@ Cette catégorie est vide.
 `;
 
         return;
+
     }
 
 
-    results.style.display="block";
+    results.style.display=
+        "block";
 
-    results.classList.add("show");
 
-    backBox.style.display="block";
+    results.classList.add(
+        "show"
+    );
+
+
+    backBox.style.display=
+        "block";
 
 
     count.textContent=
@@ -2661,7 +3021,8 @@ Cette catégorie est vide.
 
     list.innerHTML=
 
-        rows.map((r,i)=>`
+        rows.map(
+            (r,i)=>`
 
 <div
     class="row"
@@ -2670,7 +3031,8 @@ Cette catégorie est vide.
 
     style="
         --cat-color:${getCategoryColor(
-            category || r.category
+            category ||
+            r.category
         )};
     "
 >
@@ -2734,7 +3096,8 @@ Pourboire
 
 </div>
 
-`).join("");
+`
+        ).join("");
 
 
     setTimeout(()=>{
@@ -2758,35 +3121,39 @@ Pourboire
 
 function normalize(text){
 
-    return String(text ?? "")
+    return String(
+        text ?? ""
+    )
 
-        .toLocaleLowerCase(
-            "fr-FR"
-        )
+    .toLocaleLowerCase(
+        "fr-FR"
+    )
 
-        .normalize("NFKD")
+    .normalize(
+        "NFKD"
+    )
 
-        .replace(
-            /[\u0300-\u036f]/g,
-            ""
-        )
+    .replace(
+        /[\u0300-\u036f]/g,
+        ""
+    )
 
-        .replace(
-            /[’']/g,
-            ""
-        )
+    .replace(
+        /[’']/g,
+        ""
+    )
 
-        .replace(
-            /[-_]/g,
-            " "
-        )
+    .replace(
+        /[-_]/g,
+        " "
+    )
 
-        .replace(
-            /\s+/g,
-            " "
-        )
+    .replace(
+        /\s+/g,
+        " "
+    )
 
-        .trim();
+    .trim();
 
 }
 
@@ -2810,12 +3177,14 @@ function search(text){
 
         setTimeout(()=>{
 
-            results.style.display="none";
+            results.style.display=
+                "none";
 
         },300);
 
 
-        backBox.style.display="none";
+        backBox.style.display=
+            "none";
 
         return;
 
@@ -2834,25 +3203,39 @@ function search(text){
         .map(item=>{
 
             const name=
-                normalize(item.name);
+                normalize(
+                    item.name
+                );
 
             const phone=
-                normalize(item.phone);
+                normalize(
+                    item.phone
+                );
 
             const category=
-                normalize(item.category);
+                normalize(
+                    item.category
+                );
 
             const type=
-                normalize(item.type);
+                normalize(
+                    item.type
+                );
 
             const assistant=
-                normalize(item.assistant);
+                normalize(
+                    item.assistant
+                );
 
             const services=
-                normalize(item.services);
+                normalize(
+                    item.services
+                );
 
             const country=
-                normalize(item.pays);
+                normalize(
+                    item.pays
+                );
 
 
             const searchable=[
@@ -2876,20 +3259,21 @@ function search(text){
 
 
             const matches=
-                words.every(word=>
+                words.every(
+                    word=>
 
-                    searchable.includes(
-                        word
-                    )
-
-                    ||
-
-                    searchableCompact.includes(
-                        word.replace(
-                            /\s/g,
-                            ""
+                        searchable.includes(
+                            word
                         )
-                    )
+
+                        ||
+
+                        searchableCompact.includes(
+                            word.replace(
+                                /\s/g,
+                                ""
+                            )
+                        )
 
                 );
 
@@ -2901,48 +3285,71 @@ function search(text){
             let score=0;
 
 
-            words.forEach(word=>{
+            words.forEach(
+                word=>{
 
-                if(name===word)
+                if(
+                    name===word
+                )
                     score+=100;
 
                 else if(
-                    name.startsWith(word)
+                    name.startsWith(
+                        word
+                    )
                 )
                     score+=70;
 
                 else if(
-                    name.includes(word)
+                    name.includes(
+                        word
+                    )
                 )
                     score+=50;
 
 
-                if(category===word)
+                if(
+                    category===word
+                )
                     score+=40;
 
                 else if(
-                    category.includes(word)
+                    category.includes(
+                        word
+                    )
                 )
                     score+=25;
 
 
-                if(type.includes(word))
+                if(
+                    type.includes(
+                        word
+                    )
+                )
                     score+=20;
 
 
                 if(
-                    assistant.includes(word)
+                    assistant.includes(
+                        word
+                    )
                 )
                     score+=15;
 
 
                 if(
-                    services.includes(word)
+                    services.includes(
+                        word
+                    )
                 )
                     score+=10;
 
 
-                if(phone.includes(word))
+                if(
+                    phone.includes(
+                        word
+                    )
+                )
                     score+=10;
 
             });
@@ -2958,9 +3365,12 @@ function search(text){
         .filter(Boolean);
 
 
-    rows.sort((a,b)=>{
+    rows.sort(
+        (a,b)=>{
 
-        if(b.score!==a.score)
+        if(
+            b.score!==a.score
+        )
             return b.score-a.score;
 
 
@@ -2976,7 +3386,9 @@ function search(text){
 
 
     rows=
-        rows.map(x=>x.item);
+        rows.map(
+            x=>x.item
+        );
 
 
     render(rows);
@@ -2987,7 +3399,9 @@ function search(text){
 q.addEventListener(
     "input",
     e=>{
-        search(e.target.value);
+        search(
+            e.target.value
+        );
     }
 );
 
@@ -3001,7 +3415,9 @@ cats.addEventListener(
     e=>{
 
         const card=
-            e.target.closest(".card");
+            e.target.closest(
+                ".card"
+            );
 
 
         if(!card)
@@ -3015,32 +3431,39 @@ cats.addEventListener(
         let rows;
 
 
-        if(key==="ASSURANCE"){
+        if(
+            key==="ASSURANCE"
+        ){
 
             rows=
-                DATA.filter(x=>
+                DATA.filter(
+                    x=>
 
-                    x.category.includes(
-                        "ASSUR"
-                    )
+                        x.category.includes(
+                            "ASSUR"
+                        )
 
-                    ||
+                        ||
 
-                    x.category.includes(
-                        "COURT"
-                    )
+                        x.category.includes(
+                            "COURT"
+                        )
 
-                    ||
+                        ||
 
-                    x.type
-                        .toUpperCase()
-                        .includes("ASSUR")
+                        x.type
+                            .toUpperCase()
+                            .includes(
+                                "ASSUR"
+                            )
 
-                    ||
+                        ||
 
-                    x.assistant
-                        .toUpperCase()
-                        .includes("ASSUR")
+                        x.assistant
+                            .toUpperCase()
+                            .includes(
+                                "ASSUR"
+                            )
 
                 );
 
@@ -3057,7 +3480,8 @@ cats.addEventListener(
         }
 
 
-        rows.sort((a,b)=>{
+        rows.sort(
+            (a,b)=>{
 
             if(
                 a.pays==="FR"
@@ -3105,7 +3529,8 @@ cats.addEventListener(
 
         setTimeout(()=>{
 
-            cats.style.display="none";
+            cats.style.display=
+                "none";
 
 
             render(
@@ -3139,13 +3564,17 @@ list.addEventListener(
     e=>{
 
         if(
-            e.target.closest(".call")
+            e.target.closest(
+                ".call"
+            )
         )
             return;
 
 
         const row=
-            e.target.closest(".row");
+            e.target.closest(
+                ".row"
+            );
 
 
         if(!row)
@@ -3248,50 +3677,71 @@ list.addEventListener(
             );
 
 
-        typeBox.style.display="block";
+        typeBox.style.display=
+            "block";
 
-        assistBox.style.display="block";
+        assistBox.style.display=
+            "block";
 
-        addressBox.style.display="none";
+        addressBox.style.display=
+            "none";
 
-        emailBox.style.display="none";
+        emailBox.style.display=
+            "none";
 
-        servicesBox.style.display="none";
+        servicesBox.style.display=
+            "none";
 
 
-        if(item.category==="GARAGE"){
+        if(
+            item.category==="GARAGE"
+        ){
 
-            typeBox.style.display="none";
+            typeBox.style.display=
+                "none";
 
-            assistBox.style.display="none";
+            assistBox.style.display=
+                "none";
 
-            countryBox.style.display="none";
+            countryBox.style.display=
+                "none";
 
-            availableBox.style.display="none";
+            availableBox.style.display=
+                "none";
 
-            addressBox.style.display="block";
+            addressBox.style.display=
+                "block";
 
-            emailBox.style.display="block";
+            emailBox.style.display=
+                "block";
 
-            servicesBox.style.display="block";
+            servicesBox.style.display=
+                "block";
 
         }
 
         else{
 
-            typeBox.style.display="block";
+            typeBox.style.display=
+                "block";
 
-            assistBox.style.display="block";
+            assistBox.style.display=
+                "block";
 
-            countryBox.style.display="block";
+            countryBox.style.display=
+                "block";
 
-            availableBox.style.display="block";
+            availableBox.style.display=
+                "block";
 
-            addressBox.style.display="none";
+            addressBox.style.display=
+                "none";
 
-            emailBox.style.display="none";
+            emailBox.style.display=
+                "none";
 
-            servicesBox.style.display="none";
+            servicesBox.style.display=
+                "none";
 
         }
 
@@ -3307,14 +3757,16 @@ list.addEventListener(
 
 
         address.textContent=
-            item.adresse || "—";
+            item.adresse ||
+            "—";
 
 
-        if(item.adresse){
+        if(
+            item.adresse
+        ){
 
             address.href=
-                "https://maps.apple.com/?q="
-                +
+                "https://maps.apple.com/?q="+
                 encodeURIComponent(
                     item.adresse
                 );
@@ -3351,16 +3803,20 @@ list.addEventListener(
 
 
         email.textContent=
-            item.email || "—";
+            item.email ||
+            "—";
 
 
         email.style.cursor=
             "default";
 
 
-        email.onclick=async()=>{
+        email.onclick=
+            async()=>{
 
-            if(!item.email)
+            if(
+                !item.email
+            )
                 return;
 
 
@@ -3454,18 +3910,21 @@ backBtn.onclick=()=>{
 
     setTimeout(()=>{
 
-        results.style.display="none";
+        results.style.display=
+            "none";
 
     },300);
 
 
-    backBox.style.display="none";
+    backBox.style.display=
+        "none";
 
 
     list.innerHTML="";
 
 
-    cats.style.display="grid";
+    cats.style.display=
+        "grid";
 
 
     results.style.setProperty(
@@ -3481,9 +3940,8 @@ backBtn.onclick=()=>{
 
 
     /*
-       IMPORTANT :
-       On recrée les cartes afin que
-       leur système d'éclairs reparte proprement.
+       On recrée complètement les cartes
+       afin de réinitialiser les éclairs.
     */
 
     renderCategories(
