@@ -1,83 +1,110 @@
 [
     {
-      "nom": "AEDES Assurances",
-      "telephone": "+32 (0)4 340 56 23",
-      "categorie": "ASSURANCE",
-      "assisteur": "IMA",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "AEDES Assurances",
+        "telephone": "+32 (0)4 340 56 23",
+        "categorie": "ASSURANCE",
+        "assisteur": "IMA",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "AG",
-      "telephone": "+32 (078 055 505",
-      "categorie": "ASSURANCE",
-      "assisteur": "EUROP ASSISTANCE",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "AG",
+        "telephone": "+32 (078 055 505",
+        "categorie": "ASSURANCE",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "ALPHABET (via VAB)",
-      "telephone": "+32 (0) 78 15 05 35",
-      "categorie": "ASSURANCE",
-      "assisteur": "ACTA",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "ALPHABET (via VAB)",
+        "telephone": "+32 (0) 78 15 05 35",
+        "categorie": "ASSURANCE",
+        "assisteur": "ACTA",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "BELFIUS DIRECT Assurances (ex corona)",
-      "telephone": "+32 (0)2 244 23 23",
-      "categorie": "ASSURANCE",
-      "assisteur": "CHARLIE 24",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "BELFIUS DIRECT Assurances (ex corona)",
+        "telephone": "+32 (0)2 244 23 23",
+        "categorie": "ASSURANCE",
+        "assisteur": "CHARLIE 24",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "CEC finance et assurances",
-      "telephone": "01 41 85 85 85",
-      "categorie": "ASSURANCE",
-      "assisteur": "EUROP ASSISTANCE",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "CEC finance et assurances",
+        "telephone": "01 41 85 85 85",
+        "categorie": "ASSURANCE",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "ETHIAS",
-      "telephone": "+32 (0)4 220 30 40",
-      "categorie": "ASSURANCE",
-      "assisteur": "IMA",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "ETHIAS",
+        "telephone": "+32 (0)4 220 30 40",
+        "categorie": "ASSURANCE",
+        "assisteur": "IMA",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "Groupe P&V",
-      "telephone": "+32 (0)2 229 00 10",
-      "categorie": "ASSURANCE",
-      "assisteur": "IMA (actionnaire)",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "Groupe P&V",
+        "telephone": "+32 (0)2 229 00 10",
+        "categorie": "ASSURANCE",
+        "assisteur": "IMA (actionnaire)",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "ING",
-      "telephone": "+32 (0)2 464 60 02",
-      "categorie": "ASSURANCE",
-      "assisteur": "ACTA",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "ING",
+        "telephone": "+32 (0)2 464 60 02",
+        "categorie": "ASSURANCE",
+        "assisteur": "ACTA",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
     },
     {
-      "nom": "MDN Group",
-      "telephone": "+32 (078 055 505",
-      "categorie": "ASSURANCE",
-      "assisteur": "EUROP ASSISTANCE",
-      "type": "ASSURANCE",
-      "pays": "BE",
-      "logo": ""
+        "nom": "MDN Group",
+        "telephone": "+32 (078 055 505",
+        "categorie": "ASSURANCE",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "ASSURANCE",
+        "pays": "BE",
+        "logo": ""
+    },
+    {
+        "nom": "INTER PARTNER ASSISTANCE",
+        "telephone": "01 70 77 04 16",
+        "categorie": "ASSURANCE",
+        "assisteur": "AXA",
+        "type": "ASSISTANCE",
+        "pays": "BE",
+        "logo": ""
+    },
+    {
+        "nom": "SOLVAS Assistance",
+        "telephone": "+32(0)2 287 09 00",
+        "categorie": "ASSURANCE",
+        "assisteur": "AXA",
+        "type": "ASSISTANCE",
+        "pays": "BE",
+        "logo": ""
+    },
+    {
+        "nom": "VAB",
+        "telephone": "+32(0)3 253 65 65",
+        "categorie": "ASSURANCE",
+        "assisteur": "ACTA",
+        "type": "ASSISTANCE",
+        "pays": "BE",
+        "logo": ""
     }
 ]
