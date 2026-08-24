@@ -1,0 +1,83 @@
+[
+  {
+    "nom": "ALKORA",
+    "telephone": "",
+    "categorie": "ASSURANCE",
+    "assisteur": "",
+    "type": "ASSURANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "ARAG",
+    "telephone": "+34 93 300 10 50",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "ASSURANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "LAGUN ARO",
+    "telephone": "+34 944 051 412",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "Liberty Seguros (Generali)",
+    "telephone": "+34 93 495 51 25",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "PELAYO",
+    "telephone": "+34 91 520 05 00",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "PlusUltra (Groupama)",
+    "telephone": "+34 91 393 90 30",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "ASSURANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "REALE MUTUA",
+    "telephone": "",
+    "categorie": "ASSURANCE",
+    "assisteur": "CHARLIE 24",
+    "type": "ASSURANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "GESTRANS",
+    "telephone": "+34 902 242 124",
+    "categorie": "ASSURANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "ASSISTANCE",
+    "pays": "ES",
+    "logo": ""
+  },
+  {
+    "nom": "LINEA DIRECTA ASISTENCIA",
+    "telephone": "00 34 91 807 42 57",
+    "categorie": "ASSURANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "ASSISTANCE",
+    "pays": "ES",
+    "logo": ""
+  }
+]
