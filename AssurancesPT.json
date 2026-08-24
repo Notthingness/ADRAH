@@ -1,0 +1,47 @@
+[
+  {
+    "nom": "CARAVELA (ex MACIF Portugal)",
+    "telephone": "+351 211 571 982",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "PT",
+    "logo": ""
+  },
+  {
+    "nom": "CARAVELA (ex MACIF Portugal) - immatriculation Allemagne",
+    "telephone": "+351 211 571 982",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "PT",
+    "logo": ""
+  },
+  {
+    "nom": "CARAVELA (ex MACIF Portugal) - immatriculation Suisse",
+    "telephone": "+351 211 571 982",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "PT",
+    "logo": ""
+  },
+  {
+    "nom": "CARAVELA (ex MACIF Portugal) - immatriculation Royaume-Uni",
+    "telephone": "+351 211 571 982",
+    "categorie": "ASSURANCE",
+    "assisteur": "OPTEVEN",
+    "type": "ASSURANCE",
+    "pays": "PT",
+    "logo": ""
+  },
+  {
+    "nom": "FIDELIDADE",
+    "telephone": "+34 91 391 78 51",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "PT",
+    "logo": ""
+  }
+]
