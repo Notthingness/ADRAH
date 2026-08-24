@@ -1,0 +1,875 @@
+[
+  {
+    "nom": "Abeille assurance",
+    "telephone": "01 41 32 21 56",
+    "categorie": "ASSURANCE",
+    "assisteur": "OPTEVEN",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Acheel",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ACMF",
+    "telephone": "01 47 04 09 01",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AESIO Mutuelle Auto par Thelem",
+    "telephone": "01 40 25 16 16",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AFFINEO ASSUR",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AGPM",
+    "telephone": "0 800 75 75 75",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ALLIANZ",
+    "telephone": "01 40 25 59 18",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ALLIZ by Allianz",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ALOA",
+    "telephone": "01 47 11 67 07",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ALTIMA",
+    "telephone": "0 800 080 241",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AMAGUIZ.com",
+    "telephone": "0 800 02 08 00",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AMF assurances",
+    "telephone": "0 800 2000 14",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AMP Assurances Mutuelle de Picardie",
+    "telephone": "01 53 05 86 00",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AREAS Assurances",
+    "telephone": "01 49 93 73 83",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ARISA Assurances temporaires",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ARVAL",
+    "telephone": "0 800 32 88 17",
+    "categorie": "ASSURANCE",
+    "assisteur": "ACTA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AUDI Assurance",
+    "telephone": "01 40 25 52 71",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AVIVA",
+    "telephone": "0 800 145 145",
+    "categorie": "ASSURANCE",
+    "assisteur": "OPTEVEN",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AXA",
+    "telephone": "01 55 92 26 92",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AXERIA IARD",
+    "telephone": "0 800 085 085",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "BNP PARIBAS",
+    "telephone": "0 800 30 33 33",
+    "categorie": "ASSURANCE",
+    "assisteur": "ACTA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "BPCE Assurances",
+    "telephone": "09 80 98 69 86",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "BRED Banque Populaire",
+    "telephone": "09 80 98 69 86",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CAISSE D'EPARGNE",
+    "telephone": "09 69 36 45 45",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CARMA",
+    "telephone": "0 800 424 424",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CARREFOUR assurance",
+    "telephone": "01 45 16 65 66",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CASINO Banque",
+    "telephone": "01 41 85 91 40",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CMMA Assurance",
+    "telephone": "01 44 854 954",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CNP Assurances",
+    "telephone": "01 47 11 24 24",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "COVEA Risks",
+    "telephone": "01 40 25 59 59",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CREDIT du NORD SOCIETE GENERALE",
+    "telephone": "01 40 25 58 95",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CREDIT MUTUEL",
+    "telephone": "02 43 80 20 80",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Credit Mutuel de Bretagne CMB",
+    "telephone": "01 41 21 06 06",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CROISEAU ASSURANCES",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "DIRECT ASSURANCE",
+    "telephone": "01 55 92 27 20",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "EUROFIL",
+    "telephone": "01 71 25 06 25",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FACIVI ACMF",
+    "telephone": "01 47 04 09 01",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FLAT-PASS by Allianz",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FLOA par Lovys",
+    "telephone": "01 41 85 91 40",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GAMEST",
+    "telephone": "09 69 36 99 60",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GAN",
+    "telephone": "01 55 98 71 56",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GENERALI",
+    "telephone": "01 41 85 84 83",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GMF",
+    "telephone": "0800 00 12 13",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GROUPAMA",
+    "telephone": "01 45 16 66 66",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GT-PASS by Allianz",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "L'OLIVIER ASSURANCE",
+    "telephone": "01 41 85 99 73",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LA BANQUE POSTALE",
+    "telephone": "01 45 16 43 85",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LA BRESSANE",
+    "telephone": "09 69 39 16 01",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LA SAUVEGARDE",
+    "telephone": "01 47 11 12 13",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LCL",
+    "telephone": "0 800 300 380",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LE FINISTERE ASSURANCE",
+    "telephone": "0 810 2000 29",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LUXIOR FFA",
+    "telephone": "02 98 80 98 04",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LYBERNET",
+    "telephone": "01 45 16 65 66",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAAF",
+    "telephone": "0 800 16 17 18",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MACIF",
+    "telephone": "0 800 774 774",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MACSF",
+    "telephone": "01 71 25 02 50",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAIF",
+    "telephone": "0 800 875 875",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MALJ Assurance",
+    "telephone": "09 69 36 99 60",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAPA",
+    "telephone": "0 800 17 16 17",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MASTER (auto-écoles)",
+    "telephone": "02 54 73 86 23",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAT la TaxiAssurance",
+    "telephone": "01 48 03 03 03",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MATMUT",
+    "telephone": "0 800 30 20 30",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAVIC Assurances",
+    "telephone": "01 40 255 168",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAVIM pour tous",
+    "telephone": "01 44 85 47 70",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAVIT",
+    "telephone": "01 44 85 47 70",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MFA Mutuelle Fraternelle d'assurances",
+    "telephone": "09 69 32 82 25",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MGA",
+    "telephone": "02 54 72 13 65",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MGP",
+    "telephone": "01 47 11 25 25",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MMA",
+    "telephone": "01 40 25 59 59",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MONCEAU Assurances",
+    "telephone": "02 54 72 13 65",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MUDETAF",
+    "telephone": "04 87 25 71 01",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Mutuelle centrale de réassurance",
+    "telephone": "02 54 72 13 65",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Mutuelle d'ass. Solidaire",
+    "telephone": "01 53 21 70 13",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Mutuelle de l'est",
+    "telephone": "09 69 39 23 01",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Mutuelle de Poitiers Assurances",
+    "telephone": "01 47 11 73 77",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Mutuelle des Motards",
+    "telephone": "08 00 75 75 75",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Mutuelle nationale sapeurs pompiers",
+    "telephone": "09 77 40 84 16",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "NEXX Direct devenu MAAF",
+    "telephone": "voir carte verte",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "PACIFICA",
+    "telephone": "01 53 74 33 00",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "PASTEUR Mutualité Facivi ACMF",
+    "telephone": "01 47 04 09 01",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "protec btp",
+    "telephone": "0 800 424 424",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "RIO Assurances",
+    "telephone": "09 78 31 02 95",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SADA Assurance",
+    "telephone": "01 49 93 72 32",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SAINT-CHRISTOPHE",
+    "telephone": "01 55 92 26 16",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SERENIS Assurances",
+    "telephone": "01 76 49 83 80",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SMAB",
+    "telephone": "09 69 36 09 62",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SMABTP",
+    "telephone": "01 47 11 67 31",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SMACL Assurances",
+    "telephone": "0800 02 11 11",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SOCIETE GENERALE",
+    "telephone": "01 40 25 50 01",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "STELLANTIS insurance",
+    "telephone": "01 55 92 21 46",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SURAVENIR",
+    "telephone": "01 41 85 94 53",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SWISSLIFE",
+    "telephone": "01 53 21 24 72",
+    "categorie": "ASSURANCE",
+    "assisteur": "FILASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "THELEM",
+    "telephone": "01 40 25 16 16",
+    "categorie": "ASSURANCE",
+    "assisteur": "MONDIAL ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "W ASSUR",
+    "telephone": "01 40 25 59 59",
+    "categorie": "ASSURANCE",
+    "assisteur": "FIDELIA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "WAFA Assurance",
+    "telephone": "05 22 58 95 35",
+    "categorie": "ASSURANCE",
+    "assisteur": "IMA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "WAKAM",
+    "telephone": "01 45 16 43 96",
+    "categorie": "ASSURANCE",
+    "assisteur": "MUTUAIDE",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "YOU DRIVE par Direct Assurance",
+    "telephone": "01 55 92 27 20",
+    "categorie": "ASSURANCE",
+    "assisteur": "AXA",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  }
+]
