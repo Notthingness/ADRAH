@@ -1,0 +1,1397 @@
+[
+  {
+    "nom": "2MA (ma meilleure assurance)",
+    "telephone": "IMA",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "A comme Assure",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Active Assurance",
+    "telephone": "MUTUAIDE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 19 41 77",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Add Value Assurances",
+    "telephone": "ACTA",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ADEP uniquement DOM-TOM",
+    "telephone": "MUTUAIDE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ADN Assurances De Navarre",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AEC ASSURANCES",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "0 800 10 31 05",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "afd courtage d'assurances",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AFEXIA ASSURANCE",
+    "telephone": "MONDIAL ou EUROP",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AGC Assistance",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "03 88 06 78 81",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AIAC (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AIRBAG",
+    "telephone": "MUT/EUROP/MOND",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AMOPHYS",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AMV Assurance Moto Verte",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "0 820 820 750",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ANTINEA",
+    "telephone": "RESO+",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AON",
+    "telephone": "OPTEVEN",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 81 15",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "APIVIA",
+    "telephone": "IMA",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 90 41",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "APRIL",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 49 93 65 82",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ARC Assurances",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 59 23",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ARCA (LOISIRS)",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ARCA Transport",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ARILIM (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AS Assurance",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASC ASSURANCES AXILE SOGERAC Courtage",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASCOMA",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASCORA",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSU 2000",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 55 92 21 55",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSUGARAGE (groupe ETIK)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Assur Bon Plan",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "0 820 820 750",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSURANCES EBRARD CABINET EBRARD",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSURAUTO PRESTIGE",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Assurauto.fr",
+    "telephone": "MUT/EUROP/MOND",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSURBIKE",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 59 23",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSURDRIVE COVASSUR",
+    "telephone": "AXA ou EUROP",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSUREA",
+    "telephone": "MONDIAL ou EUROP",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSUREO",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 52 59",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSUREOS",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSURLAND.com",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ASSURONLINE",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "assurovert",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Assurpeople.com",
+    "telephone": "MUT/EUROP/MOND",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AUTOFIRST",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 93 94",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "AYENS",
+    "telephone": "OPTEVEN",
+    "categorie": "COURTIER",
+    "assisteur": "0 825 85 85 85",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "BAYVET BASSET",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "BESSé (flottes)",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Best assurances",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "BM Assurances (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "C2A Garantie",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CALIPSO Assurances",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 82 83 16 25",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CAM Courtage CAM btp",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 255 731",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CAMBIER & EVRARD",
+    "telephone": "AXA",
+    "categorie": "COURTIER",
+    "assisteur": "01 55 92 26 92",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CAMBRIDGE",
+    "telephone": "MUT/EUROP/MOND",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CAPRELE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CAPVEIL ASSURANCES",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CAR-Y",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CARENE Assurances",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CARMINE",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 90 08",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Celtique Courtage",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CF ASSURANCES",
+    "telephone": "LEADER Insurance",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CHESNEAU (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CIRANO (via Icare)",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 10 19 02",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "CM PRESTIGE",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "COEOS (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "COLBERT Assurances",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "COVASSUR ASSURDRIVE",
+    "telephone": "AXA ou EUROP",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "COVERITY",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "DEGONDE & Cie",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "DESCUDET & CIE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "DIF Assurances",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "DIOT (diot Siaci)",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 97 17",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "DUAL (voitures prestige)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ECA Assurances",
+    "telephone": "OPTEVEN",
+    "categorie": "COURTIER",
+    "assisteur": "09 88 29 20 00",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Elsassur",
+    "telephone": "EUROP et MUTUAIDE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ETIK Assurance",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "EURALPHA Gendarmes",
+    "telephone": "IMA",
+    "categorie": "COURTIER",
+    "assisteur": "05 49 34 81 19",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "euro-assurance",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 42 99 08 15",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "EUROASSURANCE.com",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 49 15 74 00",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "EURODOMMAGES",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 95 75",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FBASSURANCE",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "0 825 07 11 22",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Filhet-Allard (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FINAXY-MOTO",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 59 23",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "flitter",
+    "telephone": "MUTUAIDE",
+    "categorie": "COURTIER",
+    "assisteur": "01 76 36 12 60",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FMA",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 83 45",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FR COURTAGE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "FRANSSUR",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "G.L.A. (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GMAF",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Granier assurances",
+    "telephone": "RESO+",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Grouperouge",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GSA ASSURANCE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "GUEMAS & ASSOCIES",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "HERVE CLAVEL",
+    "telephone": "AXA",
+    "categorie": "COURTIER",
+    "assisteur": "01 55 92 22 03",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "HEUX Assurances",
+    "telephone": "RESO+",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "HOWDEN (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "INTER COURTAGE ASSURANCES",
+    "telephone": "France Courtage",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "JADIS Assurances",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "JSF COURTAGE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "KLIAN PAR WAKAM",
+    "telephone": "MUTUAIDE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LA FLANDRE ASSURANCES",
+    "telephone": "RESO+",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LACARTEVERTE (assurance temporaire)",
+    "telephone": "AXA",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Le courtier du Motard",
+    "telephone": "IMA",
+    "categorie": "COURTIER",
+    "assisteur": "05 48 20 48 20",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LEADER ASSURANCES",
+    "telephone": "LEADER Insurance",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LEOCARE",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 97 39",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "LOVYS",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 91 40",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MarshMcLennan",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MASCOTTE Assurances",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 59 50",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "MAXANCE",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "02 43 80 21 38",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Netvox",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 92 61",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "NousAssurons",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "NOVELIA",
+    "telephone": "IMA",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 94 05",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "OCEALIZ",
+    "telephone": "LEADER Insurance",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "OFRACAR (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "OPEN ASSURANCES",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ORNIKAR",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 15 99",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "OYAT",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 44 85 49 93",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "P.PLASSE & Cie",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "PEREIRE",
+    "telephone": "Groupe ECG",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "PERMIS 9",
+    "telephone": "SPHINX AFFINITY",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "PILLIOT Assurances",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "PROGEAS Courtage Assurance",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 95 75",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "RELYENS (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "RETRO+ et QUATTRO cabinet THEROND",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 57 58",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ROEDERER",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "RVA Assurances off road",
+    "telephone": "MUT/EUROP/MOND",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SAGESSE (flottes) ex AMI 3F Assurances",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SAINT PIERRE ASSURANCES",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SARL 2C Courtage",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SARPGN (Barruel et Giraud)",
+    "telephone": "FIDELIA",
+    "categorie": "COURTIER",
+    "assisteur": "01 47 11 73 77",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SATEC filiale d'AXA",
+    "telephone": "AXA",
+    "categorie": "COURTIER",
+    "assisteur": "01 55 92 40 00",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Secat Assurances",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Selfassurance",
+    "telephone": "OPTEVEN",
+    "categorie": "COURTIER",
+    "assisteur": "09 88 29 20 00",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Servyr",
+    "telephone": "RESO+",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SH Courtage",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Sipac Européenne d'Assurance (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SOLLY AZAR",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 48 97 74 08",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SOS Malus et JP LABALETTE",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 42 99 82 08",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SPRING",
+    "telephone": "OPTEVEN",
+    "categorie": "COURTIER",
+    "assisteur": "04 26 73 78 20",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SUISSCOURTAGE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "SVI ASSURANCES",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir contrat",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "TEA CEREDE",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 59 23",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "TETRIS ASSURANCE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "VERDINE",
+    "telephone": "MUTUAIDE",
+    "categorie": "COURTIER",
+    "assisteur": "01 55 98 71 46",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "VERLINGUE (flottes)",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "VERSPIEREN",
+    "telephone": "OPTEVEN",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "VIAXEL SOFINCO",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "02 35 61 90 19",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "VITAE COURTAGE",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "Wazari Assurances",
+    "telephone": "MUTUAIDE",
+    "categorie": "COURTIER",
+    "assisteur": "01 55 92 26 27",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "WECOVER",
+    "telephone": "IMA",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "WeeAssur",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "WILOV assurance à la demande",
+    "telephone": "IMA",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "WTW",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "XENASSUR",
+    "telephone": "EUROP ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 41 85 82 61",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "YouAssur",
+    "telephone": "OPTEVEN",
+    "categorie": "COURTIER",
+    "assisteur": "04 26 73 78 20",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "YVELIN (flottes)",
+    "telephone": "",
+    "categorie": "COURTIER",
+    "assisteur": "voir carte verte",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  },
+  {
+    "nom": "ZEPHIR",
+    "telephone": "MONDIAL ASSISTANCE",
+    "categorie": "COURTIER",
+    "assisteur": "01 40 25 50 11",
+    "type": "ASSURANCE",
+    "pays": "FR",
+    "logo": ""
+  }
+]
