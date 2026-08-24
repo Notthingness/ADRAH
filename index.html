@@ -3480,33 +3480,81 @@ cats.addEventListener(
 
 
         rows.sort(
-            (a,b)=>{
+    (a,b)=>{
 
-            if(
-                a.pays==="FR"
-                &&
-                b.pays!=="FR"
-            )
-                return -1;
+        /*
+           =========================================
+           ASSURANCE AVANT COURTIER
+           =========================================
+
+           On détermine le type de chaque entrée.
+        */
+
+        const aIsCourtier =
+            a.category.includes("COURT") ||
+            a.type.toUpperCase().includes("COURT") ||
+            a.assistant.toUpperCase().includes("COURT");
+
+        const bIsCourtier =
+            b.category.includes("COURT") ||
+            b.type.toUpperCase().includes("COURT") ||
+            b.assistant.toUpperCase().includes("COURT");
 
 
-            if(
-                a.pays!=="FR"
-                &&
-                b.pays==="FR"
-            )
-                return 1;
+        /*
+           Les ASSURANCES passent avant
+           les COURTIERS.
+        */
+
+        if(
+            aIsCourtier !== bIsCourtier
+        ){
+
+            return aIsCourtier
+                ? 1
+                : -1;
+
+        }
 
 
-            return a.name.localeCompare(
-                b.name,
-                "fr",
-                {
-                    sensitivity:"base"
-                }
-            );
+        /*
+           =========================================
+           FRANCE AVANT ÉTRANGER
+           =========================================
+        */
 
-        });
+        if(
+            a.pays==="FR"
+            &&
+            b.pays!=="FR"
+        )
+            return -1;
+
+
+        if(
+            a.pays!=="FR"
+            &&
+            b.pays==="FR"
+        )
+            return 1;
+
+
+        /*
+           =========================================
+           ALPHABÉTIQUE
+           =========================================
+        */
+
+        return a.name.localeCompare(
+            b.name,
+            "fr",
+            {
+                sensitivity:"base"
+            }
+        );
+
+    }
+);
 
 
         results.style.setProperty(
