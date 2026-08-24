@@ -1,0 +1,38 @@
+[
+  {
+    "nom": "BLUE Assistance",
+    "telephone": "+39 011 741 75 11",
+    "categorie": "ASSURANCE",
+    "assisteur": "SAVE ASSISTANCE",
+    "type": "ASSISTANCE",
+    "pays": "IT",
+    "logo": ""
+  },
+  {
+    "nom": "GARANZIA MEC",
+    "telephone": "+39 0833 693281",
+    "categorie": "ASSURANCE",
+    "assisteur": "OPTEVEN",
+    "type": "ASSURANCE",
+    "pays": "IT",
+    "logo": ""
+  },
+  {
+    "nom": "HU OPENAIR",
+    "telephone": "+39 (0)2 5824 0386",
+    "categorie": "ASSURANCE",
+    "assisteur": "EUROP ASSISTANCE",
+    "type": "ASSURANCE",
+    "pays": "IT",
+    "logo": ""
+  },
+  {
+    "nom": "REALE MUTUA",
+    "telephone": "",
+    "categorie": "ASSURANCE",
+    "assisteur": "CHARLIE 24",
+    "type": "ASSURANCE",
+    "pays": "IT",
+    "logo": ""
+  }
+]
