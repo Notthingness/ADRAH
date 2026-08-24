@@ -1,0 +1,29 @@
+[
+    {
+        "nom": "TVM",
+        "telephone": "+31 (0)528 29 29 11",
+        "categorie": "ASSURANCE",
+        "assisteur": "24SEVEN ASSISTANCE",
+        "type": "ASSURANCE",
+        "pays": "NL",
+        "logo": ""
+    },
+    {
+        "nom": "Centraal Beheer",
+        "telephone": "(055) 579 7955",
+        "categorie": "ASSURANCE",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "ASSURANCE",
+        "pays": "NL",
+        "logo": ""
+    },
+    {
+        "nom": "EUROCROSS",
+        "telephone": "+31 (0)71 36 46200",
+        "categorie": "ASSURANCE",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "ASSISTANCE",
+        "pays": "NL",
+        "logo": ""
+    }
+]
