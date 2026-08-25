@@ -1,0 +1,200 @@
+[
+    {
+        "nom": "CARRIER",
+        "telephone": "0800 91 31 48",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "ASSISTANCE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "FORD TRUCKS",
+        "telephone": "00 800 600 500 60",
+        "categorie": "PL",
+        "assisteur": "ASSISTANCE 24SEVEN",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "IVECO",
+        "telephone": "00 800 48 32 60 00",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "JAC MOTORS",
+        "telephone": "04 72 60 46 46",
+        "categorie": "PL",
+        "assisteur": "TAI (AXA)",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "MERCEDES-BENZ",
+        "telephone": "01 70 480 152",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "RENAULT TRUCKS",
+        "telephone": "0 800 24 24 10",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SCANIA",
+        "telephone": "02 41 41 32 32",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TEMSA",
+        "telephone": "06 16 24 13 92",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "VOLVO TRUCKS",
+        "telephone": "0800 90 75 18",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "EUROMASTER PL",
+        "telephone": "0 820 90 40 40",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "POINT S PL",
+        "telephone": "0 800 90 60 58",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SILIGOM PL",
+        "telephone": "04 72 61 22 25",
+        "categorie": "PL",
+        "assisteur": "TAI (AXA)",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "VULCO PL",
+        "telephone": "0825 30 31 30",
+        "categorie": "PL",
+        "assisteur": "EUROPE ASSISTANCE",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "AGC-ASSISTANCE",
+        "telephone": "09 74 190 190",
+        "categorie": "PL",
+        "assisteur": "RES ASSISTANCE",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "AS24",
+        "telephone": "09 70 82 42 47",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CLOVIS",
+        "telephone": "0 800 24 24 10",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "DKV",
+        "telephone": "01 30 52 56 91",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "FIDELIA POIDS-LOURDS",
+        "telephone": "01 30 62 11 22",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "FORCE RESEAU",
+        "telephone": "0 800 878 436",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "G-TRUCK",
+        "telephone": "04 72 60 46 46",
+        "categorie": "PL",
+        "assisteur": "TAI (AXA)",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TIP",
+        "telephone": "01 76 74 91 71",
+        "categorie": "PL",
+        "assisteur": "EBTS",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TOTAL TRUCK ASSISTANCE 24/7",
+        "telephone": "09 70 82 42 40",
+        "categorie": "PL",
+        "assisteur": "SAVE ASSISTANCE",
+        "type": "SERVICE",
+        "pays": "FR",
+        "logo": ""
+    }
+]
