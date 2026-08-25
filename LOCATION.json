@@ -1,0 +1,263 @@
+[
+    {
+        "nom": "ADA",
+        "telephone": "0 805 16 00 66",
+        "categorie": "LOCATION",
+        "assisteur": "ACTA",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ATHLON",
+        "telephone": "0 820 884 800",
+        "categorie": "LOCATION",
+        "assisteur": "OPTEVEN",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "AYVENS",
+        "telephone": "0 825 85 85 85",
+        "categorie": "LOCATION",
+        "assisteur": "OPTEVEN",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "BLABLACAR",
+        "telephone": "01 85 76 22 27",
+        "categorie": "LOCATION",
+        "assisteur": "AXA",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "BUDGET",
+        "telephone": "0 800 325 325",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CAISSE D'ÉPARGNE LEASE",
+        "telephone": "09 69 36 45 45",
+        "categorie": "LOCATION",
+        "assisteur": "OPTEVEN",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "FATEC",
+        "telephone": "0 826 10 40 60",
+        "categorie": "LOCATION",
+        "assisteur": "ACTA",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "DIAC LOCATION",
+        "telephone": "01 49 32 34 47",
+        "categorie": "LOCATION",
+        "assisteur": "AXA",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "DRIIVEME",
+        "telephone": "09 69 32 06 22",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ENTERPRISE",
+        "telephone": "0 800 13 12 11",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "EUROPCAR",
+        "telephone": "0 800 354 000",
+        "categorie": "LOCATION",
+        "assisteur": "IMA",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "HERTZ / DOLLAR / THRIFTY / FIREFLY",
+        "telephone": "01 30 44 04 41",
+        "categorie": "LOCATION",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "INTERMARCHÉ LOCATION",
+        "telephone": "0800 162 162",
+        "categorie": "LOCATION",
+        "assisteur": "OPTEVEN",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "KINTO ONE",
+        "telephone": "01 49 93 73 66",
+        "categorie": "LOCATION",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "NATIONAL",
+        "telephone": "0 800 13 12 11",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ONE LEASE",
+        "telephone": "01 85 74 77 77",
+        "categorie": "LOCATION",
+        "assisteur": "ACTA",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "PETIT FORESTIER / LECAPITAINE / IGLOOCAR / ZEFIRENT / STRICHER",
+        "telephone": "0 800 06 24 24",
+        "categorie": "LOCATION",
+        "assisteur": "GÉRÉ PAR LES AGENCES",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "RENT A CAR",
+        "telephone": "0 969 320 397",
+        "categorie": "LOCATION",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SAGA",
+        "telephone": "02 40 35 63 34",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SHIFT CAR",
+        "telephone": "01 41 85 94 52",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TILITI / ROULENLOC",
+        "telephone": "04 72 17 25 53",
+        "categorie": "LOCATION",
+        "assisteur": "ACTA",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "U LOCATION",
+        "telephone": "09 69 36 27 24",
+        "categorie": "LOCATION",
+        "assisteur": "OPTEVEN",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "UCAR",
+        "telephone": "08 09 10 82 27",
+        "categorie": "LOCATION",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "WIKICAMPERS",
+        "telephone": "05 64 11 60 64",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "LOCATION",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CITIGO",
+        "telephone": "01 76 36 12 60",
+        "categorie": "LOCATION",
+        "assisteur": "MUTUAIDE",
+        "type": "AUTOPARTAGE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CITIZ",
+        "telephone": "09 70 82 11 11",
+        "categorie": "LOCATION",
+        "assisteur": "IMA",
+        "type": "AUTOPARTAGE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "FREE2MOVE",
+        "telephone": "01 41 85 97 17",
+        "categorie": "LOCATION",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "AUTOPARTAGE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "GETAROUND / DRIVY",
+        "telephone": "04 72 17 12 11",
+        "categorie": "LOCATION",
+        "assisteur": "ACTA",
+        "type": "AUTOPARTAGE",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TURO",
+        "telephone": "04 26 73 79 36",
+        "categorie": "LOCATION",
+        "assisteur": "OPTEVEN",
+        "type": "AUTOPARTAGE",
+        "pays": "FR",
+        "logo": ""
+    }
+]
