@@ -1,0 +1,461 @@
+[
+    {
+        "nom": "ABARTH",
+        "telephone": "0 800 22 27 84 00",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "AIWAYS",
+        "telephone": "04 72 17 25 58",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ALFA ROMEO",
+        "telephone": "0 800 25 32 00 00",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ALPINE",
+        "telephone": "0 801 801 110",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "AUDI",
+        "telephone": "0 800 28 34 00",
+        "categorie": "VL",
+        "assisteur": "HLPY",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "BMW",
+        "telephone": "0800 00 16 24",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "BYD",
+        "telephone": "00 800 10 20 3000",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CADILLAC",
+        "telephone": "0800 25 66 59",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CHERY",
+        "telephone": "01 49 93 81 26",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CHRYSLER",
+        "telephone": "00 800 0 426 5337",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CITROËN",
+        "telephone": "00 800 05 24 24",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "CUPRA",
+        "telephone": "0 800 921 900",
+        "categorie": "VL",
+        "assisteur": "HLPY",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "DACIA",
+        "telephone": "0 800 740 832",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "DODGE",
+        "telephone": "00 800 0 426 5337",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "DS AUTOMOBILES",
+        "telephone": "00 800 24 24 07 07",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "EXEED",
+        "telephone": "01 49 93 81 26",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "FORD",
+        "telephone": "0800 00 50 05",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "GENESIS",
+        "telephone": "00 800 00 32 33 00",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "HONDA",
+        "telephone": "01 41 85 84 70",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "HYUNDAI",
+        "telephone": "0 800 00 12 19",
+        "categorie": "VL",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "INEOS GRENADIER",
+        "telephone": "04 37 64 11 64",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ISUZU",
+        "telephone": "01 41 85 83 79",
+        "categorie": "VL",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "JAGUAR",
+        "telephone": "+33(0)1 70 94 11 12",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "JEEP",
+        "telephone": "0 800 04 26 53 37",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "JAECOO",
+        "telephone": "01 49 93 81 26",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "KIA",
+        "telephone": "01 81 93 57 19",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "LAMBORGHINI",
+        "telephone": "0800 059 059",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "LANCIA",
+        "telephone": "00800 52 62 42 00",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "LAND ROVER",
+        "telephone": "+33(0)1 70 94 11 11",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "LEAPMOTOR",
+        "telephone": "00 800 5327 0000",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "LEXUS",
+        "telephone": "0800 572 660",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "NISSAN",
+        "telephone": "0805 11 22 23",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "OMODA",
+        "telephone": "01 49 93 81 26",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "OPEL",
+        "telephone": "0 800 100 510",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "PEUGEOT",
+        "telephone": "0 800 44 24 24",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "POLESTAR",
+        "telephone": "0 800 600 015",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "PORSCHE",
+        "telephone": "0 805 989 911",
+        "categorie": "VL",
+        "assisteur": "AXA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "RAM",
+        "telephone": "00 800 0 426 5337",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "RENAULT",
+        "telephone": "0800 05 15 15",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ROLLS-ROYCE",
+        "telephone": "01 40 25 15 45",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SEAT",
+        "telephone": "0 800 00 72 07",
+        "categorie": "VL",
+        "assisteur": "HLPY",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SKODA",
+        "telephone": "0 800 22 8000",
+        "categorie": "VL",
+        "assisteur": "HLPY",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SMART",
+        "telephone": "00800 2 777 777",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SUBARU",
+        "telephone": "01 40 25 57 55",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TESLA",
+        "telephone": "09 70 73 08 50",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TOYOTA",
+        "telephone": "0 800 80 89 35",
+        "categorie": "VL",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "VAUXHALL",
+        "telephone": "0800 55 33 88",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "VINFAST",
+        "telephone": "01 76 21 40 50",
+        "categorie": "VL",
+        "assisteur": "IMA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "VOLKSWAGEN",
+        "telephone": "0 800 22 4000",
+        "categorie": "VL",
+        "assisteur": "HLPY",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "VOLVO",
+        "telephone": "04 72 17 12 92",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ZEEKR",
+        "telephone": "+33 (0)1 85 16 92 76",
+        "categorie": "VL",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    }
+]
