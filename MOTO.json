@@ -1,0 +1,191 @@
+[
+    {
+        "nom": "MV AGUSTA",
+        "telephone": "0 800 00 20 41",
+        "categorie": "MOTO",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "APRILIA",
+        "telephone": "0 805 54 06 54",
+        "categorie": "MOTO",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "BRP CAN-AM",
+        "telephone": "09 70 24 11 85",
+        "categorie": "MOTO",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "BSA",
+        "telephone": "01 41 85 83 72",
+        "categorie": "MOTO",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "DUCATI",
+        "telephone": "0 800 23 65 10",
+        "categorie": "MOTO",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "GASGAS",
+        "telephone": "0 800 00 20 41",
+        "categorie": "MOTO",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "HARLEY-DAVIDSON",
+        "telephone": "01 49 93 80 24",
+        "categorie": "MOTO",
+        "assisteur": "OPTEVEN",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "HONDA",
+        "telephone": "01 49 93 73 90",
+        "categorie": "MOTO",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "HUSABERG",
+        "telephone": "0 800 00 20 41",
+        "categorie": "MOTO",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "HUSQVARNA",
+        "telephone": "0 800 00 20 41",
+        "categorie": "MOTO",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "KAWASAKI",
+        "telephone": "01 49 93 80 80",
+        "categorie": "MOTO",
+        "assisteur": "OPTEVEN",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "KTM",
+        "telephone": "04 37 25 14 60",
+        "categorie": "MOTO",
+        "assisteur": "ACTA",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "MOTO GUZZI",
+        "telephone": "0 805 54 06 54",
+        "categorie": "MOTO",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "PEUGEOT MOTOCYCLES",
+        "telephone": "01 41 85 83 72",
+        "categorie": "MOTO",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "PIAGGIO",
+        "telephone": "0 805 54 06 54",
+        "categorie": "MOTO",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "POLARIS",
+        "telephone": "01 40 25 57 90",
+        "categorie": "MOTO",
+        "assisteur": "OPTEVEN",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "ROYAL ENFIELD",
+        "telephone": "0 800 73 27 74 78",
+        "categorie": "MOTO",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "SUZUKI",
+        "telephone": "04 72 43 69 39",
+        "categorie": "MOTO",
+        "assisteur": "OPTEVEN",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "TRIUMPH",
+        "telephone": "01 48 97 74 43",
+        "categorie": "MOTO",
+        "assisteur": "MONDIAL ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "VESPA",
+        "telephone": "0 805 54 06 54",
+        "categorie": "MOTO",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    },
+    {
+        "nom": "YAMAHA",
+        "telephone": "01 34 30 31 00",
+        "categorie": "MOTO",
+        "assisteur": "EUROP ASSISTANCE",
+        "type": "CONSTRUCTEUR",
+        "pays": "FR",
+        "logo": ""
+    }
+]
