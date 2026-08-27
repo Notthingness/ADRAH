@@ -4,5 +4,12 @@
 "telephone":"02 32 74 37 00",
 "type":"Commissariat",  
 "categorie":"POLICE"
+},
+{
+"nom":"Police Montivilliers",
+"telephone":"02 76 52 85 75",
+"type":"Commissariat",  
+"categorie":"POLICE"
 } 
+  
 ]
