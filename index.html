@@ -3620,17 +3620,13 @@ list.addEventListener(
     e=>{
 
         if(
-            e.target.closest(
-                ".call"
-            )
+            e.target.closest(".call")
         )
             return;
 
 
         const row=
-            e.target.closest(
-                ".row"
-            );
+            e.target.closest(".row");
 
 
         if(!row)
@@ -3643,11 +3639,19 @@ list.addEventListener(
             ];
 
 
+        /* =================================================
+           COULEUR DU DRAWER
+           ================================================= */
+
         applyCategoryColor(
             drawer,
             item.category
         );
 
+
+        /* =================================================
+           INFOS PRINCIPALES
+           ================================================= */
 
         document.getElementById(
             "d-name"
@@ -3691,6 +3695,10 @@ list.addEventListener(
             item.pays;
 
 
+        /* =================================================
+           BLOCS
+           ================================================= */
+
         const typeBox=
             document.getElementById(
                 "typeBox"
@@ -3700,6 +3708,18 @@ list.addEventListener(
         const assistBox=
             document.getElementById(
                 "assistBox"
+            );
+
+
+        const countryBox=
+            document.getElementById(
+                "countryBox"
+            );
+
+
+        const availableBox=
+            document.getElementById(
+                "availableBox"
             );
 
 
@@ -3721,22 +3741,20 @@ list.addEventListener(
             );
 
 
-        const countryBox=
-            document.getElementById(
-                "countryBox"
-            );
-
-
-        const availableBox=
-            document.getElementById(
-                "availableBox"
-            );
-
+        /* =================================================
+           AFFICHAGE PAR DÉFAUT
+           ================================================= */
 
         typeBox.style.display=
             "block";
 
         assistBox.style.display=
+            "block";
+
+        countryBox.style.display=
+            "block";
+
+        availableBox.style.display=
             "block";
 
         addressBox.style.display=
@@ -3749,109 +3767,70 @@ list.addEventListener(
             "none";
 
 
+        /* =================================================
+           MENU SECRET
+           =================================================
+
+           Dans le menu secret :
+           - Assisteur caché
+           - Pays caché
+
+        */
+
+        if(
+            secretMode
+        ){
+
+            assistBox.style.display=
+                "none";
+
+            countryBox.style.display=
+                "none";
+
+        }
+
+
+        /* =================================================
+           GARAGE
+           =================================================
+
+           Les garages affichent :
+           - Adresse
+           - Email
+           - Services
+
+           Et cachent :
+           - Type
+           - Assisteur
+           - Pays
+           - Disponibilité
+
+        */
+
         if(
             item.category==="GARAGE"
         ){
 
             typeBox.style.display=
-    "block";
-
-assistBox.style.display=
-    "block";
-
-countryBox.style.display=
-    "block";
-
-availableBox.style.display=
-    "block";
-
-addressBox.style.display=
-    "none";
-
-emailBox.style.display=
-    "none";
-
-servicesBox.style.display=
-    "none";
-
-
-/* =================================================
-   MENU SECRET
-   =================================================
-
-   Dans le menu secret :
-   - Assisteur caché
-   - Pays caché
-
-   Le reste reste affiché.
-*/
-
-if(
-    secretMode
-){
-
-    assistBox.style.display=
-        "none";
-
-    countryBox.style.display=
-        "none";
-
-}
-
-
-/* =================================================
-   GARAGE
-   ================================================= */
-
-if(
-    item.category==="GARAGE"
-){
-
-    typeBox.style.display=
-        "none";
-
-    assistBox.style.display=
-        "none";
-
-    countryBox.style.display=
-        "none";
-
-    availableBox.style.display=
-        "none";
-
-    addressBox.style.display=
-        "block";
-
-    emailBox.style.display=
-        "block";
-
-    servicesBox.style.display=
-        "block";
-
-}
-
-        else{
-
-            typeBox.style.display=
-                "block";
+                "none";
 
             assistBox.style.display=
-                "block";
+                "none";
 
             countryBox.style.display=
-                "block";
+                "none";
 
             availableBox.style.display=
-                "block";
+                "none";
 
             addressBox.style.display=
-                "none";
+                "block";
 
             emailBox.style.display=
-                "none";
+                "block";
 
             servicesBox.style.display=
-                "none";
+                "block";
 
         }
 
@@ -3974,11 +3953,12 @@ if(
         document.getElementById(
             "d-services"
         ).textContent=
-            item.services;
+            item.services ||
+            "—";
 
 
         /* =================================================
-           OUVERTURE
+           OUVERTURE DU DRAWER
            ================================================= */
 
         drawer.classList.add(
