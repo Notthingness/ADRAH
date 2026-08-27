@@ -3754,27 +3754,81 @@ list.addEventListener(
         ){
 
             typeBox.style.display=
-                "none";
+    "block";
 
-            assistBox.style.display=
-                "none";
+assistBox.style.display=
+    "block";
 
-            countryBox.style.display=
-                "none";
+countryBox.style.display=
+    "block";
 
-            availableBox.style.display=
-                "none";
+availableBox.style.display=
+    "block";
 
-            addressBox.style.display=
-                "block";
+addressBox.style.display=
+    "none";
 
-            emailBox.style.display=
-                "block";
+emailBox.style.display=
+    "none";
 
-            servicesBox.style.display=
-                "block";
+servicesBox.style.display=
+    "none";
 
-        }
+
+/* =================================================
+   MENU SECRET
+   =================================================
+
+   Dans le menu secret :
+   - Assisteur caché
+   - Pays caché
+
+   Le reste reste affiché.
+*/
+
+if(
+    secretMode
+){
+
+    assistBox.style.display=
+        "none";
+
+    countryBox.style.display=
+        "none";
+
+}
+
+
+/* =================================================
+   GARAGE
+   ================================================= */
+
+if(
+    item.category==="GARAGE"
+){
+
+    typeBox.style.display=
+        "none";
+
+    assistBox.style.display=
+        "none";
+
+    countryBox.style.display=
+        "none";
+
+    availableBox.style.display=
+        "none";
+
+    addressBox.style.display=
+        "block";
+
+    emailBox.style.display=
+        "block";
+
+    servicesBox.style.display=
+        "block";
+
+}
 
         else{
 
