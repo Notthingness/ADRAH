@@ -1419,6 +1419,59 @@ body {
     }
 }
 
+
+/* =========================================================
+   CORRECTION PLEINE LARGEUR — iOS / SAFARI / WEBVIEW
+   Force le document et son conteneur à suivre toute la
+   largeur CSS réellement accordée à la page par le navigateur.
+   ========================================================= */
+html {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+}
+
+/* Évite qu'un élément interne impose une largeur fixe. */
+.app > *,
+.search,
+#cats,
+#results,
+#list {
+    min-width: 0;
+    max-width: none;
+}
+
+@supports (width: 100dvw) {
+    html, body {
+        width: 100dvw;
+        min-width: 100dvw;
+    }
+    .app {
+        width: 100dvw;
+        max-width: none;
+    }
+}
+
 </style>
 </head>
 
