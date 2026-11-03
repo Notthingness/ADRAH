@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no,email=no,address=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1249,6 +1249,175 @@ h2{
     }
 
 }
+
+
+
+/* =========================================================
+   ADAPTATION RESPONSIVE — IPHONE DUO / ÉCRANS PLIABLES
+   Ajout visuel uniquement : le HTML et le JavaScript existants
+   restent inchangés.
+   ========================================================= */
+
+html {
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.app {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
+    padding-top: max(20px, env(safe-area-inset-top, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+    padding-bottom: max(20px, env(safe-area-inset-bottom, 0px));
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+}
+
+/* Les éléments peuvent rétrécir sans provoquer de débordement. */
+.grid,
+#list,
+.card,
+.row,
+.drawer {
+    min-width: 0;
+}
+
+.card h3,
+.title,
+.sub {
+    overflow-wrap: anywhere;
+}
+
+.drawer {
+    height: 100vh;
+    height: 100dvh;
+    width: min(460px, 100vw);
+    padding-top: max(25px, env(safe-area-inset-top, 0px));
+    padding-right: max(25px, env(safe-area-inset-right, 0px));
+    padding-bottom: max(25px, env(safe-area-inset-bottom, 0px));
+    padding-left: max(25px, env(safe-area-inset-left, 0px));
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Téléphone plié : on conserve volontairement la présentation actuelle. */
+@media screen and (max-width: 699px) {
+    .app {
+        max-width: 560px;
+        padding-left: max(15px, env(safe-area-inset-left, 0px));
+        padding-right: max(15px, env(safe-area-inset-right, 0px));
+    }
+
+    .grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #list {
+        display: block;
+    }
+
+    .row {
+        margin-bottom: 15px;
+    }
+
+    .drawer {
+        width: 100vw;
+    }
+}
+
+/* Grand écran déplié : catégories et résultats en deux colonnes. */
+@media screen and (min-width: 700px) {
+    .app {
+        max-width: 1100px;
+        padding: 25px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    #list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        align-items: start;
+    }
+
+    .row {
+        margin-bottom: 0;
+        min-width: 0;
+    }
+
+    .card {
+        min-width: 0;
+        gap: 16px;
+        padding: clamp(18px, 2.2vw, 26px);
+    }
+
+    .card h3 {
+        font-size: clamp(23px, 2.5vw, 30px);
+    }
+
+    .drawer {
+        width: min(500px, 78vw);
+    }
+}
+
+/* Très grand écran / affichage paysage large. */
+@media screen and (min-width: 1100px) {
+    .app {
+        max-width: 1200px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Appareils pliables dont le navigateur expose deux segments. */
+@media (horizontal-viewport-segments: 2) {
+    .app {
+        width: 100%;
+        max-width: none;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+    }
+
+    #list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        align-items: start;
+    }
+
+    .row {
+        margin-bottom: 0;
+    }
+}
+
+/* Paysage sur téléphone : le panneau de détails reste défilable. */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .drawer {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 
 </style>
 </head>
